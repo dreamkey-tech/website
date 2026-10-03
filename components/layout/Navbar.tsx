@@ -86,7 +86,7 @@ export default function Navbar() {
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide"
-              href="#buy"
+              href="/buy"
             >
               Buy
             </Link>
@@ -177,7 +177,7 @@ export default function Navbar() {
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide py-2 border-b border-border-subtle/50"
-              href="#buy"
+              href="/buy"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Buy
