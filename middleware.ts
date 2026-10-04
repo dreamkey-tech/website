@@ -8,8 +8,8 @@ const authRoutes = ['/login', '/register'];
 
 export function middleware(request: NextRequest) {
   // Try to get the auth cookie.
-  // Note: Adjust the cookie name 'access_token' or 'refresh_token' to match whatever your backend sets!
-  const hasAuthCookie = request.cookies.has('access_token') || request.cookies.has('refresh_token') || request.cookies.has('session');
+  // Checks for standard email/password tokens or the better-auth Google OAuth session token
+  const hasAuthCookie = request.cookies.has('access_token') || request.cookies.has('refresh_token') || request.cookies.has('session') || request.cookies.has('better-auth.session_token');
   
   const { pathname } = request.nextUrl;
 

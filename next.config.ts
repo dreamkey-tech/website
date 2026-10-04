@@ -14,11 +14,12 @@ const nextConfig: NextConfig = {
     'localhost:3000',
   ],
   async rewrites() {
-    const apiUrl = process.env.API_URL || 'http://localhost:8787/'
+    // Route /api-proxy to Cloudflare Tunnel
+    const apiUrl = (process.env.NEXT_PUBLIC_API_URL || 'https://bargain-variations-recycling-thumbs.trycloudflare.com').replace(/\/$/, '');
     return [
       {
-        source: '/api/:path*',
-        destination: `${apiUrl}:path*`,
+        source: '/api-proxy/:path*',
+        destination: `${apiUrl}/:path*`,
       },
     ]
   },

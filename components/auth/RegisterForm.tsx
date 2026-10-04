@@ -4,19 +4,20 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 import { authApi } from "@/api/auth";
-import { loginSchema } from "@/zod/auth";
+import { registerSchema } from "@/zod/auth";
 import { z } from "zod";
 import { useAuthStore } from "@/store/authStore";
 import { toast } from "sonner";
 import { GoogleSignInButton } from "./GoogleSignInButton";
 
-export default function LoginForm() {
+export default function RegisterForm() {
   const router = useRouter();
   const { refreshUser } = useAuthStore();
   
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+  const [errors, setErrors] = useState<{ name?: string; email?: string; password?: string }>({});
   const [isLoading, setIsLoading] = useState(false);
   const [apiError, setApiError] = useState<string | null>(null);
 
@@ -28,19 +29,19 @@ export default function LoginForm() {
 
     try {
       // Validate input using Zod
-      const validatedData = loginSchema.parse({ email, password });
+      const validatedData = registerSchema.parse({ name, email, password });
 
       // Call API
-      await authApi.login(validatedData);
+      await authApi.register(validatedData);
       
       // Update Zustand store
       await refreshUser();
 
-      toast.success("Successfully logged in!");
+      toast.success("Account created successfully!");
 
       // Redirect to home/dashboard
       router.push("/dashboard");
-      router.refresh(); // Refresh to trigger middleware/layout state changes
+      router.refresh(); 
     } catch (error: any) {
       if (error instanceof z.ZodError) {
         // Handle Zod validation errors
@@ -54,16 +55,9 @@ export default function LoginForm() {
         toast.error("Please fix the validation errors.");
       } else {
         // Handle API errors
-        const errorData = error.response?.data;
-        if (errorData?.code === "USE_GOOGLE_LOGIN") {
-          setApiError(
-            'This account was created with Google. Please click "Continue with Google" below.'
-          );
-        } else {
-          const errorMessage = errorData?.message || "Invalid email or password";
-          toast.error(errorMessage);
-          setApiError(errorMessage);
-        }
+        const errorMessage = error.response?.data?.message || "Failed to create account. Please try again.";
+        toast.error(errorMessage);
+        setApiError(errorMessage);
       }
     } finally {
       setIsLoading(false);
@@ -79,13 +73,13 @@ export default function LoginForm() {
     >
       <div className="text-center mb-space-xl">
         <span className="font-label-ui text-label-ui text-primary uppercase tracking-widest font-semibold">
-          Welcome Back
+          Create Account
         </span>
         <h1 className="font-headline-lg text-headline-lg text-on-surface mt-2">
-          Login to Dream Key
+          Join Dream Key
         </h1>
         <p className="font-body-default text-body-default text-secondary mt-2">
-          Enter your details to access your account.
+          Enter your details to create your account.
         </p>
       </div>
 
@@ -96,6 +90,22 @@ export default function LoginForm() {
       )}
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-space-lg">
+        <div className="flex flex-col gap-2">
+          <label className="font-label-ui text-label-ui text-on-surface font-medium">
+            Full Name
+          </label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="John Doe"
+            className="w-full px-4 py-3 rounded-lg bg-surface-container-low border border-surface-container-highest focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-default transition-all"
+          />
+          {errors.name && (
+            <span className="text-error font-label-ui text-xs">{errors.name}</span>
+          )}
+        </div>
+
         <div className="flex flex-col gap-2">
           <label className="font-label-ui text-label-ui text-on-surface font-medium">
             Email Address
@@ -113,14 +123,9 @@ export default function LoginForm() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <div className="flex justify-between items-center">
-            <label className="font-label-ui text-label-ui text-on-surface font-medium">
-              Password
-            </label>
-            <a href="#" className="font-label-ui text-xs text-primary hover:underline">
-              Forgot password?
-            </a>
-          </div>
+          <label className="font-label-ui text-label-ui text-on-surface font-medium">
+            Password
+          </label>
           <input
             type="password"
             value={password}
@@ -138,13 +143,13 @@ export default function LoginForm() {
           disabled={isLoading}
           className="w-full py-3 mt-2 rounded-lg bg-primary text-white font-title-property font-semibold hover:bg-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
-          {isLoading ? "Logging in..." : "Login"}
+          {isLoading ? "Creating account..." : "Sign Up"}
         </button>
 
         <p className="text-center font-body-default text-sm text-secondary mt-2">
-          Don't have an account?{" "}
-          <a href="/register" className="text-primary hover:underline font-medium">
-            Sign up
+          Already have an account?{" "}
+          <a href="/login" className="text-primary hover:underline font-medium">
+            Log in
           </a>
         </p>
       </form>
