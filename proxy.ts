@@ -6,7 +6,7 @@ const protectedRoutes = ['/dashboard', '/profile', '/settings'];
 // Define the routes that should not be accessible if already authenticated
 const authRoutes = ['/login', '/register'];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   // Try to get the auth cookie.
   // Checks for standard email/password tokens or the better-auth Google OAuth session token
   const hasAuthCookie = request.cookies.has('access_token') || request.cookies.has('refresh_token') || request.cookies.has('session') || request.cookies.has('better-auth.session_token');
