@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 export default function Testimonials() {
   const testimonials = [
     {
-      text: '"Dream Key handled everything from builder negotiations to stamp registration seamlessly. As an IT professional in New Town, their transparency saved me months of legwork."',
+      text: <>"Dream <span className="text-primary">Key</span> handled everything from builder negotiations to stamp registration seamlessly. As an IT professional in New Town, their transparency saved me months of legwork."</>,
       initials: "AM",
       name: "Anirban Mukherjee",
       role: "Bought 3 BHK in New Town",

@@ -5,7 +5,7 @@ export default function FilterSidebar() {
   const [budget, setBudget] = useState(550);
 
   return (
-    <aside className="lg:col-span-3 flex flex-col gap-6">
+    <aside className="lg:col-span-3 flex flex-col gap-6 lg:sticky lg:top-[110px] h-max lg:max-h-[calc(100vh-130px)] overflow-y-auto no-scrollbar pb-4">
       <div className="bg-surface-container-lowest p-5 rounded-xl shadow-sm space-y-6">
         {/* Filter Header */}
         <div className="flex items-center justify-between pb-3">

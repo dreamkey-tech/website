@@ -118,7 +118,7 @@ export default function PropertyGrid() {
         <div>
           <div className="flex items-center gap-2">
             <h2 className="font-title-property text-title-property font-bold text-on-surface">12 Properties Found</h2>
-            <span className="px-2 py-0.5 rounded text-xs bg-surface-container-low text-tertiary-container font-semibold">WBRERA Verified</span>
+            {/* <span className="px-2 py-0.5 rounded text-xs bg-surface-container-low text-tertiary-container font-semibold">WBRERA Verified</span> */}
           </div>
           <p className="text-body-dense text-on-surface-variant font-body-dense mt-0.5">Showing curated high-trust residential units in Kolkata & Metro outposts</p>
         </div>

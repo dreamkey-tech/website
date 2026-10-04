@@ -76,7 +76,7 @@ export default function RegisterForm() {
           Create Account
         </span>
         <h1 className="font-headline-lg text-headline-lg text-on-surface mt-2">
-          Join Dream Key
+          Join Dream <span className="text-primary">Key</span>
         </h1>
         <p className="font-body-default text-body-default text-secondary mt-2">
           Enter your details to create your account.

@@ -20,6 +20,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Dream Key | Premier Real Estate in Kolkata",
   description: "Find a Place You’ll Love to Call Home. Verified luxury apartments, premium high-rises, and prime residential developments across Kolkata.",
+  icons: {
+    icon: "/logo.webp",
+  },
 };
 
 export default function RootLayout({

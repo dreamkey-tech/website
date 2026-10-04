@@ -3,8 +3,9 @@ import React from 'react';
 
 export default function BuyPropertySearch() {
   return (
-    <div className="relative z-20 max-w-7xl mx-auto px-margin-mobile md:px-margin -mt-12 w-full">
-      <div className="bg-surface-container-lowest rounded-xl shadow-xl p-4 md:p-6">
+    <div className="sticky top-0 z-30 w-full bg-surface/95 backdrop-blur-md pb-4 pt-4 border-b border-border-subtle/50 shadow-sm">
+      <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+        <div className="bg-surface-container-lowest rounded-xl shadow-md p-4 md:p-6 border border-secondary/10">
         <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 md:gap-4 items-end" onSubmit={(e) => e.preventDefault()}>
           <div className="lg:col-span-4 flex flex-col gap-1.5">
             <label className="font-label-ui text-label-ui text-on-surface-variant flex items-center gap-1">
@@ -69,6 +70,7 @@ export default function BuyPropertySearch() {
             </button>
           </div>
         </form>
+      </div>
       </div>
     </div>
   );

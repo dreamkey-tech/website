@@ -53,12 +53,12 @@ export default function ValueProposition() {
               Area III, our experienced team provides deep fiduciary clarity at
               every milestone.
             </p>
-            <p className="font-body-default text-body-default text-on-surface-variant leading-relaxed">
+            {/* <p className="font-body-default text-body-default text-on-surface-variant leading-relaxed">
               We partner exclusively with WBRERA-approved builders to ensure zero
               delivery disputes, guaranteed carpet areas, and completely
               transparent pricing schedules with zero hidden consultancy
               commissions for buyers.
-            </p>
+            </p> */}
             {/* Key Stat Callouts */}
             <div className="grid grid-cols-3 gap-space-md pt-space-sm pb-space-sm">
               <div className="flex flex-col">

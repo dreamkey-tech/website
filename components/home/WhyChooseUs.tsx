@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
           <div className="lg:col-span-6 flex flex-col gap-space-md">
             <div>
               <span className="font-label-ui text-label-ui text-primary uppercase tracking-widest font-semibold">
-                Why Dream Key
+                Why Dream <span className="text-primary">Key</span>
               </span>
               <h2 className="font-headline-lg-mobile md:font-headline-lg text-[20px] md:text-headline-lg text-on-surface font-bold md:font-semibold leading-tight mt-1 md:mt-2">
                 Authentic Advisory Backed by Legal Rigor

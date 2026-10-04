@@ -9,12 +9,12 @@ export default function Footer() {
             <div className="flex items-center gap-space-sm">
               <img
                 alt="Dream Key Footer Logo"
-                className="w-11 h-11 rounded-full object-cover border border-secondary/40"
-                src="/logo.jpg"
+                className="w-32 sm:w-40 h-auto object-contain"
+                src="/logo.webp"
               />
               <div className="flex flex-col">
                 <span className="font-headline-sm text-headline-sm text-surface-clean tracking-tight">
-                  Dream Key
+                  Dream <span className="text-primary">Key</span>
                 </span>
                 <span className="font-label-ui text-[11px] uppercase tracking-widest text-gold-light">
                   Unlocking Dreams
@@ -26,12 +26,12 @@ export default function Footer() {
               heritage and emerging skylines. From Ballygunge colonial estates to
               high-rise sky villas across EM Bypass and New Town.
             </p>
-            <div className="flex items-center gap-space-sm pt-space-xs font-label-ui text-label-ui text-tertiary-fixed border border-secondary/40 w-fit px-space-md py-space-xs rounded">
+            {/* <div className="flex items-center gap-space-sm pt-space-xs font-label-ui text-label-ui text-tertiary-fixed border border-secondary/40 w-fit px-space-md py-space-xs rounded">
               <span className="material-symbols-outlined text-[18px] text-tertiary-fixed">
                 verified
               </span>
               <span className="">WBRERA/AGT/2023/KOL/00482</span>
-            </div>
+            </div> */}
           </div>
           <div className="lg:col-span-2 flex flex-col gap-space-md">
             <h4 className="font-title-property text-title-property text-surface-clean border-b border-secondary/40 pb-space-xs">
@@ -132,6 +132,17 @@ export default function Footer() {
                   call
                 </span>
                 <p className="">+91 86975 59123</p>
+              </div>
+              <div className="mt-2 w-full h-40 md:h-48 rounded-lg overflow-hidden border border-secondary/20">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d29471.98044196126!2d88.44438196017714!3d22.57919476141823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAA%2052%20%2C%20st-69%2C%20AA%20block%2C%20Newtown%20%2Ckolkata%20-700156%2C%20Kolkata%2C%20West%20Bengal%20700156!5e0!3m2!1sen!2sin!4v1791114510980!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
               </div>
             </div>
           </div>

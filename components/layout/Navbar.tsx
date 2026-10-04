@@ -1,14 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useAuthStore } from "@/store/authStore";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const { user, isAuthenticated, logout } = useAuthStore();
+  const [mounted, setMounted] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const isBuyPage = pathname === '/buy';
+
+  useEffect(() => {
+    setMounted(true);
+    
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsUserMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full">
-      <div className="bg-charcoal-pure text-surface py-2 border-b border-secondary/20" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
+    <header className={`${isBuyPage ? 'absolute' : 'fixed'} top-0 left-0 right-0 z-50 w-full`}>
+      <div className="bg-charcoal-pure text-surface py-2 border-b border-secondary/20" style={{ paddingTop: 'max(0.5rem, env(safe-area-inset-top, 0.5rem))' }}>
         <div className="max-w-[1320px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between font-label-ui text-label-ui">
           <div className="flex items-center gap-space-sm shrink">
             <span className="material-symbols-outlined text-[16px] text-tertiary-fixed shrink-0">
@@ -17,12 +37,12 @@ export default function Navbar() {
             <span className="tracking-wide truncate max-w-[220px] sm:max-w-none">
               Your trusted real estate partner in Kolkata
             </span>
-            <span className="hidden lg:inline text-secondary-fixed-dim shrink-0">
+            {/* <span className="hidden lg:inline text-secondary-fixed-dim shrink-0">
               •
             </span>
             <span className="hidden lg:inline text-secondary-fixed-dim shrink-0">
               WBHIRA & WBRERA Certified
-            </span>
+            </span> */}
           </div>
           <div className="flex items-center gap-space-lg shrink-0">
             <div className="hidden sm:flex items-center gap-space-sm">
@@ -63,12 +83,12 @@ export default function Navbar() {
             <Link className="flex items-center gap-space-sm" href="/">
               <img
                 alt="Dream Key Logo"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-border-subtle"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC7wJzTd9NpJQPhlr1XqiwnOU5spuN1intZaq45ekU0mP5Q1jVj25oDAyOBKzoH0iJhkUf7byxvBgBO6RdrGvB82KRYqSH-QrTa58DVSi1h8sh7r-OySZTBn3kqjP3TZs0wFBKS8TKJwr1C5n7HkyrrftSHRp2TMHq8g4p6v5rFe1PtocjdtxQo1_vzUvjFii0nIgewFY7K4TGOPBicd5sbA3rG43oHRNgEY95jQVfUMEu9bU3oqYOkPxfTiJOnCLUgOaRvvHEV0F_gw"
+                className="w-24 sm:w-28 h-auto object-contain"
+                src="/logo.webp"
               />
               <div className="flex flex-col">
                 <span className="font-title-property text-title-property text-on-surface tracking-tight leading-tight text-[15px] sm:text-[16px]">
-                  Dream Key
+                  Dream <span className="text-primary">Key</span>
                 </span>
                 <span className="font-label-ui text-[9px] sm:text-[10px] tracking-widest uppercase text-tertiary font-semibold">
                   Unlocking Dreams
@@ -76,7 +96,7 @@ export default function Navbar() {
               </div>
             </Link>
           </div>
-          <nav className="hidden xl:flex items-center gap-space-xl font-label-ui text-label-ui">
+          <nav className="hidden xl:flex items-center gap-space-xl text-base font-semibold">
             <Link
               aria-current="page"
               className="transition-colors tracking-wide text-primary font-semibold"
@@ -130,20 +150,72 @@ export default function Navbar() {
             >
               <span className="material-symbols-outlined text-[18px] text-primary">call</span>
             </a>
-            <Link
-              className="inline-flex items-center justify-center bg-primary hover:bg-primary-container text-on-primary font-label-ui px-2 py-1.5 sm:px-space-lg sm:py-space-sm rounded-lg transition-all duration-200 shadow-sm tracking-wider uppercase font-semibold hover:-translate-y-[2px] active:scale-[0.97] text-[10px] sm:text-label-ui"
-              href="#contact"
-            >
-              Enquire Now
-            </Link>
-            {/* Hamburger — only shown at desktop xl breakpoint where side nav exists but bottom nav does not */}
-            <button
-              className="hidden xl:flex p-1 sm:p-2 text-on-surface hover:bg-surface-container rounded-md transition-colors items-center justify-center"
-              onClick={() => setIsMobileMenuOpen(true)}
-              aria-label="Open desktop menu"
-            >
-              <span className="material-symbols-outlined text-[24px]">menu</span>
-            </button>
+            {/* User Dropdown Menu */}
+            <div className="relative" ref={menuRef}>
+              <button
+                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-surface-container-low border border-border-subtle rounded-full flex items-center justify-center hover:bg-surface-container transition-colors active:scale-95"
+                aria-label="User menu"
+              >
+                <span className="material-symbols-outlined text-[18px] sm:text-[20px] text-primary">
+                  person
+                </span>
+              </button>
+
+              {isUserMenuOpen && mounted && (
+                <div className="absolute right-0 top-full mt-2 w-56 bg-surface-clean border border-border-subtle rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2 flex flex-col z-[100] font-body-default text-body-default">
+                  {isAuthenticated ? (
+                    <>
+                      <div className="px-4 py-3 border-b border-border-subtle/50 mb-1">
+                        <p className="font-semibold text-on-surface truncate">
+                          {user?.name || "User"}
+                        </p>
+                        <p className="text-xs text-secondary truncate mt-0.5">
+                          {user?.email}
+                        </p>
+                      </div>
+                      <Link
+                        href="/dashboard"
+                        onClick={() => setIsUserMenuOpen(false)}
+                        className="px-4 py-2 hover:bg-surface-container text-on-surface transition-colors flex items-center gap-2"
+                      >
+                        <span className="material-symbols-outlined text-[18px]">dashboard</span>
+                        Dashboard
+                      </Link>
+                      <button
+                        onClick={() => {
+                          logout();
+                          setIsUserMenuOpen(false);
+                        }}
+                        className="px-4 py-2 hover:bg-surface-container text-error text-left transition-colors flex items-center gap-2"
+                      >
+                        <span className="material-symbols-outlined text-[18px]">logout</span>
+                        Logout
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <Link
+                        href="/login"
+                        onClick={() => setIsUserMenuOpen(false)}
+                        className="px-4 py-2 hover:bg-surface-container text-on-surface transition-colors flex items-center gap-2"
+                      >
+                        <span className="material-symbols-outlined text-[18px]">login</span>
+                        Login
+                      </Link>
+                      <Link
+                        href="/register"
+                        onClick={() => setIsUserMenuOpen(false)}
+                        className="px-4 py-2 hover:bg-surface-container text-on-surface transition-colors flex items-center gap-2"
+                      >
+                        <span className="material-symbols-outlined text-[18px]">person_add</span>
+                        Register
+                      </Link>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -155,12 +227,12 @@ export default function Navbar() {
             <Link className="flex items-center gap-space-sm" href="/" onClick={() => setIsMobileMenuOpen(false)}>
               <img
                 alt="Dream Key Logo"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-border-subtle"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC7wJzTd9NpJQPhlr1XqiwnOU5spuN1intZaq45ekU0mP5Q1jVj25oDAyOBKzoH0iJhkUf7byxvBgBO6RdrGvB82KRYqSH-QrTa58DVSi1h8sh7r-OySZTBn3kqjP3TZs0wFBKS8TKJwr1C5n7HkyrrftSHRp2TMHq8g4p6v5rFe1PtocjdtxQo1_vzUvjFii0nIgewFY7K4TGOPBicd5sbA3rG43oHRNgEY95jQVfUMEu9bU3oqYOkPxfTiJOnCLUgOaRvvHEV0F_gw"
+                className="w-24 sm:w-28 h-auto object-contain"
+                src="/logo.webp"
               />
               <div className="flex flex-col">
                 <span className="font-title-property text-title-property text-on-surface tracking-tight leading-tight text-[15px] sm:text-[16px]">
-                  Dream Key
+                  Dream <span className="text-primary">Key</span>
                 </span>
                 <span className="font-label-ui text-[9px] sm:text-[10px] tracking-widest uppercase text-tertiary font-semibold">
                   Unlocking Dreams
