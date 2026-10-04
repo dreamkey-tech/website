@@ -43,7 +43,7 @@ export default function ValueProposition() {
             <span className="font-label-ui text-label-ui uppercase tracking-widest text-primary font-semibold">
               Real Estate Made Simple
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-on-surface">
+            <h2 className="font-headline-lg-mobile md:font-headline-lg text-[20px] md:text-headline-lg text-on-surface font-bold md:font-semibold leading-tight">
               Helping You Find the Right Property Within Your Budget
             </h2>
             <p className="font-body-default text-body-default text-on-surface-variant leading-relaxed">

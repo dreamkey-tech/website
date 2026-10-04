@@ -47,7 +47,7 @@ export default function Testimonials() {
           <span className="font-label-ui text-label-ui text-primary uppercase tracking-widest font-semibold">
             Verified Feedback
           </span>
-          <h2 className="font-headline-lg text-headline-lg text-on-surface mt-1">
+          <h2 className="font-headline-lg-mobile md:font-headline-lg text-[20px] md:text-headline-lg text-on-surface font-bold md:font-semibold leading-tight mt-1 md:mt-2">
             What Our Customers Say
           </h2>
           <p className="font-body-default text-body-default text-secondary mt-2">

@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -38,20 +39,19 @@ export default function RootLayout({
         className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} bg-surface font-body-default text-body-default text-on-surface antialiased`}
       >
         <Navbar />
-        <main className="w-full pt-[116px] bg-surface min-h-[calc(100vh-116px)]">
+        <main className="w-full pt-[116px] pb-16 xl:pb-0 bg-surface min-h-[calc(100vh-116px)]">
           {children}
         </main>
         <Footer />
-        
-        {/* Quick Enquiry FAB */}
-        <aside className="fixed bottom-6 right-6 z-50">
+        <MobileBottomNav />
+
+        {/* Quick Enquiry FAB — sits above bottom nav on mobile, bottom-6 on desktop */}
+        <aside className="fixed bottom-20 xl:bottom-6 right-4 xl:right-6 z-40">
           <a
             className="flex items-center gap-space-sm bg-primary hover:bg-primary-container text-on-primary px-space-md py-space-sm rounded-full shadow-lg border border-outline-variant/30 hover:shadow-xl transition-all duration-200 hover:-translate-y-1 active:scale-95"
-            href="https://wa.me/918697559123"
-            rel="noopener noreferrer"
-            target="_blank"
+            href="#enquiry-section"
           >
-            <span className="material-symbols-outlined text-[20px]">chat</span>
+            <span className="material-symbols-outlined text-[18px]">edit_note</span>
             <span className="font-label-ui text-label-ui uppercase tracking-wider font-semibold pr-1">
               Quick Enquiry
             </span>

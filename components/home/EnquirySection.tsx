@@ -45,7 +45,7 @@ export default function EnquirySection() {
                 Priority Booking Desk
               </span>
             </div>
-            <h2 className="font-headline-lg text-headline-lg text-surface-clean leading-tight">
+            <h2 className="font-headline-lg-mobile md:font-headline-lg text-[20px] md:text-headline-lg text-surface-clean font-bold md:font-semibold leading-tight">
               Discover a Smarter Way to Buy & Sell Property in Kolkata
             </h2>
             <p className="font-body-default text-body-default text-secondary-fixed-dim leading-relaxed">

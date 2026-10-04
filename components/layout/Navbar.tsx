@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
-      <div className="bg-charcoal-pure text-surface py-2 border-b border-secondary/20">
+      <div className="bg-charcoal-pure text-surface py-2 border-b border-secondary/20" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
         <div className="max-w-[1320px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between font-label-ui text-label-ui">
           <div className="flex items-center gap-space-sm shrink">
             <span className="material-symbols-outlined text-[16px] text-tertiary-fixed shrink-0">
@@ -122,16 +122,25 @@ export default function Navbar() {
             </Link>
           </nav>
           <div className="flex items-center gap-2 sm:gap-space-md shrink-0">
+            {/* Call icon — visible on mobile only */}
+            <a
+              href="tel:+918697559123"
+              aria-label="Call Dream Key"
+              className="xl:hidden w-9 h-9 rounded-full bg-surface-container-low text-charcoal-pure flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all"
+            >
+              <span className="material-symbols-outlined text-[18px] text-primary">call</span>
+            </a>
             <Link
               className="inline-flex items-center justify-center bg-primary hover:bg-primary-container text-on-primary font-label-ui px-2 py-1.5 sm:px-space-lg sm:py-space-sm rounded-lg transition-all duration-200 shadow-sm tracking-wider uppercase font-semibold hover:-translate-y-[2px] active:scale-[0.97] text-[10px] sm:text-label-ui"
               href="#contact"
             >
               Enquire Now
             </Link>
+            {/* Hamburger — only shown at desktop xl breakpoint where side nav exists but bottom nav does not */}
             <button
-              className="xl:hidden p-1 sm:p-2 text-on-surface hover:bg-surface-container rounded-md transition-colors flex items-center justify-center"
+              className="hidden xl:flex p-1 sm:p-2 text-on-surface hover:bg-surface-container rounded-md transition-colors items-center justify-center"
               onClick={() => setIsMobileMenuOpen(true)}
-              aria-label="Open mobile menu"
+              aria-label="Open desktop menu"
             >
               <span className="material-symbols-outlined text-[24px]">menu</span>
             </button>

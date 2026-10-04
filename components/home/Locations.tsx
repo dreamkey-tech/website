@@ -58,7 +58,7 @@ export default function Locations() {
             <div className="font-label-ui text-label-ui text-primary uppercase tracking-widest font-semibold mb-2">
               Prime Neighborhoods
             </div>
-            <h2 className="font-headline-lg text-headline-lg text-on-surface">
+            <h2 className="font-headline-lg-mobile md:font-headline-lg text-[20px] md:text-headline-lg text-on-surface font-bold md:font-semibold leading-tight">
               Explore Properties Across Kolkata
             </h2>
             <p className="font-body-default text-body-default text-secondary mt-1">

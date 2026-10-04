@@ -16,13 +16,13 @@ export default function FeaturedListings() {
       >
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
           <div className="max-w-2xl">
-            <div className="font-label-ui text-label-ui text-primary uppercase tracking-widest font-semibold mb-2">
+            <div className="font-label-ui text-[11px] md:text-label-ui text-primary uppercase tracking-widest font-bold md:font-semibold mb-1 md:mb-2">
               Curated Configurations
             </div>
-            <h2 className="font-headline-lg text-headline-lg text-on-surface">
+            <h2 className="font-headline-lg-mobile md:font-headline-lg text-[20px] md:text-headline-lg text-on-surface font-bold md:font-semibold leading-tight">
               Find a Home That Fits Your Life
             </h2>
-            <p className="font-body-default text-body-default text-secondary mt-1">
+            <p className="font-body-default text-[12px] md:text-body-default text-secondary mt-1 md:mt-2">
               Choose the residential configuration thoughtfully matched to your
               spatial requirements and investment goals.
             </p>

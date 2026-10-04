@@ -18,7 +18,7 @@ export default function FinalCTA() {
             <span className="font-label-ui text-label-ui uppercase tracking-widest text-gold-light font-semibold">
               Start Your Journey Today
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-surface-clean leading-tight">
+            <h2 className="font-headline-lg-mobile md:font-headline-lg text-[20px] md:text-headline-lg text-surface-clean font-bold md:font-semibold leading-tight">
               Ready to Find Your Next Home in Kolkata?
             </h2>
             <p className="font-body-lead text-body-lead text-secondary-fixed-dim">
