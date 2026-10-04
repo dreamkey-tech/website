@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   ],
   async rewrites() {
     // Route /api-proxy to Cloudflare Tunnel
-    const apiUrl = (process.env.NEXT_PUBLIC_API_URL || 'https://bargain-variations-recycling-thumbs.trycloudflare.com').replace(/\/$/, '');
+    const apiUrl = (process.env.NEXT_PUBLIC_API_URL);
     return [
       {
         source: '/api-proxy/:path*',
