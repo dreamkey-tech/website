@@ -85,3 +85,4 @@ Terminates the active session and clears the browser cookie.
 - **Success Response (200 OK):**
   - **Headers:** `Set-Cookie: better-auth.session_token=; Max-Age=0; HttpOnly; Secure; SameSite=Lax` (Clears the cookie)
   - **Body:** `{ "success": true }`
+#sadasdasdas
