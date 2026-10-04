@@ -42,7 +42,7 @@ export default function LoginForm() {
       if (error instanceof z.ZodError) {
         // Handle Zod validation errors
         const fieldErrors: any = {};
-        error.errors.forEach((err) => {
+        error.issues.forEach((err: z.ZodIssue) => {
           if (err.path[0]) {
             fieldErrors[err.path[0]] = err.message;
           }
