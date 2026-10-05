@@ -44,12 +44,12 @@ export const staggerContainerFast = {
 
 export const smoothTransition = {
   duration: 0.55,
-  ease: [0.23, 1, 0.32, 1],
+  ease: [0.23, 1, 0.32, 1] as [number, number, number, number],
 };
 
 export const fastTransition = {
   duration: 0.35,
-  ease: [0.23, 1, 0.32, 1],
+  ease: [0.23, 1, 0.32, 1] as [number, number, number, number],
 };
 
 export const viewportOnce = { once: true, margin: '-60px' };
