@@ -14,14 +14,8 @@ export const apiClient = axios.create({
 apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
-    if (error.response?.status === 401) {
-      if (
-        typeof window !== "undefined" &&
-        !window.location.pathname.startsWith("/login")
-      ) {
-        window.location.href = "/login";
-      }
-    }
+    // We do not want to automatically redirect on 401 because it forces unauthenticated users to the login page
+    // when they just visit the homepage or when refreshUser is called.
     return Promise.reject(error);
   }
 );
