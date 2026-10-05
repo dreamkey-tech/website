@@ -1,76 +1,89 @@
 'use client';
 import React from 'react';
+import Select from '@/components/ui/Select';
+
+const typologyOptions = [
+  { value: 'all', label: 'All Typologies' },
+  { value: 'Apartment', label: 'Apartment' },
+  { value: 'Penthouse', label: 'Sky Penthouse' },
+  { value: 'Villa', label: 'Luxury Villa' },
+  { value: 'Heritage', label: 'Heritage Suite' },
+];
+
+const budgetOptions = [
+  { value: 'all', label: 'Any Budget' },
+  { value: 'under-1.5', label: 'Up to ₹1.5 Cr' },
+  { value: '1.5-2.5', label: '₹1.5 Cr – ₹2.5 Cr' },
+  { value: '2.5-4', label: '₹2.5 Cr – ₹4.0 Cr' },
+  { value: 'above-4', label: '₹4.0 Cr & Above' },
+];
+
+const bhkOptions = [
+  { value: 'all', label: 'Any BHK' },
+  { value: '2', label: '2 BHK' },
+  { value: '3', label: '3 BHK' },
+  { value: '4', label: '4 BHK' },
+  { value: '5', label: '5+ BHK' },
+];
 
 export default function BuyPropertySearch() {
   return (
     <div className="sticky top-0 z-30 w-full bg-surface/95 backdrop-blur-md pb-4 pt-4 border-b border-border-subtle/50 shadow-sm">
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
         <div className="bg-surface-container-lowest rounded-xl shadow-md p-4 md:p-6 border border-secondary/10">
-        <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 md:gap-4 items-end" onSubmit={(e) => e.preventDefault()}>
-          <div className="lg:col-span-4 flex flex-col gap-1.5">
-            <label className="font-label-ui text-label-ui text-on-surface-variant flex items-center gap-1">
-              <span className="material-symbols-outlined text-sm text-primary">location_on</span>
-              Search Locality / Project
-            </label>
-            <div className="relative flex items-center">
-              <input 
-                className="w-full bg-surface-container-low text-on-surface placeholder:text-secondary rounded px-3 py-2.5 font-body-default text-body-default focus:outline-none focus:bg-surface-container-lowest transition-colors shadow-inner" 
-                placeholder="e.g. New Town, Ballygunge, Alipore..." 
-                type="text" 
+          <form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 md:gap-4 items-end" onSubmit={(e) => e.preventDefault()}>
+            <div className="lg:col-span-4 flex flex-col gap-1.5">
+              <label className="font-label-ui text-label-ui text-on-surface-variant flex items-center gap-1">
+                <span className="material-symbols-outlined text-sm text-primary">location_on</span>
+                Search Locality / Project
+              </label>
+              <div className="relative flex items-center">
+                <input
+                  className="w-full bg-surface-container-low hover:bg-surface-container text-on-surface placeholder:text-secondary rounded-lg px-3 py-2.5 font-body-default text-body-default focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 focus:bg-surface-container-lowest border border-transparent transition-all duration-200 shadow-inner"
+                  placeholder="e.g. New Town, Ballygunge, Alipore..."
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <div className="lg:col-span-2">
+              <Select
+                options={typologyOptions}
+                label="Typology"
+                icon="apartment"
+                placeholder="All Typologies"
               />
             </div>
-          </div>
-          
-          <div className="lg:col-span-2 flex flex-col gap-1.5">
-            <label className="font-label-ui text-label-ui text-on-surface-variant flex items-center gap-1">
-              <span className="material-symbols-outlined text-sm text-tertiary">apartment</span>
-              Typology
-            </label>
-            <select className="w-full bg-surface-container-low text-on-surface rounded px-3 py-2.5 font-body-default text-body-default focus:outline-none transition-colors">
-              <option value="all">All Typologies</option>
-              <option value="Apartment">Apartment</option>
-              <option value="Penthouse">Sky Penthouse</option>
-              <option value="Villa">Luxury Villa</option>
-              <option value="Heritage">Heritage Suite</option>
-            </select>
-          </div>
 
-          <div className="lg:col-span-3 flex flex-col gap-1.5">
-            <label className="font-label-ui text-label-ui text-on-surface-variant flex items-center gap-1">
-              <span className="material-symbols-outlined text-sm text-primary">currency_rupee</span>
-              Budget Band
-            </label>
-            <select className="w-full bg-surface-container-low text-on-surface rounded px-3 py-2.5 font-body-default text-body-default focus:outline-none transition-colors">
-              <option value="all">Any Budget</option>
-              <option value="under-1.5">Up to ₹1.5 Cr</option>
-              <option value="1.5-2.5">₹1.5 Cr – ₹2.5 Cr</option>
-              <option value="2.5-4">₹2.5 Cr – ₹4.0 Cr</option>
-              <option value="above-4">₹4.0 Cr & Above</option>
-            </select>
-          </div>
+            <div className="lg:col-span-3">
+              <Select
+                options={budgetOptions}
+                label="Budget Band"
+                icon="currency_rupee"
+                placeholder="Any Budget"
+              />
+            </div>
 
-          <div className="lg:col-span-1 flex flex-col gap-1.5">
-            <label className="font-label-ui text-label-ui text-on-surface-variant flex items-center gap-1">
-              <span className="material-symbols-outlined text-sm text-secondary">bed</span>
-              BHK
-            </label>
-            <select className="w-full bg-surface-container-low text-on-surface rounded px-2.5 py-2.5 font-body-default text-body-default focus:outline-none transition-colors">
-              <option value="all">All</option>
-              <option value="2">2 BHK</option>
-              <option value="3">3 BHK</option>
-              <option value="4">4 BHK</option>
-              <option value="5">5+ BHK</option>
-            </select>
-          </div>
+            <div className="lg:col-span-1">
+              <Select
+                options={bhkOptions}
+                label="BHK"
+                icon="bed"
+                placeholder="Any"
+              />
+            </div>
 
-          <div className="lg:col-span-2">
-            <button className="w-full bg-primary hover:bg-primary-container text-on-primary font-semibold py-2.5 px-4 rounded transition-all flex items-center justify-center gap-2 shadow-sm font-label-ui text-label-ui" type="submit">
-              <span>Find Properties</span>
-              <span className="material-symbols-outlined text-base">arrow_forward</span>
-            </button>
-          </div>
-        </form>
-      </div>
+            <div className="lg:col-span-2">
+              <button
+                className="w-full bg-primary hover:bg-primary-container text-on-primary font-semibold py-2.5 px-4 rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm font-label-ui text-label-ui hover:shadow-md active:scale-[0.98]"
+                type="submit"
+              >
+                <span>Find Properties</span>
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

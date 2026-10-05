@@ -2,6 +2,41 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
+import Select from "@/components/ui/Select";
+
+const locationOptions = [
+  { value: "", label: "Select Location" },
+  { value: "new-town", label: "New Town & Action Area" },
+  { value: "salt-lake", label: "Salt Lake (Sector I - V)" },
+  { value: "ballygunge", label: "Ballygunge & Alipore" },
+  { value: "em-bypass", label: "EM Bypass Corridor" },
+  { value: "rajarhat", label: "Rajarhat Main Road" },
+  { value: "central-kolkata", label: "Park Street & Central" },
+];
+
+const typeOptions = [
+  { value: "", label: "Any Type" },
+  { value: "apartment", label: "Gated Apt" },
+  { value: "penthouse", label: "Penthouse" },
+  { value: "villa", label: "Villa" },
+  { value: "studio", label: "Studio" },
+];
+
+const bedroomOptions = [
+  { value: "", label: "Any BHK" },
+  { value: "1bhk", label: "1 BHK" },
+  { value: "2bhk", label: "2 BHK" },
+  { value: "3bhk", label: "3 BHK" },
+  { value: "4bhk", label: "4+ BHK" },
+];
+
+const budgetOptions = [
+  { value: "", label: "Any Range" },
+  { value: "35l-75l", label: "₹35L - ₹75L" },
+  { value: "75l-1.5cr", label: "₹75L - ₹1.5 Cr" },
+  { value: "1.5cr-3cr", label: "₹1.5 Cr - ₹3 Cr" },
+  { value: "3cr+", label: "₹3 Cr & Above" },
+];
 
 export default function PropertySearch() {
   const [activeTab, setActiveTab] = useState<"buy" | "rent">("buy");
@@ -49,99 +84,49 @@ export default function PropertySearch() {
         onSubmit={(e) => e.preventDefault()}
       >
         {/* Location */}
-        <div className="col-span-2 lg:col-span-3 flex flex-col gap-1 md:gap-1.5">
-          <label className="text-[11px] md:text-label-ui md:font-label-ui font-bold uppercase tracking-wider text-secondary flex items-center gap-1">
-            <span className="material-symbols-outlined text-[14px] md:text-[15px] text-primary">
-              location_on
-            </span>{" "}
-            Location
-          </label>
-          <div className="relative">
-            <select className="w-full h-11 md:h-12 px-3 md:px-space-md bg-surface-container-low text-on-surface text-[13px] md:text-body-default font-medium md:font-body-default rounded appearance-none focus:outline-none focus:bg-surface-clean focus:ring-1 focus:ring-primary cursor-pointer border-0">
-              <option value="">Select Location</option>
-              <option value="new-town">New Town & Action Area</option>
-              <option value="salt-lake">Salt Lake (Sector I - V)</option>
-              <option value="ballygunge">Ballygunge & Alipore</option>
-              <option value="em-bypass">EM Bypass Corridor</option>
-              <option value="rajarhat">Rajarhat Main Road</option>
-              <option value="central-kolkata">Park Street & Central</option>
-            </select>
-            <span className="material-symbols-outlined absolute right-2.5 md:right-3 top-3 md:top-3.5 pointer-events-none text-secondary text-[18px]">
-              expand_more
-            </span>
-          </div>
+        <div className="col-span-2 lg:col-span-3">
+          <Select
+            options={locationOptions}
+            label="Location"
+            icon="location_on"
+            placeholder="Select Location"
+          />
         </div>
 
         {/* Property Type */}
-        <div className="col-span-1 lg:col-span-3 flex flex-col gap-1 md:gap-1.5">
-          <label className="text-[11px] md:text-label-ui md:font-label-ui font-bold uppercase tracking-wider text-secondary flex items-center gap-1">
-            <span className="material-symbols-outlined text-[14px] md:text-[15px] text-primary">
-              apartment
-            </span>{" "}
-            Type
-          </label>
-          <div className="relative">
-            <select className="w-full h-11 md:h-12 px-2.5 md:px-space-md bg-surface-container-low text-on-surface text-[13px] md:text-body-default font-medium md:font-body-default rounded appearance-none focus:outline-none focus:bg-surface-clean focus:ring-1 focus:ring-primary cursor-pointer border-0">
-              <option value="">Any Type</option>
-              <option value="apartment">Gated Apt</option>
-              <option value="penthouse">Penthouse</option>
-              <option value="villa">Villa</option>
-              <option value="studio">Studio</option>
-            </select>
-            <span className="material-symbols-outlined absolute right-2 md:right-3 top-3 md:top-3.5 pointer-events-none text-secondary text-[16px] md:text-[18px]">
-              expand_more
-            </span>
-          </div>
+        <div className="col-span-1 lg:col-span-3">
+          <Select
+            options={typeOptions}
+            label="Type"
+            icon="apartment"
+            placeholder="Any Type"
+          />
         </div>
 
         {/* Bedrooms */}
-        <div className="col-span-1 lg:col-span-2 flex flex-col gap-1 md:gap-1.5">
-          <label className="text-[11px] md:text-label-ui md:font-label-ui font-bold uppercase tracking-wider text-secondary flex items-center gap-1">
-            <span className="material-symbols-outlined text-[14px] md:text-[15px] text-primary">
-              bed
-            </span>{" "}
-            Bedrooms
-          </label>
-          <div className="relative">
-            <select className="w-full h-11 md:h-12 px-2.5 md:px-space-md bg-surface-container-low text-on-surface text-[13px] md:text-body-default font-medium md:font-body-default rounded appearance-none focus:outline-none focus:bg-surface-clean focus:ring-1 focus:ring-primary cursor-pointer border-0">
-              <option value="">Any BHK</option>
-              <option value="1bhk">1 BHK</option>
-              <option value="2bhk">2 BHK</option>
-              <option value="3bhk">3 BHK</option>
-              <option value="4bhk">4+ BHK</option>
-            </select>
-            <span className="material-symbols-outlined absolute right-2 md:right-3 top-3 md:top-3.5 pointer-events-none text-secondary text-[16px] md:text-[18px]">
-              expand_more
-            </span>
-          </div>
+        <div className="col-span-1 lg:col-span-2">
+          <Select
+            options={bedroomOptions}
+            label="Bedrooms"
+            icon="bed"
+            placeholder="Any BHK"
+          />
         </div>
 
         {/* Budget */}
-        <div className="col-span-2 lg:col-span-2 flex flex-col gap-1 md:gap-1.5">
-          <label className="text-[11px] md:text-label-ui md:font-label-ui font-bold uppercase tracking-wider text-secondary flex items-center gap-1">
-            <span className="material-symbols-outlined text-[14px] md:text-[15px] text-primary">
-              currency_rupee
-            </span>{" "}
-            Budget
-          </label>
-          <div className="relative">
-            <select className="w-full h-11 md:h-12 px-3 md:px-space-md bg-surface-container-low text-on-surface text-[13px] md:text-body-default font-medium md:font-body-default rounded appearance-none focus:outline-none focus:bg-surface-clean focus:ring-1 focus:ring-primary cursor-pointer border-0">
-              <option value="">Any Range</option>
-              <option value="35l-75l">₹35L - ₹75L</option>
-              <option value="75l-1.5cr">₹75L - ₹1.5 Cr</option>
-              <option value="1.5cr-3cr">₹1.5 Cr - ₹3 Cr</option>
-              <option value="3cr+">₹3 Cr & Above</option>
-            </select>
-            <span className="material-symbols-outlined absolute right-2.5 md:right-3 top-3 md:top-3.5 pointer-events-none text-secondary text-[18px]">
-              expand_more
-            </span>
-          </div>
+        <div className="col-span-2 lg:col-span-2">
+          <Select
+            options={budgetOptions}
+            label="Budget"
+            icon="currency_rupee"
+            placeholder="Any Range"
+          />
         </div>
 
         {/* Search CTA */}
-        <div className="col-span-2 lg:col-span-2">
+        <div className="col-span-2 lg:col-span-2 flex flex-col justify-end">
           <button
-            className="w-full h-12 bg-[#e94f37] hover:bg-[#d33f29] active:scale-[0.99] text-white font-bold text-[14px] rounded shadow-md flex items-center justify-center gap-2 transition-all"
+            className="w-full h-[42px] bg-[#e94f37] hover:bg-[#d33f29] active:scale-[0.99] text-white font-bold text-[14px] rounded-lg shadow-md flex items-center justify-center gap-2 transition-all"
             type="submit"
           >
             <span className="material-symbols-outlined text-[19px]">search</span>

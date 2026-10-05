@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "motion/react";
+import { fadeUp, staggerContainer, smoothTransition, viewportOnce } from "@/lib/animations";
 
 export default function Testimonials() {
   const testimonials = [
     {
-      text: <>"Dream <span className="text-primary">Key</span> handled everything from builder negotiations to stamp registration seamlessly. As an IT professional in New Town, their transparency saved me months of legwork."</>,
+      text: <>{"\"Dream "}<span className="text-primary">Key</span>{" handled everything from builder negotiations to stamp registration seamlessly. As an IT professional in New Town, their transparency saved me months of legwork.\""}</>,
       initials: "AM",
       name: "Anirban Mukherjee",
       role: "Bought 3 BHK in New Town",
@@ -35,15 +36,16 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="w-full py-space-2xl bg-surface-container-low">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-        className="max-w-[1320px] mx-auto px-margin-mobile md:px-margin"
-      >
-        <div className="text-center max-w-2xl mx-auto mb-space-2xl">
+    <section className="w-full py-space-2xl bg-surface-container-low overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-margin-mobile md:px-margin">
+        <motion.div
+          className="text-center max-w-2xl mx-auto mb-space-2xl"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          transition={smoothTransition}
+        >
           <span className="font-label-ui text-label-ui text-primary uppercase tracking-widest font-semibold">
             Verified Feedback
           </span>
@@ -54,54 +56,57 @@ export default function Testimonials() {
             Real homeowners and NRI investors share their buying experiences
             across Kolkata.
           </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
           {testimonials.map((test, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-surface-clean rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 ease-out hover:-translate-y-1"
+              variants={fadeUp}
+              transition={{ ...smoothTransition, delay: index * 0.1 }}
+              whileHover={{ y: -8, boxShadow: "0 16px 40px rgba(0,0,0,0.10)" }}
+              className="bg-surface-clean rounded-xl p-space-lg flex flex-col justify-between shadow-sm cursor-default"
             >
               <div className="flex flex-col gap-3">
                 <div className="flex items-center text-gold-light">
-                  <span className="material-symbols-outlined text-[18px]">
-                    star
-                  </span>
-                  <span className="material-symbols-outlined text-[18px]">
-                    star
-                  </span>
-                  <span className="material-symbols-outlined text-[18px]">
-                    star
-                  </span>
-                  <span className="material-symbols-outlined text-[18px]">
-                    star
-                  </span>
-                  <span className="material-symbols-outlined text-[18px]">
-                    star
-                  </span>
+                  {[...Array(5)].map((_, i) => (
+                    <motion.span
+                      key={i}
+                      className="material-symbols-outlined text-[18px]"
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={viewportOnce}
+                      transition={{ delay: 0.3 + index * 0.1 + i * 0.06, duration: 0.3, ease: 'backOut' }}
+                    >
+                      star
+                    </motion.span>
+                  ))}
                 </div>
                 <p className="font-body-default text-body-default text-on-surface-variant leading-relaxed italic">
                   {test.text}
                 </p>
               </div>
               <div className="pt-space-md flex items-center gap-3">
-                <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${test.colorClass}`}
-                >
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${test.colorClass}`}>
                   {test.initials}
                 </div>
                 <div>
                   <p className="font-title-property text-body-default text-on-surface font-semibold leading-tight">
                     {test.name}
                   </p>
-                  <p className="font-label-ui text-[11px] text-secondary">
-                    {test.role}
-                  </p>
+                  <p className="font-label-ui text-[11px] text-secondary">{test.role}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

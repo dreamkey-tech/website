@@ -6,8 +6,8 @@ import PropertySearch from "./PropertySearch";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-charcoal-pure -mt-[116px] pt-[116px]">
-      <div className="relative w-full h-[480px] md:h-[580px] lg:h-[620px] flex items-center md:items-center items-end pb-20 md:pb-8">
+    <section className="relative w-full bg-charcoal-pure -mt-[116px] pt-[116px]">
+      <div className="relative w-full h-[480px] md:h-[580px] lg:h-[620px] flex items-center md:items-center items-end pb-20 md:pb-8 overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105"

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { useAuthStore } from "@/store/authStore";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -124,6 +125,12 @@ export default function Navbar() {
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide"
+              href="/services"
+            >
+              Services
+            </Link>
+            <Link
+              className="text-on-surface-variant hover:text-primary transition-colors tracking-wide"
               href="#projects"
             >
               Projects
@@ -162,59 +169,78 @@ export default function Navbar() {
                 </span>
               </button>
 
+              <AnimatePresence>
               {isUserMenuOpen && mounted && (
-                <div className="absolute right-0 top-full mt-2 w-56 bg-surface-clean border border-border-subtle rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2 flex flex-col z-[100] font-body-default text-body-default">
+                <motion.div
+                  initial={{ opacity: 0, y: -8, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -6, scale: 0.97 }}
+                  transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
+                  className="absolute right-0 top-[calc(100%+10px)] w-64 bg-surface-clean/95 backdrop-blur-xl border border-border-subtle rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.14)] overflow-hidden flex flex-col z-[100]"
+                >
                   {isAuthenticated ? (
                     <>
-                      <div className="px-4 py-3 border-b border-border-subtle/50 mb-1">
-                        <p className="font-semibold text-on-surface truncate">
-                          {user?.name || "User"}
-                        </p>
-                        <p className="text-xs text-secondary truncate mt-0.5">
-                          {user?.email}
-                        </p>
+                      {/* User header */}
+                      <div className="px-4 pt-4 pb-3 bg-gradient-to-br from-primary/8 to-transparent border-b border-border-subtle/60 flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-full bg-primary/15 border border-primary/25 flex items-center justify-center flex-shrink-0">
+                          <span className="material-symbols-outlined text-[18px] text-primary">person</span>
+                        </div>
+                        <div className="overflow-hidden">
+                          <p className="font-semibold text-on-surface truncate text-[14px]">
+                            {user?.name || 'User'}
+                          </p>
+                          <p className="text-[11px] text-secondary truncate mt-0.5">{user?.email}</p>
+                        </div>
                       </div>
-                      <Link
-                        href="/dashboard"
-                        onClick={() => setIsUserMenuOpen(false)}
-                        className="px-4 py-2 hover:bg-surface-container text-on-surface transition-colors flex items-center gap-2"
-                      >
-                        <span className="material-symbols-outlined text-[18px]">dashboard</span>
-                        Dashboard
-                      </Link>
-                      <button
-                        onClick={() => {
-                          logout();
-                          setIsUserMenuOpen(false);
-                        }}
-                        className="px-4 py-2 hover:bg-surface-container text-error text-left transition-colors flex items-center gap-2"
-                      >
-                        <span className="material-symbols-outlined text-[18px]">logout</span>
-                        Logout
-                      </button>
+                      {/* Menu items */}
+                      <div className="py-1.5">
+                        <Link
+                          href="/dashboard"
+                          onClick={() => setIsUserMenuOpen(false)}
+                          className="flex items-center gap-3 px-4 py-2.5 text-on-surface hover:bg-surface-container-low transition-colors font-body-default text-body-default group"
+                        >
+                          <span className="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">dashboard</span>
+                          Dashboard
+                        </Link>
+                        <div className="border-t border-border-subtle/50 my-1" />
+                        <button
+                          onClick={() => { logout(); setIsUserMenuOpen(false); }}
+                          className="w-full flex items-center gap-3 px-4 py-2.5 text-error hover:bg-error/5 transition-colors font-body-default text-body-default text-left group"
+                        >
+                          <span className="material-symbols-outlined text-[18px] text-error/70 group-hover:text-error transition-colors">logout</span>
+                          Sign Out
+                        </button>
+                      </div>
                     </>
                   ) : (
                     <>
-                      <Link
-                        href="/login"
-                        onClick={() => setIsUserMenuOpen(false)}
-                        className="px-4 py-2 hover:bg-surface-container text-on-surface transition-colors flex items-center gap-2"
-                      >
-                        <span className="material-symbols-outlined text-[18px]">login</span>
-                        Login
-                      </Link>
-                      <Link
-                        href="/register"
-                        onClick={() => setIsUserMenuOpen(false)}
-                        className="px-4 py-2 hover:bg-surface-container text-on-surface transition-colors flex items-center gap-2"
-                      >
-                        <span className="material-symbols-outlined text-[18px]">person_add</span>
-                        Register
-                      </Link>
+                      <div className="px-4 pt-4 pb-3 border-b border-border-subtle/60">
+                        <p className="font-semibold text-on-surface text-[14px]">Welcome back</p>
+                        <p className="text-[11px] text-secondary mt-0.5">Sign in to your account</p>
+                      </div>
+                      <div className="py-1.5">
+                        <Link
+                          href="/login"
+                          onClick={() => setIsUserMenuOpen(false)}
+                          className="flex items-center gap-3 px-4 py-2.5 text-on-surface hover:bg-surface-container-low transition-colors font-body-default text-body-default group"
+                        >
+                          <span className="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">login</span>
+                          Sign In
+                        </Link>
+                        <Link
+                          href="/register"
+                          onClick={() => setIsUserMenuOpen(false)}
+                          className="flex items-center gap-3 px-4 py-2.5 text-on-surface hover:bg-surface-container-low transition-colors font-body-default text-body-default group"
+                        >
+                          <span className="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">person_add</span>
+                          Create Account
+                        </Link>
+                      </div>
                     </>
                   )}
-                </div>
+                </motion.div>
               )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
@@ -276,6 +302,13 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Rent
+            </Link>
+            <Link
+              className="text-on-surface-variant hover:text-primary transition-colors tracking-wide py-2 border-b border-border-subtle/50"
+              href="/services"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Services
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide py-2 border-b border-border-subtle/50"
