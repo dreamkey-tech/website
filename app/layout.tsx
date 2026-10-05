@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import MobileBottomNav from "@/components/layout/MobileBottomNav";
+import { Toaster } from "sonner";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -62,6 +63,7 @@ export default function RootLayout({
             </span>
           </a>
         </aside>
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );

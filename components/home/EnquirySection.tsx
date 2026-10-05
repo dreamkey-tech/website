@@ -1,8 +1,12 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 import { motion } from "motion/react";
 import Select from "@/components/ui/Select";
+import { enquiryApi } from "@/api/enquiry";
+import { propertyEnquirySchema } from "@/zod/enquiry";
+import { toast } from "sonner";
+import { z } from "zod";
 
 const propertyTypeOptions = [
   { value: "2bhk-apt", label: "2 BHK Apartment" },
@@ -27,11 +31,74 @@ const budgetOptions = [
 ];
 
 export default function EnquirySection() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    mobileNo: "",
+    email: "",
+    propertyType: "",
+    preferredLocation: "",
+    estimatedBudgetBand: "",
+    specificRequirements: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(
-      "Thank you! Your enquiry has been received. Our Kolkata property specialist will call you shortly."
-    );
+    setErrors({});
+    setIsLoading(true);
+
+    const fullMobile = `+91 ${formData.mobileNo}`;
+    const validationResult = propertyEnquirySchema.safeParse({
+      ...formData,
+      mobileNo: fullMobile,
+    });
+
+    if (!validationResult.success) {
+      const fieldErrors: Record<string, string> = {};
+      const issues = validationResult.error.issues;
+      
+      if (issues.length > 0) {
+        toast.error(issues[0].message);
+      } else {
+        toast.error("Please fix the validation errors.");
+      }
+
+      issues.forEach((err) => {
+        if (err.path && err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const response = await enquiryApi.submitPropertyEnquiry(validationResult.data);
+      
+      if (response.success) {
+        toast.success(response.message || "Enquiry submitted successfully.");
+        setFormData({
+          fullName: "",
+          mobileNo: "",
+          email: "",
+          propertyType: "",
+          preferredLocation: "",
+          estimatedBudgetBand: "",
+          specificRequirements: "",
+        });
+      }
+    } catch (error: any) {
+      const errorData = error.response?.data;
+      toast.error(errorData?.error || "Failed to submit enquiry. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -140,7 +207,10 @@ export default function EnquirySection() {
                       placeholder="Subrata Banerjee"
                       required
                       type="text"
+                      value={formData.fullName}
+                      onChange={(e) => handleChange("fullName", e.target.value)}
                     />
+                    {errors.fullName && <span className="text-error font-label-ui text-xs">{errors.fullName}</span>}
                   </div>
                   <div className="flex flex-col gap-1">
                     <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
@@ -155,8 +225,11 @@ export default function EnquirySection() {
                         placeholder="98300 XXXXX"
                         required
                         type="tel"
+                        value={formData.mobileNo}
+                        onChange={(e) => handleChange("mobileNo", e.target.value)}
                       />
                     </div>
+                    {errors.mobileNo && <span className="text-error font-label-ui text-xs">{errors.mobileNo}</span>}
                   </div>
                 </div>
                 {/* Email */}
@@ -168,7 +241,10 @@ export default function EnquirySection() {
                     className="h-11 px-3 bg-surface-container-low text-on-surface font-body-default rounded focus:outline-none focus:bg-surface-clean"
                     placeholder="subrata.b@gmail.com"
                     type="email"
+                    value={formData.email}
+                    onChange={(e) => handleChange("email", e.target.value)}
                   />
+                  {errors.email && <span className="text-error font-label-ui text-xs">{errors.email}</span>}
                 </div>
                 {/* Property Type & Location */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -179,7 +255,10 @@ export default function EnquirySection() {
                     <Select
                       options={propertyTypeOptions}
                       placeholder="Select Type"
+                      value={formData.propertyType}
+                      onChange={(val) => handleChange("propertyType", val)}
                     />
+                    {errors.propertyType && <span className="text-error font-label-ui text-xs">{errors.propertyType}</span>}
                   </div>
                   <div className="flex flex-col gap-1">
                     <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
@@ -188,7 +267,10 @@ export default function EnquirySection() {
                     <Select
                       options={locationOptions}
                       placeholder="Select Location"
+                      value={formData.preferredLocation}
+                      onChange={(val) => handleChange("preferredLocation", val)}
                     />
+                    {errors.preferredLocation && <span className="text-error font-label-ui text-xs">{errors.preferredLocation}</span>}
                   </div>
                 </div>
                 {/* Budget Range */}
@@ -199,7 +281,10 @@ export default function EnquirySection() {
                   <Select
                     options={budgetOptions}
                     placeholder="Select Budget"
+                    value={formData.estimatedBudgetBand}
+                    onChange={(val) => handleChange("estimatedBudgetBand", val)}
                   />
+                  {errors.estimatedBudgetBand && <span className="text-error font-label-ui text-xs">{errors.estimatedBudgetBand}</span>}
                 </div>
                 {/* Message */}
                 <div className="flex flex-col gap-1">
@@ -210,17 +295,23 @@ export default function EnquirySection() {
                     className="p-3 bg-surface-container-low text-on-surface font-body-default rounded focus:outline-none focus:bg-surface-clean resize-none"
                     placeholder="e.g. South-facing balcony, ready-to-move by Diwali..."
                     rows={2}
+                    value={formData.specificRequirements}
+                    onChange={(e) => handleChange("specificRequirements", e.target.value)}
                   ></textarea>
+                  {errors.specificRequirements && <span className="text-error font-label-ui text-xs">{errors.specificRequirements}</span>}
                 </div>
                 {/* Submit */}
                 <button
-                  className="w-full h-12 bg-primary hover:bg-primary-container text-on-primary font-label-ui text-body-default font-semibold rounded shadow-md transition-all duration-200 mt-1 flex items-center justify-center gap-2 hover:-translate-y-[2px] active:scale-[0.98]"
+                  className="w-full h-12 bg-primary hover:bg-primary-container text-on-primary font-label-ui text-body-default font-semibold rounded shadow-md transition-all duration-200 mt-1 flex items-center justify-center gap-2 hover:-translate-y-[2px] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
                   type="submit"
+                  disabled={isLoading}
                 >
-                  <span className="">Submit Enquiry</span>
-                  <span className="material-symbols-outlined text-[18px]">
-                    send
-                  </span>
+                  <span className="">{isLoading ? "Submitting..." : "Submit Enquiry"}</span>
+                  {!isLoading && (
+                    <span className="material-symbols-outlined text-[18px]">
+                      send
+                    </span>
+                  )}
                 </button>
               </form>
             </div>
