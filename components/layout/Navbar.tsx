@@ -137,7 +137,7 @@ export default function Navbar() {
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide"
-              href="#about-us"
+              href="/about"
             >
               About Us
             </Link>
@@ -319,7 +319,7 @@ export default function Navbar() {
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide py-2 border-b border-border-subtle/50"
-              href="#about-us"
+              href="/about"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About Us
