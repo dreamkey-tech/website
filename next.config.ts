@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   ],
   async rewrites() {
     // Route /api-proxy to Cloudflare Tunnel
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const apiUrl = process.env.API_URL;
     if (!apiUrl) {
       return [];
     }
