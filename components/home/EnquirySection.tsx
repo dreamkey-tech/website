@@ -2,6 +2,29 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import Select from "@/components/ui/Select";
+
+const propertyTypeOptions = [
+  { value: "2bhk-apt", label: "2 BHK Apartment" },
+  { value: "3bhk-luxury", label: "3 BHK Luxury Flat" },
+  { value: "4bhk-penthouse", label: "4+ BHK Penthouse" },
+  { value: "bungalow", label: "Independent Bungalow" },
+];
+
+const locationOptions = [
+  { value: "new-town", label: "New Town (Action Area I / II / III)" },
+  { value: "ballygunge", label: "Ballygunge / Alipore" },
+  { value: "salt-lake", label: "Salt Lake (Sector I - V)" },
+  { value: "em-bypass", label: "EM Bypass / Ruby" },
+  { value: "rajarhat", label: "Rajarhat Main Road" },
+];
+
+const budgetOptions = [
+  { value: "50-85", label: "₹50 Lakhs - ₹85 Lakhs" },
+  { value: "85-1.5", label: "₹85 Lakhs - ₹1.5 Crore" },
+  { value: "1.5-3", label: "₹1.5 Crore - ₹3 Crore" },
+  { value: "3+", label: "₹3 Crore & Above (Ultra Luxury)" },
+];
 
 export default function EnquirySection() {
   const handleSubmit = (e: React.FormEvent) => {
@@ -153,24 +176,19 @@ export default function EnquirySection() {
                     <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
                       Property Type
                     </label>
-                    <select className="h-11 px-3 bg-surface-container-low text-on-surface font-body-default rounded focus:outline-none focus:bg-surface-clean">
-                      <option>2 BHK Apartment</option>
-                      <option>3 BHK Luxury Flat</option>
-                      <option>4+ BHK Penthouse</option>
-                      <option>Independent Bungalow</option>
-                    </select>
+                    <Select
+                      options={propertyTypeOptions}
+                      placeholder="Select Type"
+                    />
                   </div>
                   <div className="flex flex-col gap-1">
                     <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
                       Preferred Location
                     </label>
-                    <select className="h-11 px-3 bg-surface-container-low text-on-surface font-body-default rounded focus:outline-none focus:bg-surface-clean">
-                      <option>New Town (Action Area I / II / III)</option>
-                      <option>Ballygunge / Alipore</option>
-                      <option>Salt Lake (Sector I - V)</option>
-                      <option>EM Bypass / Ruby</option>
-                      <option>Rajarhat Main Road</option>
-                    </select>
+                    <Select
+                      options={locationOptions}
+                      placeholder="Select Location"
+                    />
                   </div>
                 </div>
                 {/* Budget Range */}
@@ -178,12 +196,10 @@ export default function EnquirySection() {
                   <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
                     Estimated Budget Band
                   </label>
-                  <select className="h-11 px-3 bg-surface-container-low text-on-surface font-body-default rounded focus:outline-none focus:bg-surface-clean">
-                    <option>₹50 Lakhs - ₹85 Lakhs</option>
-                    <option>₹85 Lakhs - ₹1.5 Crore</option>
-                    <option>₹1.5 Crore - ₹3 Crore</option>
-                    <option>₹3 Crore & Above (Ultra Luxury)</option>
-                  </select>
+                  <Select
+                    options={budgetOptions}
+                    placeholder="Select Budget"
+                  />
                 </div>
                 {/* Message */}
                 <div className="flex flex-col gap-1">
