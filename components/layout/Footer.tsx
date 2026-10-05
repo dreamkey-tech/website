@@ -74,7 +74,7 @@ export default function Footer() {
               <li className="leading-none">
                 <Link
                   className="text-secondary-fixed-dim hover:text-surface-clean transition-colors"
-                  href="#careers"
+                  href="/careers"
                 >
                   Careers
                 </Link>
