@@ -195,12 +195,12 @@ export default function Navbar() {
                       {/* Menu items */}
                       <div className="py-1.5">
                         <Link
-                          href="/dashboard"
+                          href="/buy"
                           onClick={() => setIsUserMenuOpen(false)}
                           className="flex items-center gap-3 px-4 py-2.5 text-on-surface hover:bg-surface-container-low transition-colors font-body-default text-body-default group"
                         >
-                          <span className="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">dashboard</span>
-                          Dashboard
+                          <span className="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">search</span>
+                          Browse Properties
                         </Link>
                         <div className="border-t border-border-subtle/50 my-1" />
                         <button

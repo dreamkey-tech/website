@@ -38,8 +38,8 @@ export default function LoginForm() {
 
       toast.success("Successfully logged in!");
 
-      // Redirect to home/dashboard
-      router.push("/dashboard");
+      // Redirect to buy
+      router.push("/buy");
       router.refresh(); // Refresh to trigger middleware/layout state changes
     } catch (error: any) {
       if (error instanceof z.ZodError) {

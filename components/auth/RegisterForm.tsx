@@ -39,8 +39,8 @@ export default function RegisterForm() {
 
       toast.success("Account created successfully!");
 
-      // Redirect to home/dashboard
-      router.push("/dashboard");
+      // Redirect to buy
+      router.push("/buy");
       router.refresh(); 
     } catch (error: any) {
       if (error instanceof z.ZodError) {

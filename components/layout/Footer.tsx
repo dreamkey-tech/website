@@ -79,6 +79,22 @@ export default function Footer() {
                   Careers
                 </Link>
               </li>
+              <li className="leading-none">
+                <Link
+                  className="text-secondary-fixed-dim hover:text-surface-clean transition-colors"
+                  href="/privacy"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li className="leading-none">
+                <Link
+                  className="text-secondary-fixed-dim hover:text-surface-clean transition-colors"
+                  href="/terms-and-conditions"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="lg:col-span-3 flex flex-col gap-space-md">
@@ -156,23 +172,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-secondary/30 pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-label-ui text-label-ui text-secondary-fixed-dim">
-          <p className="">Copyright © 2026 Dream Key. All rights reserved.</p>
-          <div className="flex items-center gap-space-md">
-            <Link
-              className="hover:text-surface-clean transition-colors"
-              href="#privacy-policy"
-            >
-              Privacy Policy
-            </Link>
-            <span className="text-secondary">|</span>
-            <Link
-              className="hover:text-surface-clean transition-colors"
-              href="/terms-and-conditions"
-            >
-              Terms & Conditions
-            </Link>
-          </div>
+        <div className="border-t border-secondary/30 pt-space-lg flex justify-center font-label-ui text-label-ui text-secondary-fixed-dim">
+          <p className="text-center">Copyright © 2026 Dream Key. All rights reserved.</p>
         </div>
       </div>
     </footer>
