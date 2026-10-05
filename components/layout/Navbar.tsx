@@ -13,7 +13,7 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const isBuyPage = pathname === '/buy';
+  const isSearchPage = pathname === '/buy' || pathname === '/rent';
 
   useEffect(() => {
     setMounted(true);
@@ -28,7 +28,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`${isBuyPage ? 'absolute' : 'fixed'} top-0 left-0 right-0 z-50 w-full`}>
+    <header className={`${isSearchPage ? 'absolute' : 'fixed'} top-0 left-0 right-0 z-50 w-full`}>
       <div className="bg-charcoal-pure text-surface py-2 border-b border-secondary/20" style={{ paddingTop: 'max(0.5rem, env(safe-area-inset-top, 0.5rem))' }}>
         <div className="max-w-[1320px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between font-label-ui text-label-ui">
           <div className="flex items-center gap-space-sm shrink">
@@ -97,7 +97,7 @@ export default function Navbar() {
               </div>
             </Link>
           </div>
-          <nav className="hidden xl:flex items-center gap-space-xl text-base font-semibold">
+          <nav className="hidden xl:flex items-center gap-space-xl font-body-default text-body-default">
             <Link
               aria-current="page"
               className="transition-colors tracking-wide text-primary font-semibold"
@@ -113,13 +113,13 @@ export default function Navbar() {
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide"
-              href="#sell"
+              href="/contact"
             >
               Sell
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide"
-              href="#rent"
+              href="/rent"
             >
               Rent
             </Link>
@@ -129,12 +129,7 @@ export default function Navbar() {
             >
               Services
             </Link>
-            <Link
-              className="text-on-surface-variant hover:text-primary transition-colors tracking-wide"
-              href="#projects"
-            >
-              Projects
-            </Link>
+
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide"
               href="/about"
@@ -143,7 +138,7 @@ export default function Navbar() {
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide"
-              href="#contact"
+              href="/contact"
             >
               Contact
             </Link>
@@ -274,7 +269,7 @@ export default function Navbar() {
             </button>
           </div>
           
-          <nav className="flex flex-col flex-1 p-margin-mobile gap-space-lg overflow-y-auto font-label-ui text-lg bg-surface-clean">
+          <nav className="flex flex-col flex-1 p-margin-mobile gap-space-lg overflow-y-auto font-body-default text-body-default bg-surface-clean">
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide py-2 border-b border-border-subtle/50"
               href="/"
@@ -291,14 +286,14 @@ export default function Navbar() {
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide py-2 border-b border-border-subtle/50"
-              href="#sell"
+              href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Sell
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide py-2 border-b border-border-subtle/50"
-              href="#rent"
+              href="/rent"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Rent
@@ -310,13 +305,7 @@ export default function Navbar() {
             >
               Services
             </Link>
-            <Link
-              className="text-on-surface-variant hover:text-primary transition-colors tracking-wide py-2 border-b border-border-subtle/50"
-              href="#projects"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Projects
-            </Link>
+
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide py-2 border-b border-border-subtle/50"
               href="/about"
@@ -326,7 +315,7 @@ export default function Navbar() {
             </Link>
             <Link
               className="text-on-surface-variant hover:text-primary transition-colors tracking-wide py-2 border-b border-border-subtle/50"
-              href="#contact"
+              href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact
@@ -352,7 +341,7 @@ export default function Navbar() {
               
               <Link
                 className="mt-4 flex items-center justify-center bg-primary text-on-primary font-label-ui px-space-lg py-3 rounded-lg shadow-sm tracking-wider uppercase font-semibold text-sm w-full"
-                href="#contact"
+                href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Enquire Now

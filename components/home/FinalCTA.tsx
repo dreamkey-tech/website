@@ -28,7 +28,7 @@ export default function FinalCTA() {
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-space-md shrink-0">
             <Link
-              href="#featured-listings"
+              href="/buy"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-label-ui text-body-default px-space-xl py-3.5 rounded shadow transition-all duration-200 font-semibold hover:-translate-y-[2px] active:scale-[0.98]"
             >
               <span className="">Explore Properties</span>
@@ -37,7 +37,7 @@ export default function FinalCTA() {
               </span>
             </Link>
             <Link
-              href="#enquiry-section"
+              href="/contact"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-surface-clean/10 hover:bg-surface-clean/20 text-surface-clean font-label-ui text-body-default px-space-lg py-3.5 rounded transition-all duration-200 hover:-translate-y-[2px] active:scale-[0.98]"
             >
               <span className="">Contact Us</span>

@@ -52,7 +52,9 @@ export default function RootLayout({
         <aside className="fixed bottom-20 xl:bottom-6 right-4 xl:right-6 z-40">
           <a
             className="flex items-center gap-space-sm bg-primary hover:bg-primary-container text-on-primary px-space-md py-space-sm rounded-full shadow-lg border border-outline-variant/30 hover:shadow-xl transition-all duration-200 hover:-translate-y-1 active:scale-95"
-            href="#enquiry-section"
+            href="https://api.whatsapp.com/send?phone=918697559123&text=I%20would%20like%20to%20set%20an%20appointment."
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span className="material-symbols-outlined text-[18px]">edit_note</span>
             <span className="font-label-ui text-label-ui uppercase tracking-wider font-semibold pr-1">

@@ -116,7 +116,7 @@ export default function ValueProposition() {
 
             <motion.div variants={fadeUp} transition={{ ...smoothTransition, delay: 0.2 }}>
               <Link
-                href="#search-listings"
+                href="/buy"
                 className="inline-flex items-center gap-space-xs bg-charcoal-pure hover:bg-on-surface text-surface-clean font-label-ui text-body-default px-space-xl py-3 rounded transition-all duration-200 shadow-sm hover:-translate-y-[2px] active:scale-[0.98]"
               >
                 <span>Find Your Property</span>

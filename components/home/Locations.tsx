@@ -100,7 +100,7 @@ export default function Locations() {
                 </div>
                 <Link
                   className="pt-space-md inline-flex items-center gap-1 font-label-ui text-label-ui text-primary font-semibold hover:underline"
-                  href="#featured-listings"
+                  href="/buy"
                 >
                   <span className="">View Properties</span>
                   <span className="material-symbols-outlined text-[15px]">

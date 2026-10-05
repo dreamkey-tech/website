@@ -66,7 +66,7 @@ export default function Footer() {
               <li className="leading-none">
                 <Link
                   className="text-secondary-fixed-dim hover:text-surface-clean transition-colors"
-                  href="#contact"
+                  href="/contact"
                 >
                   Contact
                 </Link>
@@ -105,7 +105,7 @@ export default function Footer() {
               <li className="leading-none">
                 <Link
                   className="text-secondary-fixed-dim hover:text-surface-clean transition-colors"
-                  href="#buy"
+                  href="/buy"
                 >
                   Buy Property
                 </Link>
@@ -113,7 +113,7 @@ export default function Footer() {
               <li className="leading-none">
                 <Link
                   className="text-secondary-fixed-dim hover:text-surface-clean transition-colors"
-                  href="#sell"
+                  href="/contact"
                 >
                   Sell Property
                 </Link>
@@ -121,19 +121,12 @@ export default function Footer() {
               <li className="leading-none">
                 <Link
                   className="text-secondary-fixed-dim hover:text-surface-clean transition-colors"
-                  href="#rent"
+                  href="/rent"
                 >
                   Rent Property
                 </Link>
               </li>
-              <li className="leading-none">
-                <Link
-                  className="text-secondary-fixed-dim hover:text-surface-clean transition-colors"
-                  href="#projects"
-                >
-                  New Projects
-                </Link>
-              </li>
+
             </ul>
           </div>
           <div className="lg:col-span-3 flex flex-col gap-space-md">

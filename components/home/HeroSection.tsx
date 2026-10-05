@@ -67,7 +67,7 @@ export default function HeroSection() {
             >
               <Link
                 className="inline-flex items-center gap-1.5 md:gap-space-xs bg-primary hover:bg-primary-container text-on-primary font-bold md:font-label-ui text-[12px] md:text-body-default px-3 py-2 md:px-space-xl md:py-3 rounded shadow-sm md:shadow-md transition-all active:scale-[0.97]"
-                href="#featured-listings"
+                href="/buy"
               >
                 <span className="">Explore Properties</span>
                 <span className="material-symbols-outlined text-[15px] md:text-[18px]">
@@ -76,7 +76,7 @@ export default function HeroSection() {
               </Link>
               <Link
                 className="inline-flex items-center gap-1 md:gap-space-xs bg-surface-clean/15 hover:bg-surface-clean/25 text-surface-clean font-medium md:font-label-ui text-[12px] md:text-body-default px-3 py-2 md:px-space-lg md:py-3 rounded backdrop-blur-sm transition-all active:scale-[0.97]"
-                href="#enquiry-section"
+                href="/contact"
               >
                 <span className="material-symbols-outlined text-[15px] md:text-[18px] text-gold-light md:text-surface-clean">
                   support_agent

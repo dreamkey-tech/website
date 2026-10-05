@@ -28,7 +28,7 @@ export default function FeaturedListings() {
             </p>
           </div>
           <Link
-            href="#enquiry-section"
+            href="/buy"
             className="inline-flex items-center gap-1 font-label-ui text-body-default text-primary hover:text-primary-container font-semibold transition-colors"
           >
             <span className="">Explore All 240+ Active Units</span>
