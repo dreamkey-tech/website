@@ -22,9 +22,11 @@ export const metadata: Metadata = {
   title: "Dream Key | Premier Real Estate in Kolkata",
   description: "Find a Place You’ll Love to Call Home. Verified luxury apartments, premium high-rises, and prime residential developments across Kolkata.",
   icons: {
-    icon: "/logo.webp",
+    icon: "/logo2.png",
   },
 };
+
+import { AuthProvider } from "@/components/providers/AuthProvider";
 
 export default function RootLayout({
   children,
@@ -42,6 +44,7 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} bg-surface font-body-default text-body-default text-on-surface antialiased`}
       >
+        <AuthProvider>
         <Navbar />
         <main className="w-full pt-[116px] pb-16 xl:pb-0 bg-surface min-h-[calc(100vh-116px)]">
           {children}
@@ -64,6 +67,7 @@ export default function RootLayout({
           </a>
         </aside>
         <Toaster position="top-right" richColors />
+        </AuthProvider>
       </body>
     </html>
   );

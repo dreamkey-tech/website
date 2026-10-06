@@ -225,8 +225,9 @@ export default function EnquirySection() {
                         placeholder="98300 XXXXX"
                         required
                         type="tel"
+                        maxLength={10}
                         value={formData.mobileNo}
-                        onChange={(e) => handleChange("mobileNo", e.target.value)}
+                        onChange={(e) => handleChange("mobileNo", e.target.value.replace(/\D/g, "").slice(0, 10))}
                       />
                     </div>
                     {errors.mobileNo && <span className="text-error font-label-ui text-xs">{errors.mobileNo}</span>}

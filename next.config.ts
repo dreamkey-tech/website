@@ -14,12 +14,19 @@ const nextConfig: NextConfig = {
     'localhost:3000',
   ],
   async rewrites() {
-    // Route /api-proxy to Cloudflare Tunnel
     const apiUrl = process.env.API_URL;
-    if (!apiUrl) {
-      return [];
-    }
     return [
+      // 1. Forward /api/auth/* requests directly to backend /api/auth/* (preserving /api)
+      {
+        source: '/api/auth/:path*',
+        destination: `${apiUrl}/api/auth/:path*`,
+      },
+      // 2. Generic API routes (/api/v1/... -> backend /v1/...)
+      {
+        source: '/api/:path*',
+        destination: `${apiUrl}/:path*`,
+      },
+      // 3. Preserve api-proxy for backward compatibility with existing client
       {
         source: '/api-proxy/:path*',
         destination: `${apiUrl}/:path*`,

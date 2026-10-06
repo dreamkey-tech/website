@@ -152,29 +152,29 @@ export default function Navbar() {
             >
               <span className="material-symbols-outlined text-[18px] text-primary">call</span>
             </a>
-            {/* User Dropdown Menu */}
-            <div className="relative" ref={menuRef}>
-              <button
-                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-surface-container-low border border-border-subtle rounded-full flex items-center justify-center hover:bg-surface-container transition-colors active:scale-95"
-                aria-label="User menu"
-              >
-                <span className="material-symbols-outlined text-[18px] sm:text-[20px] text-primary">
-                  person
-                </span>
-              </button>
+            {/* User Dropdown / Login */}
+            {mounted ? (
+              isAuthenticated ? (
+                <div className="relative" ref={menuRef}>
+                  <button
+                    onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                    className="w-9 h-9 sm:w-10 sm:h-10 bg-surface-container-low border border-border-subtle rounded-full flex items-center justify-center hover:bg-surface-container transition-colors active:scale-95"
+                    aria-label="User menu"
+                  >
+                    <span className="material-symbols-outlined text-[18px] sm:text-[20px] text-primary">
+                      person
+                    </span>
+                  </button>
 
-              <AnimatePresence>
-              {isUserMenuOpen && mounted && (
-                <motion.div
-                  initial={{ opacity: 0, y: -8, scale: 0.97 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -6, scale: 0.97 }}
-                  transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
-                  className="absolute right-0 top-[calc(100%+10px)] w-64 bg-surface-clean/95 backdrop-blur-xl border border-border-subtle rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.14)] overflow-hidden flex flex-col z-[100]"
-                >
-                  {isAuthenticated ? (
-                    <>
+                  <AnimatePresence>
+                  {isUserMenuOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -8, scale: 0.97 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -6, scale: 0.97 }}
+                      transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
+                      className="absolute right-0 top-[calc(100%+10px)] w-64 bg-surface-clean/95 backdrop-blur-xl border border-border-subtle rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.14)] overflow-hidden flex flex-col z-[100]"
+                    >
                       {/* User header */}
                       <div className="px-4 pt-4 pb-3 bg-gradient-to-br from-primary/8 to-transparent border-b border-border-subtle/60 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-full bg-primary/15 border border-primary/25 flex items-center justify-center flex-shrink-0">
@@ -206,37 +206,21 @@ export default function Navbar() {
                           Sign Out
                         </button>
                       </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="px-4 pt-4 pb-3 border-b border-border-subtle/60">
-                        <p className="font-semibold text-on-surface text-[14px]">Welcome back</p>
-                        <p className="text-[11px] text-secondary mt-0.5">Sign in to your account</p>
-                      </div>
-                      <div className="py-1.5">
-                        <Link
-                          href="/login"
-                          onClick={() => setIsUserMenuOpen(false)}
-                          className="flex items-center gap-3 px-4 py-2.5 text-on-surface hover:bg-surface-container-low transition-colors font-body-default text-body-default group"
-                        >
-                          <span className="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">login</span>
-                          Sign In
-                        </Link>
-                        <Link
-                          href="/register"
-                          onClick={() => setIsUserMenuOpen(false)}
-                          className="flex items-center gap-3 px-4 py-2.5 text-on-surface hover:bg-surface-container-low transition-colors font-body-default text-body-default group"
-                        >
-                          <span className="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">person_add</span>
-                          Create Account
-                        </Link>
-                      </div>
-                    </>
+                    </motion.div>
                   )}
-                </motion.div>
-              )}
-              </AnimatePresence>
-            </div>
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  href="/login"
+                  className="hidden sm:inline-flex items-center justify-center h-9 sm:h-10 px-4 sm:px-5 bg-primary/10 hover:bg-primary/20 text-primary font-semibold rounded-full transition-colors font-body-default text-[13px] sm:text-[14px] tracking-wide"
+                >
+                  Login / Register
+                </Link>
+              )
+            ) : (
+              <div className="w-9 h-9 sm:w-10 sm:h-10 bg-surface-container-low rounded-full animate-pulse"></div>
+            )}
           </div>
         </div>
       </div>
