@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "motion/react";
+import { useState, useRef } from "react";
 import Select from "@/components/ui/Select";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const locationOptions = [
   { value: "", label: "Select Location" },
@@ -40,12 +41,21 @@ const budgetOptions = [
 
 export default function PropertySearch() {
   const [activeTab, setActiveTab] = useState<"buy" | "rent">("buy");
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.from(containerRef.current, {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      delay: 0.3,
+      ease: "power2.out",
+    });
+  }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+    <div
+      ref={containerRef}
       className="bg-surface-clean rounded-xl p-space-lg shadow-xl shadow-charcoal-pure/10"
     >
       {/* Purpose Tabs */}
@@ -134,6 +144,6 @@ export default function PropertySearch() {
           </button>
         </div>
       </form>
-    </motion.div>
+    </div>
   );
 }

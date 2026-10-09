@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { motion } from "motion/react";
 
 export default function Locations() {
   const locations = [
@@ -46,11 +44,7 @@ export default function Locations() {
 
   return (
     <section className="w-full py-space-2xl bg-surface">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+      <div
         className="max-w-[1320px] mx-auto px-margin-mobile md:px-margin"
       >
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
@@ -62,7 +56,7 @@ export default function Locations() {
               Explore Properties Across Kolkata
             </h2>
             <p className="font-body-default text-body-default text-secondary mt-1">
-              Find your ideal home at Kolkata's most sought-after urban corridors
+              Find your ideal home at Kolkata&#39;s most sought-after urban corridors
               and serene heritage avenues.
             </p>
           </div>
@@ -111,7 +105,7 @@ export default function Locations() {
             </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

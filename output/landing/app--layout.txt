@@ -1,0 +1,81 @@
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import "./globals.css";
+import "./hero.css";
+import HomeNavbar from "@/components/layout/HomeNavbar";
+import SiteHeader from "@/components/layout/SiteHeader";
+import Footer from "@/components/layout/Footer";
+import SiteFooter from "@/components/layout/SiteFooter";
+import PageHeader from "@/components/pages/PageHeader";
+import PageFooter from "@/components/pages/PageFooter";
+import { Toaster } from "sonner";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
+import { AuthProvider } from "@/components/providers/AuthProvider";
+
+const plusJakartaSans = localFont({
+  src: "../public/fonts/plus-jakarta-sans-variable.woff2",
+  variable: "--font-plus-jakarta",
+  weight: "400 800",
+  display: "swap",
+});
+
+const spaceGrotesk = localFont({
+  src: "../public/fonts/space-grotesk-variable.woff2",
+  variable: "--font-space-grotesk",
+  weight: "400 700",
+  display: "swap",
+});
+
+// The italic face echoes the architectural reference; body type stays Jakarta.
+const heroEditorial = localFont({
+  src: "../public/fonts/playfair-display-italic.woff2",
+  variable: "--font-hero-editorial",
+  weight: "400",
+  style: "italic",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Dream Key Reality | Premier Real Estate in Kolkata",
+  description:
+    "Find a place you will love to call home. Verified luxury apartments, premium high-rises, and prime residential developments across Kolkata.",
+  icons: { icon: "/logo2.png" },
+  openGraph: {
+    title: "Dream Key Reality | Premier Real Estate in Kolkata",
+    description:
+      "Trusted real estate partner connecting buyers and sellers across Kolkata's finest neighbourhoods.",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en" data-theme="light">
+      <body
+        className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} ${heroEditorial.variable} bg-dark-base font-body text-text-dark-primary antialiased`}
+      >
+        <AuthProvider>
+          <SiteHeader homeHeader={<HomeNavbar />} interiorHeader={<PageHeader />} />
+          <main className="w-full bg-dark-base pb-16 xl:pb-0">
+            {children}
+          </main>
+          <MobileBottomNav />
+          <SiteFooter legacyFooter={<Footer />} interiorFooter={<PageFooter />} />
+          <Toaster
+            position="top-right"
+            richColors
+            toastOptions={{
+              style: {
+                background: "#242424",
+                border: "1px solid #333333",
+                color: "#ffffff",
+              },
+            }}
+          />
+        </AuthProvider>
+      </body>
+    </html>
+  );
+}

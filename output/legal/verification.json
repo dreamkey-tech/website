@@ -1,0 +1,22 @@
+{
+  "privacy": {
+    "scores": {
+      "performance": 92,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "lcpMs": 2741,
+    "cls": 0
+  },
+  "terms": {
+    "scores": {
+      "performance": 94,
+      "accessibility": 100,
+      "best-practices": 96,
+      "seo": 100
+    },
+    "lcpMs": 3005,
+    "cls": 0
+  }
+}

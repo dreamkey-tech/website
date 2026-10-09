@@ -1,131 +1,172 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
-import { useRef, useEffect, useState } from "react";
-import Link from "next/link";
-import { fadeUp, fadeLeft, fadeRight, staggerContainer, smoothTransition, viewportOnce } from "@/lib/animations";
+import { useRef } from "react";
+import { Check, X as XIcon } from "@phosphor-icons/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-// Animated counter hook
-function useCounter(target: number, inView: boolean, duration = 1600) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!inView) return;
-    let start = 0;
-    const step = target / (duration / 16);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) { setCount(target); clearInterval(timer); }
-      else setCount(Math.floor(start));
-    }, 16);
-    return () => clearInterval(timer);
-  }, [inView, target, duration]);
-  return count;
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
 }
 
-function AnimatedStat({ value, label, suffix = "", color = "text-primary" }: { value: number; label: string; suffix?: string; color?: string }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
-  const count = useCounter(value, inView);
+interface ComparisonRow {
+  feature: string;
+  dreamkey: boolean | string;
+  traditional: boolean | string;
+  online: boolean | string;
+}
+
+const ROWS: ComparisonRow[] = [
+  { feature: "Verified Property Listings",       dreamkey: true,         traditional: "Partial", online: "Partial"  },
+  { feature: "Dedicated Personal Agent",         dreamkey: true,         traditional: true,      online: false      },
+  { feature: "Legal & Documentation Support",    dreamkey: true,         traditional: false,     online: false      },
+  { feature: "Transparent Pricing, No Surprises",dreamkey: true,         traditional: false,     online: "Partial"  },
+  { feature: "Post-Purchase Support",            dreamkey: true,         traditional: false,     online: false      },
+  { feature: "Property Shortlisting in 24 hrs",  dreamkey: true,         traditional: false,     online: true       },
+  { feature: "Home Loan Assistance",             dreamkey: true,         traditional: false,     online: false      },
+  { feature: "Zero Hidden Brokerage",            dreamkey: true,         traditional: false,     online: true       },
+];
+
+function Cell({ value }: { value: boolean | string }) {
+  if (value === true)
+    return (
+      <div className="flex justify-center">
+        <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gold/15 border border-gold/30">
+          <Check size={14} weight="bold" className="text-gold" />
+        </span>
+      </div>
+    );
+  if (value === false)
+    return (
+      <div className="flex justify-center">
+        <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/5 border border-border-dark">
+          <XIcon size={14} weight="bold" className="text-text-dark-muted" />
+        </span>
+      </div>
+    );
   return (
-    <div ref={ref} className="flex flex-col">
-      <span className={`font-spec-numeral text-spec-numeral ${color}`}>
-        {count.toLocaleString()}{suffix}
+    <div className="flex justify-center">
+      <span className="text-[12px] font-medium text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-full">
+        {value}
       </span>
-      <span className="font-body-dense text-body-dense text-secondary">{label}</span>
     </div>
   );
 }
 
-export default function ValueProposition() {
+export default function AgencyComparison() {
+  const containerRef = useRef<HTMLElement>(null);
+
+  useGSAP(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    gsap.from(".anim-header", {
+      y: 24,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".anim-header",
+        start: "top 80%",
+      }
+    });
+
+    gsap.from(".anim-table", {
+      y: 32,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".anim-table",
+        start: "top 80%",
+      }
+    });
+
+    gsap.from(".anim-cta", {
+      y: 16,
+      opacity: 0,
+      duration: 0.6,
+      delay: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".anim-table",
+        start: "top 80%",
+      }
+    });
+  }, { scope: containerRef });
+
   return (
-    <section className="w-full py-space-2xl bg-surface-container-low overflow-hidden">
-      <div className="max-w-[1320px] mx-auto px-margin-mobile md:px-margin">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-          {/* Left Image */}
-          <motion.div
-            className="lg:col-span-6 relative"
-            variants={fadeLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-            transition={smoothTransition}
+    <section ref={containerRef} className="py-24 md:py-32 bg-dark-raised relative overflow-hidden" id="why-dreamkey">
+      {/* Border top accent */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
+        {/* Header */}
+        <div className="anim-header text-center mb-14">
+          <h2 className="font-display text-headline-lg text-white leading-tight">
+            Dream Key vs. <span className="text-gold">The Rest</span>
+          </h2>
+          <p className="text-text-dark-secondary text-body-default mt-3 max-w-lg mx-auto">
+            We built our process around you, not commissions. See how we compare.
+          </p>
+        </div>
+
+        {/* Comparison table */}
+        <div className="anim-table overflow-x-auto rounded-2xl border border-border-dark">
+          <table className="w-full min-w-[600px]">
+            <thead>
+              <tr className="border-b border-border-dark">
+                <th className="text-left px-6 py-5 text-[12px] uppercase tracking-[0.1em] text-text-dark-secondary font-semibold w-[40%]">
+                  Feature
+                </th>
+                {/* Dream Key column - highlighted */}
+                <th className="px-4 py-5 text-center relative">
+                  <div className="absolute inset-0 bg-gold/6 border-x border-gold/20" />
+                  <span className="relative font-display text-[15px] font-bold text-gold">Dream Key</span>
+                </th>
+                <th className="px-4 py-5 text-center text-[14px] font-semibold text-text-dark-secondary">
+                  Traditional Agent
+                </th>
+                <th className="px-4 py-5 text-center text-[14px] font-semibold text-text-dark-secondary">
+                  Online Portals
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {ROWS.map((row, i) => (
+                <tr
+                  key={i}
+                  className={`border-b border-border-dark/60 transition-colors hover:bg-dark-elevated/60 ${
+                    i === ROWS.length - 1 ? "border-b-0" : ""
+                  }`}
+                >
+                  <td className="px-6 py-4 text-[14px] text-white font-medium">{row.feature}</td>
+                  <td className="px-4 py-4 relative">
+                    <div className="absolute inset-0 bg-gold/6 border-x border-gold/20" />
+                    <div className="relative"><Cell value={row.dreamkey} /></div>
+                  </td>
+                  <td className="px-4 py-4"><Cell value={row.traditional} /></td>
+                  <td className="px-4 py-4"><Cell value={row.online} /></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="anim-cta mt-10 text-center">
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 h-12 px-8 bg-gold hover:bg-gold-light text-dark-base font-bold text-[14px] rounded-full transition-all duration-200 active:scale-[0.97]"
           >
-            <motion.div
-              className="rounded-xl overflow-hidden shadow-lg bg-surface-clean p-2"
-              whileHover={{ scale: 1.015 }}
-              transition={{ duration: 0.4, ease: 'easeOut' }}
-            >
-              <img
-                className="w-full h-[460px] object-cover rounded-lg"
-                alt="Warm welcoming interior of a contemporary upscale apartment"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMgnjC1WGZ9LDQq6ZojZg5FOj0TLkNgEzauCsUqVPJz5zFAJ3-77IAWnshpTaYCp-FOqvg7cqEvXdfOS-Exa69klLsCGwPxPjScqet-RKruXfjYJIUB3dhZYSKHkjUJGejk63Ennn_ttx85xaYNDkZbqwnLbURllbq9gmj7Pmq6xMjGmYg5zN8ehcgHWeiU05jPyhM9lRHDCwXkvNxdH2Kj5j4H1dQHJOz7sZN7dTM60Xkjpx7W1wG"
-              />
-            </motion.div>
-            {/* Experience Seal */}
-            <motion.div
-              className="absolute -bottom-6 -right-3 md:right-6 bg-charcoal-pure text-surface-clean p-space-lg rounded-xl shadow-xl max-w-[240px]"
-              initial={{ opacity: 0, scale: 0.8, y: 16 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={viewportOnce}
-              transition={{ ...smoothTransition, delay: 0.3 }}
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <span className="material-symbols-outlined text-gold-light text-[22px]">verified</span>
-                <span className="font-label-ui text-label-ui font-semibold text-tertiary-fixed">10+ Years Trust</span>
-              </div>
-              <p className="font-body-dense text-body-dense text-secondary-fixed-dim leading-snug">
-                Empowering transparent home ownership across Bengal since 2014.
-              </p>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Content */}
-          <motion.div
-            className="lg:col-span-6 flex flex-col gap-space-md"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-          >
-            <motion.div variants={fadeRight} transition={smoothTransition}>
-              <span className="font-label-ui text-label-ui uppercase tracking-widest text-primary font-semibold">
-                Real Estate Made Simple
-              </span>
-              <h2 className="font-headline-lg-mobile md:font-headline-lg text-[20px] md:text-headline-lg text-on-surface font-bold md:font-semibold leading-tight">
-                Helping You Find the Right Property Within Your Budget
-              </h2>
-              <p className="font-body-default text-body-default text-on-surface-variant leading-relaxed mt-2">
-                Navigating Kolkata's real estate ecosystem requires more than just
-                browsing listings. From unravelling century-old clear title deeds in
-                Ballygunge to evaluating master-plan developments in New Town Action
-                Area III, our experienced team provides deep fiduciary clarity at
-                every milestone.
-              </p>
-            </motion.div>
-
-            {/* Animated Stats */}
-            <motion.div
-              className="grid grid-cols-3 gap-space-md pt-space-sm pb-space-sm"
-              variants={fadeUp}
-              transition={{ ...smoothTransition, delay: 0.15 }}
-            >
-              <AnimatedStat value={1200} label="Families Settled" suffix="+" color="text-primary" />
-              <AnimatedStat value={98} label="Client Satisfaction" suffix="%" color="text-on-surface" />
-              <AnimatedStat value={40} label="Premier Projects" suffix="+" color="text-tertiary" />
-            </motion.div>
-
-            <motion.div variants={fadeUp} transition={{ ...smoothTransition, delay: 0.2 }}>
-              <Link
-                href="/buy"
-                className="inline-flex items-center gap-space-xs bg-charcoal-pure hover:bg-on-surface text-surface-clean font-label-ui text-body-default px-space-xl py-3 rounded transition-all duration-200 shadow-sm hover:-translate-y-[2px] active:scale-[0.98]"
-              >
-                <span>Find Your Property</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-              </Link>
-            </motion.div>
-          </motion.div>
+            Start with Dream Key
+          </a>
         </div>
       </div>
+
+      {/* Border bottom accent */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
     </section>
   );
 }

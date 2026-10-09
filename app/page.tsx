@@ -1,27 +1,24 @@
 import HeroSection from "@/components/home/HeroSection";
-import FeaturedListings from "@/components/home/FeaturedListings";
-import ValueProposition from "@/components/home/ValueProposition";
-import Developers from "@/components/home/Developers";
-import EnquirySection from "@/components/home/EnquirySection";
-import Locations from "@/components/home/Locations";
-import HowItWorks from "@/components/home/HowItWorks";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
-import Testimonials from "@/components/home/Testimonials";
-import FinalCTA from "@/components/home/FinalCTA";
+import DesignGallery from "@/components/home/DesignGallery";
+import PropertyManagement from "@/components/home/PropertyManagement";
+import BestProperties from "@/components/home/BestProperties";
+import ClientStories from "@/components/home/ClientStories";
+import HomeContactCTA from "@/components/home/HomeContactCTA";
+import styles from "@/components/home/Landing.module.css";
+import { connection } from "next/server";
 
-export default function Home() {
+export default async function Home() {
+  await connection();
   return (
-    <div className="flex flex-col w-full">
+    <div className={styles.page}>
       <HeroSection />
-      <FeaturedListings />
-      <ValueProposition />
-      <Developers />
-      <EnquirySection />
-      <Locations />
-      <HowItWorks />
-      <WhyChooseUs />
-      <Testimonials />
-      <FinalCTA />
+      <DesignGallery />
+      <div className={styles.content}>
+        <PropertyManagement />
+        <BestProperties />
+        <ClientStories />
+        <HomeContactCTA />
+      </div>
     </div>
   );
 }

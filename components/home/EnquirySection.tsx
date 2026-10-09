@@ -1,324 +1,176 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "motion/react";
-import Select from "@/components/ui/Select";
-import { enquiryApi } from "@/api/enquiry";
-import { propertyEnquirySchema } from "@/zod/enquiry";
-import { toast } from "sonner";
-import { z } from "zod";
+import { useState, useRef, useEffect } from "react";
+import { Plus, Minus } from "@phosphor-icons/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-const propertyTypeOptions = [
-  { value: "2bhk-apt", label: "2 BHK Apartment" },
-  { value: "3bhk-luxury", label: "3 BHK Luxury Flat" },
-  { value: "4bhk-penthouse", label: "4+ BHK Penthouse" },
-  { value: "bungalow", label: "Independent Bungalow" },
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
+
+interface FAQ {
+  q: string;
+  a: string;
+}
+
+const FAQS: FAQ[] = [
+  {
+    q: "How much does Dream Key charge as a brokerage fee?",
+    a: "Our standard brokerage is 1-2% of the property value, disclosed before any engagement begins. There are no hidden charges, administrative fees, or post-closing surprises.",
+  },
+  {
+    q: "How long does the entire property buying process take?",
+    a: "From initial consultation to key handover, a typical transaction takes 30-90 days depending on property type, loan processing, and registration queues. Our agents keep the timeline moving.",
+  },
+  {
+    q: "Do you assist with home loans?",
+    a: "Yes. We have partnerships with major banks and NBFCs in Kolkata. Our team will compare loan offers for you, assist with paperwork, and coordinate with the lender throughout the process.",
+  },
+  {
+    q: "Can I list my property for sale or rent through Dream Key?",
+    a: "Absolutely. We list seller and landlord properties after a physical inspection. Fill out our Contact form or call us, and a listing specialist will visit within 48 hours.",
+  },
+  {
+    q: "Do you cover areas outside Kolkata?",
+    a: "Currently we operate exclusively within the Greater Kolkata region, covering New Town, Salt Lake, Rajarhat, South Kolkata, Ballygunge, and surrounding areas. We plan to expand in 2025.",
+  },
+  {
+    q: "What types of properties do you deal with?",
+    a: "We handle residential apartments, penthouses, villas, row houses, commercial spaces, and land plots across Kolkata. Our primary strength is premium and mid-premium residential properties.",
+  },
 ];
 
-const locationOptions = [
-  { value: "new-town", label: "New Town (Action Area I / II / III)" },
-  { value: "ballygunge", label: "Ballygunge / Alipore" },
-  { value: "salt-lake", label: "Salt Lake (Sector I - V)" },
-  { value: "em-bypass", label: "EM Bypass / Ruby" },
-  { value: "rajarhat", label: "Rajarhat Main Road" },
-];
+function FAQItem({ faq, isOpen, onToggle }: { faq: FAQ; isOpen: boolean; onToggle: () => void }) {
+  const contentRef = useRef<HTMLDivElement>(null);
 
-const budgetOptions = [
-  { value: "50-85", label: "₹50 Lakhs - ₹85 Lakhs" },
-  { value: "85-1.5", label: "₹85 Lakhs - ₹1.5 Crore" },
-  { value: "1.5-3", label: "₹1.5 Crore - ₹3 Crore" },
-  { value: "3+", label: "₹3 Crore & Above (Ultra Luxury)" },
-];
-
-export default function EnquirySection() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    mobileNo: "",
-    email: "",
-    propertyType: "",
-    preferredLocation: "",
-    estimatedBudgetBand: "",
-    specificRequirements: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const handleChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setErrors({});
-    setIsLoading(true);
-
-    const fullMobile = `+91 ${formData.mobileNo}`;
-    const validationResult = propertyEnquirySchema.safeParse({
-      ...formData,
-      mobileNo: fullMobile,
-    });
-
-    if (!validationResult.success) {
-      const fieldErrors: Record<string, string> = {};
-      const issues = validationResult.error.issues;
-      
-      if (issues.length > 0) {
-        toast.error(issues[0].message);
-      } else {
-        toast.error("Please fix the validation errors.");
-      }
-
-      issues.forEach((err) => {
-        if (err.path && err.path[0]) {
-          fieldErrors[err.path[0] as string] = err.message;
-        }
+  useGSAP(() => {
+    if (!contentRef.current) return;
+    
+    if (isOpen) {
+      gsap.to(contentRef.current, {
+        height: "auto",
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out"
       });
-      setErrors(fieldErrors);
-      setIsLoading(false);
-      return;
+    } else {
+      gsap.to(contentRef.current, {
+        height: 0,
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.inOut"
+      });
     }
-
-    try {
-      const response = await enquiryApi.submitPropertyEnquiry(validationResult.data);
-      
-      if (response.success) {
-        toast.success(response.message || "Enquiry submitted successfully.");
-        setFormData({
-          fullName: "",
-          mobileNo: "",
-          email: "",
-          propertyType: "",
-          preferredLocation: "",
-          estimatedBudgetBand: "",
-          specificRequirements: "",
-        });
-      }
-    } catch (error: any) {
-      const errorData = error.response?.data;
-      toast.error(errorData?.error || "Failed to submit enquiry. Please try again.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  }, [isOpen]);
 
   return (
-    <section
-      className="relative w-full py-space-2xl bg-charcoal-pure overflow-hidden"
-      id="enquiry-section"
-    >
-      {/* Architectural Backdrop */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-25"
-        title="Interior architectural rendering of a grand high ceiling Kolkata clubhouse lounge"
-        style={{
-          backgroundImage:
-            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsw3fdpMABq241LdzEhvpYCP4XOm-KksPeLSF5IGRb52yqR15hB_EXlzM-aVTyAAsEzZXn354Rz-716KMDsIayA4g2pdT-hrf4XDPLDIvA4wlndXdoqs_XnBvJZaVGir1Mz3Xn88I6n5joEb0H13GOrcOlGhmCNz1RXluSH0oQ38_JEkZ5a2HfNoEUTP54oBIPzxLL-2r1l7WK9hL_IocfudquYTNdRCfhUNyZzomDrD5fvhQkKt2M')",
-        }}
-      ></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal-pure via-charcoal-pure/95 to-charcoal-pure/80"></div>
-      
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-        className="relative z-10 max-w-[1320px] mx-auto px-margin-mobile md:px-margin"
+    <div className="border-b border-border-dark last:border-b-0">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between gap-4 py-5 text-left group"
+        aria-expanded={isOpen}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-          {/* Left Editorial Copy */}
-          <div className="lg:col-span-6 flex flex-col gap-space-md text-surface-clean">
-            <div className="inline-flex items-center gap-space-xs px-3 py-1 rounded bg-surface/10 w-fit">
-              <span className="material-symbols-outlined text-gold-light text-[18px]">
-                verified_user
-              </span>
-              <span className="font-label-ui text-label-ui text-tertiary-fixed tracking-wider uppercase font-semibold">
-                Priority Booking Desk
-              </span>
-            </div>
-            <h2 className="font-headline-lg-mobile md:font-headline-lg text-[20px] md:text-headline-lg text-surface-clean font-bold md:font-semibold leading-tight">
-              Discover a Smarter Way to Buy & Sell Property in Kolkata
+        <span className={`font-display text-[15px] font-medium transition-colors duration-200 ${isOpen ? "text-gold" : "text-white group-hover:text-gold"}`}>
+          {faq.q}
+        </span>
+        <span className={`shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-200 ${
+          isOpen
+            ? "bg-gold/15 border-gold/30 text-gold"
+            : "border-border-dark text-text-dark-secondary group-hover:border-gold/30 group-hover:text-gold"
+        }`}>
+          {isOpen ? <Minus size={14} weight="bold" /> : <Plus size={14} weight="bold" />}
+        </span>
+      </button>
+
+      <div
+        ref={contentRef}
+        className="overflow-hidden"
+        style={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+      >
+        <p className="text-text-dark-secondary text-body-default leading-relaxed pb-5 max-w-2xl">
+          {faq.a}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default function FAQ() {
+  const containerRef = useRef<HTMLElement>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(true);
+
+  useEffect(() => {
+    setPrefersReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }, []);
+
+  useGSAP(() => {
+    if (prefersReducedMotion) return;
+
+    gsap.from(".anim-left", {
+      y: 24,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".anim-left",
+        start: "top 80%",
+      }
+    });
+
+    gsap.from(".anim-right", {
+      y: 24,
+      opacity: 0,
+      duration: 0.6,
+      delay: 0.1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".anim-left",
+        start: "top 80%",
+      }
+    });
+  }, { scope: containerRef, dependencies: [prefersReducedMotion] });
+
+  return (
+    <section ref={containerRef} className="py-24 md:py-32 bg-dark-raised relative overflow-hidden" id="faq">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+          {/* Left column - heading */}
+          <div className="anim-left lg:col-span-4">
+            <h2 className="font-display text-headline-lg text-white leading-tight">
+              Frequently Asked{" "}
+              <span className="text-gold">Questions</span>
             </h2>
-            <p className="font-body-default text-body-default text-secondary-fixed-dim leading-relaxed">
-              Eliminate conflicting developer claims and opaque pricing tiers. Our
-              verified property consultants provide transparent comparative
-              evaluations, arrange chauffeured inspection tours, and assist with
-              institutional home loan sanctioning.
+            <p className="text-text-dark-secondary text-body-default mt-4 leading-relaxed">
+              Have more questions? Call us directly or drop us a message.
             </p>
-            <div className="flex flex-col gap-space-sm pt-space-xs">
-              <div className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">
-                  check_circle
-                </span>
-                <span className="font-body-default text-surface-clean">
-                  100% Zero Brokerage on direct partner developer inventory
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">
-                  check_circle
-                </span>
-                <span className="font-body-default text-surface-clean">
-                  Complimentary title search & municipal sanction assessment
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">
-                  check_circle
-                </span>
-                <span className="font-body-default text-surface-clean">
-                  Bank tie-ups with SBI, HDFC & ICICI at preferential rates
-                </span>
-              </div>
-            </div>
-            <div className="pt-space-sm">
-              <a
-                href="tel:+919830012345"
-                className="inline-flex items-center gap-space-sm text-gold-light hover:text-surface-clean font-title-property text-headline-sm transition-colors"
-              >
-                <span className="material-symbols-outlined text-[24px]">
-                  phone_in_talk
-                </span>
-                <span className="">+91 98300 12345</span>
-              </a>
-            </div>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 mt-6 h-11 px-6 bg-dark-elevated border border-border-dark hover:border-gold/40 text-text-dark-secondary hover:text-gold text-[13px] font-semibold rounded-full transition-all duration-200"
+            >
+              Contact Us
+            </a>
           </div>
-          
-          {/* Right Floating Clean White Enquiry Form Card */}
-          <div className="lg:col-span-6">
-            <div className="bg-surface-clean rounded-xl p-space-xl shadow-2xl">
-              <div className="mb-space-md">
-                <h3 className="font-headline-sm text-headline-sm text-on-surface">
-                  Make an Enquiry
-                </h3>
-                <p className="font-body-dense text-body-dense text-secondary mt-0.5">
-                  Our dedicated Kolkata relationship manager will connect within 2
-                  hours.
-                </p>
-              </div>
-              <form className="flex flex-col gap-3.5" onSubmit={handleSubmit}>
-                {/* Name & Phone */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="flex flex-col gap-1">
-                    <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
-                      Full Name *
-                    </label>
-                    <input
-                      className="h-11 px-3 bg-surface-container-low text-on-surface font-body-default rounded focus:outline-none focus:bg-surface-clean"
-                      placeholder="Subrata Banerjee"
-                      required
-                      type="text"
-                      value={formData.fullName}
-                      onChange={(e) => handleChange("fullName", e.target.value)}
-                    />
-                    {errors.fullName && <span className="text-error font-label-ui text-xs">{errors.fullName}</span>}
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
-                      Mobile Number *
-                    </label>
-                    <div className="flex">
-                      <span className="inline-flex items-center px-2.5 bg-surface-container text-secondary text-body-dense rounded-l font-semibold">
-                        +91
-                      </span>
-                      <input
-                        className="h-11 px-3 w-full bg-surface-container-low text-on-surface font-body-default rounded-r focus:outline-none focus:bg-surface-clean"
-                        placeholder="98300 XXXXX"
-                        required
-                        type="tel"
-                        maxLength={10}
-                        value={formData.mobileNo}
-                        onChange={(e) => handleChange("mobileNo", e.target.value.replace(/\D/g, "").slice(0, 10))}
-                      />
-                    </div>
-                    {errors.mobileNo && <span className="text-error font-label-ui text-xs">{errors.mobileNo}</span>}
-                  </div>
-                </div>
-                {/* Email */}
-                <div className="flex flex-col gap-1">
-                  <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
-                    Email Address
-                  </label>
-                  <input
-                    className="h-11 px-3 bg-surface-container-low text-on-surface font-body-default rounded focus:outline-none focus:bg-surface-clean"
-                    placeholder="subrata.b@gmail.com"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleChange("email", e.target.value)}
-                  />
-                  {errors.email && <span className="text-error font-label-ui text-xs">{errors.email}</span>}
-                </div>
-                {/* Property Type & Location */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="flex flex-col gap-1">
-                    <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
-                      Property Type
-                    </label>
-                    <Select
-                      options={propertyTypeOptions}
-                      placeholder="Select Type"
-                      value={formData.propertyType}
-                      onChange={(val) => handleChange("propertyType", val)}
-                    />
-                    {errors.propertyType && <span className="text-error font-label-ui text-xs">{errors.propertyType}</span>}
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
-                      Preferred Location
-                    </label>
-                    <Select
-                      options={locationOptions}
-                      placeholder="Select Location"
-                      value={formData.preferredLocation}
-                      onChange={(val) => handleChange("preferredLocation", val)}
-                    />
-                    {errors.preferredLocation && <span className="text-error font-label-ui text-xs">{errors.preferredLocation}</span>}
-                  </div>
-                </div>
-                {/* Budget Range */}
-                <div className="flex flex-col gap-1">
-                  <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
-                    Estimated Budget Band
-                  </label>
-                  <Select
-                    options={budgetOptions}
-                    placeholder="Select Budget"
-                    value={formData.estimatedBudgetBand}
-                    onChange={(val) => handleChange("estimatedBudgetBand", val)}
-                  />
-                  {errors.estimatedBudgetBand && <span className="text-error font-label-ui text-xs">{errors.estimatedBudgetBand}</span>}
-                </div>
-                {/* Message */}
-                <div className="flex flex-col gap-1">
-                  <label className="font-label-ui text-label-ui uppercase tracking-wider text-secondary">
-                    Specific Requirements
-                  </label>
-                  <textarea
-                    className="p-3 bg-surface-container-low text-on-surface font-body-default rounded focus:outline-none focus:bg-surface-clean resize-none"
-                    placeholder="e.g. South-facing balcony, ready-to-move by Diwali..."
-                    rows={2}
-                    value={formData.specificRequirements}
-                    onChange={(e) => handleChange("specificRequirements", e.target.value)}
-                  ></textarea>
-                  {errors.specificRequirements && <span className="text-error font-label-ui text-xs">{errors.specificRequirements}</span>}
-                </div>
-                {/* Submit */}
-                <button
-                  className="w-full h-12 bg-primary hover:bg-primary-container text-on-primary font-label-ui text-body-default font-semibold rounded shadow-md transition-all duration-200 mt-1 flex items-center justify-center gap-2 hover:-translate-y-[2px] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
-                  type="submit"
-                  disabled={isLoading}
-                >
-                  <span className="">{isLoading ? "Submitting..." : "Submit Enquiry"}</span>
-                  {!isLoading && (
-                    <span className="material-symbols-outlined text-[18px]">
-                      send
-                    </span>
-                  )}
-                </button>
-              </form>
-            </div>
+
+          {/* Right column - FAQs */}
+          <div className="anim-right lg:col-span-8">
+            {FAQS.map((faq, i) => (
+              <FAQItem
+                key={i}
+                faq={faq}
+                isOpen={openIndex === i}
+                onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+              />
+            ))}
           </div>
         </div>
-      </motion.div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
     </section>
   );
 }

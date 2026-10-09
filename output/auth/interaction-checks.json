@@ -1,0 +1,9 @@
+{
+  "passed": [
+    "login and registration validation block invalid API requests",
+    "first invalid field receives focus",
+    "existing login/register payloads, refresh and /buy redirect preserved",
+    "API and Google-only account errors stay on the form",
+    "Google sign-in success redirect and recoverable failure state"
+  ]
+}
