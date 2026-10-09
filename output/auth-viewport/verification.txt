@@ -1,0 +1,6 @@
+PASS: login SSR contains the standalone account shell, all required/autocomplete fields, Google action, page switch, home, support and legal links.
+PASS: register SSR contains the standalone account shell, all required/autocomplete fields, Google action, page switch, home, support and legal links.
+Production build/TypeScript, scoped ESLint, formatting and whitespace checks passed. Live viewport fit is not visually verified; browser preview remains blocked on its connection-error document. Only the form panel may scroll under constrained height or expanded validation feedback.
+login Lighthouse: {'accessibility': 100, 'best-practices': 96}. Only console failure is the pre-existing anonymous session HTTP 401. Lighthouse does not verify screen fit visually.
+register Lighthouse: {'accessibility': 100, 'best-practices': 96}. Only console failure is the pre-existing anonymous session HTTP 401. Lighthouse does not verify screen fit visually.
+Aligned account layout: final production build/TypeScript, scoped ESLint, formatting, whitespace and both SSR structure checks passed. No extra login fields are rendered; shared field-area space is CSS only. Live tab/action coordinates remain unmeasured because the browser preview is unavailable. The saved accessibility audits predate this alignment change.

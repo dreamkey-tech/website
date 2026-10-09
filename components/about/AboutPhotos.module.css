@@ -1,0 +1,42 @@
+.officeHero img {
+  object-position: 50% 70%;
+}
+.intro {
+  max-width: 780px;
+  margin-bottom: 32px;
+}
+.intro p {
+  margin-top: 18px;
+  color: var(--home-text-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+.photo {
+  position: relative;
+  aspect-ratio: 1.15;
+  margin: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--home-surface-muted);
+}
+.photo img {
+  object-fit: cover;
+}
+@media (max-width: 640px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .photo {
+    aspect-ratio: 1;
+    border-radius: 18px;
+  }
+  .intro p {
+    font-size: 13px;
+  }
+}

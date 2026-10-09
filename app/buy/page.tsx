@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+// import Image from "next/image"; // Restore with the intro section below.
 import Link from "next/link";
 import { connection } from "next/server";
 import { X, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
@@ -45,6 +45,10 @@ export default async function BuyPage({
   return (
     <div className={interior.page} id="page-content">
       <div className={interior.container}>
+        <h1 className={interior.srOnly} id="buy-title">
+          Homes to buy in Kolkata
+        </h1>
+        {/* Temporarily hidden intro. To restore: remove the hidden h1 above, uncomment this section and restore the Image import.
         <section className={styles.intro} aria-labelledby="buy-title">
           <div>
             <p className={interior.eyebrow}>Buy in Kolkata</p>
@@ -69,6 +73,7 @@ export default async function BuyPage({
             />
           </div>
         </section>
+        */}
         <BuySearch key={formKey} filters={filters} />
         <section
           id="homes"

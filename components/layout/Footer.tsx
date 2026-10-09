@@ -1,46 +1,54 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PhoneCall, Envelope, MapPin, InstagramLogo, FacebookLogo, LinkedinLogo, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import { PhoneCall, Envelope, MapPin } from "@phosphor-icons/react/dist/ssr";
+import FooterSocialLinks from "./FooterSocialLinks";
+import FooterMap from "./FooterMap";
+import linkStyles from "./FooterTextLink.module.css";
 
 const FOOTER_LINKS = {
   Explore: [
-    { label: "Buy a Property",    href: "/buy"     },
-    { label: "Rent a Property",   href: "/rent"    },
-    { label: "Sell Your Property",href: "/contact" },
-    { label: "New Projects",      href: "/buy"     },
+    { label: "Buy a Property", href: "/buy" },
+    { label: "Rent a Property", href: "/rent" },
+    { label: "Sell Your Property", href: "/contact" },
+    { label: "New Projects", href: "/buy" },
   ],
   Company: [
-    { label: "About Dream Key",   href: "/about"   },
-    { label: "Our Services",      href: "/services"},
-    { label: "Careers",           href: "/careers" },
-    { label: "Contact Us",        href: "/contact" },
+    { label: "About Dream Key", href: "/about" },
+    { label: "Our Services", href: "/services" },
+    { label: "Careers", href: "/careers" },
+    { label: "Contact Us", href: "/contact" },
   ],
   Legal: [
-    { label: "Privacy Policy",       href: "/privacy"            },
-    { label: "Terms & Conditions",   href: "/terms-and-conditions"},
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms & Conditions", href: "/terms-and-conditions" },
   ],
 };
-
-const SOCIAL = [
-  { label: "Instagram", href: "#", icon: <InstagramLogo size={18} weight="fill" /> },
-  { label: "Facebook",  href: "#", icon: <FacebookLogo  size={18} weight="fill" /> },
-  { label: "LinkedIn",  href: "#", icon: <LinkedinLogo  size={18} weight="fill" /> },
-  { label: "WhatsApp",  href: "https://api.whatsapp.com/send?phone=918697559123", icon: <WhatsappLogo size={18} weight="fill" /> },
-];
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark-raised border-t border-border-dark" aria-label="Footer">
+    <footer
+      className="bg-dark-raised border-t border-border-dark"
+      aria-label="Footer"
+    >
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         {/* Main footer grid */}
         <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2 flex flex-col gap-5">
-            <Link href="/" className="flex items-center gap-3 w-fit" aria-label="Dream Key Reality home">
+            <Link
+              href="/"
+              className="flex items-center gap-3 w-fit"
+              aria-label="Dream Key Reality home"
+            >
               <div className="relative w-8 h-8">
-                <Image src="/logo2.png" alt="Dream Key logo" fill className="object-contain" />
+                <Image
+                  src="/logo2.png"
+                  alt="Dream Key logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div className="flex flex-col leading-none">
                 <span className="font-display text-[16px] font-bold text-white">
@@ -53,41 +61,48 @@ export default function Footer() {
             </Link>
 
             <p className="text-text-dark-secondary text-body-dense leading-relaxed max-w-xs">
-              Kolkata&#39;s trusted real estate broker since 2012, connecting buyers, sellers,
-              and renters with verified properties across the city.
+              Kolkata&#39;s trusted real estate broker since 2012, connecting
+              buyers, sellers, and renters with verified properties across the
+              city.
             </p>
 
             {/* Contact */}
             <div className="flex flex-col gap-2.5 text-[13px]">
-              <a href="tel:+918697559123" className="flex items-center gap-2.5 text-text-dark-secondary hover:text-gold transition-colors">
-                <PhoneCall size={14} weight="duotone" className="text-gold shrink-0" />
+              <a
+                href="tel:+918697559123"
+                className={`${linkStyles.link} ${linkStyles.compact} flex items-center gap-2.5 text-text-dark-secondary`}
+              >
+                <PhoneCall
+                  size={14}
+                  weight="duotone"
+                  className="text-gold shrink-0"
+                />
                 +91 86975 59123
               </a>
-              <a href="mailto:info@dreamkeykol.com" className="flex items-center gap-2.5 text-text-dark-secondary hover:text-gold transition-colors">
-                <Envelope size={14} weight="duotone" className="text-gold shrink-0" />
+              <a
+                href="mailto:info@dreamkeykol.com"
+                className={`${linkStyles.link} ${linkStyles.compact} flex items-center gap-2.5 text-text-dark-secondary`}
+              >
+                <Envelope
+                  size={14}
+                  weight="duotone"
+                  className="text-gold shrink-0"
+                />
                 info@dreamkeykol.com
               </a>
               <div className="flex items-start gap-2.5 text-text-dark-secondary">
-                <MapPin size={14} weight="duotone" className="text-gold shrink-0 mt-0.5" />
+                <MapPin
+                  size={14}
+                  weight="duotone"
+                  className="text-gold shrink-0 mt-0.5"
+                />
                 New Town, Kolkata - 700156
               </div>
             </div>
 
             {/* Social */}
-            <div className="flex items-center gap-3 mt-1">
-              {SOCIAL.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="w-9 h-9 rounded-full bg-dark-elevated border border-border-dark flex items-center justify-center text-text-dark-secondary hover:text-gold hover:border-gold/30 transition-all duration-200 active:scale-95"
-                >
-                  {s.icon}
-                </a>
-              ))}
-            </div>
+            <FooterSocialLinks legacy />
+            <FooterMap legacy />
           </div>
 
           {/* Link columns */}
@@ -101,7 +116,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[13px] text-text-dark-secondary hover:text-gold transition-colors duration-200"
+                      className={`${linkStyles.link} ${linkStyles.compact} text-[13px] text-text-dark-secondary`}
                     >
                       {link.label}
                     </Link>
@@ -115,7 +130,8 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-border-dark py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[12px] text-text-dark-muted text-center sm:text-left">
-            &copy; {year} Dream Key Reality. All rights reserved. WBHIRA &amp; WBRERA compliant.
+            &copy; {year} Dream Key Reality. All rights reserved. WBHIRA &amp;
+            WBRERA compliant.
           </p>
           <p className="text-[12px] text-text-dark-muted">
             Built with care in Kolkata.

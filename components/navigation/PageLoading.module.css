@@ -1,0 +1,91 @@
+.screen {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  display: grid;
+  place-items: center;
+  background: var(--home-page);
+  color: var(--home-text);
+  font-family: var(--font-plus-jakarta), sans-serif;
+  pointer-events: none;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+  animation: appear 160ms ease 150ms both;
+}
+.logo {
+  width: 160px;
+  height: 64px;
+  object-fit: cover;
+}
+.brand {
+  margin-top: 4px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+}
+.brand span {
+  display: block;
+  margin-top: 6px;
+  color: var(--home-text-muted);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.dots {
+  display: flex;
+  gap: 7px;
+  margin-top: 24px;
+  height: 12px;
+  align-items: center;
+}
+.dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--home-accent);
+  animation: pulse 1s ease-in-out infinite;
+}
+.dots span:nth-child(2) {
+  animation-delay: 140ms;
+}
+.dots span:nth-child(3) {
+  animation-delay: 280ms;
+}
+.label {
+  margin-top: 14px;
+  color: var(--home-text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .content,
+  .dots span {
+    animation: none;
+  }
+}

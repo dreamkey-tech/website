@@ -1,0 +1,59 @@
+.socials {
+  --social-text: var(--home-text-muted);
+  margin-top: 20px;
+}
+.legacy {
+  --social-text: var(--color-text-dark-secondary);
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.socials .link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  color: var(--social-text);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.link[data-platform="instagram"] {
+  --social-brand: #d62976;
+}
+.link[data-platform="youtube"] {
+  --social-brand: #ff0000;
+}
+.link[data-platform="facebook"] {
+  --social-brand: #0866ff;
+}
+.link[data-platform="linkedin"] {
+  --social-brand: #0a66c2;
+}
+.link[data-platform="whatsapp"] {
+  --social-brand: #25d366;
+}
+.socials .link:is(:hover, :focus-visible) {
+  color: var(--social-brand);
+  text-decoration: none;
+}
+.link[data-platform="instagram"]:is(:hover, :focus-visible) svg {
+  fill: var(--instagram-gradient);
+}
+.socials .link:focus-visible {
+  outline: 2px solid var(--home-focus);
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .socials .link {
+    transition: none;
+  }
+}

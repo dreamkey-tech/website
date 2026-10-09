@@ -18,7 +18,7 @@
   line-height: 1.9;
   margin-top: 26px;
 }
-.brand > a:last-child,
+.brand > .contactLink,
 .address > a {
   display: inline-flex;
   align-items: center;
@@ -34,6 +34,8 @@
 }
 .top nav > a {
   display: block;
+  width: fit-content;
+  max-width: 100%;
   font-size: 12px;
   color: var(--home-text-muted);
   padding-block: 9px;
@@ -71,11 +73,6 @@
   min-height: 36px;
   font-size: 10px;
   color: var(--home-text-muted);
-}
-.footer a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--home-accent);
-  text-underline-offset: 5px;
 }
 .footer :focus-visible {
   outline: 2px solid var(--home-focus);

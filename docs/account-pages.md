@@ -30,3 +30,19 @@ Final mobile Lighthouse:
 The best-practices deduction comes from the existing anonymous session check returning HTTP 401. No authentication/session behavior was changed to silence it. Simulated LCP remains above the 2.5s target.
 
 All 24 landing baseline file hashes remain unchanged, and the browser still renders the original `.home-header` on `/`. Privacy and Terms legal copy remains unchanged. Temporary public dark-preview files were removed. Screenshots, original form snapshots, interaction checks, and audits are saved in `output/auth/`.
+
+## Viewport fit
+
+The later viewport-fit request removes the account shell's inherited marketing-page padding and the fixed 600px photo/layout minimums. The shared shell now occupies `100dvh`, with a three-row grid for the header, remaining-height photo/form area, and support/legal footer. Theme, typography and focus styling are retained locally in the account CSS module; the marketing page styles no longer size the account container.
+
+Headings, controls and spacing adapt to screen height, with a compact layout at heights up to 800px. Inputs and primary actions retain a minimum 44px height, and mobile inputs retain 16px text. The photo remains hidden below 900px. The outer page has no scrolling; if a very short viewport, zoom, keyboard or validation feedback exceeds the available form space, only the form panel scrolls, preserving access to every field, error and action. No authentication logic, text, routes or legal links are changed.
+
+Production build/TypeScript, scoped lint, formatting and SSR validation passed for this revision. Both pages scored 100 accessibility and 96 best practices in fresh Lighthouse audits; the only reported console error remains the anonymous session HTTP 401. SSR HTML, audit reports and verification notes are saved in `output/auth-viewport/`. Live viewport measurements and screenshots remain pending because the in-app preview is still on a connection-error document blocked by the browser tool's URL policy. Earlier screenshots and performance scores above predate this layout revision.
+
+## Stable account switch positions
+
+The follow-up alignment request anchors both forms to the same top padding instead of vertically centring different-height content. A shared `fields` wrapper reserves space for three label/input rows and the registration password hint. Login uses the same minimum height, with its help link aligned to the bottom of this area; the submit, divider and Google button consequently share the same vertical positions in the default state. The reserved space is layout only: login still renders just its email and password fields.
+
+Container queries reserve a second heading line for narrow panels, and a second description line for very narrow panels, so different copy wrapping does not shift the following actions between modes. Expanded errors can grow the form naturally and remain accessible in the existing form-panel scroll area. The tab links retain the same position regardless of content growth.
+
+Final production build/TypeScript, scoped ESLint, formatting, whitespace and SSR checks passed. Both pages retain their original field sets and active tabs, with the submit button still inside its form. SSR responses and notes are saved alongside the viewport checks under `output/auth-viewport/`; the existing audit reports predate this alignment adjustment. Live coordinate measurements remain pending due to the preview browser limitation described above.
