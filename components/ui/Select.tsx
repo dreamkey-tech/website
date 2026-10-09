@@ -1,7 +1,5 @@
 'use client';
 import React, { useState, useRef, useEffect, useId } from 'react';
-import { motion } from 'motion/react';
-
 interface SelectOption {
   value: string;
   label: string;
@@ -104,14 +102,15 @@ export default function Select({
           <span className={selected ? 'text-[#1a1c15]' : 'text-[#5a5f62]'}>
             {selected ? selected.label : placeholder}
           </span>
-          <motion.span
-            animate={{ rotate: isOpen ? 180 : 0 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="material-symbols-outlined text-[18px] flex-shrink-0"
-            style={{ color: isOpen ? 'var(--color-primary)' : '#5a5f62' }}
+          <span
+            className="material-symbols-outlined text-[18px] flex-shrink-0 transition-transform duration-200 ease-in-out"
+            style={{ 
+              color: isOpen ? 'var(--color-primary)' : '#5a5f62',
+              transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)'
+            }}
           >
             expand_more
-          </motion.span>
+          </span>
         </button>
 
         {/* Dropdown — CSS transition only, zero flicker */}

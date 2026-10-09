@@ -1,131 +1,168 @@
 "use client";
 
-import { motion } from "motion/react";
-import Link from "next/link";
-import { fadeUp, fadeLeft, fadeRight, staggerContainer, staggerContainerFast, smoothTransition, viewportOnce } from "@/lib/animations";
+import { useRef } from "react";
+import {
+  ShieldCheck,
+  Medal,
+  HandCoins,
+  ClockCounterClockwise,
+  Globe,
+  HeartStraight,
+} from "@phosphor-icons/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
+
+interface Feature {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  accent: string;
+}
+
+const FEATURES: Feature[] = [
+  {
+    icon: <ShieldCheck size={24} weight="duotone" />,
+    title: "100% Verified Listings",
+    description:
+      "Every property on our platform is physically inspected, legally vetted, and documented before you see it.",
+    accent: "text-emerald-400",
+  },
+  {
+    icon: <Medal size={24} weight="duotone" />,
+    title: "12+ Years of Expertise",
+    description:
+      "A decade of navigating Kolkata's property market gives us the edge to find deals others miss.",
+    accent: "text-gold",
+  },
+  {
+    icon: <HandCoins size={24} weight="duotone" />,
+    title: "Transparent Pricing",
+    description:
+      "No hidden charges. Our fee structure is disclosed upfront. What you see is what you pay.",
+    accent: "text-blue-400",
+  },
+  {
+    icon: <ClockCounterClockwise size={24} weight="duotone" />,
+    title: "24-Hour Shortlisting",
+    description:
+      "Share your requirements in the morning. Receive a curated property list by evening, guaranteed.",
+    accent: "text-purple-400",
+  },
+  {
+    icon: <Globe size={24} weight="duotone" />,
+    title: "City-Wide Network",
+    description:
+      "From New Town and Salt Lake to South Kolkata, our network covers every major residential corridor.",
+    accent: "text-cyan-400",
+  },
+  {
+    icon: <HeartStraight size={24} weight="duotone" />,
+    title: "Long-Term Relationship",
+    description:
+      "We do not vanish after handover. Resale, rental, or legal queries, your agent stays reachable.",
+    accent: "text-rose-400",
+  },
+];
 
 export default function WhyChooseUs() {
-  const benefits = [
-    {
-      icon: "explore",
-      title: "Local Expertise",
-      desc: "Hyper-local valuation intelligence spanning North heritage, South boulevards, and East corridors.",
-      colorClass: "bg-primary/10 text-primary",
-    },
-    {
-      icon: "tune",
-      title: "Tailored Recommendations",
-      desc: "Zero algorithmic mass spam. Every match fits your exact commute, family layout, and budget.",
-      colorClass: "bg-tertiary/10 text-tertiary",
-    },
-    {
-      icon: "gavel",
-      title: "Legal & Title Verification",
-      desc: "Dedicated real estate advocates examine 30+ years of mother deeds, sanctions, and encumbrances.",
-      colorClass: "bg-primary/10 text-primary",
-    },
-    {
-      icon: "handshake",
-      title: "Transparent Pricing",
-      desc: "Zero hidden fees or marked-up rates. Developer price sheets shared directly with complete parity.",
-      colorClass: "bg-charcoal-pure/10 text-charcoal-pure",
-    },
-  ];
+  const containerRef = useRef<HTMLElement>(null);
+
+  useGSAP(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    gsap.from(".anim-header-1", {
+      y: 24,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".anim-header-1",
+        start: "top 80%",
+      }
+    });
+
+    gsap.from(".anim-header-2", {
+      y: 24,
+      opacity: 0,
+      duration: 0.6,
+      delay: 0.1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".anim-header-2",
+        start: "top 80%",
+      }
+    });
+
+    ScrollTrigger.batch(".anim-card", {
+      onEnter: (elements) => {
+        gsap.from(elements, {
+          y: 24,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.08,
+          ease: "power3.out",
+          overwrite: true
+        });
+      },
+      start: "top 85%",
+      once: true
+    });
+  }, { scope: containerRef });
 
   return (
-    <section className="w-full py-space-2xl bg-surface overflow-hidden">
-      <div className="max-w-[1320px] mx-auto px-margin-mobile md:px-margin">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-          {/* Left: Why Choose Details */}
-          <motion.div
-            className="lg:col-span-6 flex flex-col gap-space-md"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-          >
-            <motion.div variants={fadeLeft} transition={smoothTransition}>
-              <span className="font-label-ui text-label-ui text-primary uppercase tracking-widest font-semibold">
-                Why Dream <span className="text-primary">Key</span>
-              </span>
-              <h2 className="font-headline-lg-mobile md:font-headline-lg text-[20px] md:text-headline-lg text-on-surface font-bold md:font-semibold leading-tight mt-1 md:mt-2">
-                Authentic Advisory Backed by Legal Rigor
-              </h2>
-              <p className="font-body-default text-body-default text-secondary mt-2">
-                We replace aggressive property push with principled, hyper-local
-                consultation built on verifiable property records.
-              </p>
-            </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeUp}
-                  transition={{ ...smoothTransition, delay: index * 0.08 }}
-                  whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.10)" }}
-                  className="bg-surface-clean p-space-md rounded-xl shadow-sm transition-shadow duration-300 cursor-default"
-                >
-                  <div className={`w-10 h-10 rounded flex items-center justify-center mb-3 ${benefit.colorClass}`}>
-                    <span className="material-symbols-outlined text-[22px]">{benefit.icon}</span>
-                  </div>
-                  <h3 className="font-title-property text-title-property text-on-surface mb-1">{benefit.title}</h3>
-                  <p className="font-body-dense text-body-dense text-secondary">{benefit.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+    <section ref={containerRef} className="py-24 md:py-32 bg-dark-raised relative overflow-hidden" id="about">
+      {/* Top border gradient */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
-          {/* Right: Modern 3-Image Collage */}
-          <motion.div
-            className="lg:col-span-6 grid grid-cols-12 gap-space-md"
-            variants={staggerContainerFast}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-          >
-            <div className="col-span-7 flex flex-col gap-space-md">
-              <motion.div
-                variants={fadeRight}
-                transition={{ ...smoothTransition, delay: 0 }}
-                className="rounded-xl overflow-hidden shadow-md"
-                whileHover={{ scale: 1.02 }}
-              >
-                <img
-                  className="w-full h-56 object-cover transition-transform duration-700 hover:scale-105"
-                  alt="Modern architectural balcony overlooking greenery in Kolkata"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeZK-esgHbtGZPhwzEnSmW6Prqjp2fBKYFn1k0vLlFHhQ0v8JEqkrxB0jPqMsQb5YHqtuKL2ft_gNyvxyCIfYNOOkViGKvoVdRzk5FruTrk6T_00Fie9kFIjPhxrmypWNK40oeUMqkZGRZNT9Z4-UN3SY-5VLbm56k1qJ8ZsR1j2kvhz0-neyYYLZnHXlh572MtQmcw-ga0pkn83_ebzhuwLdlFf9O03bp0lzWarK4lm2353ENMp5c"
-                />
-              </motion.div>
-              <motion.div
-                variants={fadeRight}
-                transition={{ ...smoothTransition, delay: 0.12 }}
-                className="rounded-xl overflow-hidden shadow-md"
-                whileHover={{ scale: 1.02 }}
-              >
-                <img
-                  className="w-full h-44 object-cover transition-transform duration-700 hover:scale-105"
-                  alt="Architectural detail of contemporary Kolkata residential high-rise building"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuChbVK2-Up1I8kRbhZ3wBVZ1JiTSwplYoLvQNp9gLhFh61PkfPviiSIe1Xe_ytuQPpV9Cc8f8ZgMLoBdtkWMUsQbfhsChqIpWX8WTtQbWORk66i0LebaN8EV-2KE97Td6GovnKwrFxgZiX8qrSvZFwTj0XbjMFDEyv12nD1a6XwuXBqbJartOpuM4woQzqJ8rLBntr2tTxkUO59u1-xyrwGxNv_xjyEfbN_Mni_TrvZzKLUPPAqfv1B"
-                />
-              </motion.div>
-            </div>
-            <motion.div
-              variants={fadeRight}
-              transition={{ ...smoothTransition, delay: 0.2 }}
-              className="col-span-5 flex flex-col"
-              whileHover={{ scale: 1.02 }}
+      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
+        {/* Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 items-end">
+          <div className="anim-header-1">
+            <h2 className="font-display text-headline-lg text-white leading-tight">
+              Why Choose{" "}
+              <span className="text-gold">Dream Key</span>
+            </h2>
+          </div>
+          <p className="anim-header-2 text-text-dark-secondary text-body-lead leading-relaxed">
+            We are a full-service real estate broker, not just a listing portal.
+            Our clients stay with us because of the results and the trust we build together.
+          </p>
+        </div>
+
+        {/* Features grid - 3 col desktop, 2 col tablet, 1 col mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {FEATURES.map((feature, i) => (
+            <div
+              key={i}
+              className="anim-card opacity-0 group flex flex-col gap-4 p-6 bg-dark-elevated border border-border-dark rounded-2xl transition-all duration-300 hover:border-gold/25 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:-translate-y-1"
             >
-              <div className="rounded-xl overflow-hidden shadow-md h-full">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  alt="Sophisticated modern interior of a luxury master bedroom in Kolkata"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfwzJkmDAbNaFvPCr3sXmzlWzdl-pBU3men7HfQForXgqBbmPpFws-gS0ho-LtigMQe1PPPzncobV7dN33CezXXr0SGmc6uYZlbvxRcfndKtRmAc4jHcmHIISDes3yY-XYAXUdanF16NoqdIoEWkqzEAGJ83gejIo6SvhTXxw1t3CvEuh8VwzWM9ODF3-9uScsMHSrMHruX48PJR8HIuDNj0huygEd70zJb4QWsEhuY2QtD3Q-zT4t"
-                />
+              {/* Icon */}
+              <div className={`w-11 h-11 rounded-xl bg-dark-float border border-border-dark flex items-center justify-center transition-all duration-300 group-hover:border-gold/30 group-hover:bg-dark-raised ${feature.accent}`}>
+                {feature.icon}
               </div>
-            </motion.div>
-          </motion.div>
+
+              {/* Text */}
+              <div>
+                <h3 className="font-display text-[16px] font-semibold text-white mb-2 group-hover:text-gold transition-colors duration-200">
+                  {feature.title}
+                </h3>
+                <p className="text-text-dark-secondary text-body-dense leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* Bottom border gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
     </section>
   );
 }

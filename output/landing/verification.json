@@ -1,0 +1,25 @@
+{
+  "productionBuild": "passed",
+  "scopedLint": "passed",
+  "protectedHeroGalleryInteriorLegalSources": "unchanged",
+  "responsiveWidths": [
+    320,
+    390,
+    768
+  ],
+  "horizontalOverflow": false,
+  "testimonialNavigationAndKeyboard": "passed",
+  "enquiryPrefillAndBuyNavigation": "passed",
+  "futureDarkTokens": "verified; active site remains light",
+  "lighthouse": {
+    "performance": 92,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100
+  },
+  "cls": 0,
+  "lcpSeconds": 3.3,
+  "tbtMilliseconds": 79.5,
+  "knownConsoleWarning": "Unauthenticated existing account check returns HTTP 401",
+  "inventory": "Existing illustrative Buy catalog; testimonials are retained sample copy"
+}

@@ -1,0 +1,39 @@
+{
+  "sell": {
+    "performance": 94,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100,
+    "lcp": "3.0 s",
+    "cls": "0"
+  },
+  "rent": {
+    "performance": 91,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100,
+    "lcp": "3.5 s",
+    "cls": "0"
+  },
+  "about": {
+    "performance": 94,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100,
+    "lcp": "3.0 s",
+    "cls": "0"
+  },
+  "contact": {
+    "performance": 93,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100,
+    "lcp": "3.2 s",
+    "cls": "0"
+  },
+  "landing": {
+    "filesChecked": 24,
+    "changed": []
+  },
+  "temporaryTestApiRemoved": true
+}

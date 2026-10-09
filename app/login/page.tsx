@@ -1,15 +1,20 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { connection } from "next/server";
 import LoginForm from "@/components/auth/LoginForm";
+import AuthPageShell from "@/components/auth/AuthPageShell";
 
 export const metadata: Metadata = {
   title: "Login | Dream Key",
-  description: "Login to your Dream Key account to access your personalized real estate dashboard.",
+  description:
+    "Login to your Dream Key account to access your personalized real estate dashboard.",
+  icons: { icon: "/images/pages/favicon.png" },
 };
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  await connection();
   return (
-    <div className="min-h-screen flex items-center justify-center bg-surface-container-low px-margin-mobile md:px-margin">
+    <AuthPageShell>
       <LoginForm />
-    </div>
+    </AuthPageShell>
   );
 }

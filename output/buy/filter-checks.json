@@ -1,0 +1,11 @@
+{
+  "passed": [
+    "all eight original listing names, prices, locations, descriptions, sizes, configurations, and amenity copy preserved",
+    "query, multi-location, budget, max-price, bedroom, type, status, and combined amenities filtering",
+    "landing-page query values select matching homes during SSR",
+    "price/size sorting leaves catalog unchanged",
+    "multi-value filters survive URL round trips, page changes and resets",
+    "invalid input normalization and no-result queries",
+    "working buyer enquiry URLs for every listing"
+  ]
+}
