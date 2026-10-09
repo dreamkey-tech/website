@@ -113,51 +113,53 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
         aria-busy={busy}
         className={styles.form}
       >
-        {!isLogin && (
+        <div className={styles.fields}>
+          {!isLogin && (
+            <AuthField
+              name="name"
+              label="Full name"
+              value={values.name}
+              onChange={(value) => changeField("name", value)}
+              autoComplete="name"
+              placeholder="Your full name"
+              error={errors.name}
+              disabled={busy}
+            />
+          )}
           <AuthField
-            name="name"
-            label="Full name"
-            value={values.name}
-            onChange={(value) => changeField("name", value)}
-            autoComplete="name"
-            placeholder="Your full name"
-            error={errors.name}
+            name="email"
+            label="Email address"
+            type="email"
+            value={values.email}
+            onChange={(value) => changeField("email", value)}
+            autoComplete="email"
+            placeholder="you@example.com"
+            error={errors.email}
             disabled={busy}
           />
-        )}
-        <AuthField
-          name="email"
-          label="Email address"
-          type="email"
-          value={values.email}
-          onChange={(value) => changeField("email", value)}
-          autoComplete="email"
-          placeholder="you@example.com"
-          error={errors.email}
-          disabled={busy}
-        />
-        <AuthField
-          name="password"
-          label="Password"
-          type="password"
-          value={values.password}
-          onChange={(value) => changeField("password", value)}
-          autoComplete={isLogin ? "current-password" : "new-password"}
-          placeholder={isLogin ? "Enter your password" : "Create a password"}
-          hint={!isLogin ? "Use at least 6 characters." : undefined}
-          error={errors.password}
-          disabled={busy}
-        />
-        {Object.keys(errors).some((key) => !!errors[key as keyof Fields]) && (
-          <p className={styles.srOnly} role="alert">
-            Please check the highlighted fields.
-          </p>
-        )}
-        {isLogin && (
-          <Link className={styles.helpLink} href="/contact">
-            Need help signing in?
-          </Link>
-        )}
+          <AuthField
+            name="password"
+            label="Password"
+            type="password"
+            value={values.password}
+            onChange={(value) => changeField("password", value)}
+            autoComplete={isLogin ? "current-password" : "new-password"}
+            placeholder={isLogin ? "Enter your password" : "Create a password"}
+            hint={!isLogin ? "Use at least 6 characters." : undefined}
+            error={errors.password}
+            disabled={busy}
+          />
+          {Object.keys(errors).some((key) => !!errors[key as keyof Fields]) && (
+            <p className={styles.srOnly} role="alert">
+              Please check the highlighted fields.
+            </p>
+          )}
+          {isLogin && (
+            <Link className={styles.helpLink} href="/contact">
+              Need help signing in?
+            </Link>
+          )}
+        </div>
         <button className={styles.submit} type="submit" disabled={busy}>
           <span>
             {isLoading

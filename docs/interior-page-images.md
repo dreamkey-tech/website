@@ -2,6 +2,8 @@
 
 Generated with the built-in image generation tool. All scenes are illustrative, not photographs of available properties or Dream Key’s office. Originals are retained in Codex’s generated image directory; project files are WebP encodings.
 
+This description applies to the generated assets documented below. The About page now uses the client-supplied office photographs listed in the final section instead of `about-studio.webp`. That illustrative asset remains available to the other pages that use it.
+
 Design read: a calm editorial real-estate website for Kolkata buyers, sellers and tenants, continuing the landing page’s existing brand language. DESIGN_VARIANCE: 6; MOTION_INTENSITY: 3; VISUAL_DENSITY: 3.
 
 ## sell-residence
@@ -36,3 +38,20 @@ Exact prompt:
 
 > Use case: ads-marketing. Create a standalone clean premium architectural editorial photograph for a Kolkata real estate consultancy website. Wide landscape aspect ratio 3:2. Natural photorealistic materials, calm daylight, ivory/light gray walls, restrained charcoal details, a few warm wood details, uncluttered polished composition. No text, logo, watermark or people. No plants or planters on balconies, facades or roofs. This is an illustrative scene, not a real listed property or actual company office. Subject: Kolkata New Town-inspired urban neighbourhood seen from a modest elevated viewpoint, a neat broad avenue with palm trees and mature ground-level greenery, contemporary residential towers with simple white/gray rectilinear facades and realistic Indian urban streetscape. Low afternoon sunlight, clean natural blue sky, calm welcoming authentic Bengal city atmosphere. Composition led by the avenue toward high-rises, no foreign skyline, no famous monument collage, no waterfront claim.
 
+## Client-supplied About photographs, 9 October 2026
+
+Five renamed HEIC photographs from the folder supplied by the client were decoded with the bundled `heif-convert`, oriented using their EXIF metadata and converted from their embedded colour profile to sRGB. WebP copies use quality 85, preserve the photographs without generative retouching, and omit camera/location metadata. Original HEIC files and the old website assets are retained. New filenames avoid reusing cached portrait URLs.
+
+| Source filename | Website asset                           | Use                                 |
+| --------------- | --------------------------------------- | ----------------------------------- |
+| `Sayan.HEIC`    | `public/about/sayan-portrait.webp`      | Sayan Dutta portrait, 900 × 1200    |
+| `Siddhant.HEIC` | `public/about/siddhant-portrait.webp`   | Siddhant Singh portrait, 900 × 1200 |
+| `office2.HEIC`  | `public/about/office-meeting-room.webp` | About hero, 1350 × 1800             |
+| `office1.HEIC`  | `public/about/office-workspace.webp`    | Office gallery, 1350 × 1800         |
+| `office3.HEIC`  | `public/about/office-exterior.webp`     | Office gallery, 1350 × 1800         |
+
+The two replacement portraits use individual CSS object positions to keep faces inside the existing square cards; Mainak's photograph keeps its existing position. The reusable server-rendered `OfficeGallery` displays the two remaining office photographs with theme tokens and a single-column mobile layout. The About hero now has accurate office alt text. Other pages keep their existing illustrative images.
+
+The five source photographs and converted files were visually inspected. Browser layout verification remains limited by the preview tab's existing unsupported connection-error URL; build, lint and production media delivery are checked separately.
+
+Verification passed: production webpack build including TypeScript, scoped ESLint, formatting and diff whitespace checks. The production About response contains all five new image paths, correct portrait names and object positions, and Mainak's existing photograph; the illustrative office image is no longer rendered on this page. Next's image endpoint successfully delivered resized hero and portrait files. Reopened public WebP assets contain no EXIF or XMP metadata.

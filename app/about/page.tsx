@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import PagePhoto from "@/components/pages/PagePhoto";
 import PageCTA from "@/components/pages/PageCTA";
+import OfficeGallery from "@/components/about/OfficeGallery";
+import photoStyles from "@/components/about/AboutPhotos.module.css";
 import styles from "@/components/pages/Interior.module.css";
 
 export const metadata: Metadata = {
@@ -18,19 +20,22 @@ const founders = [
   {
     name: "Sayan Dutta",
     role: "Founder",
-    image: "/about/Sayan.webp",
+    image: "/about/sayan-portrait.webp",
+    imagePosition: "50% 35%",
     bio: "A passion for Kolkata’s property landscape and helping people find a place that feels right.",
   },
   {
     name: "Mainak Maji",
     role: "Co-Founder",
     image: "/about/mainak.webp",
+    imagePosition: "center bottom",
     bio: "Focused on luxury properties and building relationships that continue beyond a single transaction.",
   },
   {
     name: "Siddhant Singh",
     role: "Co-Founder",
-    image: "/about/siddhart.webp",
+    image: "/about/siddhant-portrait.webp",
+    imagePosition: "50% 65%",
     bio: "Committed to clear communication and a considered, transparent property journey.",
   },
 ];
@@ -67,9 +72,10 @@ export default async function AboutPage() {
             </div>
           </div>
           <PagePhoto
-            src="/images/pages/about-studio.webp"
-            alt="Illustrative welcoming consultation space with warm wood, architecture books, and a Kolkata-inspired view"
-            caption="Rooted in Kolkata. Focused on you."
+            src="/about/office-meeting-room.webp"
+            alt="Dream Key’s Kolkata office meeting area with a shared desk, seating and wood-panelled wall"
+            caption="Inside our Kolkata office"
+            className={photoStyles.officeHero}
             eager
           />
         </section>
@@ -129,6 +135,7 @@ export default async function AboutPage() {
             </div>
           ))}
         </section>
+        <OfficeGallery />
         <section
           className={styles.section}
           id="our-founders"
@@ -154,6 +161,7 @@ export default async function AboutPage() {
                   <Image
                     src={founder.image}
                     alt={founder.name}
+                    style={{ objectPosition: founder.imagePosition }}
                     fill
                     sizes="(max-width: 520px) 100vw, (max-width: 1440px) 33vw, 424px"
                   />

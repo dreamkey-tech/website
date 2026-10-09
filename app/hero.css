@@ -57,8 +57,22 @@
 .home-brand__descriptor { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--home-text-muted); }
 .home-header__right { display: flex; align-items: center; gap: 38px; }
 .home-header__links { display: flex; align-items: center; gap: 30px; }
-.home-header__links a { font-size: 13px; font-weight: 500; padding: 12px 0; transition: color 180ms; }
-.home-header__links a:hover { color: var(--home-text-muted); text-decoration: underline; text-underline-offset: 6px; text-decoration-color: var(--home-accent); }
+.home-header__links a { position: relative; font-size: 13px; font-weight: 500; padding: 12px 0; }
+.home-header__links a::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--home-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+  pointer-events: none;
+}
+.home-header__links a:hover::after,
+.home-header__links a:focus-visible::after { transform: scaleX(1); }
 .home-login { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 42px; padding: 0 18px; border: 1px solid var(--home-border); border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: background 180ms; }
 .home-login:hover { background: var(--home-surface-muted); }
 .home-account { position: relative; }
@@ -191,6 +205,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-header *, .home-hero * { transition: none !important; }
+  .home-header *, .home-header__links a::after, .home-hero * { transition: none !important; }
   .home-hero__consultation:hover svg, .hero-search__submit:active { transform: none; }
 }

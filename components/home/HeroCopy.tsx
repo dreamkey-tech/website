@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/ssr";
+import HeroCopyEntrance from "./HeroCopyEntrance";
 
 export default function HeroCopy() {
   return (
-    <div className="home-hero__copy">
+    <HeroCopyEntrance>
       <h1 id="hero-heading" className="home-hero__title">
         <span>Homes That Match</span>{" "}
         <em>Your Pace,</em>{" "}
@@ -16,6 +17,6 @@ export default function HeroCopy() {
       <Link href="/contact" className="home-hero__consultation">
         Let’s find your home <ArrowUpRight size={19} aria-hidden="true" />
       </Link>
-    </div>
+    </HeroCopyEntrance>
   );
 }

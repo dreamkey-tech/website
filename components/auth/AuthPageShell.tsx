@@ -5,10 +5,11 @@ import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import BrandLogo from "@/components/layout/BrandLogo";
 import interior from "@/components/pages/Interior.module.css";
 import styles from "./Auth.module.css";
+import linkStyles from "@/components/layout/FooterTextLink.module.css";
 
 export default function AuthPageShell({ children }: { children: ReactNode }) {
   return (
-    <div className={`${interior.page} ${styles.page}`} id="page-content">
+    <div className={styles.page} id="page-content">
       <div className={styles.container}>
         <header className={styles.header}>
           <a className={interior.skipLink} href="#account-form">
@@ -48,9 +49,24 @@ export default function AuthPageShell({ children }: { children: ReactNode }) {
         <footer className={styles.footer}>
           <p>© {new Date().getFullYear()} Dream Key Reality</p>
           <nav aria-label="Account support and legal information">
-            <Link href="/contact">Need help?</Link>
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            <Link
+              href="/contact"
+              className={`${linkStyles.link} ${linkStyles.compact}`}
+            >
+              Need help?
+            </Link>
+            <Link
+              href="/privacy"
+              className={`${linkStyles.link} ${linkStyles.compact}`}
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms-and-conditions"
+              className={`${linkStyles.link} ${linkStyles.compact}`}
+            >
+              Terms &amp; Conditions
+            </Link>
           </nav>
         </footer>
       </div>

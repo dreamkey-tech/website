@@ -3,6 +3,7 @@ export function isRedesignedPage(pathname: string) {
   return [
     "/buy",
     "/sell",
+    "/services",
     "/rent",
     "/about",
     "/contact",

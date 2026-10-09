@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+// import Image from "next/image"; // Restore with the intro section below.
 import { connection } from "next/server";
 import RentalBrowser from "@/components/pages/RentalBrowser";
 import PageCTA from "@/components/pages/PageCTA";
@@ -17,6 +17,10 @@ export default async function RentPage() {
   return (
     <div className={styles.page} id="page-content">
       <div className={styles.container}>
+        <h1 className={styles.srOnly} id="rent-title">
+          Rental homes in Kolkata
+        </h1>
+        {/* Temporarily hidden intro. To restore: remove the hidden h1 above, uncomment this section and restore the Image import.
         <section aria-labelledby="rent-title">
           <div className={styles.rentIntro}>
             <div>
@@ -46,6 +50,7 @@ export default async function RentPage() {
             </span>
           </div>
         </section>
+        */}
         <RentalBrowser />
         <PageCTA
           title="Still finding your neighbourhood?"

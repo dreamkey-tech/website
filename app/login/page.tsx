@@ -6,7 +6,7 @@ import AuthPageShell from "@/components/auth/AuthPageShell";
 export const metadata: Metadata = {
   title: "Login | Dream Key",
   description:
-    "Login to your Dream Key account to access your personalized real estate dashboard.",
+    "Log in to your Dream Key account and continue your property search in Kolkata.",
   icons: { icon: "/images/pages/favicon.png" },
 };
 

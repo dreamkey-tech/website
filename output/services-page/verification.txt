@@ -1,0 +1,11 @@
+Services page final verification
+
+Production webpack build including TypeScript: passed; /services is dynamic SSR.
+Scoped ESLint: passed. Prettier and diff whitespace: passed.
+Production response: one H1, four native FAQs, correct service categories, active services navigation, unique IDs, working anchor targets and image alts.
+All five local illustrative image assets present.
+Text contrast meets AA for light and future-dark token pairs; minimum computed ratio 4.59:1.
+Lighthouse accessibility: 100; best practices: 96.0.
+Only failing audit: existing auth/me unauthenticated 401 console response. No runtime error.
+Visual screenshot and interactive mobile/dark checks: unavailable because the preview tab is on its unsupported connection-error data URL.
+Landing-page files unchanged by this task. No commit or push.

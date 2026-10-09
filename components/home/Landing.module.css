@@ -100,10 +100,6 @@
   background: var(--home-surface);
   color: var(--home-text);
 }
-.photoButton:hover {
-  background: var(--home-accent);
-  color: var(--home-on-accent);
-}
 .management .photoButton:focus-visible {
   outline-color: var(--home-photo-text);
 }
