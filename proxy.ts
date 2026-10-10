@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 // Define the routes that require authentication
-const protectedRoutes = ['/dashboard', '/profile', '/settings'];
+const protectedRoutes = ['/profile', '/settings'];
 // Define the routes that should not be accessible if already authenticated
 const authRoutes = ['/login', '/register'];
 
@@ -27,7 +27,7 @@ export function proxy(request: NextRequest) {
   const isAuthRoute = authRoutes.some((route) => pathname.startsWith(route));
   
   if (isAuthRoute && hasAuthCookie) {
-    // Redirect them to the dashboard or home page
+    // Redirect them to the home page
     return NextResponse.redirect(new URL('/', request.url));
   }
 

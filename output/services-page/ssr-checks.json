@@ -1,0 +1,11 @@
+{
+  "one_h1": true,
+  "four_faqs": true,
+  "services_active_in_navigation": true,
+  "unique_ids": true,
+  "anchors_resolve": true,
+  "image_alts_present": true,
+  "service_categories_present": true,
+  "rental_owner_copy_present": true,
+  "no_legacy_services_grid": true
+}

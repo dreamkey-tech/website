@@ -1,0 +1,40 @@
+.link {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: inherit;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: inherit;
+  padding: inherit;
+  background: var(--home-accent);
+  color: var(--home-on-accent);
+  clip-path: circle(
+    var(--fill-radius, 0px) at var(--fill-x, 50%) var(--fill-y, 50%)
+  );
+  pointer-events: none;
+}
+
+/* A clipped duplicate keeps text readable over both light and future-dark fills. */
+.link:is(:focus-visible, :active) .fill {
+  clip-path: inset(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Solid hover is also available before hydration, without JS, or with reduced motion. */
+  .link:not([data-fill-motion="true"]):hover .fill {
+    clip-path: inset(0);
+  }
+}

@@ -1,0 +1,41 @@
+.link {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: var(--footer-underline-bottom, 5px);
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--home-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+  pointer-events: none;
+}
+
+.link:is(:hover, :focus-visible)::after {
+  transform: scaleX(1);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--home-focus);
+  outline-offset: 5px;
+}
+
+/* Unpadded legal/legacy links keep the line below their text without adding height. */
+.compact {
+  --footer-underline-bottom: -4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link::after {
+    transition: none;
+  }
+}

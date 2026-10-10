@@ -1,0 +1,21 @@
+{
+  "app/hero.css": "c643b75d741c446e7a8c2589e32cb60270470956d905ebb0c8f78985f1c5d927",
+  "components/home/HeroSection.tsx": "de490306772434941c23b047eb17ffbfd0c325a152c3c04a07963b113ba185a0",
+  "components/home/HeroCopy.tsx": "b8f00e15d65d6d8abec8de226fae639440494c72a53678274e4e38b452369fa8",
+  "components/home/HeroPropertySearch.tsx": "b974d596b021b20578cded219a026200aa26b1b41611deb20b4623a11cd1a1ae",
+  "components/home/HeroSearchField.tsx": "5cbd171d3e9bdde8dddc7cd8b45afa42f9ba1f1675c64768bbea96087033bfb2",
+  "components/home/DesignGallery.tsx": "9bf465854f151ad9ea565136f96a25209b23629e5f338f780a99d0a76f59e464",
+  "components/home/DesignGalleryCard.tsx": "b49ee03c91fede460d86292ea1107d15ce2a3f7e796ff286032f2194880e7577",
+  "components/home/DesignGallery.module.css": "cb80f5ad2366379264f82f1fa5842cc06cb0f5c1c1827d53c95db59dda8f82f6",
+  "components/layout/HomeNavbar.tsx": "bdf38f9fc4bc6ab27f73aa74c2686d194efddcd7e405df9747c6521abb873ff2",
+  "components/layout/BrandLogo.tsx": "c188b32ee6a67444bfbbe292841dd9a1541be096fb6c74ab53d3da4e029e7767",
+  "app/privacy/page.tsx": "85575b34ed26db4164f7d388ab1aec85e4f5b5022497668ef4126cb2be827170",
+  "app/terms-and-conditions/page.tsx": "a663e5373d07a7bb0a6a4328da7d3078b8d73567f09fe0718143013b0f07d143",
+  "app/buy/page.tsx": "aaff45e05f4873577e9b7d56fba96dbc4f86823bec98f2cbff1d98c171c286db",
+  "app/rent/page.tsx": "bb5309724a28a1fa085632c90203ca1e6711a90cf7fb47b0484ddd3228d0a984",
+  "app/about/page.tsx": "49b1537c183fdbd2c0096d4a58cb98a6338f6106f5ccd39c35a3bda82fa53f8b",
+  "app/contact/page.tsx": "4111b00d34d7a7006c0eba7826e0293be558598242d8aab2389af0aff9671951",
+  "app/sell/page.tsx": "e90ecd34521882035738556f80c7d626f9d071d53c9af238e1c684b9f2dde70a",
+  "app/login/page.tsx": "df621a90973a1b8ff9f628c72a4b1ba80dda54bad66fd48d25969b450caa5d86",
+  "app/register/page.tsx": "6b1ca96f390626d24bfa970075fc3f98f5cec18371e6d1e38b466f7b31f7921f"
+}

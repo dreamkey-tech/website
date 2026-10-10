@@ -1,0 +1,80 @@
+.frame {
+  position: relative;
+  max-width: 1568px;
+  margin-inline: auto;
+}
+.photo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.controls {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border: 1px solid rgb(250 250 250 / 0.3);
+  border-radius: 999px;
+  background: var(--home-photo-shade);
+  color: var(--home-photo-text);
+}
+.controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background 180ms ease;
+}
+.controls button:hover {
+  background: rgb(250 250 250 / 0.12);
+}
+.controls button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+.dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.5;
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease;
+}
+.controls button[aria-pressed="true"] .dot {
+  opacity: 1;
+  transform: scale(1.5);
+}
+@media (max-width: 767px) {
+  .frame {
+    padding-bottom: 60px;
+  }
+  .controls {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    background: var(--home-surface);
+    border-color: var(--home-border);
+    color: var(--home-text);
+  }
+  .controls button:hover {
+    background: var(--home-surface-muted);
+  }
+  .controls button:focus-visible {
+    outline-color: var(--home-focus);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .controls button,
+  .dot {
+    transition: none;
+  }
+}

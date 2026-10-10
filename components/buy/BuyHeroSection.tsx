@@ -20,10 +20,6 @@ export default function BuyHeroSection() {
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container-highest/20 backdrop-blur-md text-tertiary-fixed-dim font-label-ui text-label-ui mb-3">
-              <span className="material-symbols-outlined text-sm">verified_user</span>
-              <span>RERA REGULATED EXCLUSIVE PORTFOLIO</span>
-            </div>
             <h1 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-inverse-on-surface tracking-tight font-semibold">
               Find Your Next Home in Kolkata
             </h1>

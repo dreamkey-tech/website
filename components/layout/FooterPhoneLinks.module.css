@@ -1,0 +1,29 @@
+.list {
+  display: grid;
+  gap: 0;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--home-text);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.link svg {
+  flex-shrink: 0;
+}
+.legacy {
+  margin: 0;
+  color: var(--color-text-dark-secondary);
+  font-size: 13px;
+}
+.legacy .link svg {
+  color: var(--home-accent);
+}

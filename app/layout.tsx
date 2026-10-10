@@ -1,72 +1,87 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
+import "./hero.css";
+import HomeNavbar from "@/components/layout/HomeNavbar";
+import SiteHeader from "@/components/layout/SiteHeader";
 import Footer from "@/components/layout/Footer";
-import MobileBottomNav from "@/components/layout/MobileBottomNav";
+import HomeFooter from "@/components/layout/HomeFooter";
+import SiteFooter from "@/components/layout/SiteFooter";
+import PageHeader from "@/components/pages/PageHeader";
+import PageFooter from "@/components/pages/PageFooter";
 import { Toaster } from "sonner";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
+import FloatingEnquiry from "@/components/layout/FloatingEnquiry";
+import { AuthProvider } from "@/components/providers/AuthProvider";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const plusJakartaSans = localFont({
+  src: "../public/fonts/plus-jakarta-sans-variable.woff2",
   variable: "--font-plus-jakarta",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: "400 800",
+  display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const spaceGrotesk = localFont({
+  src: "../public/fonts/space-grotesk-variable.woff2",
   variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: "400 700",
+  display: "swap",
+});
+
+// The italic face echoes the architectural reference; body type stays Jakarta.
+const heroEditorial = localFont({
+  src: "../public/fonts/playfair-display-italic.woff2",
+  variable: "--font-hero-editorial",
+  weight: "400",
+  style: "italic",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Dream Key | Premier Real Estate in Kolkata",
-  description: "Find a Place You’ll Love to Call Home. Verified luxury apartments, premium high-rises, and prime residential developments across Kolkata.",
-  icons: {
-    icon: "/logo2.png",
+  title: "Dream Key Reality | Premier Real Estate in Kolkata",
+  description:
+    "Find a place you will love to call home. Verified luxury apartments, premium high-rises, and prime residential developments across Kolkata.",
+  icons: { icon: "/logo2.png" },
+  openGraph: {
+    title: "Dream Key Reality | Premier Real Estate in Kolkata",
+    description:
+      "Trusted real estate partner connecting buyers and sellers across Kolkata's finest neighbourhoods.",
+    type: "website",
   },
 };
 
-import { AuthProvider } from "@/components/providers/AuthProvider";
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" data-theme="light">
       <body
-        className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} bg-surface font-body-default text-body-default text-on-surface antialiased`}
+        className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} ${heroEditorial.variable} bg-dark-base font-body text-text-dark-primary antialiased`}
       >
         <AuthProvider>
-        <Navbar />
-        <main className="w-full pt-[116px] pb-16 xl:pb-0 bg-surface min-h-[calc(100vh-116px)]">
-          {children}
-        </main>
-        <Footer />
-        <MobileBottomNav />
-
-        {/* Quick Enquiry FAB — sits above bottom nav on mobile, bottom-6 on desktop */}
-        <aside className="fixed bottom-20 xl:bottom-6 right-4 xl:right-6 z-40">
-          <a
-            className="flex items-center gap-space-sm bg-primary hover:bg-primary-container text-on-primary px-space-md py-space-sm rounded-full shadow-lg border border-outline-variant/30 hover:shadow-xl transition-all duration-200 hover:-translate-y-1 active:scale-95"
-            href="https://api.whatsapp.com/send?phone=918697559123&text=I%20would%20like%20to%20set%20an%20appointment."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="material-symbols-outlined text-[18px]">edit_note</span>
-            <span className="font-label-ui text-label-ui uppercase tracking-wider font-semibold pr-1">
-              Quick Enquiry
-            </span>
-          </a>
-        </aside>
-        <Toaster position="top-right" richColors />
+          <SiteHeader
+            homeHeader={<HomeNavbar />}
+            interiorHeader={<PageHeader />}
+          />
+          <main className="w-full bg-dark-base pb-16 xl:pb-0">{children}</main>
+          <MobileBottomNav />
+          <SiteFooter
+            homeFooter={<HomeFooter />}
+            legacyFooter={<Footer />}
+            interiorFooter={<PageFooter />}
+          />
+          <FloatingEnquiry />
+          <Toaster
+            position="top-right"
+            richColors
+            toastOptions={{
+              style: {
+                background: "#242424",
+                border: "1px solid #333333",
+                color: "#ffffff",
+              },
+            }}
+          />
         </AuthProvider>
       </body>
     </html>

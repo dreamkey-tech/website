@@ -1,0 +1,200 @@
+import React from 'react';
+import Link from 'next/link';
+
+export default function TermsAndConditionsPage() {
+  return (
+    <div className="flex flex-col w-full bg-surface">
+      {/* Header */}
+      <section className="w-full bg-charcoal-pure text-surface py-20 md:py-28 px-margin-mobile md:px-margin text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-charcoal-pure to-charcoal-pure pointer-events-none" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-4">
+          <h1 className="font-display text-[40px] md:text-[56px] font-bold text-surface-clean tracking-tight">
+            Terms & Conditions
+          </h1>
+          <p className="font-label-ui text-label-ui text-primary font-semibold uppercase tracking-[0.2em] bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">
+            Last Updated: October 4, 2026
+          </p>
+        </div>
+      </section>
+
+      {/* Content */}
+      <section className="w-full py-16 md:py-24 px-margin-mobile md:px-margin">
+        <div className="max-w-3xl mx-auto flex flex-col gap-10 font-body-default text-body-default text-on-surface-variant">
+          
+          <div className="space-y-4 text-[16px] leading-relaxed">
+            <p>
+              Welcome to DreamKey Reality. These Terms & Conditions (“Terms”) govern your access to and use of our website and the real-estate-related information and services provided by DreamKey Reality (“DreamKey,” “we,” “us,” or “our”).
+            </p>
+            <p>
+              By accessing or using our website, you agree to these Terms. If you do not agree with these Terms, please discontinue using the website.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">1. About DreamKey Reality</h2>
+            <p className="leading-relaxed">DreamKey Reality provides real-estate consultancy and related services, which may include property discovery, buying and selling assistance, rental and leasing assistance, property marketing, and coordination between prospective clients, property owners, brokers, and other relevant parties.</p>
+            <p className="leading-relaxed">The specific services available may vary depending on the property, location, and individual arrangement.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">2. Use of Our Website</h2>
+            <p className="leading-relaxed">You agree to use our website only for lawful purposes. You must not:</p>
+            <ul className="list-disc pl-5 space-y-2 marker:text-primary">
+              <li>Submit false, misleading, or fraudulent information.</li>
+              <li>Use the website for any unlawful activity.</li>
+              <li>Attempt to gain unauthorized access to our systems or information.</li>
+              <li>Copy, distribute, or misuse website content without permission.</li>
+              <li>Interfere with the operation, security, or functionality of the website.</li>
+              <li>Use our contact details or enquiry facilities to send spam or harass others.</li>
+            </ul>
+            <p className="leading-relaxed">We reserve the right to restrict access to our website where reasonably necessary to protect our business, users, or systems.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">3. Property Information and Listings</h2>
+            <p className="leading-relaxed">Property details displayed on our website, including photographs, descriptions, prices, locations, sizes, availability, amenities, and other specifications, are provided for general informational purposes.</p>
+            <p className="leading-relaxed">Property information may be supplied by owners, developers, brokers, or other third parties. Although we aim to provide accurate and up-to-date information, we do not guarantee that every listing is complete, current, or error-free.</p>
+            <p className="leading-relaxed">Property availability, pricing, specifications, and other details may change without notice. Users should independently verify all relevant information before making a property-related decision.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">4. No Guarantee of Transactions or Returns</h2>
+            <p className="leading-relaxed">Our website and services are intended to assist users in exploring real-estate opportunities. We do not guarantee that:</p>
+            <ul className="list-disc pl-5 space-y-2 marker:text-primary">
+              <li>A particular property will remain available.</li>
+              <li>A transaction will be completed successfully.</li>
+              <li>A property will increase in value or generate a particular return.</li>
+              <li>Financing, approvals, possession, or other transaction requirements will be secured.</li>
+            </ul>
+            <p className="leading-relaxed">Any investment decision should be based on your own assessment and appropriate professional advice.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">5. Property Verification and Due Diligence</h2>
+            <p className="leading-relaxed">Before purchasing, renting, leasing, or investing in a property, users should independently verify relevant information, including:</p>
+            <ul className="list-disc pl-5 space-y-2 marker:text-primary">
+              <li>Ownership and title documents.</li>
+              <li>Applicable land-use permissions and building approvals.</li>
+              <li>Encumbrances, disputes, and other legal restrictions.</li>
+              <li>Applicable registrations and regulatory requirements, including RERA where relevant.</li>
+              <li>Taxes, maintenance charges, fees, and other financial obligations.</li>
+              <li>The property's physical condition, measurements, and actual availability.</li>
+            </ul>
+            <p className="leading-relaxed">Where appropriate, consult a qualified property lawyer, financial adviser, surveyor, or other professional.</p>
+            <p className="leading-relaxed">Unless expressly agreed in a separate written agreement, DreamKey Reality does not replace independent legal, financial, technical, or title verification.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">6. Brokerage, Consultancy Fees, and Other Charges</h2>
+            <p className="leading-relaxed">Any brokerage, consultancy fee, commission, service charge, or other payment applicable to a transaction will be communicated separately, where applicable, and should be agreed upon by the relevant parties before the service or transaction proceeds.</p>
+            <p className="leading-relaxed">Users should request clarification of applicable fees, payment terms, taxes, and refund conditions before making any payment.</p>
+            <p className="leading-relaxed">No fee or commission should be assumed solely from the information published on our website.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">7. User Enquiries and Communication</h2>
+            <p className="leading-relaxed">When you submit an enquiry, contact form, or property requirement, you agree to provide information that is accurate to the best of your knowledge.</p>
+            <p className="leading-relaxed">You authorize DreamKey Reality to use the contact information you provide to respond to your enquiry and communicate with you about relevant services or properties, subject to applicable law and our Privacy Policy.</p>
+            <p className="leading-relaxed">Submitting an enquiry does not create a brokerage agreement, agency relationship, or obligation to complete a transaction unless separately agreed.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">8. Third-Party Services and Relationships</h2>
+            <p className="leading-relaxed">Our services may involve communication or coordination with property owners, developers, brokers, banks, legal professionals, or other third parties.</p>
+            <p className="leading-relaxed">Such third parties may operate independently and may have their own terms, policies, and obligations. Unless expressly agreed otherwise in writing, DreamKey Reality is not responsible for their independent conduct, representations, services, or decisions.</p>
+            <p className="leading-relaxed">Any transaction-specific obligations should be documented in the relevant agreement between the parties.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">9. Intellectual Property</h2>
+            <p className="leading-relaxed">Unless otherwise stated, website content, branding, logos, text, graphics, design elements, and other materials belonging to DreamKey Reality are protected by applicable intellectual property laws.</p>
+            <p className="leading-relaxed">You may view and use this content for personal, non-commercial informational purposes. You must not reproduce, modify, distribute, publish, or commercially exploit our content without prior written permission, except where permitted by law.</p>
+            <p className="leading-relaxed">Property photographs, logos, and materials belonging to third parties remain subject to their respective rights.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">10. Limitation of Liability</h2>
+            <p className="leading-relaxed">To the extent permitted by applicable law, DreamKey Reality shall not be liable for losses arising from reliance on incomplete or outdated listing information, independent third-party conduct, temporary website unavailability, or decisions made without appropriate verification.</p>
+            <p className="leading-relaxed">Nothing in these Terms excludes or limits liability where such exclusion or limitation is prohibited by applicable law, including liability that cannot legally be waived.</p>
+            <p className="leading-relaxed">Any liability arising from a specific consultancy, brokerage, or property transaction will also be governed by the applicable written agreement and relevant law.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">11. Indemnity</h2>
+            <p className="leading-relaxed">To the extent permitted by applicable law, you agree to be responsible for losses or claims arising directly from your unlawful use of the website, fraudulent information, or infringement of another person's rights.</p>
+            <p className="leading-relaxed">This provision does not require you to indemnify DreamKey Reality for losses caused by our own unlawful conduct or where such an obligation is prohibited by law.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">12. Privacy and Data Protection</h2>
+            <p className="leading-relaxed">Your use of the website is also subject to our Privacy Policy, which explains how we collect, use, store, and disclose personal information.</p>
+            <p className="leading-relaxed">By using the website, you acknowledge that you have had the opportunity to review the Privacy Policy. Any consent required by applicable data protection law will be obtained separately where necessary.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">13. External Links</h2>
+            <p className="leading-relaxed">Our website may contain links to external websites or third-party platforms for convenience or informational purposes.</p>
+            <p className="leading-relaxed">We do not control all external websites and are not responsible for their content, availability, security, or privacy practices. Accessing such websites is at your own discretion.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">14. Changes to These Terms</h2>
+            <p className="leading-relaxed">We may update these Terms from time to time to reflect changes in our services, website, business practices, or applicable laws.</p>
+            <p className="leading-relaxed">Updated Terms will be published on this page with a revised “Last Updated” date. Your continued use of the website after updated Terms are published constitutes acceptance where recognized by applicable law.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">15. Governing Law and Jurisdiction</h2>
+            <p className="leading-relaxed">These Terms shall be governed by the laws of India.</p>
+            <p className="leading-relaxed">Subject to applicable law and the jurisdiction of any competent statutory or regulatory authority, disputes relating to these Terms shall be subject to the jurisdiction of the competent courts in <strong>Kolkata, West Bengal, India</strong>, where legally applicable.</p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="font-display text-[24px] font-bold text-on-surface pb-2 border-b border-border-subtle">16. Contact Us</h2>
+            <p className="leading-relaxed">For questions about these Terms & Conditions, please contact us:</p>
+            
+            <div className="bg-surface-container p-6 rounded-xl border border-border-subtle mt-4">
+              <h3 className="font-title-property text-[20px] font-bold text-on-surface mb-4">DreamKey Reality</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">mail</span>
+                  <div>
+                    <span className="block font-semibold text-on-surface">Email:</span>
+                    <a href="mailto:info@dreamkeykol.com" className="text-secondary hover:text-primary transition-colors">info@dreamkeykol.com</a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">call</span>
+                  <div>
+                    <span className="block font-semibold text-on-surface">Phone:</span>
+                    <a href="tel:+918697559123" className="text-secondary hover:text-primary transition-colors">+91 86975 59123</a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">language</span>
+                  <div>
+                    <span className="block font-semibold text-on-surface">Website:</span>
+                    <Link href="/" className="text-secondary hover:text-primary transition-colors">www.dreamkeykol.com</Link>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">location_on</span>
+                  <div>
+                    <span className="block font-semibold text-on-surface">Business Address:</span>
+                    <span className="text-secondary">AA 52 , st-69, AA block, Newtown ,kolkata -700156, Kolkata, West Bengal 700156</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <p className="leading-relaxed mt-6 italic text-secondary">
+              By continuing to use our website, you acknowledge that you have read and understood these Terms & Conditions.
+            </p>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  );
+}

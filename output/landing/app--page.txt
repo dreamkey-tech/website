@@ -1,0 +1,44 @@
+import HeroSection      from "@/components/home/HeroSection";
+import DesignGallery    from "@/components/home/DesignGallery";
+import FeaturedListings  from "@/components/home/FeaturedListings";
+import ValueProposition  from "@/components/home/ValueProposition";
+import HowItWorks        from "@/components/home/HowItWorks";
+import WhyChooseUs       from "@/components/home/WhyChooseUs";
+import Testimonials      from "@/components/home/Testimonials";
+import EnquirySection    from "@/components/home/EnquirySection";
+import FinalCTA          from "@/components/home/FinalCTA";
+import { connection } from "next/server";
+
+export default async function Home() {
+  await connection();
+  return (
+    <div className="flex flex-col w-full">
+      {/* 1. Server-rendered photographic hero */}
+      <HeroSection />
+
+      {/* Staggered design gallery, directly below the hero */}
+      <DesignGallery />
+
+      {/* 2. Property Carousel */}
+      <FeaturedListings />
+
+      {/* 3. Agency Comparison */}
+      <ValueProposition />
+
+      {/* 4. Client Journey (How We Work) */}
+      <HowItWorks />
+
+      {/* 5. Why Dream Key */}
+      <WhyChooseUs />
+
+      {/* 6. Testimonials carousel */}
+      <Testimonials />
+
+      {/* 7. FAQ accordion */}
+      <EnquirySection />
+
+      {/* 8. Contact form + details */}
+      <FinalCTA />
+    </div>
+  );
+}
