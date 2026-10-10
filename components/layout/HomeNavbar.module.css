@@ -1,0 +1,13 @@
+/* Share the interior header on phones/tablets without a hydration-time swap. */
+.mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}

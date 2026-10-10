@@ -109,6 +109,10 @@ The earlier instruction to leave the landing page untouched was scoped to interi
 
 ## Important components and current behavior — verified
 
+### Shared mobile landing header — verified, 10 October 2026
+
+The user requested using the Sell navbar on the mobile landing page. `HomeNavbar.tsx` reuses the exact shared `PageHeader` at widths up to 800px, matching its mobile breakpoint. `HomeNavbar.module.css` switches the server-rendered variants with CSS, avoiding a client viewport/hydration swap. Above 800px the original landing header remains, including its existing tablet menu. Only the visible header participates in keyboard/accessibility navigation. `PageHeader` accepts optional `className` and `contentId` props; Home passes `home-content` for the skip link, and interior routes keep `page-content`. Mobile navigation therefore shares the Sell menu's styling, account placement, destinations (including `/sell`), close-on-link and Escape handling.
+
 ### Mobile logo, hero capsule and FAQ follow-up — verified, 10 October 2026
 
 The user requested fixing phone logo clipping, temporarily commenting out the hero dot capsule on desktop/mobile, and opening Sell/Services answers smoothly on hover. `app/hero.css` now fits the key artwork using proportional image sizing/offsets based on `public/logo.webp`'s transparent margins; the artwork fits both the 52px home mark and 43px narrow interior mark without changing the asset. `HeroSlideshow.tsx` retains the capsule import/render as comments, and its CSS no longer reserves mobile space for hidden controls. Automatic rotation and failure/pause logic remain. Manual dot navigation is currently unavailable; reduced motion retains the static first view. A concurrent user edit commented out the riverside slide, so there are currently four active records; older five-slide notes describe the previous revision.
