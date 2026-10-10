@@ -54,9 +54,7 @@
   transform: scale(1.5);
 }
 @media (max-width: 767px) {
-  .frame {
-    padding-bottom: 60px;
-  }
+  /* Restore .frame { padding-bottom: 60px; } with the slide-selector capsule. */
   .controls {
     top: auto;
     bottom: 0;

@@ -51,8 +51,10 @@
   gap: 24px;
 }
 .home-brand { display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; }
-.home-brand__mark { width: 68px; height: 40px; position: relative; overflow: hidden; }
-.home-brand__mark img { position: absolute; width: 90px; max-width: none; height: 60px; left: -11px; top: -10px; }
+.home-brand__mark { width: 68px; height: 40px; position: relative; overflow: hidden; flex-shrink: 0; }
+/* Fit the key artwork inside the mark, excluding the source's transparent padding.
+   Percentages scale with every header/footer mark width, including narrow phones. */
+.home-brand__mark img { position: absolute; width: 136%; max-width: none; height: auto; left: -20%; top: 50%; transform: translateY(-46%); }
 .home-brand__name { display: grid; gap: 5px; font-size: 19px; font-weight: 700; letter-spacing: -0.7px; line-height: 1; }
 .home-brand__descriptor { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--home-text-muted); }
 .home-header__right { display: flex; align-items: center; gap: 38px; }
@@ -167,7 +169,6 @@
   .home-header__inner { height: 72px; padding: 0 20px; gap: 12px; }
   .home-brand { gap: 3px; }
   .home-brand__mark { width: 52px; }
-  .home-brand__mark img { left: -18px; width: 84px; height: 56px; top: -8px; }
   .home-brand__name { font-size: 16px; }
   .home-brand__descriptor { font-size: 8px; letter-spacing: 2px; }
   .home-login { min-height: 40px; padding: 0 13px; gap: 7px; }

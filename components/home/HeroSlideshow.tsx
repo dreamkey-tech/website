@@ -6,7 +6,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { HERO_IMAGE_SIZES, HERO_SLIDES } from "./hero-slides";
 import useHeroRotation from "./useHeroRotation";
-import HeroSlideControls from "./HeroSlideControls";
+// Restore alongside the JSX below if slide selectors are needed again.
+// import HeroSlideControls from "./HeroSlideControls";
 import styles from "./HeroSlideshow.module.css";
 
 if (typeof window !== "undefined") gsap.registerPlugin(useGSAP);
@@ -104,12 +105,13 @@ export default function HeroSlideshow({ children }: { children: ReactNode }) {
         </div>
         {children}
       </div>
+      {/* Slide-selector capsule temporarily hidden on desktop and mobile.
       {ready && (
         <HeroSlideControls
           active={rotation.active}
           onSelect={rotation.select}
         />
-      )}
+      )} */}
     </div>
   );
 }

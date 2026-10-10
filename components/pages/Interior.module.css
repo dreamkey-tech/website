@@ -439,6 +439,14 @@
 .faqList details[open] svg {
   transform: rotate(45deg);
 }
+.faqAnswer {
+  overflow: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .faqList svg {
+    transition: none;
+  }
+}
 .faqList p {
   color: var(--home-text-muted);
   margin-top: 16px;

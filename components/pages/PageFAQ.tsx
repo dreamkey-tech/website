@@ -1,5 +1,6 @@
 import { Plus } from "@phosphor-icons/react/dist/ssr";
 import styles from "./Interior.module.css";
+import FAQItem from "./FAQItem";
 
 export default function PageFAQ({
   items,
@@ -9,13 +10,16 @@ export default function PageFAQ({
   return (
     <div className={styles.faqList}>
       {items.map((item) => (
-        <details key={item.question}>
-          <summary>
-            {item.question}
-            <Plus size={20} aria-hidden="true" />
-          </summary>
-          <p>{item.answer}</p>
-        </details>
+        <FAQItem
+          key={item.question}
+          summary={
+            <summary>
+              {item.question}
+              <Plus size={20} aria-hidden="true" />
+            </summary>
+          }
+          answer={<p>{item.answer}</p>}
+        />
       ))}
     </div>
   );
