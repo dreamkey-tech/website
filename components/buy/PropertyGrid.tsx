@@ -1,4 +1,6 @@
 'use client';
+
+import Select from '@/components/ui/Select';
 import React, { useState } from 'react';
 import PropertyCard from './PropertyCard';
 
@@ -118,7 +120,6 @@ export default function PropertyGrid() {
         <div>
           <div className="flex items-center gap-2">
             <h2 className="font-title-property text-title-property font-bold text-on-surface">12 Properties Found</h2>
-            {/* <span className="px-2 py-0.5 rounded text-xs bg-surface-container-low text-tertiary-container font-semibold">WBRERA Verified</span> */}
           </div>
           <p className="text-body-dense text-on-surface-variant font-body-dense mt-0.5">Showing curated high-trust residential units in Kolkata & Metro outposts</p>
         </div>
@@ -126,12 +127,7 @@ export default function PropertyGrid() {
         <div className="flex items-center gap-3 self-stretch md:self-auto justify-between md:justify-end">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-secondary text-lg hidden sm:inline">sort</span>
-            <select className="bg-surface-container-low text-on-surface rounded px-3 py-1.5 font-label-ui text-label-ui focus:outline-none">
-              <option value="newest">Sort: Newest First</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="area-desc">Size: Largest First</option>
-            </select>
+            <Select ariaLabel="Sort properties" defaultValue="newest" variant="compact" options={[{"value": "newest", "label": "Sort: Newest First"}, {"value": "price-asc", "label": "Price: Low to High"}, {"value": "price-desc", "label": "Price: High to Low"}, {"value": "area-desc", "label": "Size: Largest First"}]} />
           </div>
           <div className="flex items-center bg-surface-container-low p-1 rounded">
             <button 

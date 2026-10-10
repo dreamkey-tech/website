@@ -23,8 +23,8 @@ export default function ServicesHero() {
         </a>
       </div>
       <PagePhoto
-        src="/images/pages/contact-kolkata.webp"
-        alt="Illustrative Kolkata-inspired neighbourhood with residential towers and tree-lined streets"
+        src="/images/pages/services-consultation-v1.webp"
+        alt="Illustrative property consultation with an agent and client reviewing documents beside a house model"
         className={styles.heroPhoto}
         eager
       />

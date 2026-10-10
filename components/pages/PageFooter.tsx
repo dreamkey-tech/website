@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import BrandLogo from "@/components/layout/BrandLogo";
 import FooterSocialLinks from "@/components/layout/FooterSocialLinks";
 import FooterMap from "@/components/layout/FooterMap";
+import FooterPhoneLinks from "@/components/layout/FooterPhoneLinks";
 import styles from "./Interior.module.css";
 import linkStyles from "@/components/layout/FooterTextLink.module.css";
 
@@ -17,12 +17,7 @@ export default function PageFooter() {
               A place to begin.
               <br />A partner for every next step.
             </p>
-            <a
-              className={`${styles.footerPhone} ${linkStyles.link}`}
-              href="tel:+918697559123"
-            >
-              +91 86975 59123 <ArrowUpRight size={18} aria-hidden="true" />
-            </a>
+            <FooterPhoneLinks />
             <FooterSocialLinks />
           </div>
           <nav aria-label="Explore">
@@ -73,8 +68,7 @@ export default function PageFooter() {
         </div>
         <div className={styles.footerBottom}>
           <p>
-            © {new Date().getFullYear()} Dream Key Reality. All rights
-            reserved. WBHIRA &amp; WBRERA compliant.
+            © {new Date().getFullYear()} Dream Key Reality. All rights reserved.
           </p>
           <span>Made for your next move.</span>
         </div>

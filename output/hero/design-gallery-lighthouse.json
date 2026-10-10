@@ -2841,7 +2841,7 @@
                 "height": 36
               },
               "snippet": "<p class=\"text-[12px] text-text-dark-muted text-center sm:text-left\">",
-              "nodeLabel": "© 2026 Dream Key Reality. All rights reserved. WBHIRA & WBRERA compliant.",
+              "nodeLabel": "© 2026 Dream Key Reality. All rights reserved.",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.7 (foreground color: #666666, background color: #242424, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
             },
             "subItems": {

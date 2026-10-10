@@ -1,3 +1,4 @@
+import Select from "@/components/ui/Select";
 import EnquiryField from "./EnquiryField";
 
 export default function SellerPropertyFields({ prefix }: { prefix: string }) {
@@ -5,13 +6,21 @@ export default function SellerPropertyFields({ prefix }: { prefix: string }) {
   return (
     <>
       <EnquiryField id={id("propertyType")} label="Property type">
-        <select id={id("propertyType")} name="propertyType" defaultValue="">
-          <option value="">Select type</option>
-          <option>Apartment</option>
-          <option>Independent house / villa</option>
-          <option>Land / plot</option>
-          <option>Commercial property</option>
-        </select>
+        <Select
+          id={id("propertyType")}
+          name="propertyType"
+          defaultValue={""}
+          options={[
+            { value: "", label: "Select type" },
+            { value: "Apartment", label: "Apartment" },
+            {
+              value: "Independent house / villa",
+              label: "Independent house / villa",
+            },
+            { value: "Land / plot", label: "Land / plot" },
+            { value: "Commercial property", label: "Commercial property" },
+          ]}
+        />
       </EnquiryField>
       <EnquiryField id={id("preferredLocation")} label="Property location">
         <input

@@ -17,7 +17,7 @@ export const propertyServices: PropertyService[] = [
     title: "Find a place to buy.",
     description:
       "Your location, budget and priorities shape the search. We explore property options through our broker and consultant network to help you find a suitable match.",
-    image: "/images/kolkata-urbana-inspired-hero.webp",
+    image: "/images/Buying.webp",
     imageAlt: "Illustrative Kolkata-inspired high-rise residential towers",
     href: "/buy",
     linkLabel: "Explore homes to buy",
@@ -28,7 +28,7 @@ export const propertyServices: PropertyService[] = [
     title: "Find your next rental.",
     description:
       "Looking for a rental or a tenant? We connect rental requirements and property information with relevant customers, brokers and consultants across our local network.",
-    image: "/images/pages/rent-living.webp",
+    image: "/images/service/Thoughtful_Rental_Search_at_Home.webp",
     imageAlt:
       "Illustrative bright living room with a Kolkata-inspired city view",
     href: "/rent",
@@ -40,7 +40,7 @@ export const propertyServices: PropertyService[] = [
     title: "Give your property a new chapter.",
     description:
       "Selling starts with reaching the right people. We share property information with relevant customers, brokers and consultants to connect your property with potential buyers.",
-    image: "/images/pages/sell-residence.webp",
+    image: "/images/Selling.webp",
     imageAlt:
       "Illustrative apartment living room overlooking Kolkata-inspired residential towers",
     href: "/sell",
@@ -52,7 +52,7 @@ export const propertyServices: PropertyService[] = [
     title: "Make sense of your options.",
     description:
       "Considering an investment or still defining your search? Our property investment and real estate consulting starts with your objectives, budget and preferred location.",
-    image: "/images/pages/about-studio.webp",
+    image: "/images/service/Real_Estate_Investment_Consultation.webp",
     imageAlt:
       "Illustrative consultation space overlooking a Kolkata-inspired river and bridge",
     href: "/contact",

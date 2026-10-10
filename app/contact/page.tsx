@@ -46,7 +46,7 @@ export default async function ContactPage({
         <div className={styles.contactGrid}>
           <div>
             <PagePhoto
-              src="/images/pages/contact-kolkata.webp"
+              src="/images/Dream_Key_Office_Call_2.webp"
               alt="Illustrative New Town-inspired avenue with contemporary Kolkata residential towers"
               className={styles.contactPhoto}
               eager

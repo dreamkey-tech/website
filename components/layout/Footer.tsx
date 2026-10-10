@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PhoneCall, Envelope, MapPin } from "@phosphor-icons/react/dist/ssr";
+import { Envelope, MapPin } from "@phosphor-icons/react/dist/ssr";
 import FooterSocialLinks from "./FooterSocialLinks";
 import FooterMap from "./FooterMap";
+import FooterPhoneLinks from "./FooterPhoneLinks";
 import linkStyles from "./FooterTextLink.module.css";
 
 const FOOTER_LINKS = {
@@ -68,17 +69,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="flex flex-col gap-2.5 text-[13px]">
-              <a
-                href="tel:+918697559123"
-                className={`${linkStyles.link} ${linkStyles.compact} flex items-center gap-2.5 text-text-dark-secondary`}
-              >
-                <PhoneCall
-                  size={14}
-                  weight="duotone"
-                  className="text-gold shrink-0"
-                />
-                +91 86975 59123
-              </a>
+              <FooterPhoneLinks legacy />
               <a
                 href="mailto:info@dreamkeykol.com"
                 className={`${linkStyles.link} ${linkStyles.compact} flex items-center gap-2.5 text-text-dark-secondary`}
@@ -130,8 +121,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-border-dark py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[12px] text-text-dark-muted text-center sm:text-left">
-            &copy; {year} Dream Key Reality. All rights reserved. WBHIRA &amp;
-            WBRERA compliant.
+            &copy; {year} Dream Key Reality. All rights reserved.
           </p>
           <p className="text-[12px] text-text-dark-muted">
             Built with care in Kolkata.

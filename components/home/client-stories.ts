@@ -1,4 +1,11 @@
 /** Existing sample copy retained for preview; replace with approved client reviews. */
+export type ClientStory = {
+  name: string;
+  role: string;
+  location: string;
+  quote: string;
+};
+
 export const CLIENT_STORIES = [
   {
     name: "Priya Mukherjee",
@@ -35,4 +42,4 @@ export const CLIENT_STORIES = [
     quote:
       "The legal due diligence they did on the property we chose revealed a title issue that would have cost us dearly. Saved us from a disaster.",
   },
-] as const;
+] as const satisfies readonly ClientStory[];

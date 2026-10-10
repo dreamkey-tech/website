@@ -4,6 +4,7 @@ import { useState, useTransition, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { SquaresFour, Rows } from "@phosphor-icons/react";
 import { SORTS, buyHref, type BuyFilters } from "./buy-data";
+import Select from "@/components/ui/Select";
 import styles from "./Buy.module.css";
 
 export default function BuyResults({
@@ -35,25 +36,20 @@ export default function BuyResults({
         <div className={styles.resultControls}>
           <div className={styles.sort}>
             <label htmlFor="buy-sort">Sort by</label>
-            <select
+            <Select
               id="buy-sort"
               value={filters.sort}
               disabled={pending}
-              onChange={(event) => {
-                const sort = event.target.value;
+              variant="compact"
+              options={SORTS.map(([value, label]) => ({ value, label }))}
+              onChange={(sort) => {
                 startTransition(() =>
                   router.push(buyHref(filters, { sort, page: 1 }), {
                     scroll: false,
                   }),
                 );
               }}
-            >
-              {SORTS.map(([value, label]) => (
-                <option key={value} value={value}>
-                  {label}
-                </option>
-              ))}
-            </select>
+            />
           </div>
           <div
             className={styles.viewToggle}

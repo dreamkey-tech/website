@@ -53,13 +53,6 @@
   opacity: 1;
   transform: scale(1.5);
 }
-.controls .rotationButton {
-  margin-left: 4px;
-}
-.controls button:disabled {
-  cursor: default;
-  opacity: 0.45;
-}
 @media (max-width: 767px) {
   .frame {
     padding-bottom: 60px;

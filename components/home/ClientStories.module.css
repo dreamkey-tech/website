@@ -1,0 +1,228 @@
+.section {
+  margin-top: 100px;
+  scroll-margin-top: 24px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.heading h2 {
+  font-size: clamp(36px, 4.2vw, 56px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.18;
+}
+
+.heading em {
+  font-family: var(--font-hero-editorial), Georgia, serif;
+  font-weight: 400;
+}
+
+.heading p {
+  margin: 16px auto 0;
+  max-width: 420px;
+  color: var(--home-text-muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.carousel {
+  margin-top: 20px;
+}
+
+.stage {
+  display: grid;
+  overflow: hidden;
+  padding: 30px 12px 42px;
+  touch-action: pan-y;
+}
+
+.card {
+  grid-area: 1 / 1;
+  position: relative;
+  width: min(430px, calc(100% - 40px));
+  min-width: 0;
+  margin-inline: auto;
+  padding: 32px;
+  border: 1px solid var(--home-border);
+  border-radius: 20px;
+  background: var(--home-surface);
+  color: var(--home-text);
+  transform: translateX(calc(var(--position) * (100% + 24px)))
+    translateY(calc(var(--depth) * 16px));
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 320ms ease,
+    border-color 320ms ease,
+    box-shadow 320ms ease;
+}
+
+.card[data-visible="false"] {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card[data-current="true"] {
+  border-color: var(--home-accent);
+  box-shadow: 0 10px 24px -20px var(--home-text-muted);
+  z-index: 2;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 28px;
+}
+
+.initials {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--home-surface-muted);
+  color: var(--home-text);
+  font-size: 12px;
+}
+
+.author h3 {
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.author p {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--home-text-muted);
+}
+
+.quoteIcon {
+  position: absolute;
+  right: 26px;
+  top: 36px;
+  color: var(--home-text-muted);
+}
+
+.card blockquote {
+  margin-top: 28px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: -0.02em;
+}
+
+.location {
+  margin-top: auto;
+  padding-top: 28px;
+  color: var(--home-text-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.selectCard {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  cursor: pointer;
+  background: transparent;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--home-border);
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--home-surface);
+  color: var(--home-text);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.controls button:hover {
+  background: var(--home-accent);
+  border-color: var(--home-accent);
+  color: var(--home-on-accent);
+}
+
+.counter {
+  min-width: 58px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--home-text-muted);
+  font-size: 11px;
+}
+
+.counter span {
+  color: var(--home-text);
+}
+
+.sampleNote {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--home-text-muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+@media (max-width: 767px) {
+  .section {
+    margin-top: 64px;
+  }
+  .heading h2 {
+    max-width: 330px;
+    margin-inline: auto;
+  }
+  .heading p {
+    font-size: 12px;
+  }
+  .carousel {
+    margin-inline: -20px;
+  }
+  .stage {
+    padding: 24px 0 32px;
+  }
+  .card {
+    width: calc(100% - 64px);
+    padding: 24px;
+    transform: translateX(calc(var(--position) * (100% + 12px)))
+      translateY(calc(var(--depth) * 10px));
+  }
+  .card blockquote {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-top: 24px;
+  }
+  .quoteIcon {
+    right: 20px;
+    top: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .controls button {
+    transition: none;
+  }
+}

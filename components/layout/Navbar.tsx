@@ -178,25 +178,25 @@ export default function Navbar() {
                   {isUserMenuOpen && (
                     <div
                       ref={userMenuRef}
-                      className="absolute right-0 top-[calc(100%+10px)] w-56 bg-dark-elevated border border-border-dark rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.5)] overflow-hidden z-[100]"
+                      className="absolute right-0 top-[calc(100%+10px)] w-56 bg-[var(--home-surface)] text-[var(--home-text)] border border-[var(--home-border)] rounded-2xl shadow-[var(--home-panel-shadow)] overflow-hidden z-[100]"
                     >
-                      <div className="px-4 pt-3.5 pb-3 border-b border-border-dark">
-                        <p className="text-[14px] font-semibold text-white truncate">{user?.name || "User"}</p>
-                        <p className="text-[11px] text-text-dark-secondary truncate mt-0.5">{user?.email}</p>
+                      <div className="px-4 pt-3.5 pb-3 border-b border-[var(--home-border)]">
+                        <p className="text-[14px] font-semibold text-[var(--home-text)] truncate">{user?.name || "User"}</p>
+                        <p className="text-[11px] text-[var(--home-text-muted)] truncate mt-0.5">{user?.email}</p>
                       </div>
-                      <div className="py-1.5">
+                      <div className="p-1.5">
                         <Link
                           href="/buy"
                           onClick={() => setIsUserMenuOpen(false)}
-                          className="flex items-center gap-3 px-4 py-2.5 text-[14px] text-text-dark-secondary hover:text-white hover:bg-dark-float transition-colors group"
+                          className="flex items-center gap-3 min-h-11 rounded-[10px] px-3 py-2.5 text-[12px] text-[var(--home-text-muted)] hover:text-[var(--home-text)] hover:bg-[var(--home-surface-muted)] transition-colors group"
                         >
                           <MagnifyingGlass size={16} className="group-hover:text-gold transition-colors" />
                           Browse Properties
                         </Link>
-                        <div className="border-t border-border-dark mx-3 my-1" />
+                        <div className="border-t border-[var(--home-border)] mx-3 my-1" />
                         <button
                           onClick={() => { logout(); setIsUserMenuOpen(false); }}
-                          className="w-full flex items-center gap-3 px-4 py-2.5 text-[14px] text-red-400 hover:bg-red-500/10 transition-colors"
+                          className="w-full flex items-center gap-3 min-h-11 rounded-[10px] px-3 py-2.5 text-[12px] text-[var(--home-text)] hover:bg-[var(--home-surface-muted)] transition-colors"
                         >
                           <SignOut size={16} />
                           Sign Out

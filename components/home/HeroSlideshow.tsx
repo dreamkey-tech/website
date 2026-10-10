@@ -107,10 +107,7 @@ export default function HeroSlideshow({ children }: { children: ReactNode }) {
       {ready && (
         <HeroSlideControls
           active={rotation.active}
-          paused={rotation.paused}
-          reducedMotion={rotation.reducedMotion}
           onSelect={rotation.select}
-          onToggle={rotation.toggle}
         />
       )}
     </div>
