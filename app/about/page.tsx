@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { connection } from "next/server";
 import Link from "next/link";
@@ -9,12 +9,7 @@ import OfficeGallery from "@/components/about/OfficeGallery";
 import photoStyles from "@/components/about/AboutPhotos.module.css";
 import styles from "@/components/pages/Interior.module.css";
 
-export const metadata: Metadata = {
-  icons: { icon: "/images/pages/favicon.png" },
-  title: "About our Kolkata team | Dream Key Reality",
-  description:
-    "Meet the founders of Dream Key Reality, a client-focused real estate consultancy in Kolkata helping buyers, sellers, tenants, owners, and investors.",
-};
+export const metadata = pageMetadata("/about");
 
 const founders = [
   {

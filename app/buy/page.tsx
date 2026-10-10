@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 // import Image from "next/image"; // Restore with the intro section below.
 import Link from "next/link";
 import { connection } from "next/server";
@@ -20,12 +21,30 @@ import PageCTA from "@/components/pages/PageCTA";
 import interior from "@/components/pages/Interior.module.css";
 import styles from "@/components/buy/Buy.module.css";
 
-export const metadata: Metadata = {
-  title: "Buy a home in Kolkata | Dream Key Reality",
-  description:
-    "Explore homes across Kolkata with Dream Key Reality. Refine your search by neighbourhood, budget, property type, bedrooms, and possession status.",
-  icons: { icon: "/images/pages/favicon.png" },
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<BuySearchParams>;
+}): Promise<Metadata> {
+  const initial = parseBuyFilters(await searchParams);
+  const count = filterBuyHomes(BUY_HOMES, initial).length;
+  // Match the rendered pagination, including out-of-range page requests.
+  const filters = {
+    ...initial,
+    page: Math.min(initial.page, Math.max(1, Math.ceil(count / 6))),
+  };
+  const noIndex =
+    activeBuyFilters(filters).length > 0 || filters.sort !== "recommended";
+
+  return pageMetadata("/buy", {
+    canonical: buyHref(filters).split("#")[0],
+    noIndex,
+    title:
+      !noIndex && filters.page > 1
+        ? `Flats & Houses for Sale in Kolkata — Page ${filters.page} | Dream Key Reality`
+        : undefined,
+  });
+}
 
 export default async function BuyPage({
   searchParams,

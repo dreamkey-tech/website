@@ -6,7 +6,19 @@ Reviewed: 10 October 2026. This document describes the current working tree, inc
 
 **Verified:** The homepage and primary interior/account routes contain the new editorial design. `/dashboard` is removed. Footer social colors and the subsequent office-map addition are implemented. The initial handoff task changed documentation only; later feature updates are recorded below.
 
-Git branch is `redesign`, remote `dreamkey-tech/website`. There are extensive pre-existing modifications and untracked components/assets/docs/verification artifacts. A tracked deletion remains for `app/dashboard/page.tsx`. The three handoff documents do not imply that the redesign is committed, pushed, deployed, or client-approved for release.
+**Historical handoff:** The earlier documentation task recorded branch `redesign`, remote `dreamkey-tech/website`, extensive uncommitted work and a pending Dashboard deletion. **Current SEO task checkpoint (10 October 2026):** The branch is `main`, and the working tree was clean before this task added its SEO changes. Dashboard remains absent. This task has not committed, pushed or deployed its changes; the historical handoff is not evidence of current release approval.
+
+## Latest update — SEO and AI discovery
+
+**OG image follow-up:** Shared route metadata now uses the user-provided `public/images/OG.webp` for Open Graph and Twitter previews, with its actual 1920 × 862 dimensions and WebP media type. Logo/favicons and visible page design are unchanged. Scoped lint, TypeScript and production webpack build passed; repeat HTTP checks confirmed OG/Twitter image tags across all twelve routes and HTTP 200 WebP delivery. Social-platform preview caches and public deployment were not tested.
+
+**Verified locally, 10 October 2026:** Added generated `/sitemap.xml` (ten public routes) and `/robots.txt`; route-specific metadata/canonicals/social previews; Login/Register `noindex`; normalized Buy query metadata with indexable unfiltered pagination and `noindex` search/filter/sort variants. Added Home `RealEstateAgent`/`WebSite` JSON-LD and four Services records sourced from visible copy. Sample testimonials have `data-nosnippet`; no fake review/rating/offer schema was added. Repaired landing desktop Sell link to `/sell`. Approved layout, hero tagline and legal content remain unchanged.
+
+**Verification:** Scoped ESLint, TypeScript and production webpack build passed. `output/seo/check-seo.cjs` passed 19 local production HTTP route/query checks, crawler output, business/service data, assets and 404 behavior. Evidence: `output/seo/verification.json`. No live backend, search indexing/rank or ChatGPT recommendation was verified.
+
+**Mobile audit + fix:** The first local Lighthouse run caught a footer layout shift (CLS 0.823) while the fixed loading overlay reserved no space for streamed content. `app/loading.tsx` / `PageLoading.module.css` now reserve `100svh` during loading. Rebuilt and repeated SEO checks passed. Repeat mobile audit: SEO 100/100, performance 77/100, CLS 0, LCP about 5.9s. Hero delivery remains an optimization target; these are simulated lab results, not field Core Web Vitals or ranking evidence. Reports: `output/seo/home-mobile-{before-loading-fix-,}summary.json` and corresponding raw audits. Loaded page visual/touch behavior was not newly exercised.
+
+**Public-site observation before changes:** Apex redirects to `https://www.dreamkeykol.com`; robots/sitemap returned 404, inspected routes lacked canonical/JSON-LD, and Login lacked `noindex`. New code is not deployed. After deployment, submit the `www` sitemap in owner-controlled Search Console/Bing accounts and confirm CDN access for OAI-SearchBot. Real inventory/detail pages, approved reviews, factual locality content and a verified Business Profile are priorities. `docs/seo-geo-audit.md` records findings, evidence, search-intent mapping and follow-ups. No ranking or AI-recommendation guarantee; no special `llms.txt` added.
 
 ## Completed implementation — verified in current code
 

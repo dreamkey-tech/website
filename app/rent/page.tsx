@@ -1,16 +1,11 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 // import Image from "next/image"; // Restore with the intro section below.
 import { connection } from "next/server";
 import RentalBrowser from "@/components/pages/RentalBrowser";
 import PageCTA from "@/components/pages/PageCTA";
 import styles from "@/components/pages/Interior.module.css";
 
-export const metadata: Metadata = {
-  icons: { icon: "/images/pages/favicon.png" },
-  title: "Find a rental in Kolkata | Dream Key Reality",
-  description:
-    "Explore your next rental home in Kolkata with Dream Key Reality. Share your neighbourhood, budget, and lifestyle preferences with our team.",
-};
+export const metadata = pageMetadata("/rent");
 
 export default async function RentPage() {
   await connection();

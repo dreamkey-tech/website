@@ -5,6 +5,7 @@ export default function ClientStories() {
   return (
     <section
       id="testimonials"
+      data-nosnippet
       className={styles.section}
       aria-labelledby="stories-heading"
     >

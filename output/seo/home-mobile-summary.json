@@ -1,0 +1,40 @@
+{
+  "fetchTime": "2026-10-10T14:44:41.249Z",
+  "lighthouseVersion": "13.5.0",
+  "requestedUrl": "http://localhost:3002/",
+  "formFactor": "mobile",
+  "throttlingMethod": "simulate",
+  "categories": {
+    "performance": 0.77,
+    "seo": 1
+  },
+  "metrics": {
+    "largest-contentful-paint": {
+      "value": 5945.28975,
+      "unit": "millisecond",
+      "display": "5.9 s"
+    },
+    "first-contentful-paint": {
+      "value": 1213.5265,
+      "unit": "millisecond",
+      "display": "1.2 s"
+    },
+    "cumulative-layout-shift": {
+      "value": 0,
+      "unit": "unitless",
+      "display": "0"
+    },
+    "total-blocking-time": {
+      "value": 119.5,
+      "unit": "millisecond",
+      "display": "120 ms"
+    },
+    "speed-index": {
+      "value": 2621.2744254730364,
+      "unit": "millisecond",
+      "display": "2.6 s"
+    }
+  },
+  "failedSeo": [],
+  "scope": "Single local simulated mobile Lighthouse run after loading placeholder fix; not field Core Web Vitals or rankings."
+}

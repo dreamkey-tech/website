@@ -1,13 +1,9 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { connection } from "next/server";
 import LegalDocument from "@/components/pages/LegalDocument";
 import styles from "@/components/pages/LegalDocument.module.css";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | DreamKey Reality",
-  description: "Privacy Policy for DreamKey Reality website and services.",
-  icons: { icon: "/images/pages/favicon.png" },
-};
+export const metadata = pageMetadata("/privacy");
 
 const sections = [
   {

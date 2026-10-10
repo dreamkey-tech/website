@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { connection } from "next/server";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import PagePhoto from "@/components/pages/PagePhoto";
@@ -8,12 +8,7 @@ import { getEnquiryPurpose } from "@/components/pages/enquiry-values";
 import { OFFICE_MAP_URL } from "@/lib/office-location";
 import styles from "@/components/pages/Interior.module.css";
 
-export const metadata: Metadata = {
-  icons: { icon: "/images/pages/favicon.png" },
-  title: "Contact our Kolkata team | Dream Key Reality",
-  description:
-    "Get in touch with Dream Key Reality in New Town, Kolkata. Call +91 86975 59123 or send an enquiry about buying, renting, or selling a property.",
-};
+export const metadata = pageMetadata("/contact");
 
 export default async function ContactPage({
   searchParams,

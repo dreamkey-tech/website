@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { connection } from "next/server";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
@@ -7,12 +7,7 @@ import PageFAQ from "@/components/pages/PageFAQ";
 import PropertyEnquiryForm from "@/components/pages/PropertyEnquiryForm";
 import styles from "@/components/pages/Interior.module.css";
 
-export const metadata: Metadata = {
-  icons: { icon: "/images/pages/favicon.png" },
-  title: "Sell your property in Kolkata | Dream Key Reality",
-  description:
-    "Talk to Dream Key Reality about selling your Kolkata property, from positioning and viewings to the next steps.",
-};
+export const metadata = pageMetadata("/sell");
 
 const steps = [
   {

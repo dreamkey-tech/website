@@ -1,0 +1,79 @@
+{
+  "fetchTime": "2026-10-10T14:39:42.883Z",
+  "lighthouseVersion": "13.5.0",
+  "requestedUrl": "http://localhost:3002/",
+  "formFactor": "mobile",
+  "throttlingMethod": "simulate",
+  "categories": {
+    "performance": 0.52,
+    "seo": 1
+  },
+  "metrics": {
+    "largest-contentful-paint": {
+      "value": 5436.026550000002,
+      "unit": "millisecond",
+      "display": "5.4 s"
+    },
+    "first-contentful-paint": {
+      "value": 1224.0177,
+      "unit": "millisecond",
+      "display": "1.2 s"
+    },
+    "cumulative-layout-shift": {
+      "value": 0.8226002430133658,
+      "unit": "unitless",
+      "display": "0.823"
+    },
+    "total-blocking-time": {
+      "value": 215.99999999999955,
+      "unit": "millisecond",
+      "display": "220 ms"
+    },
+    "speed-index": {
+      "value": 2638.6988853003095,
+      "unit": "millisecond",
+      "display": "2.6 s"
+    }
+  },
+  "failedSeo": [],
+  "performanceFindings": [
+    {
+      "id": "unused-javascript",
+      "title": "Reduce unused JavaScript",
+      "display": "Est savings of 67 KiB"
+    },
+    {
+      "id": "cache-insight",
+      "title": "Use efficient cache lifetimes",
+      "display": "Est savings of 12 KiB"
+    },
+    {
+      "id": "cls-culprits-insight",
+      "title": "Layout shift culprits"
+    },
+    {
+      "id": "forced-reflow-insight",
+      "title": "Forced reflow"
+    },
+    {
+      "id": "image-delivery-insight",
+      "title": "Improve image delivery",
+      "display": "Est savings of 245 KiB"
+    },
+    {
+      "id": "legacy-javascript-insight",
+      "title": "Legacy JavaScript",
+      "display": "Est savings of 12 KiB"
+    },
+    {
+      "id": "network-dependency-tree-insight",
+      "title": "Network dependency tree"
+    },
+    {
+      "id": "render-blocking-insight",
+      "title": "Render-blocking requests",
+      "display": "Est savings of 380 ms"
+    }
+  ],
+  "scope": "Single local simulated mobile Lighthouse run; not field Core Web Vitals or search rank."
+}

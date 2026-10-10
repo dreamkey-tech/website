@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+import { servicesSchema } from "@/lib/business-schema";
+import JsonLd from "@/components/seo/JsonLd";
+import { pageMetadata } from "@/lib/seo";
 import { connection } from "next/server";
 import PageCTA from "@/components/pages/PageCTA";
 import PageFAQ from "@/components/pages/PageFAQ";
@@ -10,24 +12,14 @@ import { serviceQuestions } from "@/components/services/services-content";
 import interior from "@/components/pages/Interior.module.css";
 import styles from "@/components/services/Services.module.css";
 
-export const metadata: Metadata = {
-  icons: { icon: "/images/pages/favicon.png" },
-  title: "Real estate services in Kolkata | Dream Key Reality",
-  description:
-    "Buying, renting, selling, property investment consulting and real estate guidance in Kolkata through Dream Key Reality's collaborative broker and consultant network.",
-  openGraph: {
-    title: "Real estate services in Kolkata | Dream Key Reality",
-    description:
-      "Property options, local connections and personal guidance for your next move in Kolkata.",
-    type: "website",
-  },
-};
+export const metadata = pageMetadata("/services");
 
 export default async function ServicesPage() {
   await connection();
   return (
     <div className={interior.page} id="page-content">
       <div className={interior.container}>
+        <JsonLd id="dreamkey-services" data={servicesSchema()} />
         <ServicesHero />
         <ServicesCollection />
         <ServicesNetwork />

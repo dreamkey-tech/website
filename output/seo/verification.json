@@ -1,0 +1,172 @@
+{
+  "checkedAt": "2026-10-10T14:58:39.025Z",
+  "base": "http://localhost:3002",
+  "canonicalOrigin": "https://www.dreamkeykol.com",
+  "checks": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "Real Estate Consultants in Kolkata | Dream Key Reality",
+      "canonical": "https://www.dreamkeykol.com",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/buy",
+      "status": 200,
+      "title": "Flats & Houses for Sale in Kolkata | Dream Key Reality",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/rent",
+      "status": 200,
+      "title": "Rental Homes & Flats in Kolkata | Dream Key Reality",
+      "canonical": "https://www.dreamkeykol.com/rent",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/sell",
+      "status": 200,
+      "title": "Sell Your Property in Kolkata | Dream Key Reality",
+      "canonical": "https://www.dreamkeykol.com/sell",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/services",
+      "status": 200,
+      "title": "Real Estate Services in Kolkata | Dream Key Reality",
+      "canonical": "https://www.dreamkeykol.com/services",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "title": "About Our Kolkata Real Estate Team | Dream Key Reality",
+      "canonical": "https://www.dreamkeykol.com/about",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "title": "Contact Our New Town, Kolkata Team | Dream Key Reality",
+      "canonical": "https://www.dreamkeykol.com/contact",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/careers",
+      "status": 200,
+      "title": "Real Estate Careers in Kolkata | Dream Key Reality",
+      "canonical": "https://www.dreamkeykol.com/careers",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "title": "Privacy Policy | DreamKey Reality",
+      "canonical": "https://www.dreamkeykol.com/privacy",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/terms-and-conditions",
+      "status": 200,
+      "title": "Terms & Conditions | DreamKey Reality",
+      "canonical": "https://www.dreamkeykol.com/terms-and-conditions",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/login",
+      "status": 200,
+      "title": "Login | Dream Key",
+      "canonical": "https://www.dreamkeykol.com/login",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/register",
+      "status": 200,
+      "title": "Create Account | Dream Key",
+      "canonical": "https://www.dreamkeykol.com/register",
+      "ogImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "twitterImage": "https://www.dreamkeykol.com/images/OG.webp",
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/buy?page=2",
+      "canonical": "https://www.dreamkeykol.com/buy?page=2",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/buy?page=9999",
+      "canonical": "https://www.dreamkeykol.com/buy?page=2",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/buy?utm_source=example",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/buy?page=invalid&type=invalid",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/buy?q=no-such-property&page=2",
+      "canonical": "https://www.dreamkeykol.com/buy?q=no-such-property",
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/buy?location=new-town",
+      "canonical": "https://www.dreamkeykol.com/buy?location=new-town",
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/buy?sort=price-asc",
+      "canonical": "https://www.dreamkeykol.com/buy?sort=price-asc",
+      "robots": "noindex, follow"
+    }
+  ],
+  "sitemapUrls": [
+    "https://www.dreamkeykol.com/",
+    "https://www.dreamkeykol.com/about",
+    "https://www.dreamkeykol.com/buy",
+    "https://www.dreamkeykol.com/careers",
+    "https://www.dreamkeykol.com/contact",
+    "https://www.dreamkeykol.com/privacy",
+    "https://www.dreamkeykol.com/rent",
+    "https://www.dreamkeykol.com/sell",
+    "https://www.dreamkeykol.com/services",
+    "https://www.dreamkeykol.com/terms-and-conditions"
+  ],
+  "robots": "User-Agent: *\nAllow: /\nDisallow: /api/\nDisallow: /api-proxy/\nDisallow: /profile\nDisallow: /settings\n\nUser-Agent: OAI-SearchBot\nAllow: /\nDisallow: /api/\nDisallow: /api-proxy/\nDisallow: /profile\nDisallow: /settings\n\nSitemap: https://www.dreamkeykol.com/sitemap.xml\n",
+  "structuredDataTypes": [
+    "RealEstateAgent",
+    "WebSite",
+    "Service",
+    "Service",
+    "Service",
+    "Service"
+  ],
+  "scope": "Local production HTTP/SSR verification; not deployment, indexing, ranking or backend validation."
+}

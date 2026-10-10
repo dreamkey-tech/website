@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_URL, SITE_NAME, SEO_PAGES } from "@/lib/seo";
 import localFont from "next/font/local";
 import "./globals.css";
 import "./hero.css";
@@ -37,17 +38,12 @@ const heroEditorial = localFont({
   display: "swap",
 });
 
+// Route pages supply their own canonical; unknown/404 routes must not inherit Home's URL.
 export const metadata: Metadata = {
-  title: "Dream Key Reality | Premier Real Estate in Kolkata",
-  description:
-    "Find a place you will love to call home. Verified luxury apartments, premium high-rises, and prime residential developments across Kolkata.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_NAME,
+  description: SEO_PAGES["/"].description,
   icons: { icon: "/logo2.png" },
-  openGraph: {
-    title: "Dream Key Reality | Premier Real Estate in Kolkata",
-    description:
-      "Trusted real estate partner connecting buyers and sellers across Kolkata's finest neighbourhoods.",
-    type: "website",
-  },
 };
 
 export default function RootLayout({

@@ -1,15 +1,10 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { connection } from "next/server";
 import Link from "next/link";
 import LegalDocument from "@/components/pages/LegalDocument";
 import styles from "@/components/pages/LegalDocument.module.css";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions | DreamKey Reality",
-  description:
-    "Terms and conditions for DreamKey Reality website and services.",
-  icons: { icon: "/images/pages/favicon.png" },
-};
+export const metadata = pageMetadata("/terms-and-conditions");
 
 const sections = [
   {
