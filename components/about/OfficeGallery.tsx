@@ -1,19 +1,7 @@
 import Image from "next/image";
 import interior from "@/components/pages/Interior.module.css";
 import styles from "./AboutPhotos.module.css";
-
-const officePhotos = [
-  {
-    src: "/about/office-workspace.webp",
-    alt: "Dream Key office workspace with a desk, chairs, window and plants",
-    position: "50% 70%",
-  },
-  {
-    src: "/about/office-exterior.webp",
-    alt: "Dream Key’s exterior sign with the key logo and the words Rent, Sale and Consultancy",
-    position: "50% 75%",
-  },
-];
+import { OFFICE_GALLERY_PHOTOS } from "./office-gallery-photos";
 
 export default function OfficeGallery() {
   return (
@@ -31,13 +19,20 @@ export default function OfficeGallery() {
         </p>
       </div>
       <div className={styles.gallery}>
-        {officePhotos.map((photo) => (
-          <figure className={styles.photo} key={photo.src}>
+        {OFFICE_GALLERY_PHOTOS.map((photo) => (
+          <figure
+            className={`${styles.photo} ${photo.layout === "wide" ? styles.photoWide : styles.photoCompact}`}
+            key={photo.src}
+          >
             <Image
               src={photo.src}
               alt={photo.alt}
               fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1440px) 50vw, 650px"
+              sizes={
+                photo.layout === "wide"
+                  ? "(max-width: 640px) calc(100vw - 40px), (max-width: 900px) 50vw, (max-width: 1440px) 58vw, 800px"
+                  : "(max-width: 640px) calc(100vw - 40px), (max-width: 900px) 50vw, (max-width: 1440px) 42vw, 570px"
+              }
               style={{ objectPosition: photo.position }}
             />
           </figure>

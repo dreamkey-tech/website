@@ -574,6 +574,7 @@
   font-size: 11px;
   color: var(--home-text-muted);
 }
+.sortSelect { width: 174px; }
 .sortControls select {
   background: var(--home-page);
   color: var(--home-text);
@@ -967,7 +968,7 @@
     left: 24px;
     right: 24px;
     top: 82px;
-    padding: 20px;
+    padding: 6px;
     border: 1px solid var(--home-border);
     border-radius: 16px;
     background: var(--home-surface);
@@ -978,7 +979,12 @@
     grid-template-columns: 1fr 1fr;
   }
   .navLinks a {
+    min-height: 44px;
     padding: 13px;
+    border-radius: 10px;
+  }
+  .navLinks a:hover, .navLinks a:focus-visible {
+    background: color-mix(in srgb, var(--home-accent) 12%, var(--home-surface));
   }
   .navLinks a::after {
     left: 13px;

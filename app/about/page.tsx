@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { connection } from "next/server";
 import Link from "next/link";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRightIcon, LinkedinLogoIcon } from "@phosphor-icons/react/dist/ssr";
 import PagePhoto from "@/components/pages/PagePhoto";
 import PageCTA from "@/components/pages/PageCTA";
 import OfficeGallery from "@/components/about/OfficeGallery";
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 const founders = [
   {
     name: "Sayan Dutta",
+    linkedIn: "https://www.linkedin.com/in/sayan-dutta-1763b8250/",
     role: "Founder",
     image: "/about/sayan-portrait.webp",
     imagePosition: "50% 35%",
@@ -26,15 +27,17 @@ const founders = [
   },
   {
     name: "Mainak Maji",
+    linkedIn: "https://www.linkedin.com/in/mainakdreamkey/",
     role: "Co-Founder",
-    image: "/about/mainak.webp",
+    image: "/about/Mainak.webp",
     imagePosition: "center bottom",
     bio: "Focused on luxury properties and building relationships that continue beyond a single transaction.",
   },
   {
     name: "Siddhant Singh",
+    linkedIn: "https://www.linkedin.com/in/siddhant-singh-5600a2308/",
     role: "Co-Founder",
-    image: "/about/siddhant-portrait.webp",
+    image: "/about/siddhantPortrait.webp",
     imagePosition: "50% 65%",
     bio: "Committed to clear communication and a considered, transparent property journey.",
   },
@@ -63,18 +66,18 @@ export default async function AboutPage() {
             <div className={styles.heroActions}>
               <Link className={styles.primaryButton} href="/contact">
                 Get to know us
-                <ArrowUpRight size={19} aria-hidden="true" />
+                <ArrowUpRightIcon size={19} aria-hidden="true" />
               </Link>
               <a className={styles.textLink} href="#our-founders">
                 Meet the founders
-                <ArrowUpRight size={17} aria-hidden="true" />
+                <ArrowUpRightIcon size={17} aria-hidden="true" />
               </a>
             </div>
           </div>
           <PagePhoto
-            src="/about/office-meeting-room.webp"
+            src="/about/Joyful_Friends_in_Matching_Dream_Key_Polos.webp"
             alt="Dream Key’s Kolkata office meeting area with a shared desk, seating and wood-panelled wall"
-            caption="Inside our Kolkata office"
+            caption="Our Team"
             className={photoStyles.officeHero}
             eager
           />
@@ -169,6 +172,17 @@ export default async function AboutPage() {
                 <h3>{founder.name}</h3>
                 <p className={styles.founderRole}>{founder.role}</p>
                 <p className={styles.founderBio}>{founder.bio}</p>
+                <a
+                  href={founder.linkedIn}
+                  className={photoStyles.founderLinkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${founder.name} on LinkedIn (opens in a new tab)`}
+                >
+                  <LinkedinLogoIcon size={18} weight="fill" aria-hidden="true" />
+                  LinkedIn
+                  <ArrowUpRightIcon size={15} aria-hidden="true" />
+                </a>
               </article>
             ))}
           </div>

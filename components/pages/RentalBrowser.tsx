@@ -8,6 +8,7 @@ import {
   filterRentalHomes,
   type RentalFilters,
 } from "./rental-data";
+import Select from "@/components/ui/Select";
 import RentalCard from "./RentalCard";
 import styles from "./Interior.module.css";
 
@@ -36,56 +37,64 @@ export default function RentalBrowser() {
       >
         <div className={styles.filter}>
           <label htmlFor="rent-location">Neighbourhood</label>
-          <select
+          <Select
             id="rent-location"
             value={draft.location}
-            onChange={(event) => update("location", event.target.value)}
-          >
-            <option value="">All Kolkata locations</option>
-            <option>New Town</option>
-            <option>Salt Lake</option>
-            <option>EM Bypass</option>
-          </select>
+            onChange={(value) => update("location", value)}
+            variant="inline"
+            options={[
+              { value: "", label: "All Kolkata locations" },
+              { value: "New Town", label: "New Town" },
+              { value: "Salt Lake", label: "Salt Lake" },
+              { value: "EM Bypass", label: "EM Bypass" },
+            ]}
+          />
         </div>
         <div className={styles.filter}>
           <label htmlFor="rent-budget">Monthly budget</label>
-          <select
+          <Select
             id="rent-budget"
             value={draft.budget}
-            onChange={(event) => update("budget", event.target.value)}
-          >
-            <option value="">Any budget</option>
-            <option value="30000">Up to ₹30,000</option>
-            <option value="50000">Up to ₹50,000</option>
-            <option value="75000">Up to ₹75,000</option>
-            <option value="100000">Up to ₹1,00,000</option>
-          </select>
+            onChange={(value) => update("budget", value)}
+            variant="inline"
+            options={[
+              { value: "", label: "Any budget" },
+              { value: "30000", label: "Up to ₹30,000" },
+              { value: "50000", label: "Up to ₹50,000" },
+              { value: "75000", label: "Up to ₹75,000" },
+              { value: "100000", label: "Up to ₹1,00,000" },
+            ]}
+          />
         </div>
         <div className={styles.filter}>
           <label htmlFor="rent-bedrooms">Bedrooms</label>
-          <select
+          <Select
             id="rent-bedrooms"
             value={draft.bedrooms}
-            onChange={(event) => update("bedrooms", event.target.value)}
-          >
-            <option value="">Any size</option>
-            <option value="2">2 bedrooms</option>
-            <option value="3">3 bedrooms</option>
-            <option value="4">4 bedrooms</option>
-          </select>
+            onChange={(value) => update("bedrooms", value)}
+            variant="inline"
+            options={[
+              { value: "", label: "Any size" },
+              { value: "2", label: "2 bedrooms" },
+              { value: "3", label: "3 bedrooms" },
+              { value: "4", label: "4 bedrooms" },
+            ]}
+          />
         </div>
         <div className={styles.filter}>
           <label htmlFor="rent-furnishing">Furnishing</label>
-          <select
+          <Select
             id="rent-furnishing"
             value={draft.furnishing}
-            onChange={(event) => update("furnishing", event.target.value)}
-          >
-            <option value="">Any furnishing</option>
-            <option>Furnished</option>
-            <option>Semi-furnished</option>
-            <option>Unfurnished</option>
-          </select>
+            onChange={(value) => update("furnishing", value)}
+            variant="inline"
+            options={[
+              { value: "", label: "Any furnishing" },
+              { value: "Furnished", label: "Furnished" },
+              { value: "Semi-furnished", label: "Semi-furnished" },
+              { value: "Unfurnished", label: "Unfurnished" },
+            ]}
+          />
         </div>
         <button className={styles.primaryButton} type="submit">
           <MagnifyingGlass size={17} aria-hidden="true" />
@@ -105,15 +114,18 @@ export default function RentalBrowser() {
         </div>
         <div className={styles.sortControls}>
           <label htmlFor="rent-sort">Sort by</label>
-          <select
+          <Select
+            className={styles.sortSelect}
             id="rent-sort"
             value={sort}
-            onChange={(event) => setSort(event.target.value)}
-          >
-            <option value="recommended">Recommended</option>
-            <option value="price-low">Rent: low to high</option>
-            <option value="price-high">Rent: high to low</option>
-          </select>
+            onChange={setSort}
+            variant="compact"
+            options={[
+              { value: "recommended", label: "Recommended" },
+              { value: "price-low", label: "Rent: low to high" },
+              { value: "price-high", label: "Rent: high to low" },
+            ]}
+          />
           <button className={styles.resetButton} onClick={reset} type="button">
             Reset filters
           </button>

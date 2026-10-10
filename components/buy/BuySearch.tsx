@@ -1,3 +1,4 @@
+import Select from "@/components/ui/Select";
 import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
 import {
   BEDROOMS,
@@ -42,14 +43,17 @@ export default function BuySearch({ filters }: { filters: BuyFilters }) {
       ).map(([name, label, empty, options]) => (
         <div className={styles.searchField} key={name}>
           <label htmlFor={`buy-${name}`}>{label}</label>
-          <select id={`buy-${name}`} name={name} defaultValue={filters[name]}>
-            <option value="">{empty}</option>
-            {options.map(([value, text]) => (
-              <option key={value} value={value}>
-                {text}
-              </option>
-            ))}
-          </select>
+          <Select
+            id={`buy-${name}`}
+            name={name}
+            defaultValue={filters[name]}
+            key={filters[name]}
+            variant="inline"
+            options={[
+              { value: "", label: empty },
+              ...options.map(([value, label]) => ({ value, label })),
+            ]}
+          />
         </div>
       ))}
       <button className={styles.searchButton} type="submit">

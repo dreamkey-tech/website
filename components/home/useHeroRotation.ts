@@ -27,7 +27,6 @@ export default function useHeroRotation(
   count: number,
 ) {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [focused, setFocused] = useState(false);
   const [selectionVersion, setSelectionVersion] = useState(0);
   const [inView, setInView] = useState(true);
@@ -57,7 +56,6 @@ export default function useHeroRotation(
     if (
       !ready ||
       count < 2 ||
-      paused ||
       focused ||
       reducedMotion ||
       !inView ||
@@ -72,7 +70,6 @@ export default function useHeroRotation(
   }, [
     active,
     ready,
-    paused,
     focused,
     selectionVersion,
     reducedMotion,
@@ -83,13 +80,8 @@ export default function useHeroRotation(
 
   return {
     active,
-    paused: paused || focused,
     reducedMotion,
     setFocused,
-    toggle: () => {
-      setPaused(!(paused || focused));
-      setFocused(false);
-    },
     select: (index: number) => {
       setActive(index);
       setFocused(false);

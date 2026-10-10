@@ -5,7 +5,7 @@ export default function TrustAssurance() {
     {
       icon: "verified",
       title: "100% Verified Titles",
-      desc: "30-year ancestral title verification, search reports, and mandatory compliance certificates on every residential unit." // TODO: add "WBRERA" back later
+      desc: "30-year ancestral title verification, search reports, and mandatory compliance certificates on every residential unit."
     },
     {
       icon: "person_pin",

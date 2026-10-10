@@ -46,12 +46,21 @@ Five renamed HEIC photographs from the folder supplied by the client were decode
 | --------------- | --------------------------------------- | ----------------------------------- |
 | `Sayan.HEIC`    | `public/about/sayan-portrait.webp`      | Sayan Dutta portrait, 900 × 1200    |
 | `Siddhant.HEIC` | `public/about/siddhant-portrait.webp`   | Siddhant Singh portrait, 900 × 1200 |
-| `office2.HEIC`  | `public/about/office-meeting-room.webp` | About hero, 1350 × 1800             |
-| `office1.HEIC`  | `public/about/office-workspace.webp`    | Office gallery, 1350 × 1800         |
-| `office3.HEIC`  | `public/about/office-exterior.webp`     | Office gallery, 1350 × 1800         |
+| `office2.HEIC`  | `public/about/office-meetingRoom.webp` | About hero, 1350 × 1800             |
+| `office1.HEIC`  | `public/about/officeWorkspace.webp`    | Office gallery, 1350 × 1800         |
+| `office3.HEIC`  | `public/about/officeExterior.webp`     | Office gallery, 1350 × 1800         |
 
 The two replacement portraits use individual CSS object positions to keep faces inside the existing square cards; Mainak's photograph keeps its existing position. The reusable server-rendered `OfficeGallery` displays the two remaining office photographs with theme tokens and a single-column mobile layout. The About hero now has accurate office alt text. Other pages keep their existing illustrative images.
 
 The five source photographs and converted files were visually inspected. Browser layout verification remains limited by the preview tab's existing unsupported connection-error URL; build, lint and production media delivery are checked separately.
 
 Verification passed: production webpack build including TypeScript, scoped ESLint, formatting and diff whitespace checks. The production About response contains all five new image paths, correct portrait names and object positions, and Mainak's existing photograph; the illustrative office image is no longer rendered on this page. Next's image endpoint successfully delivered resized hero and portrait files. Reopened public WebP assets contain no EXIF or XMP metadata.
+
+
+## Four-photo office bento follow-up — 10 October 2026
+
+The user requested a four-image bento under “A place for real conversations.” using suitable current imagery that they may replace later. `OfficeGallery.tsx` now reads `office-gallery-photos.ts`: exterior sign, workspace, meeting room and the existing matching-polo group photo. The group image was already present in the user's tree and About hero; its provenance/identities were not independently confirmed. No new image generation or alterations to client photos were performed.
+
+Desktop uses a 12-column grid with 7/5 then 5/7 spans and equal rows; tablet uses two equal columns, mobile a 4:3 single-column stack. Theme surfaces, rounded frames, heading and descriptive copy are preserved. Swap paths, alt text and crop positions together in the data file. The earlier hero/image-role descriptions above are historical; concurrent user edits selected the group photo as About hero before this follow-up.
+
+Scoped lint, TypeScript, final production webpack build, formatting/whitespace, four-photo SSR and image-delivery checks pass. Supported live preview reviewed the desktop, tablet and phone layouts; no horizontal overflow at 1575, 768, 390 or 320px. The desktop sign/faces remain visible. Screenshot: `/tmp/dreamkey-about-bento-desktop.png`; SSR evidence: `/tmp/dreamkey-about-bento-ssr.json`. No new animation or active dark mode was added.

@@ -201,10 +201,7 @@ export default async function TermsAndConditionsPage() {
           <li>Ownership and title documents.</li>
           <li>Applicable land-use permissions and building approvals.</li>
           <li>Encumbrances, disputes, and other legal restrictions.</li>
-          <li>
-            Applicable registrations and regulatory requirements, including RERA
-            where relevant.
-          </li>
+          <li>Applicable registrations and regulatory requirements.</li>
           <li>
             Taxes, maintenance charges, fees, and other financial obligations.
           </li>

@@ -11,6 +11,7 @@ import PageHeader from "@/components/pages/PageHeader";
 import PageFooter from "@/components/pages/PageFooter";
 import { Toaster } from "sonner";
 import MobileBottomNav from "@/components/layout/MobileBottomNav";
+import FloatingEnquiry from "@/components/layout/FloatingEnquiry";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 
 const plusJakartaSans = localFont({
@@ -69,6 +70,7 @@ export default function RootLayout({
             legacyFooter={<Footer />}
             interiorFooter={<PageFooter />}
           />
+          <FloatingEnquiry />
           <Toaster
             position="top-right"
             richColors

@@ -3,6 +3,7 @@ import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import BrandLogo from "./BrandLogo";
 import FooterSocialLinks from "./FooterSocialLinks";
 import FooterMap from "./FooterMap";
+import FooterPhoneLinks from "./FooterPhoneLinks";
 import styles from "./HomeFooter.module.css";
 import linkStyles from "./FooterTextLink.module.css";
 
@@ -60,16 +61,13 @@ export default function HomeFooter() {
               <br />
               Kolkata, West Bengal 700156
             </address>
-            <a href="tel:+918697559123" className={linkStyles.link}>
-              +91 86975 59123 <ArrowUpRight size={17} aria-hidden="true" />
-            </a>
+            <FooterPhoneLinks />
             <FooterMap />
           </div>
         </div>
         <div className={styles.bottom}>
           <p>
-            © {new Date().getFullYear()} Dream Key Reality. All rights
-            reserved. WBHIRA &amp; WBRERA compliant.
+            © {new Date().getFullYear()} Dream Key Reality. All rights reserved.
           </p>
           <nav aria-label="Legal">
             <Link href="/privacy" className={linkStyles.link}>

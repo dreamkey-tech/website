@@ -1,168 +1,205 @@
-'use client';
-import React, { useState, useRef, useEffect, useId } from 'react';
-interface SelectOption {
+"use client";
+
+import {
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
+import * as Primitive from "@radix-ui/react-select";
+import {
+  Bed,
+  Buildings,
+  CaretDown,
+  CaretUp,
+  Check,
+  CurrencyInr,
+  MapPin,
+} from "@phosphor-icons/react";
+import styles from "./Select.module.css";
+
+export interface SelectOption {
   value: string;
   label: string;
+  disabled?: boolean;
 }
-
 interface SelectProps {
-  options: SelectOption[];
+  options: readonly SelectOption[];
   value?: string;
+  defaultValue?: string;
   onChange?: (value: string) => void;
   placeholder?: string;
   icon?: string;
   label?: string;
+  ariaLabel?: string;
+  ariaDescribedBy?: string;
+  id?: string;
+  name?: string;
+  disabled?: boolean;
+  required?: boolean;
   className?: string;
+  variant?: "field" | "inline" | "compact";
 }
+const EMPTY_VALUE = "__dreamkey_empty__";
+const subscribeHydration = () => () => {};
+const icons = {
+  location_on: MapPin,
+  apartment: Buildings,
+  bed: Bed,
+  currency_rupee: CurrencyInr,
+};
 
 export default function Select({
   options,
   value,
+  defaultValue = "",
   onChange,
-  placeholder = 'Select...',
+  placeholder = "Select…",
   icon,
   label,
-  className = '',
+  ariaLabel,
+  ariaDescribedBy,
+  id: providedId,
+  name,
+  disabled,
+  required,
+  className = "",
+  variant = "field",
 }: SelectProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
-  const [selected, setSelected] = useState<SelectOption | null>(
-    value ? options.find((o) => o.value === value) || null : null
+  const generatedId = useId();
+  const id = providedId ?? generatedId;
+  const native = useRef<HTMLSelectElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const [internal, setInternal] = useState(defaultValue);
+  const [invalid, setInvalid] = useState(false);
+  const selected = value ?? internal;
+  const hydrated = useSyncExternalStore(
+    subscribeHydration,
+    () => true,
+    () => false,
   );
-  const containerRef = useRef<HTMLDivElement>(null);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const id = useId();
-
-  // Two-step visibility for smooth CSS transition (no AnimatePresence needed)
-  const openDropdown = () => {
-    setIsOpen(true);
-    requestAnimationFrame(() => setVisible(true));
+  const hasEmpty = options.some((option) => option.value === "");
+  const selectedLabel =
+    options.find((option) => option.value === selected)?.label ?? placeholder;
+  const Icon = icon ? icons[icon as keyof typeof icons] : undefined;
+  const update = (next: string) => {
+    if (value === undefined) setInternal(next);
+    setInvalid(false);
+    onChange?.(next);
   };
-
-  const closeDropdown = () => {
-    setVisible(false);
-    timerRef.current = setTimeout(() => setIsOpen(false), 160);
-  };
-
-  const toggle = () => (isOpen ? closeDropdown() : openDropdown());
 
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        closeDropdown();
-      }
+    const form = native.current?.form;
+    if (!form || value !== undefined) return;
+    const reset = () => {
+      setInternal(defaultValue);
+      setInvalid(false);
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
-  }, [isOpen]);
-
-  const handleSelect = (option: SelectOption) => {
-    setSelected(option);
-    onChange?.(option.value);
-    closeDropdown();
-  };
+    form.addEventListener("reset", reset);
+    return () => form.removeEventListener("reset", reset);
+  }, [defaultValue, value]);
 
   return (
-    <div className={`flex flex-col gap-1.5 ${className}`}>
+    <div
+      className={`${styles.field} ${styles[variant]} ${className}`}
+      data-enhanced={hydrated}
+    >
       {label && (
-        <label
-          htmlFor={id}
-          className="font-label-ui text-label-ui text-[#1a1c15] flex items-center gap-1 cursor-pointer select-none"
-          onClick={toggle}
-        >
-          {icon && (
-            <span className="material-symbols-outlined text-sm" style={{ color: 'var(--color-primary)' }}>
-              {icon}
-            </span>
-          )}
+        <label className={styles.label} htmlFor={id}>
+          {Icon && <Icon size={15} aria-hidden="true" />}
           {label}
         </label>
       )}
-
-      <div ref={containerRef} className="relative" id={id}>
-        {/* Trigger */}
-        <button
-          type="button"
-          onClick={toggle}
-          className={`
-            w-full flex items-center justify-between gap-2
-            bg-[#f3f5e9] hover:bg-[#eeefe3]
-            text-[#1a1c15] rounded-lg px-3 py-2.5
-            font-body-default text-body-default
-            border transition-all duration-150
-            focus:outline-none
-            ${isOpen ? 'border-[var(--color-primary)] ring-2 ring-[var(--color-primary)]/20 bg-white shadow-sm' : 'border-transparent'}
-          `}
-          aria-haspopup="listbox"
-          aria-expanded={isOpen}
-        >
-          <span className={selected ? 'text-[#1a1c15]' : 'text-[#5a5f62]'}>
-            {selected ? selected.label : placeholder}
-          </span>
-          <span
-            className="material-symbols-outlined text-[18px] flex-shrink-0 transition-transform duration-200 ease-in-out"
-            style={{ 
-              color: isOpen ? 'var(--color-primary)' : '#5a5f62',
-              transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)'
-            }}
-          >
-            expand_more
-          </span>
-        </button>
-
-        {/* Dropdown — CSS transition only, zero flicker */}
-        {isOpen && (
-          <div
-            className="absolute z-[500] left-0 right-0 top-[calc(100%+6px)]
-              bg-white border border-[#e2e4d8] rounded-xl
-              shadow-[0_8px_32px_rgba(0,0,0,0.13)] overflow-hidden"
-            style={{
-              transition: 'opacity 0.15s ease, transform 0.15s ease',
-              opacity: visible ? 1 : 0,
-              transform: visible ? 'translateY(0)' : 'translateY(-6px)',
-            }}
-            role="listbox"
-          >
-            <div className="py-1.5 max-h-56 overflow-y-auto">
-              {options.map((option) => {
-                const isSelected = selected?.value === option.value;
-                return (
-                  <button
-                    key={option.value}
-                    type="button"
-                    role="option"
-                    aria-selected={isSelected}
-                    onClick={() => handleSelect(option)}
-                    className={`
-                      w-full flex items-center justify-between gap-2
-                      px-4 py-2.5 text-left
-                      font-body-default text-body-default
-                      transition-colors duration-100
-                      ${isSelected
-                        ? 'text-[var(--color-primary)] font-semibold bg-[#fdf0ee]'
-                        : 'text-[#1a1c15] hover:bg-[#f3f5e9]'
-                      }
-                    `}
-                  >
-                    <span>{option.label}</span>
-                    {isSelected && (
-                      <span
-                        className="material-symbols-outlined text-[16px] flex-shrink-0"
-                        style={{ color: 'var(--color-primary)' }}
-                      >
-                        check
-                      </span>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+      {/* This is the only named form control: preserve empty values, FormData and no-JS GET forms. */}
+      <select
+        ref={native}
+        id={hydrated ? `${id}-native` : id}
+        name={name}
+        value={selected}
+        onChange={(event) => update(event.target.value)}
+        disabled={disabled}
+        required={required}
+        aria-label={ariaLabel ?? label}
+        aria-describedby={ariaDescribedBy}
+        aria-hidden={hydrated || undefined}
+        tabIndex={hydrated ? -1 : undefined}
+        className={styles.native}
+        onInvalid={(event) => {
+          if (!hydrated) return;
+          event.preventDefault();
+          setInvalid(true);
+          trigger.current?.focus();
+        }}
+      >
+        {!hasEmpty && selected === "" && (
+          <option value="" hidden>
+            {placeholder}
+          </option>
         )}
-      </div>
+        {options.map((option) => (
+          <option
+            key={option.value}
+            value={option.value}
+            disabled={option.disabled}
+          >
+            {option.label}
+          </option>
+        ))}
+      </select>
+      {hydrated && (
+        <Primitive.Root
+          value={selected === "" && hasEmpty ? EMPTY_VALUE : selected}
+          onValueChange={(next) => update(next === EMPTY_VALUE ? "" : next)}
+          disabled={disabled}
+          required={required}
+        >
+          <Primitive.Trigger
+            ref={trigger}
+            id={id}
+            className={styles.trigger}
+            aria-label={ariaLabel ?? label}
+            aria-describedby={ariaDescribedBy}
+            aria-invalid={invalid || undefined}
+          >
+            <Primitive.Value>{selectedLabel}</Primitive.Value>
+            <Primitive.Icon className={styles.caret}>
+              <CaretDown size={14} aria-hidden="true" />
+            </Primitive.Icon>
+          </Primitive.Trigger>
+          <Primitive.Portal>
+            <Primitive.Content
+              className={styles.menu}
+              position="popper"
+              sideOffset={8}
+              collisionPadding={12}
+              align="start"
+            >
+              <Primitive.ScrollUpButton className={styles.scrollButton}>
+                <CaretUp size={14} aria-hidden="true" />
+              </Primitive.ScrollUpButton>
+              <Primitive.Viewport className={styles.viewport}>
+                {options.map((option) => (
+                  <Primitive.Item
+                    className={styles.option}
+                    key={option.value}
+                    value={option.value === "" ? EMPTY_VALUE : option.value}
+                    disabled={option.disabled}
+                  >
+                    <Primitive.ItemText>{option.label}</Primitive.ItemText>
+                    <Primitive.ItemIndicator className={styles.check}>
+                      <Check size={16} weight="bold" aria-hidden="true" />
+                    </Primitive.ItemIndicator>
+                  </Primitive.Item>
+                ))}
+              </Primitive.Viewport>
+              <Primitive.ScrollDownButton className={styles.scrollButton}>
+                <CaretDown size={14} aria-hidden="true" />
+              </Primitive.ScrollDownButton>
+            </Primitive.Content>
+          </Primitive.Portal>
+        </Primitive.Root>
+      )}
     </div>
   );
 }

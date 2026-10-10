@@ -4,6 +4,7 @@ import { useRef, useState, type FormEvent } from "react";
 import { ArrowUpRight, CheckCircle } from "@phosphor-icons/react";
 import { enquiryApi } from "@/api/enquiry";
 import { propertyEnquirySchema } from "@/zod/enquiry";
+import Select from "@/components/ui/Select";
 import EnquiryField from "./EnquiryField";
 import EnquiryContactFields from "./EnquiryContactFields";
 import SellerPropertyFields from "./SellerPropertyFields";
@@ -105,16 +106,17 @@ export default function PropertyEnquiryForm({
         <EnquiryContactFields prefix={prefix} errors={errors} />
         {variant === "contact" && (
           <EnquiryField id={id("purpose")} label="How can we help?" wide>
-            <select
+            <Select
               id={id("purpose")}
               name="purpose"
               defaultValue={getEnquiryPurpose(initialPurpose)}
-            >
-              <option value="general">A general enquiry</option>
-              <option value="buy">I’m looking to buy</option>
-              <option value="rent">I’m looking to rent</option>
-              <option value="sell">I’d like to sell</option>
-            </select>
+              options={[
+                { value: "general", label: "A general enquiry" },
+                { value: "buy", label: "I’m looking to buy" },
+                { value: "rent", label: "I’m looking to rent" },
+                { value: "sell", label: "I’d like to sell" },
+              ]}
+            />
           </EnquiryField>
         )}
         {variant === "sell" && <SellerPropertyFields prefix={prefix} />}

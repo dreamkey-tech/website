@@ -6,7 +6,7 @@ import OfficeMap from "@/components/maps/OfficeMap";
 import styles from "./Interior.module.css";
 
 export default function ContactMap() {
-  const [showMap, setShowMap] = useState(false);
+  const [showMap, setShowMap] = useState(true);
   if (showMap) {
     return <OfficeMap className={styles.map} />;
   }
