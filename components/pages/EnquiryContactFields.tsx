@@ -50,12 +50,18 @@ export default function EnquiryContactFields({
           {...errorProps("mobileNo")}
         />
       </EnquiryField>
-      <EnquiryField id={id("email")} label="Email address" error={errors.email}>
+      <EnquiryField
+        id={id("email")}
+        label="Email address"
+        error={errors.email}
+        required
+      >
         <input
           id={id("email")}
           name="email"
           type="email"
           autoComplete="email"
+          required
           placeholder="you@example.com"
           maxLength={200}
           {...errorProps("email")}

@@ -2,12 +2,12 @@
 
 import { useRef, useState, type FormEvent } from "react";
 import { ArrowUpRight, CheckCircle } from "@phosphor-icons/react";
-import { enquiryApi } from "@/api/enquiry";
+import { enquiryApi, getEnquiryErrorMessage } from "@/api/enquiry";
 import { propertyEnquirySchema } from "@/zod/enquiry";
 import Select from "@/components/ui/Select";
 import EnquiryField from "./EnquiryField";
 import EnquiryContactFields from "./EnquiryContactFields";
-import SellerPropertyFields from "./SellerPropertyFields";
+import EnquiryPropertyFields from "./EnquiryPropertyFields";
 import { normalizeIndianMobile, getEnquiryPurpose } from "./enquiry-values";
 import styles from "./Interior.module.css";
 
@@ -22,6 +22,7 @@ export default function PropertyEnquiryForm({
 }) {
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [responseMessage, setResponseMessage] = useState("");
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
@@ -53,18 +54,23 @@ export default function PropertyEnquiryForm({
       setErrors(fieldErrors);
       setStatus("idle");
       formRef.current
-        ?.querySelector<HTMLInputElement>(
-          `[name="${Object.keys(fieldErrors)[0]}"]`,
+        ?.querySelector<HTMLElement>(
+          `[id="${id(Object.keys(fieldErrors)[0])}"]`,
         )
         ?.focus();
       return;
     }
     setErrors({});
+    setResponseMessage("");
     setStatus("sending");
     try {
-      await enquiryApi.submitPropertyEnquiry(parsed.data);
+      const result = await enquiryApi.submitPropertyEnquiry(parsed.data);
+      setResponseMessage(
+        typeof result.message === "string" ? result.message.trim() : "",
+      );
       setStatus("success");
-    } catch {
+    } catch (error) {
+      setResponseMessage(getEnquiryErrorMessage(error));
       setStatus("error");
     }
   }
@@ -75,8 +81,8 @@ export default function PropertyEnquiryForm({
         <CheckCircle size={46} weight="light" aria-hidden="true" />
         <Heading>Your enquiry is with us.</Heading>
         <p>
-          Thank you for reaching out. The Dream Key team will contact you using
-          the details you shared.
+          {responseMessage ||
+            "Thank you for reaching out. The Dream Key team will contact you using the details you shared."}
         </p>
         <button
           className={styles.secondaryButton}
@@ -119,7 +125,11 @@ export default function PropertyEnquiryForm({
             />
           </EnquiryField>
         )}
-        {variant === "sell" && <SellerPropertyFields prefix={prefix} />}
+        <EnquiryPropertyFields
+          prefix={prefix}
+          variant={variant}
+          errors={errors}
+        />
         <EnquiryField
           id={id("specificRequirements")}
           label={
@@ -145,7 +155,7 @@ export default function PropertyEnquiryForm({
       </div>
       {status === "error" && (
         <p className={styles.submitError} role="alert">
-          We couldn’t send your enquiry. Please try again, or call{" "}
+          {responseMessage} You can also call{" "}
           <a href="tel:+918697559123">+91 86975 59123</a>.
         </p>
       )}

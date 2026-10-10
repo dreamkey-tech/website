@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-10T18:11:29.886Z",
+  "endpoint": "/v1/website/enquiry",
+  "requiredFields": [
+    "fullName",
+    "mobileNo",
+    "email",
+    "propertyType",
+    "preferredLocation",
+    "estimatedBudgetBand"
+  ],
+  "optionalFields": [
+    "specificRequirements"
+  ],
+  "checks": [
+    "required/whitespace/email validation",
+    "Indian phone normalization",
+    "exact public POST payload and proxy",
+    "201 success envelope/message",
+    "400 validation message",
+    "success:false and malformed body cannot report success",
+    "network fallback",
+    "SSR required fields on Contact and Sell",
+    "real form handler validation, sending guard, success/reset, backend error and seller purpose"
+  ],
+  "scope": "Isolated Axios adapter, real schema, real component SSR and form-handler state adapter. No production lead created; not live backend or browser interaction verification."
+}

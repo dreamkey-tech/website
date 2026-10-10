@@ -11,6 +11,8 @@ Four request-rendered pages continue the landing page’s gold, neutral, editori
 
 The forms call the existing `enquiryApi.submitPropertyEnquiry` adapter and existing Zod schema. Indian mobile numbers are normalized to the API’s `+91 1234567890` format. Native and schema validation, pending, success, and error states are included. Success and failure were verified against a temporary local mock endpoint, which was removed before the final build. Live backend enquiry delivery was not tested.
 
+**Superseded contract, 10 October 2026:** The paragraph above records the original implementation. Both forms now require six fields and normalize phones as `+91 12345 67890` using the updated public API example; only the requirements message is optional. Typed response/error handling and current verification are recorded in [enquiry-api.md](enquiry-api.md).
+
 All page files are Server Components and call `connection()` for request rendering. Client boundaries cover navigation, enquiry forms, rental filtering, and the map control. Metadata includes page titles/descriptions and a 3.2 KB favicon derived from the supplied logo; the original favicon remains unchanged for the landing page.
 
 ## Theme and scope

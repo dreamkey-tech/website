@@ -8,7 +8,13 @@ Reviewed: 10 October 2026. This document describes the current working tree, inc
 
 **Historical handoff:** The earlier documentation task recorded branch `redesign`, remote `dreamkey-tech/website`, extensive uncommitted work and a pending Dashboard deletion. **Current SEO task checkpoint (10 October 2026):** The branch is `main`, and the working tree was clean before this task added its SEO changes. Dashboard remains absent. This task has not committed, pushed or deployed its changes; the historical handoff is not evidence of current release approval.
 
-## Latest update — SEO and AI discovery
+## Latest update — public enquiry contract
+
+**User-supplied API/model + verified frontend, 10 October 2026:** Contact and Sell now require the six nonnullable input fields (`fullName`, `mobileNo`, `email`, `propertyType`, `preferredLocation`, `estimatedBudgetBand`); `specificRequirements` remains optional. Shared property fields replace Contact's missing inputs and Seller's optional versions. Indian local/+91 phone input serializes as `+91 12345 67890`, matching the supplied API example. The adapter sends exactly seven documented keys to the existing public endpoint and handles typed success/validation responses. It checks `success: true` before confirming, displays the backend message, and provides a generic network/malformed-error fallback. Existing purpose prefix, auth cookies, redirects and backend proxy rewrites are preserved.
+
+**Verification:** Scoped ESLint, TypeScript, production webpack build and `node output/enquiry/check-enquiry.cjs` passed. The repeatable isolated Axios/schema/real-form-handler checks cover payload, six required fields, optional message, phone formats, HTTP 201/400, false/malformed success, network errors, pending guard, retry/reset and initial server markup. Evidence: `output/enquiry/verification.json`. Local production browser checks confirmed Contact's dropdown and blank-submit focus, both forms' required attributes and no horizontal overflow at 390px. Preview: `output/enquiry/contact-form.png`. No live enquiry POST, CRM lead or delivery verification was performed. Backend controller validation beyond the supplied examples/model remains unknown; verify in an approved test environment. Contract and implementation details: `docs/enquiry-api.md`. No commit, push or deployment in this task.
+
+## Previous update — SEO and AI discovery
 
 **OG image follow-up:** Shared route metadata now uses the user-provided `public/images/OG.webp` for Open Graph and Twitter previews, with its actual 1920 × 862 dimensions and WebP media type. Logo/favicons and visible page design are unchanged. Scoped lint, TypeScript and production webpack build passed; repeat HTTP checks confirmed OG/Twitter image tags across all twelve routes and HTTP 200 WebP delivery. Social-platform preview caches and public deployment were not tested.
 
