@@ -38,7 +38,7 @@ export const SEO_PAGES = {
   "/contact": {
     title: "Contact Our New Town, Kolkata Team | Dream Key Reality",
     description:
-      "Contact Dream Key Reality in New Town, Kolkata. Call +91 86975 59123 or send an enquiry about buying, renting, selling or property consulting.",
+      "Contact Dream Key Reality in New Town, Kolkata. Call +91 79801 33881 or send an enquiry about buying, renting, selling or property consulting.",
   },
   "/careers": {
     title: "Real Estate Careers in Kolkata | Dream Key Reality",

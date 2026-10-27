@@ -21,7 +21,7 @@ export default function HomeContactCTA() {
         <Link href="/contact" className={styles.primaryButton}>
           Start an enquiry <ArrowUpRight size={20} aria-hidden="true" />
         </Link>
-        <a href="tel:+918697559123">Or call +91 86975 59123</a>
+        <a href="tel:+917980133881">Or call +91 79801 33881</a>
       </div>
     </section>
   );

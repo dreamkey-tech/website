@@ -156,7 +156,7 @@ export default function PropertyEnquiryForm({
       {status === "error" && (
         <p className={styles.submitError} role="alert">
           {responseMessage} You can also call{" "}
-          <a href="tel:+918697559123">+91 86975 59123</a>.
+          <a href="tel:+917980133881">+91 79801 33881</a>.
         </p>
       )}
       <button

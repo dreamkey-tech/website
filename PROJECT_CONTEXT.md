@@ -19,8 +19,7 @@ Existing `docs/` files are implementation history. For example, `docs/hero-desig
 
 Contact details currently rendered in Contact and shared footers:
 
-- Primary phone: `+91 86975 59123`; telephone destination `tel:+918697559123`.
-- **Conversation + verified, footer-only additions (10 October 2026):** `+91 81003 79277` (`tel:+918100379277`) and `+91 62914 25620` (`tel:+916291425620`). All three marketing footer variants reuse the server component `components/layout/FooterPhoneLinks.tsx` / `.module.css`, retaining the shared gold underline and 44px touch targets. Contact page, other phone CTAs and legacy WhatsApp retain the primary number; account standalone footers retain their existing layout.
+- **User decision + verified source, 27 October 2026:** The sole business phone is now `+91 79801 33881` (`7980133881` locally); telephone destination `tel:+917980133881`, WhatsApp destination `phone=917980133881`. The user explicitly replaced all three previous numbers everywhere. Marketing footers show one number through `components/layout/FooterPhoneLinks.tsx`; Contact/Sell/legal contact details, enquiry error fallback, Home/legacy CTAs, retained Buy/Rent sidebars, Contact metadata and business structured data use the same new number. Existing WhatsApp messages and footer styling are preserved. Historical records below describe superseded contact details; do not restore those numbers.
 - General email: `info@dreamkeykol.com`.
 - Address: `AA 52, st-69, AA block, Newtown, Kolkata, West Bengal 700156`.
 - Privacy intentionally retains its existing `contact@dreamkeykol.com` link; Terms uses `info@dreamkeykol.com`.

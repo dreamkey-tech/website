@@ -3,9 +3,7 @@ import styles from "./FooterPhoneLinks.module.css";
 import linkStyles from "./FooterTextLink.module.css";
 
 const PHONE_NUMBERS = [
-  { label: "+91 86975 59123", href: "tel:+918697559123" },
-  { label: "+91 81003 79277", href: "tel:+918100379277" },
-  { label: "+91 62914 25620", href: "tel:+916291425620" },
+  { label: "+91 79801 33881", href: "tel:+917980133881" },
 ] as const;
 
 export default function FooterPhoneLinks({

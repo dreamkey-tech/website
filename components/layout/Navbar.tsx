@@ -274,9 +274,9 @@ export default function Navbar() {
 
             {/* Bottom contact info */}
             <div className="mt-auto pt-8 pb-8 flex flex-col gap-4">
-              <a href="tel:+918697559123" className="flex items-center gap-3 text-text-dark-secondary hover:text-gold transition-colors text-[15px]">
+              <a href="tel:+917980133881" className="flex items-center gap-3 text-text-dark-secondary hover:text-gold transition-colors text-[15px]">
                 <PhoneCall size={18} weight="duotone" className="text-gold" />
-                +91 86975 59123
+                +91 79801 33881
               </a>
               <a href="mailto:info@dreamkeykol.com" className="flex items-center gap-3 text-text-dark-secondary hover:text-gold transition-colors text-[15px]">
                 <Envelope size={18} weight="duotone" className="text-gold" />

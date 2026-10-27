@@ -18,7 +18,7 @@ export function businessSchema() {
           "Real estate consultancy in Kolkata for buying, renting, selling and property investment consulting.",
         logo: absoluteUrl("/logo2.png"),
         image: absoluteUrl("/about/officeExterior.webp"),
-        telephone: "+91 86975 59123",
+        telephone: "+91 79801 33881",
         email: "info@dreamkeykol.com",
         address: {
           "@type": "PostalAddress",
@@ -30,11 +30,7 @@ export function businessSchema() {
         },
         areaServed: { "@type": "City", name: "Kolkata" },
         hasMap: OFFICE_MAP_URL,
-        contactPoint: [
-          "+91 86975 59123",
-          "+91 81003 79277",
-          "+91 62914 25620",
-        ].map((telephone) => ({
+        contactPoint: ["+91 79801 33881"].map((telephone) => ({
           "@type": "ContactPoint",
           telephone,
           contactType: "customer service",

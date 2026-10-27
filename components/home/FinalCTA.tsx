@@ -109,7 +109,7 @@ export default function FinalCTA() {
             {/* Contact details */}
             <div className="flex flex-col gap-5">
               <a
-                href="tel:+918697559123"
+                href="tel:+917980133881"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-11 h-11 rounded-xl bg-dark-raised border border-border-dark flex items-center justify-center text-gold group-hover:bg-gold/10 group-hover:border-gold/30 transition-all duration-200">
@@ -117,7 +117,7 @@ export default function FinalCTA() {
                 </div>
                 <div>
                   <p className="text-[11px] uppercase tracking-wider text-text-dark-secondary font-semibold">Call Us</p>
-                  <p className="text-white font-medium text-[15px] group-hover:text-gold transition-colors">+91 86975 59123</p>
+                  <p className="text-white font-medium text-[15px] group-hover:text-gold transition-colors">+91 79801 33881</p>
                 </div>
               </a>
 
@@ -147,7 +147,7 @@ export default function FinalCTA() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://api.whatsapp.com/send?phone=918697559123&text=Hi%2C%20I%20am%20interested%20in%20a%20property."
+              href="https://api.whatsapp.com/send?phone=917980133881&text=Hi%2C%20I%20am%20interested%20in%20a%20property."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 h-12 px-6 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/25 text-emerald-400 font-semibold text-[14px] rounded-full w-fit transition-all duration-200 active:scale-[0.97]"

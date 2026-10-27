@@ -161,7 +161,7 @@ async function main() {
   const graph = schemas(home).flatMap((schema) => schema["@graph"] || []);
   const business = graph.find((item) => item["@type"] === "RealEstateAgent");
   assert.equal(business?.address.postalCode, "700156");
-  assert.equal(business?.contactPoint.length, 3);
+  assert.equal(business?.contactPoint.length, 1);
   assert.equal(business?.sameAs.length, 4);
   assert.ok(graph.some((item) => item["@type"] === "WebSite"));
   const serviceGraph = schemas(services).flatMap(

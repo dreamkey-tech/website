@@ -1,6 +1,6 @@
 # DreamKey current progress
 
-Reviewed: 10 October 2026. This document describes the current working tree, including uncommitted work. `PROJECT_CONTEXT.md` defines the evidence labels and architecture; `AGENTS.md` contains durable rules.
+Reviewed: 27 October 2026. This document describes the current working tree, including uncommitted work. `PROJECT_CONTEXT.md` defines the evidence labels and architecture; `AGENTS.md` contains durable rules.
 
 ## State at handoff
 
@@ -8,7 +8,15 @@ Reviewed: 10 October 2026. This document describes the current working tree, inc
 
 **Historical handoff:** The earlier documentation task recorded branch `redesign`, remote `dreamkey-tech/website`, extensive uncommitted work and a pending Dashboard deletion. **Current SEO task checkpoint (10 October 2026):** The branch is `main`, and the working tree was clean before this task added its SEO changes. Dashboard remains absent. This task has not committed, pushed or deployed its changes; the historical handoff is not evidence of current release approval.
 
-## Latest update — public enquiry contract
+## Latest update — single contact number
+
+**User decision + verified source, 27 October 2026:** Replace all three previous business phone numbers with `7980133881` across the site. Visible numbers now read `+91 79801 33881`; telephone and WhatsApp destinations use `+917980133881` and `917980133881` respectively. Each marketing footer contains one number. Contact/Sell, Privacy/Terms contact links, enquiry failure fallback, active and retained legacy CTAs/navigation/sidebars, Contact SEO metadata and business JSON-LD have been updated. WhatsApp message text and existing presentation remain. Historical phone-addition records below are superseded. No call or WhatsApp message was sent.
+
+**Verification:** Production webpack build including TypeScript passed. Scoped ESLint passes for the twelve changed files without pre-existing diagnostics; the four other changed components retain exactly the same three legacy hook errors and four unused-import/variable warnings verified against HEAD. Application-source search finds none of the three previous numbers. Local production HTTP checks pass on all twelve page routes: one new phone link per marketing footer, only the new telephone/WhatsApp destinations, and updated Contact metadata/Home business JSON-LD with one contact point. The retained SEO check now expects one contact point. Evidence: `/tmp/check-dreamkey-single-phone.cjs` and `/tmp/dreamkey-single-phone-check.json`. These are source/SSR checks, not live calls, WhatsApp delivery, deployment or external business-profile updates. No commit or push in this task.
+
+**Publication follow-up:** The user subsequently authorized committing and pushing the phone-number update to `origin/main`. Deployment is not verified by a Git push.
+
+## Previous update — public enquiry contract
 
 **User-supplied API/model + verified frontend, 10 October 2026:** Contact and Sell now require the six nonnullable input fields (`fullName`, `mobileNo`, `email`, `propertyType`, `preferredLocation`, `estimatedBudgetBand`); `specificRequirements` remains optional. Shared property fields replace Contact's missing inputs and Seller's optional versions. Indian local/+91 phone input serializes as `+91 12345 67890`, matching the supplied API example. The adapter sends exactly seven documented keys to the existing public endpoint and handles typed success/validation responses. It checks `success: true` before confirming, displays the backend message, and provides a generic network/malformed-error fallback. Existing purpose prefix, auth cookies, redirects and backend proxy rewrites are preserved.
 

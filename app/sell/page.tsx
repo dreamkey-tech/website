@@ -102,8 +102,8 @@ export default async function SellPage() {
               us a little about your property. We’ll help you work through the
               possibilities.
             </p>
-            <a className={styles.textLink} href="tel:+918697559123">
-              Prefer a call? +91 86975 59123
+            <a className={styles.textLink} href="tel:+917980133881">
+              Prefer a call? +91 79801 33881
               <ArrowUpRight size={18} aria-hidden="true" />
             </a>
           </div>

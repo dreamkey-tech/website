@@ -38,7 +38,7 @@ const socialLinks = [
 const whatsAppLink = {
   label: "WhatsApp",
   platform: "whatsapp",
-  href: "https://api.whatsapp.com/send?phone=918697559123",
+  href: "https://api.whatsapp.com/send?phone=917980133881",
   Icon: WhatsappLogo,
 };
 

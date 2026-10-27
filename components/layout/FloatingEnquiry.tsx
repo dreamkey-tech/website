@@ -7,7 +7,7 @@ import styles from "./FloatingEnquiry.module.css";
 import { ArrowRightIcon, ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 
 const WHATSAPP_ENQUIRY =
-  "https://api.whatsapp.com/send?phone=918697559123&text=Hi%2C%20I%20am%20interested%20in%20a%20property.";
+  "https://api.whatsapp.com/send?phone=917980133881&text=Hi%2C%20I%20am%20interested%20in%20a%20property.";
 
 export default function FloatingEnquiry() {
   const pathname = usePathname();

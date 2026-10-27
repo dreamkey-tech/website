@@ -49,7 +49,7 @@ export default async function ContactPage({
             <div className={styles.contactInfo}>
               <div>
                 <h2>Give us a call</h2>
-                <a href="tel:+918697559123">+91 86975 59123</a>
+                <a href="tel:+917980133881">+91 79801 33881</a>
               </div>
               <div>
                 <h2>Write to us</h2>

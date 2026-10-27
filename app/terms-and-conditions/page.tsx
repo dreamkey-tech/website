@@ -398,7 +398,7 @@ export default async function TermsAndConditionsPage() {
             <li>
               <div>
                 <span>Phone:</span>
-                <a href="tel:+918697559123">+91 86975 59123</a>
+                <a href="tel:+917980133881">+91 79801 33881</a>
               </div>
             </li>
             <li>

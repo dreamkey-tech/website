@@ -189,7 +189,7 @@ export default function HowItWorks() {
             </p>
           </div>
           <a
-            href="https://api.whatsapp.com/send?phone=918697559123&text=I%20would%20like%20to%20start%20my%20property%20search."
+            href="https://api.whatsapp.com/send?phone=917980133881&text=I%20would%20like%20to%20start%20my%20property%20search."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 h-11 px-6 bg-gold hover:bg-gold-light text-dark-base font-bold text-[13px] rounded-full transition-all duration-200 active:scale-[0.97] shrink-0"

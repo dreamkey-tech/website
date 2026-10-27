@@ -105,8 +105,8 @@ export default function FilterSidebar() {
         <div>
           <h4 className="font-label-ui text-label-ui font-bold text-on-surface uppercase tracking-wide">Prefer Guided Tours?</h4>
           <p className="text-body-dense text-on-surface-variant mt-0.5 leading-snug">Connect with our Senior Kolkata Portfolio Director for private chauffeured site visits.</p>
-          <a className="inline-flex items-center gap-1 text-primary font-bold font-label-ui text-label-ui mt-2 hover:underline" href="tel:+918697559123">
-            <span>+91 86975 59123</span>
+          <a className="inline-flex items-center gap-1 text-primary font-bold font-label-ui text-label-ui mt-2 hover:underline" href="tel:+917980133881">
+            <span>+91 79801 33881</span>
             <span className="material-symbols-outlined text-xs">arrow_forward</span>
           </a>
         </div>
