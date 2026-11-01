@@ -3,7 +3,7 @@
 import { useState, useTransition, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { SquaresFour, Rows } from "@phosphor-icons/react";
-import { SORTS, buyHref, type BuyFilters } from "./buy-data";
+import { SORTS, buyHref, type BuyFilters } from "./website-filters";
 import Select from "@/components/ui/Select";
 import styles from "./Buy.module.css";
 
@@ -29,7 +29,7 @@ export default function BuyResults({
         <div>
           <h2>Explore the collection</h2>
           <p aria-live="polite">
-            {total} {total === 1 ? "home" : "homes"}
+            {total} {total === 1 ? "property" : "properties"}
             {total > 0 ? ` · Showing ${first}-${last}` : ""}
           </p>
         </div>

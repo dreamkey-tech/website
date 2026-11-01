@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-30T08:41:15.100Z",
+  "checks": [
+    {
+      "route": "/buy/dreamkey-altura",
+      "status": 200
+    },
+    {
+      "route": "/buy/dreamkey-residences",
+      "status": 200
+    },
+    {
+      "route": "/buy/dreamkey-heights",
+      "status": 200
+    },
+    {
+      "route": "/buy/dreamkey-icon",
+      "status": 200
+    },
+    {
+      "route": "/buy/dreamkey-grand",
+      "status": 200
+    },
+    {
+      "route": "/buy/dreamkey-prime",
+      "status": 200
+    },
+    {
+      "route": "/buy/dreamkey-sky-mansions",
+      "status": 200
+    },
+    {
+      "route": "/buy/dreamkey-serene-villas",
+      "status": 200
+    }
+  ],
+  "passed": [
+    "8 distinct request-rendered property pages",
+    "Buy image/title detail links and retained enquiry links",
+    "page-specific canonical and sample noindex",
+    "unknown unit fields and photo/area disclosures",
+    "missing record fallback",
+    "existing sitemap excludes illustrative details",
+    "local bedroom image delivery"
+  ],
+  "scope": "Local production HTTP/SSR, not browser interactions, live inventory or enquiry delivery."
+}

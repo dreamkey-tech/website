@@ -387,7 +387,7 @@ export function activeBuyFilters(filters: BuyFilters) {
   );
   return chips;
 }
-export function buyEnquiryHref(home: BuyHome) {
+export function buyEnquiryHref(home: Pick<BuyHome, "title" | "status">) {
   return (
     "/contact?purpose=buy&property=" +
     encodeURIComponent(
@@ -395,4 +395,9 @@ export function buyEnquiryHref(home: BuyHome) {
         (home.status === "waitlist" ? " (waitlist / alternatives)" : ""),
     )
   );
+}
+
+/** Stable public detail URL, separate from the existing Contact enquiry flow. */
+export function buyPropertyHref(home: BuyHome) {
+  return `/buy/${home.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 }

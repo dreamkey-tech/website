@@ -1,0 +1,6 @@
+{
+  "publicCatalogueStatus": 200,
+  "renderedPublicCards": 5,
+  "anonymousDetailGated": true,
+  "scope": "Read-only local production GET using the configured live public backend; no live customer authentication or interest POST."
+}

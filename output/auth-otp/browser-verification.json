@@ -1,0 +1,42 @@
+{
+  "backend": "Loopback-only contract fixture, no outbound HTTP",
+  "signup": [
+    "register",
+    "clear provisional session",
+    "send LOGIN code",
+    "invalid code error",
+    "verify",
+    "redirect /buy"
+  ],
+  "recovery": [
+    "email request",
+    "reset OTP precheck",
+    "password mismatch focus",
+    "network failure feedback",
+    "successful retry",
+    "clear session",
+    "return /login"
+  ],
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "documentOverflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "documentOverflow": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "documentOverflow": false,
+      "formPanelScroll": true,
+      "invalidOtpFocus": true
+    }
+  ],
+  "viewportOverrideReset": true,
+  "liveEmailDeliveryTested": false,
+  "realAccountsOrPasswordsChanged": false
+}

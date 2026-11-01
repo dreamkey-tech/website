@@ -6,7 +6,7 @@ import {
   PROPERTY_TYPES,
   buyQueryEntries,
   type BuyFilters,
-} from "./buy-data";
+} from "./website-filters";
 import styles from "./Buy.module.css";
 
 export default function BuySearch({ filters }: { filters: BuyFilters }) {
@@ -36,7 +36,7 @@ export default function BuySearch({ filters }: { filters: BuyFilters }) {
       </div>
       {(
         [
-          ["type", "Property type", "All homes", PROPERTY_TYPES],
+          ["type", "Property type", "All properties", PROPERTY_TYPES],
           ["budget", "Budget", "Any budget", BUDGETS],
           ["bedrooms", "Bedrooms", "Any BHK", BEDROOMS],
         ] as const

@@ -1,0 +1,12 @@
+.fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: var(--home-text-muted);
+  background: var(--home-surface-muted);
+  font-size: 12px;
+}

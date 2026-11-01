@@ -1,0 +1,16 @@
+{
+  "passed": 10,
+  "checks": [
+    "card/detail DTO strips CRM fields and rejects unsafe or private media",
+    "query mapping preserves hero aliases and sends supported backend filters with INR amounts",
+    "return destinations stay same-origin and account links retain the property",
+    "public catalogue fetch is cookie-free, fresh, paginated and never substitutes sample stock on failure",
+    "details require backend authorization and discard internal fields before rendering",
+    "anonymous card opens reusable modal; cancel and modifier clicks preserve browsing behavior",
+    "popup OTP completion resumes the selected listing instead of generic Buy",
+    "standalone OTP login honors safe returnTo and rejects external destinations",
+    "interest is absent during SSR and sent once after a Strict Mode mount",
+    "failed interest can retry explicitly; 401 hides details and requests login"
+  ],
+  "scope": "Actual source in React/jsdom and isolated Axios/fetch adapters. No live accounts, details or CRM activity."
+}

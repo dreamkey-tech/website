@@ -66,6 +66,12 @@ export const SEO_PAGES = {
       "Create your Dream Key account to begin your property search in Kolkata.",
     noIndex: true,
   },
+  "/forgot-password": {
+    title: "Reset Password | Dream Key",
+    description:
+      "Reset your Dream Key account password with an email verification code.",
+    noIndex: true,
+  },
 } as const;
 
 export type SEOPath = keyof typeof SEO_PAGES;
@@ -76,10 +82,16 @@ export function absoluteUrl(path: string) {
 
 export function pageMetadata(
   path: SEOPath,
-  overrides: { canonical?: string; title?: string; noIndex?: boolean } = {},
+  overrides: {
+    canonical?: string;
+    title?: string;
+    description?: string;
+    noIndex?: boolean;
+  } = {},
 ): Metadata {
   const page = SEO_PAGES[path];
   const title = overrides.title ?? page.title;
+  const description = overrides.description ?? page.description;
   const noIndex = overrides.noIndex ?? ("noIndex" in page && page.noIndex);
   const url = absoluteUrl(overrides.canonical ?? path);
   const images = [
@@ -94,12 +106,12 @@ export function pageMetadata(
 
   return {
     title,
-    description: page.description,
+    description,
     alternates: { canonical: url },
     icons: { icon: path === "/" ? "/logo2.png" : "/images/pages/favicon.png" },
     openGraph: {
       title,
-      description: page.description,
+      description,
       url,
       siteName: SITE_NAME,
       locale: "en_IN",
@@ -109,7 +121,7 @@ export function pageMetadata(
     twitter: {
       card: "summary_large_image",
       title,
-      description: page.description,
+      description,
       images,
     },
     robots: {

@@ -2,15 +2,18 @@
 
 import { useState } from "react";
 import { authApi } from "@/api/auth";
+import { safeAuthReturnTo, authPageHref } from "@/lib/auth-return";
 import { authErrorDetails } from "./auth-errors";
 import styles from "./Auth.module.css";
 
 export const GoogleSignInButton = ({
   disabled,
   onBusyChange,
+  returnTo,
 }: {
   disabled?: boolean;
   onBusyChange?: (busy: boolean) => void;
+  returnTo?: string;
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -21,7 +24,15 @@ export const GoogleSignInButton = ({
     setIsLoading(true);
     onBusyChange?.(true);
     try {
-      const url = await authApi.googleSignIn();
+      const url = await authApi.googleSignIn(
+        returnTo
+          ? new URL(safeAuthReturnTo(returnTo), window.location.origin).href
+          : undefined,
+        returnTo
+          ? new URL(authPageHref("/login", returnTo), window.location.origin)
+              .href
+          : undefined,
+      );
       if (!url) throw new Error("No sign-in URL returned");
       window.location.href = url;
     } catch (error: unknown) {

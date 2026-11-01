@@ -1,57 +1,103 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Bed, CornersOut } from "@phosphor-icons/react/dist/ssr";
-import { STATUSES, buyEnquiryHref, type BuyHome } from "./buy-data";
+import {
+  ArrowRight,
+  Bed,
+  Bathtub,
+  CornersOut,
+} from "@phosphor-icons/react/dist/ssr";
+import {
+  AVAILABILITY_LABELS,
+  PROPERTY_LABELS,
+  propertyName,
+  propertyAddress,
+  propertyPrice,
+  propertyArea,
+  propertyHref,
+  propertyEnquiryHref,
+  type WebsitePropertyCard,
+} from "@/lib/website-properties";
+import PropertyLink from "@/components/property/PropertyLink";
+import ListingImage from "@/components/property/ListingImage";
 import styles from "./Buy.module.css";
 
-export default function BuyCard({ home }: { home: BuyHome }) {
-  const href = buyEnquiryHref(home);
+export default function BuyCard({
+  property,
+}: {
+  property: WebsitePropertyCard;
+}) {
+  const title = propertyName(property);
+  const href = propertyHref(property);
+  const area = property.carpetAreaSqFt ?? property.superBuiltUpAreaSqFt;
   return (
     <article className={styles.card}>
-      <Link
+      <PropertyLink
         className={styles.cardPhoto}
         href={href}
-        aria-label={`Enquire about ${home.title}`}
+        aria-label={`View ${title} property details`}
       >
-        <Image
-          src={home.image}
-          alt={home.imageAlt}
-          fill
-          sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, (max-width: 1440px) 37vw, 510px"
+        <ListingImage
+          key={property.coverImage}
+          src={property.coverImage}
+          alt={`${title}, ${propertyAddress(property)}`}
+          sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1440px) 37vw, 510px"
         />
         <span className={styles.cardArrow}>
           <ArrowRight size={20} aria-hidden="true" />
         </span>
-      </Link>
+      </PropertyLink>
       <div className={styles.cardBody}>
         <div className={styles.cardMeta}>
-          <p>{home.location}</p>
-          <span>{STATUSES.find(([value]) => value === home.status)?.[1]}</span>
+          <p>{propertyAddress(property)}</p>
+          <span>
+            {property.availabilityStatus
+              ? AVAILABILITY_LABELS[property.availabilityStatus] ||
+                "Confirm availability"
+              : "Confirm availability"}
+          </span>
         </div>
         <h3>
-          <Link href={href}>{home.title}</Link>
+          <PropertyLink href={href}>{title}</PropertyLink>
         </h3>
-        <p className={styles.description}>{home.description}</p>
+        <p className={styles.description}>
+          {PROPERTY_LABELS[property.propertyType] || "Property"} for sale
+        </p>
         <div className={styles.specs}>
-          <span>
-            <Bed size={17} aria-hidden="true" />
-            {home.bhk}
-          </span>
+          {property.bedrooms !== null && (
+            <span>
+              <Bed size={17} aria-hidden="true" />
+              {property.bedrooms} BHK
+            </span>
+          )}
+          {property.bathrooms !== null && (
+            <span>
+              <Bathtub size={17} aria-hidden="true" />
+              {property.bathrooms} baths
+            </span>
+          )}
           <span>
             <CornersOut size={17} aria-hidden="true" />
-            {home.size}
+            {propertyArea(area)}
           </span>
         </div>
-        <p className={styles.amenityText}>{home.amenitiesText}</p>
+        <p className={styles.amenityText}>
+          {area !== null
+            ? property.carpetAreaSqFt !== null
+              ? "Carpet area"
+              : "Super built-up area"
+            : "Measurements on request"}
+        </p>
+        {property.amenities.length > 0 && (
+          <p className={styles.amenityText}>
+            {property.amenities.slice(0, 2).join(" • ")}
+          </p>
+        )}
         <div className={styles.cardBottom}>
           <p className={styles.price}>
-            <span>Indicative price</span>
-            {home.price}
-            <small> onwards</small>
+            <span>Asking price</span>
+            {propertyPrice(property)}
           </p>
-          <Link className={styles.enquire} href={href}>
-            {home.status === "waitlist" ? "Ask our team" : "Enquire"}
-            <ArrowRight size={16} aria-hidden="true" />
+          <Link className={styles.enquire} href={propertyEnquiryHref(property)}>
+            Enquire <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
       </div>

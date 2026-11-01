@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { safeAuthReturnTo } from '@/lib/auth-return';
 
 // Define the routes that require authentication
 const protectedRoutes = ['/profile', '/settings'];
@@ -28,7 +29,8 @@ export function proxy(request: NextRequest) {
   
   if (isAuthRoute && hasAuthCookie) {
     // Redirect them to the home page
-    return NextResponse.redirect(new URL('/', request.url));
+    const returnTo = request.nextUrl.searchParams.get('returnTo');
+    return NextResponse.redirect(new URL(returnTo ? safeAuthReturnTo(returnTo) : '/', request.url));
   }
 
   // Allow the request to proceed normally

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { buyHref, type BuyFilters } from "./buy-data";
+import { buyHref, type BuyFilters } from "./website-filters";
 import styles from "./Buy.module.css";
 
 export default function BuyPagination({
@@ -25,16 +25,21 @@ export default function BuyPagination({
         </span>
       )}
       <div>
-        {Array.from({ length: pages }, (_, index) => index + 1).map((page) => (
-          <Link
-            key={page}
-            href={buyHref(filters, { page })}
-            aria-current={page === filters.page ? "page" : undefined}
-            aria-label={`Page ${page}`}
-          >
-            {page}
-          </Link>
-        ))}
+        {Array.from(
+          new Set([1, filters.page - 1, filters.page, filters.page + 1, pages]),
+        )
+          .filter((page) => page >= 1 && page <= pages)
+          .sort((a, b) => a - b)
+          .map((page) => (
+            <Link
+              key={page}
+              href={buyHref(filters, { page })}
+              aria-current={page === filters.page ? "page" : undefined}
+              aria-label={`Page ${page}`}
+            >
+              {page}
+            </Link>
+          ))}
       </div>
       {filters.page < pages ? (
         <Link href={buyHref(filters, { page: filters.page + 1 })}>

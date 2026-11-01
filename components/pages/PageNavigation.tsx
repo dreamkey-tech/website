@@ -43,7 +43,11 @@ export default function PageNavigation() {
           <Link
             key={link.href}
             href={link.href}
-            aria-current={pathname === link.href ? "page" : undefined}
+            aria-current={
+              pathname === link.href || pathname.startsWith(`${link.href}/`)
+                ? "page"
+                : undefined
+            }
             onClick={() => setOpen(false)}
           >
             {link.label}

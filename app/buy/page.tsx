@@ -9,14 +9,15 @@ import BuyFilters from "@/components/buy/BuyFilters";
 import BuyCard from "@/components/buy/BuyCard";
 import BuyResults from "@/components/buy/BuyResults";
 import BuyPagination from "@/components/buy/BuyPagination";
+import BuyCatalogueError from "@/components/buy/BuyCatalogueError";
+import { getSaleCatalogue } from "@/lib/website-properties.server";
 import {
-  BUY_HOMES,
   parseBuyFilters,
-  filterBuyHomes,
   activeBuyFilters,
   buyHref,
+  buyQueryEntries,
   type BuySearchParams,
-} from "@/components/buy/buy-data";
+} from "@/components/buy/website-filters";
 import PageCTA from "@/components/pages/PageCTA";
 import interior from "@/components/pages/Interior.module.css";
 import styles from "@/components/buy/Buy.module.css";
@@ -27,12 +28,10 @@ export async function generateMetadata({
   searchParams: Promise<BuySearchParams>;
 }): Promise<Metadata> {
   const initial = parseBuyFilters(await searchParams);
-  const count = filterBuyHomes(BUY_HOMES, initial).length;
-  // Match the rendered pagination, including out-of-range page requests.
-  const filters = {
-    ...initial,
-    page: Math.min(initial.page, Math.max(1, Math.ceil(count / 6))),
-  };
+  const catalog = await getSaleCatalogue(
+    new URLSearchParams(buyQueryEntries(initial)).toString(),
+  );
+  const filters = catalog.filters;
   const noIndex =
     activeBuyFilters(filters).length > 0 || filters.sort !== "recommended";
 
@@ -53,19 +52,24 @@ export default async function BuyPage({
 }) {
   await connection();
   const initial = parseBuyFilters(await searchParams);
-  const homes = filterBuyHomes(BUY_HOMES, initial);
-  const perPage = 6;
-  const pages = Math.max(1, Math.ceil(homes.length / perPage));
-  const filters = { ...initial, page: Math.min(initial.page, pages) };
-  const start = (filters.page - 1) * perPage;
-  const shown = homes.slice(start, start + perPage);
+  const catalog = await getSaleCatalogue(
+    new URLSearchParams(buyQueryEntries(initial)).toString(),
+  );
+  const filters = catalog.filters;
+  const pages =
+    catalog.kind === "ready" ? Math.max(1, catalog.pagination.totalPages) : 1;
+  const start =
+    catalog.kind === "ready"
+      ? (catalog.pagination.page - 1) * catalog.pagination.limit
+      : 0;
+  const shown = catalog.kind === "ready" ? catalog.properties : [];
   const chips = activeBuyFilters(filters);
   const formKey = buyHref(filters);
   return (
     <div className={interior.page} id="page-content">
       <div className={interior.container}>
         <h1 className={interior.srOnly} id="buy-title">
-          Homes to buy in Kolkata
+          Properties for sale in Kolkata
         </h1>
         {/* Temporarily hidden intro. To restore: remove the hidden h1 above, uncomment this section and restore the Image import.
         <section className={styles.intro} aria-labelledby="buy-title">
@@ -100,8 +104,8 @@ export default async function BuyPage({
           aria-label="Homes to buy"
         >
           <p className={styles.catalogNote}>
-            An illustrative collection. Our team can confirm current
-            availability, pricing, and property photographs.
+            Explore properties listed with Dream Key. Confirm availability and
+            final pricing with our team.
           </p>
           {chips.length > 0 && (
             <div
@@ -126,39 +130,45 @@ export default async function BuyPage({
           <div className={styles.collectionLayout}>
             <BuyFilters key={formKey} filters={filters} />
             <div>
-              <BuyResults
-                filters={filters}
-                total={homes.length}
-                first={shown.length ? start + 1 : 0}
-                last={start + shown.length}
-              >
-                {shown.length ? (
-                  shown.map((home) => <BuyCard key={home.id} home={home} />)
-                ) : (
-                  <div className={styles.emptyState}>
-                    <h3>A different starting point?</h3>
-                    <p>
-                      No homes in this collection match your filters. Try
-                      widening the search, or tell us what you’re looking for.
-                    </p>
-                    <div>
-                      <Link
-                        className={interior.secondaryButton}
-                        href="/buy#homes"
-                      >
-                        Clear filters
-                      </Link>
-                      <Link
-                        className={interior.textLink}
-                        href="/contact?purpose=buy"
-                      >
-                        Help me find a home
-                        <ArrowUpRight size={17} aria-hidden="true" />
-                      </Link>
+              {catalog.kind === "error" ? (
+                <BuyCatalogueError />
+              ) : (
+                <BuyResults
+                  filters={filters}
+                  total={catalog.pagination.total}
+                  first={shown.length ? start + 1 : 0}
+                  last={start + shown.length}
+                >
+                  {shown.length ? (
+                    shown.map((property) => (
+                      <BuyCard key={property.id} property={property} />
+                    ))
+                  ) : (
+                    <div className={styles.emptyState}>
+                      <h3>A different starting point?</h3>
+                      <p>
+                        No homes in this collection match your filters. Try
+                        widening the search, or tell us what you’re looking for.
+                      </p>
+                      <div>
+                        <Link
+                          className={interior.secondaryButton}
+                          href="/buy#homes"
+                        >
+                          Clear filters
+                        </Link>
+                        <Link
+                          className={interior.textLink}
+                          href="/contact?purpose=buy"
+                        >
+                          Help me find a home
+                          <ArrowUpRight size={17} aria-hidden="true" />
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                )}
-              </BuyResults>
+                  )}
+                </BuyResults>
+              )}
               <BuyPagination filters={filters} pages={pages} />
             </div>
           </div>

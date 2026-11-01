@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-01",
+  "backend": "Loopback-only mock; dummy accounts and OTP, no live CRM mutation",
+  "checks": [
+    "Anonymous card opens login popup without navigating",
+    "Cancel restores card focus and scrolling",
+    "Invalid OTP remains in popup; valid OTP returns to exact property",
+    "One authenticated interest POST observed for opening",
+    "Gallery opens, advances and restores focus",
+    "Direct anonymous property URL opens gate with no protected detail DOM",
+    "Escape dismisses popup while keeping details gated"
+  ],
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "dialogWithinViewport": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "overflow": false,
+      "dialogWithinViewport": true
+    }
+  ],
+  "viewportOverrideReset": true,
+  "liveCustomerSessionTested": false,
+  "liveInterestPostSent": false
+}

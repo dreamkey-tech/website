@@ -5,11 +5,15 @@ import AuthPageShell from "@/components/auth/AuthPageShell";
 
 export const metadata = pageMetadata("/login");
 
-export default async function LoginPage() {
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ returnTo?: string }>;
+}) {
   await connection();
   return (
     <AuthPageShell>
-      <LoginForm />
+      <LoginForm returnTo={(await searchParams).returnTo} />
     </AuthPageShell>
   );
 }

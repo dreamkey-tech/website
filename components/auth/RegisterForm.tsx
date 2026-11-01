@@ -1,5 +1,5 @@
 import AuthForm from "./AuthForm";
 
-export default function RegisterForm() {
-  return <AuthForm mode="register" />;
+export default function RegisterForm({ returnTo }: { returnTo?: string }) {
+  return <AuthForm mode="register" returnTo={returnTo} />;
 }

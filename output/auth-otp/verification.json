@@ -1,0 +1,21 @@
+{
+  "passed": 15,
+  "checks": [
+    "schemas reject invalid email/code/password and preserve leading-zero OTP",
+    "adapter exact payloads, cookie/proxy/signal preservation and unspecified 200 responses",
+    "malformed login/session, explicit failures and unverified OTP response reject",
+    "login: blank fields stay local with first-field focus",
+    "login: OTP required before auth/redirect, bad code retry, verified session redirect",
+    "register: blank fields stay local with first-field focus",
+    "register: OTP required before auth/redirect, bad code retry, verified session redirect",
+    "signup send failure retries code without duplicate registration",
+    "signup must clear provisional session before sending code; logout failure is retryable",
+    "cancelled OTP returns to login without authentication",
+    "login pending guard and abort on unmount",
+    "reset complete flow, local mismatch, expired reset failure, no premature auth and session cleanup",
+    "resend cooldown, both purposes, OTP expiry, replacement-code clear and timer cleanup",
+    "Google-only, rate-limit, malformed/network errors render safe feedback",
+    "Google endpoint, callback and connection-failure feedback remain intact"
+  ],
+  "scope": "Actual source in React/jsdom with isolated Axios adapter; no live backend requests."
+}

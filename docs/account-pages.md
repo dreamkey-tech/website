@@ -1,5 +1,7 @@
 # Login and registration redesign
 
+**1 November 2026 follow-up:** The authentication behavior below is historical. Email login and signup now require OTP, and `/forgot-password` implements password recovery. Current contract, signup decision, checks and backend limitation are in [auth-otp.md](auth-otp.md). The original visual design and constrained-height form scrolling remain.
+
 The existing `/login` and `/register` routes now share a light account layout with an architectural photo on the left and the form on the right. The existing illustrative Kolkata high-rise asset is reused. Below 900px the photo is hidden and the form becomes the primary content. The account pages use a small brand header, return-home link, and support/legal footer instead of the full marketing navigation and footer.
 
 `AuthPageShell` and `AuthFormFrame` provide the shared layout. `AuthForm` owns the login/registration interaction, `AuthField` handles accessible fields and password visibility, and `GoogleSignInButton` handles the existing Google OAuth endpoint with pending and error feedback. The original LoginForm and RegisterForm exports remain as small wrappers. No dependencies were added.

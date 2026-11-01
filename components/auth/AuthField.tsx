@@ -16,7 +16,7 @@ export default function AuthField({
   hint,
   disabled,
 }: {
-  name: "name" | "email" | "password";
+  name: "name" | "email" | "password" | "newPassword" | "confirmPassword";
   label: string;
   type?: "text" | "email" | "password";
   value: string;

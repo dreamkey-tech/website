@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -8,13 +7,11 @@ import {
   ArrowUpRight,
 } from "@phosphor-icons/react";
 import {
-  LOCATIONS,
-  STATUSES,
-  AMENITIES,
+  AREAS,
   activeBuyFilters,
   buyQueryEntries,
   type BuyFilters as Filters,
-} from "./buy-data";
+} from "./website-filters";
 import BuyBudget from "./BuyBudget";
 import styles from "./Buy.module.css";
 
@@ -49,23 +46,29 @@ export default function BuyFilters({ filters }: { filters: Filters }) {
         <form action="/buy#homes" method="get">
           {buyQueryEntries(filters)
             .filter(
-              ([name]) =>
-                !["location", "amenity", "status", "maxPrice", "page"].includes(
-                  name,
-                ),
+              ([name]) => !["location", "maxPrice", "page"].includes(name),
             )
             .map(([name, value], index) => (
               <input type="hidden" name={name} value={value} key={index} />
             ))}
           <fieldset className={styles.filterGroup}>
             <legend>Neighbourhood</legend>
-            {LOCATIONS.map(([value, label]) => (
+            <label className={styles.choice}>
+              <input
+                type="radio"
+                name="location"
+                value=""
+                defaultChecked={!filters.location}
+              />
+              <span>All Kolkata</span>
+            </label>
+            {AREAS.map(([value, label]) => (
               <label className={styles.choice} key={value}>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="location"
                   value={value}
-                  defaultChecked={filters.locations.includes(value)}
+                  defaultChecked={filters.location === value}
                 />
                 <span>{label}</span>
               </label>
@@ -74,51 +77,6 @@ export default function BuyFilters({ filters }: { filters: Filters }) {
           <div className={styles.filterGroup}>
             <BuyBudget initial={filters.maxPrice} />
           </div>
-          <fieldset className={styles.filterGroup}>
-            <legend>Possession status</legend>
-            <label className={styles.choice}>
-              <input
-                type="radio"
-                name="status-filter"
-                value=""
-                defaultChecked={!filters.status}
-              />
-              <span>All statuses</span>
-            </label>
-            {STATUSES.map(([value, label]) => (
-              <label className={styles.choice} key={value}>
-                <input
-                  type="radio"
-                  name="status-filter"
-                  value={value}
-                  defaultChecked={filters.status === value}
-                />
-                <span>{label}</span>
-              </label>
-            ))}
-          </fieldset>
-          <details
-            className={styles.amenities}
-            open={filters.amenities.length > 0 || undefined}
-          >
-            <summary>
-              Amenities <CaretDown size={15} aria-hidden="true" />
-            </summary>
-            <fieldset>
-              <legend className={styles.srOnly}>Required amenities</legend>
-              {AMENITIES.map(([value, label]) => (
-                <label className={styles.choice} key={value}>
-                  <input
-                    type="checkbox"
-                    name="amenity"
-                    value={value}
-                    defaultChecked={filters.amenities.includes(value)}
-                  />
-                  <span>{label}</span>
-                </label>
-              ))}
-            </fieldset>
-          </details>
           <button type="submit" className={styles.applyButton}>
             Apply filters
           </button>

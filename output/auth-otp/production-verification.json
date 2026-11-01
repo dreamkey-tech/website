@@ -1,0 +1,39 @@
+{
+  "pages": [
+    {
+      "route": "/login",
+      "status": 200,
+      "names": [
+        "email",
+        "password"
+      ],
+      "noIndex": true,
+      "standaloneShell": true
+    },
+    {
+      "route": "/register",
+      "status": 200,
+      "names": [
+        "name",
+        "email",
+        "password"
+      ],
+      "noIndex": true,
+      "standaloneShell": true
+    },
+    {
+      "route": "/forgot-password",
+      "status": 200,
+      "names": [
+        "email"
+      ],
+      "noIndex": true,
+      "standaloneShell": true
+    }
+  ],
+  "publicSitemapUrls": 10,
+  "recoveryExcludedFromSitemap": true,
+  "recoveryReachableWithCookie": true,
+  "existingAuthRedirectsPreserved": true,
+  "scope": "Local production SSR/GET only; no backend authentication requests."
+}
