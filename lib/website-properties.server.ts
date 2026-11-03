@@ -1,7 +1,11 @@
 import "server-only";
 import { cache } from "react";
 import { z } from "zod";
-import { propertyDetailSchema, propertyListSchema } from "./website-properties";
+import {
+  bestPropertiesSchema,
+  propertyDetailSchema,
+  propertyListSchema,
+} from "./website-properties";
 import {
   parseBuyFilters,
   saleApiQuery,
@@ -20,6 +24,18 @@ async function request(path: string, cookie?: string) {
       : { Accept: "application/json" },
   });
 }
+
+/** Public, backend-selected showcase. Never forward visitor session cookies. */
+export const getBestProperties = cache(async () => {
+  try {
+    const response = await request("/v1/best-properties");
+    if (!response.ok) return { kind: "error" as const };
+    const data = bestPropertiesSchema.parse(await response.json());
+    return { kind: "ready" as const, ...data };
+  } catch {
+    return { kind: "error" as const };
+  }
+});
 
 export const getSaleCatalogue = cache(async (query: string) => {
   let filters: BuyFilters = parseBuyFilters(

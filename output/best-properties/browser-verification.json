@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-03",
+  "environment": "Local production preview on 127.0.0.1:3063; public best-properties GET only",
+  "checks": [
+    "Section skeleton visible while hero and other sections render",
+    "All three API-selected cards render in server order",
+    "Commercial null bedrooms omitted; supplied bathrooms retained",
+    "Rental labelled for rent without unsupported onwards or billing-period assumption",
+    "Anonymous card opens existing login popup retaining UUID return target",
+    "Close restores focus to selected Home card"
+  ],
+  "mobile": {
+    "viewportRequested": {
+      "width": 390,
+      "height": 844
+    },
+    "documentWidth": 385,
+    "scrollWidth": 385,
+    "cards": [
+      {
+        "x": 20,
+        "width": 345,
+        "source": "live"
+      },
+      {
+        "x": 20,
+        "width": 345,
+        "source": "live"
+      },
+      {
+        "x": 20,
+        "width": 345,
+        "source": "live"
+      }
+    ]
+  },
+  "limits": [
+    "No production frontend tests",
+    "No credentials entered, authenticated details or interest/enquiry POST",
+    "Record/photograph accuracy is supplied by backend, not independently verified"
+  ]
+}

@@ -1,20 +1,46 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Bed, ArrowsOut } from "@phosphor-icons/react/dist/ssr";
-import { buyEnquiryHref, type BuyHome } from "@/components/buy/buy-data";
+import {
+  ArrowRight,
+  Bed,
+  Bathtub,
+  ArrowsOut,
+} from "@phosphor-icons/react/dist/ssr";
+import {
+  PROPERTY_LABELS,
+  propertyName,
+  propertyAddress,
+  propertyPrice,
+  propertyArea,
+  propertyHref,
+  type WebsitePropertyCard,
+} from "@/lib/website-properties";
+import PropertyLink from "@/components/property/PropertyLink";
+import ListingImage from "@/components/property/ListingImage";
 import styles from "./Landing.module.css";
 
-export default function HomePropertyCard({ home }: { home: BuyHome }) {
-  const href = buyEnquiryHref(home);
+export default function HomePropertyCard({
+  property,
+}: {
+  property: WebsitePropertyCard;
+}) {
+  const href = propertyHref(property);
+  const title = propertyName(property);
+  const address = propertyAddress(property);
+  const area = property.carpetAreaSqFt ?? property.superBuiltUpAreaSqFt;
+  const rental = property.pricingType === "RENT";
+  const image = property.coverImage ?? property.previewImages[0] ?? null;
   const analytics = {
-    "data-property-id": `sample-buy-${home.id}`,
-    "data-property-type": ["apartment", "villa", "penthouse", "studio"].includes(
-      home.type,
-    )
-      ? home.type
+    "data-property-id": property.id,
+    "data-property-type": [
+      "FLAT",
+      "LAND",
+      "WAREHOUSE",
+      "COMMERCIAL",
+      "OTHER",
+    ].includes(property.propertyType)
+      ? property.propertyType
       : "OTHER",
-    "data-transaction-type": "buy",
-    "data-inventory-source": "sample",
+    "data-transaction-type": rental ? "rent" : "buy",
+    "data-inventory-source": "live",
     "data-list-name": "home_featured",
     "data-component-name": "property_card",
   };
@@ -24,49 +50,64 @@ export default function HomePropertyCard({ home }: { home: BuyHome }) {
       {...analytics}
       data-analytics-impression="list"
     >
-      <Link
+      <PropertyLink
         href={href}
         className={styles.propertyPhoto}
-        aria-label={`Enquire about ${home.title}`}
+        aria-label={`View ${title} property details`}
         {...analytics}
-        data-analytics-event="property_enquiry_click"
+        data-analytics-event="select_item"
       >
-        <Image
-          src={home.image}
-          alt={home.imageAlt}
-          fill
+        <ListingImage
+          key={image}
+          src={image}
+          alt={`${title}, ${address}`}
           sizes="(max-width: 767px) calc(100vw - 40px), (min-width: 1440px) 590px, 44vw"
         />
         <span className={styles.propertyArrow} aria-hidden="true">
           <ArrowRight size={21} />
         </span>
-      </Link>
+      </PropertyLink>
       <div className={styles.propertyInfo}>
-        <p className={styles.propertyLocation}>{home.location}</p>
+        <p className={styles.propertyLocation}>{address}</p>
         <div className={styles.propertyTitleRow}>
           <h3>
-            <Link
+            <PropertyLink
               href={href}
               {...analytics}
-              data-analytics-event="property_enquiry_click"
+              data-analytics-event="select_item"
             >
-              {home.title}
-            </Link>
+              {title}
+            </PropertyLink>
           </h3>
           <p className={styles.propertyPrice}>
-            {home.price}
-            <span>onwards</span>
+            {propertyPrice(property)}
+            {!!property.askingPrice && (
+              <span>{rental ? "rent" : "asking price"}</span>
+            )}
           </p>
         </div>
-        <p className={styles.propertyDescription}>{home.description}</p>
+        <p className={styles.propertyDescription}>
+          {PROPERTY_LABELS[property.propertyType] || "Property"} for{" "}
+          {rental ? "rent" : "sale"}
+        </p>
         <div className={styles.propertySpecs}>
-          <span>
-            <Bed size={15} aria-hidden="true" />
-            {home.bhk}
-          </span>
+          {property.bedrooms !== null && (
+            <span>
+              <Bed size={15} aria-hidden="true" />
+              {property.bedrooms} BHK
+            </span>
+          )}
+          {property.bathrooms !== null && (
+            <span>
+              <Bathtub size={15} aria-hidden="true" />
+              {property.bathrooms} baths
+            </span>
+          )}
           <span>
             <ArrowsOut size={15} aria-hidden="true" />
-            {home.size}
+            {area === null
+              ? propertyArea(null)
+              : `${propertyArea(area)} ${property.carpetAreaSqFt !== null ? "carpet" : "super built-up"}`}
           </span>
         </div>
       </div>

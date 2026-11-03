@@ -32,6 +32,7 @@ export default function TestimonialCard({
         <div className={styles.author}>
           <span className={styles.initials} aria-hidden="true">
             {story.name
+              .replace(/^Capt\.?\s+/i, "")
               .split(" ")
               .map((word) => word[0])
               .join("")}
@@ -48,7 +49,7 @@ export default function TestimonialCard({
           aria-hidden="true"
         />
         <blockquote>“{story.quote}”</blockquote>
-        <p className={styles.location}>{story.location}, Kolkata</p>
+        {story.location && <p className={styles.location}>{story.location}</p>}
       </div>
       {!active && visible && (
         <button

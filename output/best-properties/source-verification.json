@@ -1,0 +1,15 @@
+{
+  "passed": 9,
+  "checks": [
+    "public GET preserves curated order, validates one-to-three records and strips CRM fields",
+    "HTTP, transport, malformed JSON and schema failures become honest unavailable results",
+    "empty success stays empty and unsafe photo URLs do not reach image props",
+    "live cards use real detail links, consent-compatible metadata and accurate sale/rent pricing",
+    "missing commercial facts render on-request values without invented home specifications",
+    "featured wrapper is synchronous, has a status fallback and keeps error/empty states free of fake stock",
+    "one-to-three featured cards preserve API order and stay inside the property access provider",
+    "streaming exposes preceding hero content and fallback before a slow featured response resolves",
+    "anonymous Home card opens the reused login modal without recording interest"
+  ],
+  "scope": "Actual source parser/server adapter, streamed React SSR and React/jsdom component checks with isolated synthetic fixtures. Does not establish live CRM responses, real OTP completion, native animation or deployment."
+}

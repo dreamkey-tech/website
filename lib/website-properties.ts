@@ -115,6 +115,12 @@ export const propertyListSchema = z.object({
   }),
 });
 
+export const bestPropertiesSchema = z.object({
+  success: z.literal(true),
+  properties: z.array(propertyCardSchema).max(3),
+  total: z.number().int().nonnegative(),
+});
+
 export type WebsitePropertyCard = z.infer<typeof propertyCardSchema>;
 export type WebsiteProperty = z.infer<typeof propertyDetailSchema>;
 export type PropertyList = z.infer<typeof propertyListSchema>;

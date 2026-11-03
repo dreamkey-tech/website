@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-03",
+  "scope": "Replace active sample testimonials with three user-supplied client endorsements",
+  "content": {
+    "names": ["Oanh", "Mai", "Capt. Amit Choudhury"],
+    "source": "User-supplied WhatsApp screenshots; original private chat images are not copied into the repository",
+    "editing": "Grammar polished; Mai's explicit recommendation excerpted; meaning preserved",
+    "attribution": "Oanh spelling follows the screenshot; Vietnam supplied for Oanh and Mai; captain's location unknown and omitted",
+    "inventedMetadata": false
+  },
+  "checks": {
+    "scopedEslint": "passed",
+    "typescript": "passed",
+    "productionWebpackBuild": "passed",
+    "diffCheck": "passed",
+    "localBrowser": {
+      "origin": "http://127.0.0.1:3063",
+      "allThreeQuotes": "passed",
+      "keyboardNavigation": "passed",
+      "wrapThirdToFirst": "passed",
+      "desktop": {"requestedWidth": 1280, "pageWidth": 1275, "scrollWidth": 1275, "cardHeight": 342, "cardScrollHeight": 342},
+      "mobile": {"requestedWidth": 390, "pageWidth": 385, "scrollWidth": 385, "cardHeight": 330, "cardScrollHeight": 330},
+      "screenshots": ["desktop.png", "mobile.png"]
+    }
+  },
+  "preserved": ["Existing carousel design, timing and controls", "Concurrent Best properties API changes"],
+  "productionTested": false,
+  "committedOrPushed": false
+}

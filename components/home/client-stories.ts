@@ -1,45 +1,29 @@
-/** Existing sample copy retained for preview; replace with approved client reviews. */
+/** User-supplied client feedback, lightly edited for clarity from WhatsApp messages. */
 export type ClientStory = {
   name: string;
   role: string;
-  location: string;
+  location?: string;
   quote: string;
 };
 
 export const CLIENT_STORIES = [
   {
-    name: "Priya Mukherjee",
-    role: "Software Engineer",
-    location: "New Town",
+    name: "Oanh",
+    role: "Client",
+    location: "Vietnam",
     quote:
-      "Dream Key found us a 3BHK in Rajarhat within two weeks of our call. The agent handled everything from site visits to registration. Zero stress.",
+      "The house is beautiful, and we’re very satisfied with the way you work. Your team is cheerful and enthusiastic. Thank you!",
   },
   {
-    name: "Arjun Chatterjee",
-    role: "Business Owner",
-    location: "South Kolkata",
-    quote:
-      "I have worked with three brokers before Dream Key. The difference is transparency. No hidden fees, no pressure. Just good advice and results.",
+    name: "Mai",
+    role: "Client",
+    location: "Vietnam",
+    quote: "Keep up the good work! I’ll also recommend you to my friends.",
   },
   {
-    name: "Sunita Roy",
-    role: "Retired Teacher",
-    location: "Salt Lake",
+    name: "Capt. Amit Choudhury",
+    role: "Client",
     quote:
-      "My son is in Bangalore. Dream Key managed the entire purchase for us remotely, kept us updated at every step, and got us a fair price.",
-  },
-  {
-    name: "Debashis Ghosh",
-    role: "Architect",
-    location: "Ballygunge",
-    quote:
-      "As an architect, I had very specific requirements. They showed me four properties, all of which met my criteria. The shortlisting was incredibly precise.",
-  },
-  {
-    name: "Meenakshi Bose",
-    role: "Doctor",
-    location: "New Town",
-    quote:
-      "The legal due diligence they did on the property we chose revealed a title issue that would have cost us dearly. Saved us from a disaster.",
+      "You did an excellent job. The documentation and other formalities were handled smoothly and in a timely manner, helping both parties. Your team was courteous and professional. I would definitely recommend your services to other property owners. Best wishes for your future endeavours.",
   },
 ] as const satisfies readonly ClientStory[];
