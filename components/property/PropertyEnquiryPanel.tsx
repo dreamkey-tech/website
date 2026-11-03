@@ -34,6 +34,7 @@ export default function PropertyEnquiryPanel({
       <Link
         href={enquiryHref ?? buyEnquiryHref(home)}
         className={styles.primaryButton}
+        data-analytics-event="property_enquiry_click"
       >
         {waitlist
           ? "Ask about alternatives"
@@ -42,7 +43,11 @@ export default function PropertyEnquiryPanel({
             : "Enquire about this home"}
         <ArrowUpRight size={19} aria-hidden="true" />
       </Link>
-      <a href="tel:+917980133881" className={styles.secondaryButton}>
+      <a
+        href="tel:+917980133881"
+        className={styles.secondaryButton}
+        data-component-name="property_details"
+      >
         <PhoneCall size={18} aria-hidden="true" />
         +91 79801 33881
       </a>
@@ -51,6 +56,7 @@ export default function PropertyEnquiryPanel({
         target="_blank"
         rel="noopener noreferrer"
         className={styles.whatsapp}
+        data-component-name="property_details"
       >
         <ChatCircleText size={18} aria-hidden="true" />
         Continue on WhatsApp

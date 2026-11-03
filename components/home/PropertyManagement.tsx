@@ -32,7 +32,13 @@ export default function PropertyManagement() {
             to coordinating enquiries and connecting with tenants, our Kolkata
             team helps you take the next step.
           </p>
-          <DirectionalFillLink href="/contact" className={styles.photoButton}>
+          <DirectionalFillLink
+            href="/contact"
+            className={styles.photoButton}
+            data-analytics-event="cta_click"
+            data-cta-name="discuss_property"
+            data-component-name="property_management"
+          >
             Discuss your property <ArrowUpRight size={17} aria-hidden="true" />
           </DirectionalFillLink>
         </div>

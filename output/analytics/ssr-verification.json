@@ -1,0 +1,88 @@
+{
+  "scope": "Final local production HTTP/SSR only; not browser event delivery or live authenticated CRM access.",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/buy",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/rent",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/sell",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/services",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/login",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/register",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/forgot-password",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/terms-and-conditions",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/careers",
+      "status": 200,
+      "initialConsentChoices": true,
+      "preferencesEntry": true
+    },
+    {
+      "route": "/buy/[id] (anonymous)",
+      "status": 200,
+      "preferencesEntry": true
+    }
+  ]
+}

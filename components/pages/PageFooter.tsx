@@ -1,3 +1,4 @@
+import CookiePreferencesButton from "@/components/analytics/CookiePreferencesButton";
 import Link from "next/link";
 import BrandLogo from "@/components/layout/BrandLogo";
 import FooterSocialLinks from "@/components/layout/FooterSocialLinks";
@@ -68,8 +69,10 @@ export default function PageFooter() {
         </div>
         <div className={styles.footerBottom}>
           <p>
-            © {new Date().getFullYear()} Dream Key Reality. All rights reserved.
+            © {new Date().getFullYear()} Dream Key Reality. All rights
+            reserved.
           </p>
+          <CookiePreferencesButton />
           <span>Made for your next move.</span>
         </div>
       </div>

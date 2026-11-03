@@ -14,7 +14,13 @@ export default function HeroCopy() {
         Find your place in Kolkata. Thoughtfully chosen homes,
         in neighbourhoods that feel like you.
       </p>
-      <Link href="/contact" className="home-hero__consultation">
+      <Link
+        href="/contact"
+        className="home-hero__consultation"
+        data-analytics-event="cta_click"
+        data-cta-name="hero_find_home"
+        data-component-name="hero"
+      >
         Let’s find your home <ArrowUpRight size={19} aria-hidden="true" />
       </Link>
     </HeroCopyEntrance>

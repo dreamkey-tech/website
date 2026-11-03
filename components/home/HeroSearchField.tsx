@@ -33,6 +33,11 @@ export default function HeroSearchField({
           defaultValue={options[0].value}
           variant="inline"
           ariaLabel={label}
+          analytics={{
+            component: "hero_search",
+            filter: name,
+            transactionType: "buy",
+          }}
         />
       </div>
     </div>

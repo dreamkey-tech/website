@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { SquaresFour, Rows } from "@phosphor-icons/react";
 import { SORTS, buyHref, type BuyFilters } from "./website-filters";
 import Select from "@/components/ui/Select";
+import { trackEvent } from "@/lib/analytics";
 import styles from "./Buy.module.css";
 
 export default function BuyResults({
@@ -43,6 +44,15 @@ export default function BuyResults({
               variant="compact"
               options={SORTS.map(([value, label]) => ({ value, label }))}
               onChange={(sort) => {
+                if (sort !== filters.sort) {
+                  trackEvent("property_search", {
+                    component_name: "buy_sort",
+                    filter_name: "sort",
+                    filter_value: sort,
+                    transaction_type: "buy",
+                    interaction_type: "sort_change",
+                  });
+                }
                 startTransition(() =>
                   router.push(buyHref(filters, { sort, page: 1 }), {
                     scroll: false,

@@ -43,7 +43,13 @@ export default async function SellPage() {
               with care, reach the right buyers, and move forward with clarity.
             </p>
             <div className={styles.heroActions}>
-              <a className={styles.primaryButton} href="#property-consultation">
+              <a
+                className={styles.primaryButton}
+                href="#property-consultation"
+                data-analytics-event="cta_click"
+                data-cta-name="sell_primary"
+                data-component-name="sell_primary"
+              >
                 Let’s discuss your property
                 <ArrowUpRight size={19} aria-hidden="true" />
               </a>

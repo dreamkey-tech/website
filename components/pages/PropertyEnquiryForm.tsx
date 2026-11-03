@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent, type SyntheticEvent } from "react";
 import { ArrowUpRight, CheckCircle } from "@phosphor-icons/react";
 import { enquiryApi, getEnquiryErrorMessage } from "@/api/enquiry";
 import { propertyEnquirySchema } from "@/zod/enquiry";
+import { trackEvent } from "@/lib/analytics";
 import Select from "@/components/ui/Select";
 import EnquiryField from "./EnquiryField";
 import EnquiryContactFields from "./EnquiryContactFields";
@@ -21,6 +22,8 @@ export default function PropertyEnquiryForm({
   initialMessage?: string;
 }) {
   const formRef = useRef<HTMLFormElement>(null);
+  const startTracked = useRef(false);
+  const pending = useRef(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [responseMessage, setResponseMessage] = useState("");
   const [status, setStatus] = useState<
@@ -29,10 +32,30 @@ export default function PropertyEnquiryForm({
   const prefix = variant === "sell" ? "seller" : "contact";
   const Heading = variant === "sell" ? "h3" : "h2";
   const id = (name: string) => `${prefix}-${name}`;
+  const formName = variant === "sell" ? "sell_enquiry" : "contact_enquiry";
+
+  function handleStart(event: SyntheticEvent<HTMLFormElement>) {
+    if (
+      startTracked.current ||
+      !(event.target instanceof Element) ||
+      !event.target.closest(
+        'input:not([type="hidden"]), select, textarea, [role="combobox"]',
+      )
+    )
+      return;
+    const purpose =
+      variant === "sell"
+        ? "sell"
+        : getEnquiryPurpose(new FormData(event.currentTarget).get("purpose"));
+    startTracked.current = trackEvent("form_start", {
+      form_name: formName,
+      enquiry_type: purpose,
+    });
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (status === "sending") return;
+    if (pending.current) return;
     const data = new FormData(event.currentTarget);
     const value = (name: string) => String(data.get(name) || "").trim();
     const purpose =
@@ -62,6 +85,7 @@ export default function PropertyEnquiryForm({
     }
     setErrors({});
     setResponseMessage("");
+    pending.current = true;
     setStatus("sending");
     try {
       const result = await enquiryApi.submitPropertyEnquiry(parsed.data);
@@ -69,9 +93,15 @@ export default function PropertyEnquiryForm({
         typeof result.message === "string" ? result.message.trim() : "",
       );
       setStatus("success");
+      trackEvent("generate_lead", {
+        form_name: formName,
+        enquiry_type: purpose,
+      });
     } catch (error) {
       setResponseMessage(getEnquiryErrorMessage(error));
       setStatus("error");
+    } finally {
+      pending.current = false;
     }
   }
 
@@ -87,7 +117,10 @@ export default function PropertyEnquiryForm({
         <button
           className={styles.secondaryButton}
           type="button"
-          onClick={() => setStatus("idle")}
+          onClick={() => {
+            startTracked.current = false;
+            setStatus("idle");
+          }}
         >
           Send another enquiry
         </button>
@@ -95,7 +128,13 @@ export default function PropertyEnquiryForm({
     );
 
   return (
-    <form ref={formRef} className={styles.enquiryForm} onSubmit={handleSubmit}>
+    <form
+      ref={formRef}
+      className={styles.enquiryForm}
+      onSubmit={handleSubmit}
+      onFocusCapture={handleStart}
+      onInputCapture={handleStart}
+    >
       <div className={styles.formHeading}>
         <Heading>
           {variant === "sell"

@@ -1,3 +1,4 @@
+import CookiePreferencesButton from "@/components/analytics/CookiePreferencesButton";
 import Link from "next/link";
 import Image from "next/image";
 import { Envelope, MapPin } from "@phosphor-icons/react/dist/ssr";
@@ -34,6 +35,7 @@ export default function Footer() {
       aria-label="Footer"
     >
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
+        <CookiePreferencesButton />
         {/* Main footer grid */}
         <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand column */}

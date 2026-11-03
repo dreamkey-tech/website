@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import {
   CaretDown,
@@ -13,11 +13,32 @@ import {
   type BuyFilters as Filters,
 } from "./website-filters";
 import BuyBudget from "./BuyBudget";
+import { trackEvent } from "@/lib/analytics";
 import styles from "./Buy.module.css";
 
 export default function BuyFilters({ filters }: { filters: Filters }) {
   const [open, setOpen] = useState(false);
+  const selectedLocation = useRef(filters.location);
   const count = activeBuyFilters(filters).length;
+  const changeLocation = (value: string) => {
+    if (selectedLocation.current === value) return;
+    selectedLocation.current = value;
+    trackEvent("property_search", {
+      component_name: "buy_filters",
+      filter_name: "location",
+      filter_value: value || "any",
+      transaction_type: "buy",
+      interaction_type: "filter_change",
+    });
+  };
+  const reset = () => {
+    if (!count) return;
+    trackEvent("property_search", {
+      component_name: "buy_filters",
+      transaction_type: "buy",
+      interaction_type: "reset",
+    });
+  };
   return (
     <aside className={styles.sidebar} aria-label="Refine your property search">
       <div className={styles.filterHeading}>
@@ -25,7 +46,12 @@ export default function BuyFilters({ filters }: { filters: Filters }) {
           <SlidersHorizontal size={18} aria-hidden="true" />
           Refine your search
         </h2>
-        <Link href="/buy#homes" className={styles.linkButton}>
+        <Link
+          href="/buy#homes"
+          className={styles.linkButton}
+          onClick={reset}
+          data-analytics-ignore-click
+        >
           Clear all
         </Link>
       </div>
@@ -43,7 +69,12 @@ export default function BuyFilters({ filters }: { filters: Filters }) {
         <CaretDown size={17} aria-hidden="true" />
       </button>
       <div id="buy-filter-body" className={styles.filterBody} data-open={open}>
-        <form action="/buy#homes" method="get">
+        <form
+          action="/buy#homes"
+          method="get"
+          data-analytics-search="buy"
+          data-analytics-component="buy_filters"
+        >
           {buyQueryEntries(filters)
             .filter(
               ([name]) => !["location", "maxPrice", "page"].includes(name),
@@ -59,6 +90,7 @@ export default function BuyFilters({ filters }: { filters: Filters }) {
                 name="location"
                 value=""
                 defaultChecked={!filters.location}
+                onChange={() => changeLocation("")}
               />
               <span>All Kolkata</span>
             </label>
@@ -69,6 +101,7 @@ export default function BuyFilters({ filters }: { filters: Filters }) {
                   name="location"
                   value={value}
                   defaultChecked={filters.location === value}
+                  onChange={() => changeLocation(value)}
                 />
                 <span>{label}</span>
               </label>
@@ -80,7 +113,12 @@ export default function BuyFilters({ filters }: { filters: Filters }) {
           <button type="submit" className={styles.applyButton}>
             Apply filters
           </button>
-          <Link href="/buy#homes" className={styles.resetLink}>
+          <Link
+            href="/buy#homes"
+            className={styles.resetLink}
+            onClick={reset}
+            data-analytics-ignore-click
+          >
             Reset filters
           </Link>
         </form>

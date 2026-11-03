@@ -28,12 +28,30 @@ export default function BuyCard({
   const title = propertyName(property);
   const href = propertyHref(property);
   const area = property.carpetAreaSqFt ?? property.superBuiltUpAreaSqFt;
+  const analytics = {
+    "data-property-id": property.id,
+    "data-property-type": ["FLAT", "LAND", "WAREHOUSE", "COMMERCIAL", "OTHER"].includes(
+      property.propertyType,
+    )
+      ? property.propertyType
+      : "OTHER",
+    "data-transaction-type": property.pricingType === "RENT" ? "rent" : "buy",
+    "data-inventory-source": "live",
+    "data-list-name": "buy_catalogue",
+    "data-component-name": "property_card",
+  };
   return (
-    <article className={styles.card}>
+    <article
+      className={styles.card}
+      {...analytics}
+      data-analytics-impression="list"
+    >
       <PropertyLink
         className={styles.cardPhoto}
         href={href}
         aria-label={`View ${title} property details`}
+        {...analytics}
+        data-analytics-event="select_item"
       >
         <ListingImage
           key={property.coverImage}
@@ -56,7 +74,9 @@ export default function BuyCard({
           </span>
         </div>
         <h3>
-          <PropertyLink href={href}>{title}</PropertyLink>
+          <PropertyLink href={href} {...analytics} data-analytics-event="select_item">
+            {title}
+          </PropertyLink>
         </h3>
         <p className={styles.description}>
           {PROPERTY_LABELS[property.propertyType] || "Property"} for sale
@@ -96,7 +116,12 @@ export default function BuyCard({
             <span>Asking price</span>
             {propertyPrice(property)}
           </p>
-          <Link className={styles.enquire} href={propertyEnquiryHref(property)}>
+          <Link
+            className={styles.enquire}
+            href={propertyEnquiryHref(property)}
+            {...analytics}
+            data-analytics-event="property_enquiry_click"
+          >
             Enquire <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>

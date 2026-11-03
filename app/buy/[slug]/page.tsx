@@ -57,7 +57,12 @@ export default async function PropertyPage({ params }: Props) {
         ) : result.kind === "error" ? (
           <PropertyLoadError />
         ) : (
-          <PropertySession key={crypto.randomUUID()} id={id}>
+          <PropertySession
+            key={crypto.randomUUID()}
+            id={id}
+            propertyType={result.property.propertyType}
+            transactionType={result.property.pricingType === "RENT" ? "rent" : "buy"}
+          >
             <LivePropertyDetails property={result.property} />
           </PropertySession>
         )}

@@ -1,3 +1,4 @@
+import CookiePreferencesButton from "@/components/analytics/CookiePreferencesButton";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import BrandLogo from "./BrandLogo";
@@ -67,9 +68,11 @@ export default function HomeFooter() {
         </div>
         <div className={styles.bottom}>
           <p>
-            © {new Date().getFullYear()} Dream Key Reality. All rights reserved.
+            © {new Date().getFullYear()} Dream Key Reality. All rights
+            reserved.
           </p>
           <nav aria-label="Legal">
+            <CookiePreferencesButton />
             <Link href="/privacy" className={linkStyles.link}>
               Privacy policy
             </Link>

@@ -17,6 +17,8 @@ export default function BuySearch({ filters }: { filters: BuyFilters }) {
       method="get"
       className={styles.search}
       aria-label="Find a property to buy"
+      data-analytics-search="buy"
+      data-analytics-component="buy_search"
     >
       {buyQueryEntries(filters)
         .filter(([name]) => !visible.includes(name))
@@ -49,6 +51,11 @@ export default function BuySearch({ filters }: { filters: BuyFilters }) {
             defaultValue={filters[name]}
             key={filters[name]}
             variant="inline"
+            analytics={{
+              component: "buy_search",
+              filter: name,
+              transactionType: "buy",
+            }}
             options={[
               { value: "", label: empty },
               ...options.map(([value, label]) => ({ value, label })),

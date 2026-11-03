@@ -1,5 +1,6 @@
 import { pageMetadata } from "@/lib/seo";
 import { connection } from "next/server";
+import CookiePreferencesButton from "@/components/analytics/CookiePreferencesButton";
 import LegalDocument from "@/components/pages/LegalDocument";
 import styles from "@/components/pages/LegalDocument.module.css";
 
@@ -138,13 +139,43 @@ export default async function PrivacyPolicyPage() {
       <section id="section-4">
         <h2>4. Cookies and Analytics</h2>
         <p>
-          Our website may use cookies and similar technologies to improve
-          website functionality, understand website usage, and enhance your
-          experience.
+          Essential cookies support sign-in, security and other website
+          functionality. These remain available regardless of your optional
+          cookie choices. We store your cookie preferences on your device for
+          180 days so you do not need to choose on every visit.
         </p>
         <p>
-          We may also use third-party analytics or website services that collect
-          information about how visitors interact with our website.
+          With your analytics permission, we use Google Analytics 4 to
+          understand page visits, property and service interest, contact-link
+          clicks and successful enquiries. Analytics cookies are configured to
+          expire after up to 180 days. We do not send names, phone numbers,
+          email addresses, passwords, enquiry messages or free-text search
+          queries to Google Analytics.
+        </p>
+        <p>
+          Advertising permission is separate and optional. When analytics is
+          also enabled, this permission allows Google advertising data and
+          personalization signals. We do not install a separate advertising tag.
+          Optional tracking remains off until you choose to allow it, and stays
+          off when your browser sends a Global Privacy Control or Do Not Track
+          signal.
+        </p>
+        <p>
+          You can accept or reject optional cookies, choose categories, or
+          withdraw permission at any time through Cookie preferences in the
+          footer or the button below. Google may process information outside
+          your country. Read{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google’s Privacy Policy
+          </a>{" "}
+          for information about its processing.
+        </p>
+        <p>
+          <CookiePreferencesButton />
         </p>
         <p>
           You can control or disable cookies through your browser settings,

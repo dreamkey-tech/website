@@ -9,6 +9,7 @@ import {
   type RentalFilters,
 } from "./rental-data";
 import Select from "@/components/ui/Select";
+import { trackEvent } from "@/lib/analytics";
 import RentalCard from "./RentalCard";
 import styles from "./Interior.module.css";
 
@@ -17,15 +18,48 @@ export default function RentalBrowser() {
   const [filters, setFilters] = useState<RentalFilters>(EMPTY_RENTAL_FILTERS);
   const [sort, setSort] = useState("recommended");
   const homes = filterRentalHomes(RENTAL_HOMES, filters, sort);
-  const update = (name: keyof RentalFilters, value: string) =>
+  const update = (name: keyof RentalFilters, value: string) => {
+    if (draft[name] !== value) {
+      const locations: Record<string, string> = {
+        "New Town": "new-town",
+        "Salt Lake": "salt-lake",
+        "EM Bypass": "em-bypass",
+      };
+      trackEvent("property_search", {
+        component_name: "rent_search",
+        transaction_type: "rent",
+        interaction_type: "filter_change",
+        filter_name: name,
+        filter_value:
+          name === "location" ? locations[value] || "any" : value || "any",
+      });
+    }
     setDraft({ ...draft, [name]: value });
+  };
   const reset = () => {
+    if (
+      sort !== "recommended" ||
+      Object.values(draft).some(Boolean) ||
+      Object.values(filters).some(Boolean)
+    ) {
+      trackEvent("property_search", {
+        component_name: "rent_search",
+        transaction_type: "rent",
+        interaction_type: "reset",
+      });
+    }
     setDraft(EMPTY_RENTAL_FILTERS);
     setFilters(EMPTY_RENTAL_FILTERS);
     setSort("recommended");
   };
   const search = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    trackEvent("property_search", {
+      component_name: "rent_search",
+      transaction_type: "rent",
+      interaction_type: "submit",
+      search_term_present: false,
+    });
     setFilters({ ...draft });
   };
   return (
@@ -119,7 +153,18 @@ export default function RentalBrowser() {
             className={styles.sortSelect}
             id="rent-sort"
             value={sort}
-            onChange={setSort}
+            onChange={(next) => {
+              if (next !== sort) {
+                trackEvent("property_search", {
+                  component_name: "rent_sort",
+                  transaction_type: "rent",
+                  interaction_type: "sort_change",
+                  filter_name: "sort",
+                  filter_value: next,
+                });
+              }
+              setSort(next);
+            }}
             variant="compact"
             options={[
               { value: "recommended", label: "Recommended" },

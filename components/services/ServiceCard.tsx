@@ -5,6 +5,13 @@ import type { PropertyService } from "./services-content";
 import styles from "./Services.module.css";
 
 export default function ServiceCard({ service }: { service: PropertyService }) {
+  const serviceNames: Record<string, string> = {
+    buying: "buying",
+    renting: "renting",
+    selling: "selling",
+    consulting: "investment_and_real_estate_consulting",
+  };
+  const serviceName = serviceNames[service.id];
   return (
     <article className={styles.service} aria-labelledby={`${service.id}-title`}>
       <div className={styles.servicePhoto}>
@@ -18,7 +25,13 @@ export default function ServiceCard({ service }: { service: PropertyService }) {
       <p className={styles.serviceCategory}>{service.category}</p>
       <h3 id={`${service.id}-title`}>{service.title}</h3>
       <p>{service.description}</p>
-      <Link className={styles.serviceLink} href={service.href}>
+      <Link
+        className={styles.serviceLink}
+        href={service.href}
+        data-analytics-event={serviceName ? "service_interest" : undefined}
+        data-service-name={serviceName}
+        data-component-name="services"
+      >
         <span>{service.linkLabel}</span>
         <ArrowRight size={20} aria-hidden="true" />
       </Link>

@@ -1,6 +1,11 @@
 "use client";
 
-import { useRef, type PointerEvent, type ReactNode } from "react";
+import {
+  useRef,
+  type ComponentProps,
+  type PointerEvent,
+  type ReactNode,
+} from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -15,7 +20,11 @@ export default function DirectionalFillLink({
   href,
   children,
   className = "",
-}: {
+  ...linkProps
+}: Omit<
+  ComponentProps<typeof Link>,
+  "href" | "children" | "className" | "ref" | "onPointerEnter" | "onPointerLeave"
+> & {
   href: string;
   children: ReactNode;
   className?: string;
@@ -97,6 +106,7 @@ export default function DirectionalFillLink({
 
   return (
     <Link
+      {...linkProps}
       ref={link}
       href={href}
       className={`${styles.link} ${className}`}

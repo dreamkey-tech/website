@@ -14,7 +14,7 @@ import { Toaster } from "sonner";
 import MobileBottomNav from "@/components/layout/MobileBottomNav";
 import FloatingEnquiry from "@/components/layout/FloatingEnquiry";
 import { AuthProvider } from "@/components/providers/AuthProvider";
-import { Analytics } from "@vercel/analytics/next";
+import AnalyticsProvider from "@/components/analytics/AnalyticsProvider";
 
 const plusJakartaSans = localFont({
   src: "../public/fonts/plus-jakarta-sans-variable.woff2",
@@ -80,7 +80,7 @@ export default function RootLayout({
             }}
           />
         </AuthProvider>
-        <Analytics />
+        <AnalyticsProvider />
       </body>
     </html>
   );

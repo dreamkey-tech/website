@@ -20,6 +20,16 @@ export default function DesignGalleryCard({
   href,
   imageAspectRatio = 4 / 5,
 }: DesignGalleryItem) {
+  const categoryName: Record<string, string> = {
+    "Apartments / Flats": "apartments_flats",
+    "Independent Houses": "independent_houses",
+    Villas: "villas",
+    Penthouses: "penthouses",
+    "Duplex Homes": "duplex_homes",
+    "Studio Apartments": "studio_apartments",
+    "Residential Plots": "residential_plots",
+    "Commercial Properties": "commercial_properties",
+  };
   const coverFactor = Math.max(1, imageAspectRatio / (4 / 5));
   const photo = (
     <Image
@@ -38,6 +48,9 @@ export default function DesignGalleryCard({
       draggable={false}
       className={`${styles.card} ${styles.featured}${description ? ` ${styles.withDescription}` : ""}`}
       aria-label={`Explore ${title.toLowerCase()}${description ? ` — ${description}` : ""}`}
+      data-analytics-event={categoryName[title] ? "cta_click" : undefined}
+      data-cta-name={categoryName[title] ? `category_${categoryName[title]}` : undefined}
+      data-component-name="home_gallery"
     >
       {photo}
       <div className={styles.caption}>

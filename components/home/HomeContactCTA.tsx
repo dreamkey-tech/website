@@ -18,7 +18,13 @@ export default function HomeContactCTA() {
         <p>Buying, renting, or making a new plan? Start with a conversation.</p>
       </div>
       <div className={styles.contactActions} id="contact-form">
-        <Link href="/contact" className={styles.primaryButton}>
+        <Link
+          href="/contact"
+          className={styles.primaryButton}
+          data-analytics-event="cta_click"
+          data-cta-name="home_start_conversation"
+          data-component-name="home_contact"
+        >
           Start an enquiry <ArrowUpRight size={20} aria-hidden="true" />
         </Link>
         <a href="tel:+917980133881">Or call +91 79801 33881</a>

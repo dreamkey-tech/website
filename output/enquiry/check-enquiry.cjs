@@ -19,6 +19,7 @@ function load(relative, overrides = {}) {
   mod.paths = Module._nodeModulePaths(path.dirname(file));
   mod.require = (name) => {
     if (Object.hasOwn(overrides, name)) return overrides[name];
+    if (name === "@/lib/analytics") return { trackEvent };
     // Use the package's ESM entry; its CommonJS filename is inside a type:module package.
     if (name === "@phosphor-icons/react") return icons;
     if (name.endsWith(".css"))
@@ -116,6 +117,13 @@ function find(node, predicate) {
     if (result) return result;
   }
 }
+const analyticsEvents = [];
+let analyticsAllowed = true;
+function trackEvent(name, params) {
+  if (!analyticsAllowed) return false;
+  analyticsEvents.push({ name, params });
+  return true;
+}
 function formHarness(props = {}) {
   const states = [],
     refs = [];
@@ -133,21 +141,25 @@ function formHarness(props = {}) {
         },
       ];
     },
-    useRef() {
+    useRef(initial) {
       const index = cursor++;
       return (refs[index] ||= {
-        current: {
-          querySelector: (selector) => ({
-            focus: () => {
-              focused = selector;
-            },
-          }),
-        },
+        current:
+          initial === null
+            ? {
+                querySelector: (selector) => ({
+                  focus: () => {
+                    focused = selector;
+                  },
+                }),
+              }
+            : initial,
       });
     },
   };
   const Form = load("components/pages/PropertyEnquiryForm.tsx", {
     react: hooks,
+    "@/lib/analytics": { trackEvent },
   }).default;
   return {
     render: () => {
@@ -297,6 +309,18 @@ async function main() {
   }
 
   const OriginalFormData = global.FormData;
+  const OriginalElement = global.Element;
+  // Handler adapter: supported control targets, including Radix comboboxes.
+  global.Element = class {
+    constructor(control) {
+      this.control = control;
+    }
+    closest() {
+      return ["input", "textarea", "select", "combobox"].includes(this.control)
+        ? this
+        : null;
+    }
+  };
   global.FormData = class {
     constructor(values) {
       this.values = values;
@@ -309,17 +333,50 @@ async function main() {
     const contact = formHarness({ variant: "contact", initialPurpose: "buy" });
     const values = { ...sample, purpose: "buy" };
     const event = (data) => ({ preventDefault() {}, currentTarget: data });
+    const interact = (form, handler, control, data = values) =>
+      form.render().props[handler]({
+        target: new global.Element(control),
+        currentTarget: data,
+      });
+    interact(contact, "onFocusCapture", "button");
+    assert.deepEqual(
+      analyticsEvents,
+      [],
+      "Submit-only focus is not form start",
+    );
+    analyticsAllowed = false;
+    interact(contact, "onFocusCapture", "input");
+    assert.deepEqual(analyticsEvents, [], "Denied analytics is never queued");
+    analyticsAllowed = true;
+    assert.deepEqual(
+      analyticsEvents,
+      [],
+      "Grant alone does not replay interaction",
+    );
+    interact(contact, "onInputCapture", "input");
+    interact(contact, "onFocusCapture", "textarea");
+    assert.deepEqual(analyticsEvents, [
+      {
+        name: "form_start",
+        params: { form_name: "contact_enquiry", enquiry_type: "buy" },
+      },
+    ]);
     const before = requests.length;
     await contact
       .render()
       .props.onSubmit(event({ ...values, email: "", preferredLocation: " " }));
     assert.equal(requests.length, before, "Invalid form makes no request");
+    assert.equal(analyticsEvents.length, 1, "Invalid form is not a lead");
     assert.match(contact.focused(), /contact-email/);
     let release;
     wait = new Promise((resolve) => {
       release = resolve;
     });
-    const pending = contact.render().props.onSubmit(event(values));
+    const submit = contact.render().props.onSubmit;
+    const pending = submit(event(values));
+    // The synchronous ref guard must protect two events before React rerenders.
+    await submit(event(values));
+    assert.equal(analyticsEvents.length, 1, "Pending request is not a lead");
     const sending = contact.render();
     assert.equal(
       find(sending, (n) => n.type === "button" && n.props.type === "submit")
@@ -340,12 +397,25 @@ async function main() {
       "Enquiry: buy. " + sample.specificRequirements,
     );
     assert.equal(contact.render().props.role, "status");
+    assert.deepEqual(analyticsEvents.at(-1), {
+      name: "generate_lead",
+      params: { form_name: "contact_enquiry", enquiry_type: "buy" },
+    });
+    assert.equal(analyticsEvents.length, 2, "Saved enquiry counts once");
     assert.equal(
       find(contact.render(), (n) => n.type === "p").props.children,
       message,
     );
     find(contact.render(), (n) => n.type === "button").props.onClick();
     assert.equal(contact.render().type, "form");
+    interact(contact, "onFocusCapture", "combobox", {
+      ...values,
+      purpose: "rent",
+    });
+    assert.deepEqual(analyticsEvents.at(-1), {
+      name: "form_start",
+      params: { form_name: "contact_enquiry", enquiry_type: "rent" },
+    });
     failure = true;
     reply = {
       success: false,
@@ -355,21 +425,61 @@ async function main() {
     await contact.render().props.onSubmit(event(values));
     const alert = find(contact.render(), (n) => n.props?.role === "alert");
     assert.ok(alert && alert.props.children.includes("Budget is required"));
+    assert.equal(analyticsEvents.length, 3, "Rejected enquiry is not a lead");
     assert.equal(
       contact.render().type,
       "form",
       "Failure preserves editable form",
     );
     failure = false;
+    reply = { success: false, error: "Not saved", code: "VALIDATION_ERROR" };
+    await contact.render().props.onSubmit(event(values));
+    assert.equal(analyticsEvents.length, 3, "False success body is not a lead");
+    failure = "network";
+    await contact.render().props.onSubmit(event(values));
+    assert.equal(analyticsEvents.length, 3, "Network failure is not a lead");
+    failure = false;
     reply = success;
-    await formHarness({ variant: "sell" })
+    const seller = formHarness({ variant: "sell" });
+    interact(seller, "onFocusCapture", "select");
+    assert.deepEqual(analyticsEvents.at(-1), {
+      name: "form_start",
+      params: { form_name: "sell_enquiry", enquiry_type: "sell" },
+    });
+    await seller
       .render()
       .props.onSubmit(
         event({ ...values, specificRequirements: "", purpose: "rent" }),
       );
     assert.equal(requests.at(-1).body.specificRequirements, "Enquiry: sell.");
+    assert.deepEqual(analyticsEvents.at(-1), {
+      name: "generate_lead",
+      params: { form_name: "sell_enquiry", enquiry_type: "sell" },
+    });
+    const denied = formHarness({ variant: "contact" });
+    analyticsAllowed = false;
+    await denied.render().props.onSubmit(event(values));
+    assert.equal(
+      denied.render().props.role,
+      "status",
+      "Consent denial does not prevent save",
+    );
+    assert.equal(analyticsEvents.length, 5, "Denied lead is not collected");
+    analyticsAllowed = true;
+    assert.equal(analyticsEvents.length, 5, "Denied lead is not replayed");
+    for (const entry of analyticsEvents) {
+      assert.deepEqual(Object.keys(entry.params).sort(), [
+        "enquiry_type",
+        "form_name",
+      ]);
+      assert.ok(!JSON.stringify(entry).includes(sample.fullName));
+      assert.ok(!JSON.stringify(entry).includes(sample.email));
+      assert.ok(!JSON.stringify(entry).includes(sample.mobileNo));
+      assert.ok(!JSON.stringify(entry).includes(sample.specificRequirements));
+    }
   } finally {
     global.FormData = OriginalFormData;
+    global.Element = OriginalElement;
   }
 
   const evidence = {
@@ -394,6 +504,9 @@ async function main() {
       "network fallback",
       "SSR required fields on Contact and Sell",
       "real form handler validation, sending guard, success/reset, backend error and seller purpose",
+      "form_start once per enquiry, including combobox, only on a real interaction after consent",
+      "generate_lead once after saved response only; invalid, pending, false-success and failed enquiries excluded",
+      "analytics denial does not block successful enquiries or replay denied events; only form and enquiry enums leave the handler",
     ],
     scope:
       "Isolated Axios adapter, real schema, real component SSR and form-handler state adapter. No production lead created; not live backend or browser interaction verification.",

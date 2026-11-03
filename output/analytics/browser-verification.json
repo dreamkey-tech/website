@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-03",
+  "environment": "Local production build, Codex in-app browser; transport tests use isolated Google bootstrap.",
+  "desktop": [
+    "Consent banner matches current theme",
+    "Preferences essential checked/disabled, analytics/advertising initially unchecked",
+    "Escape closes native dialog and returns focus",
+    "Footer preferences opens after rejection"
+  ],
+  "mobile": {
+    "requestedViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "documentWidth": 385,
+    "scrollWidth": 385,
+    "bannerBounds": {
+      "top": 610.625,
+      "bottom": 844,
+      "height": 233.375
+    },
+    "floatingEnquiryBottom": 594,
+    "gapAboveBanner": 16,
+    "dialogBounds": {
+      "top": 56.75,
+      "bottom": 787.25,
+      "height": 730.5
+    },
+    "dialogScrollHeight": 729,
+    "dialogClientHeight": 729
+  },
+  "rejectedReload": {
+    "bannerCountAfterHydration": 0,
+    "googleTagScriptCount": 0
+  },
+  "limits": [
+    "No live Google collector/network capture",
+    "No GA Realtime account access; owner account is in friend browser",
+    "No live enquiry submitted",
+    "Production deployment and account settings not verified"
+  ]
+}

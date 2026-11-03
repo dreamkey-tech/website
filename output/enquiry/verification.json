@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-10T18:11:29.886Z",
+  "checkedAt": "2026-11-03T12:16:41.414Z",
   "endpoint": "/v1/website/enquiry",
   "requiredFields": [
     "fullName",
@@ -21,7 +21,10 @@
     "success:false and malformed body cannot report success",
     "network fallback",
     "SSR required fields on Contact and Sell",
-    "real form handler validation, sending guard, success/reset, backend error and seller purpose"
+    "real form handler validation, sending guard, success/reset, backend error and seller purpose",
+    "form_start once per enquiry, including combobox, only on a real interaction after consent",
+    "generate_lead once after saved response only; invalid, pending, false-success and failed enquiries excluded",
+    "analytics denial does not block successful enquiries or replay denied events; only form and enquiry enums leave the handler"
   ],
   "scope": "Isolated Axios adapter, real schema, real component SSR and form-handler state adapter. No production lead created; not live backend or browser interaction verification."
 }

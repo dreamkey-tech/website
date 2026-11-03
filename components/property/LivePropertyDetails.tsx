@@ -157,6 +157,7 @@ export default function LivePropertyDetails({
             <Link
               className={`${styles.primaryButton} ${styles.mobileEnquiry}`}
               href={enquiry}
+              data-analytics-event="property_enquiry_click"
             >
               Enquire about this property
               <ArrowUpRight size={18} aria-hidden="true" />
@@ -241,7 +242,7 @@ export default function LivePropertyDetails({
                   </a>
                 ))}
                 {!floorPlans.length && (
-                  <Link href={enquiry}>
+                  <Link href={enquiry} data-analytics-event="property_enquiry_click">
                     Request floor plan{" "}
                     <ArrowUpRight size={16} aria-hidden="true" />
                   </Link>

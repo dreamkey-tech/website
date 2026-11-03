@@ -19,7 +19,13 @@ export default function PageCTA({
         <h2>{title}</h2>
         <p>{copy}</p>
       </div>
-      <Link className={styles.primaryButton} href={href}>
+      <Link
+        className={styles.primaryButton}
+        href={href}
+        data-analytics-event="cta_click"
+        data-cta-name="page_contact"
+        data-component-name="page_cta"
+      >
         {label}
         <ArrowUpRight size={19} aria-hidden="true" />
       </Link>

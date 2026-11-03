@@ -17,6 +17,7 @@ import {
   CurrencyInr,
   MapPin,
 } from "@phosphor-icons/react";
+import { trackEvent } from "@/lib/analytics";
 import styles from "./Select.module.css";
 
 export interface SelectOption {
@@ -40,6 +41,11 @@ interface SelectProps {
   required?: boolean;
   className?: string;
   variant?: "field" | "inline" | "compact";
+  analytics?: {
+    component: string;
+    filter: string;
+    transactionType?: "buy" | "rent";
+  };
 }
 const EMPTY_VALUE = "__dreamkey_empty__";
 const subscribeHydration = () => () => {};
@@ -66,6 +72,7 @@ export default function Select({
   required,
   className = "",
   variant = "field",
+  analytics,
 }: SelectProps) {
   const generatedId = useId();
   const id = providedId ?? generatedId;
@@ -84,6 +91,15 @@ export default function Select({
     options.find((option) => option.value === selected)?.label ?? placeholder;
   const Icon = icon ? icons[icon as keyof typeof icons] : undefined;
   const update = (next: string) => {
+    if (next !== selected && analytics) {
+      trackEvent("property_search", {
+        component_name: analytics.component,
+        filter_name: analytics.filter,
+        filter_value: next || "any",
+        transaction_type: analytics.transactionType,
+        interaction_type: "filter_change",
+      });
+    }
     if (value === undefined) setInternal(next);
     setInvalid(false);
     onChange?.(next);

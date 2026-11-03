@@ -6,12 +6,30 @@ import styles from "./Landing.module.css";
 
 export default function HomePropertyCard({ home }: { home: BuyHome }) {
   const href = buyEnquiryHref(home);
+  const analytics = {
+    "data-property-id": `sample-buy-${home.id}`,
+    "data-property-type": ["apartment", "villa", "penthouse", "studio"].includes(
+      home.type,
+    )
+      ? home.type
+      : "OTHER",
+    "data-transaction-type": "buy",
+    "data-inventory-source": "sample",
+    "data-list-name": "home_featured",
+    "data-component-name": "property_card",
+  };
   return (
-    <article className={styles.propertyCard}>
+    <article
+      className={styles.propertyCard}
+      {...analytics}
+      data-analytics-impression="list"
+    >
       <Link
         href={href}
         className={styles.propertyPhoto}
         aria-label={`Enquire about ${home.title}`}
+        {...analytics}
+        data-analytics-event="property_enquiry_click"
       >
         <Image
           src={home.image}
@@ -27,7 +45,13 @@ export default function HomePropertyCard({ home }: { home: BuyHome }) {
         <p className={styles.propertyLocation}>{home.location}</p>
         <div className={styles.propertyTitleRow}>
           <h3>
-            <Link href={href}>{home.title}</Link>
+            <Link
+              href={href}
+              {...analytics}
+              data-analytics-event="property_enquiry_click"
+            >
+              {home.title}
+            </Link>
           </h3>
           <p className={styles.propertyPrice}>
             {home.price}

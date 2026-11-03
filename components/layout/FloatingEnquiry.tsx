@@ -1,10 +1,11 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { WhatsappLogo } from "@phosphor-icons/react";
 import { isAuthPage, isRedesignedPage } from "@/components/pages/page-routes";
 import styles from "./FloatingEnquiry.module.css";
-import { ArrowRightIcon, ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowUpRightIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 const WHATSAPP_ENQUIRY =
   "https://api.whatsapp.com/send?phone=917980133881&text=Hi%2C%20I%20am%20interested%20in%20a%20property.";
@@ -17,6 +18,7 @@ export default function FloatingEnquiry() {
   return (
     <a
       className={`${styles.link} ${hasMobileNavigation ? styles.aboveNavigation : ""}`}
+      data-analytics-component="floating_whatsapp"
       href={WHATSAPP_ENQUIRY}
       target="_blank"
       rel="noopener noreferrer"
