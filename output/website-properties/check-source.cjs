@@ -58,6 +58,7 @@ const mocks = {
   "next/navigation": { useRouter: () => router },
   "next/link": {
     __esModule: true,
+    useLinkStatus: () => ({ pending: false }),
     default: ({ children, prefetch, scroll, ...props }) =>
       React.createElement("a", props, children),
   },

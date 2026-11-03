@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 import { useAuthStore } from "@/store/authStore";
 import { usePropertyAccess } from "./PropertyAccessProvider";
+import PropertyLinkPending from "./PropertyLinkPending";
 
 export default function PropertyLink({
   href,
@@ -36,6 +37,7 @@ export default function PropertyLink({
       }}
     >
       {children}
+      <PropertyLinkPending />
     </Link>
   );
 }

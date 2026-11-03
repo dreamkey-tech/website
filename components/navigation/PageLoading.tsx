@@ -1,8 +1,12 @@
 import Image from "next/image";
 import styles from "./PageLoading.module.css";
 
-/** Rendered only while Next's route boundary is waiting for page content. */
-export default function PageLoading() {
+/** Used by Next-owned route and navigation pending states. */
+export default function PageLoading({
+  label = "Loading your page…",
+}: {
+  label?: string;
+}) {
   return (
     <div
       className={styles.screen}
@@ -27,7 +31,7 @@ export default function PageLoading() {
           <span />
           <span />
         </div>
-        <p className={styles.label}>Loading your page…</p>
+        <p className={styles.label}>{label}</p>
       </div>
     </div>
   );

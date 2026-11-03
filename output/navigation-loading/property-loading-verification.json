@@ -1,0 +1,10 @@
+{
+  "passed": 4,
+  "checks": [
+    "shared and detail-boundary SSR preserve brand, default/custom labels and polite loading status",
+    "Link-owned pending state alone mounts/removes a body portal without altering the anchor label; unmount cleans up",
+    "anonymous clicks keep the login modal; cancelling and modified clicks never invent a navigation loader",
+    "verified-auth callback closes the modal, retains push/refresh, shows feedback through an actual suspended React transition and clears it on completion"
+  ],
+  "scope": "Actual source components in React/jsdom with isolated Link/router/auth adapters. No live APIs, CRM activity or production requests. Native Next history/error timing and visual rendering require separate browser checks."
+}

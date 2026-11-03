@@ -7,12 +7,14 @@ import {
   useEffect,
   useRef,
   useState,
+  useTransition,
   type ReactNode,
 } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { X } from "@phosphor-icons/react";
 import AuthForm from "@/components/auth/AuthForm";
+import PageLoading from "@/components/navigation/PageLoading";
 import { safeAuthReturnTo } from "@/lib/auth-return";
 import styles from "./PropertyAccess.module.css";
 
@@ -29,6 +31,8 @@ export default function PropertyAccessProvider({
 }) {
   const [target, setTarget] = useState<string | null>(null);
   const [mode, setMode] = useState<"login" | "register">("login");
+  const [opening, startTransition] = useTransition();
+  const router = useRouter();
   const open = useCallback((href: string) => {
     setMode("login");
     setTarget(safeAuthReturnTo(href));
@@ -43,8 +47,16 @@ export default function PropertyAccessProvider({
           mode={mode}
           onModeChange={setMode}
           onClose={() => setTarget(null)}
+          onAuthenticated={() => {
+            setTarget(null);
+            startTransition(() => {
+              router.push(target);
+              router.refresh();
+            });
+          }}
         />
       )}
+      {opening && <PageLoading label="Opening property…" />}
     </AccessContext.Provider>
   );
 }
@@ -53,14 +65,15 @@ function PropertyLoginModal({
   mode,
   onModeChange,
   onClose,
+  onAuthenticated,
 }: {
   target: string;
   mode: "login" | "register";
   onModeChange: (mode: "login" | "register") => void;
   onClose: () => void;
+  onAuthenticated: () => void;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
-  const router = useRouter();
   useEffect(() => {
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -103,11 +116,7 @@ function PropertyLoginModal({
         mode={mode}
         returnTo={target}
         onModeChange={onModeChange}
-        onAuthenticated={() => {
-          onClose();
-          router.push(target);
-          router.refresh();
-        }}
+        onAuthenticated={onAuthenticated}
       />
       <p className={styles.legal}>
         Read our <Link href="/privacy">Privacy Policy</Link> and{" "}

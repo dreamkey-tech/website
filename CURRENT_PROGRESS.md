@@ -8,7 +8,13 @@ Reviewed: 30 October 2026. This document describes the current working tree, inc
 
 **Historical handoff:** The earlier documentation task recorded branch `redesign`, remote `dreamkey-tech/website`, extensive uncommitted work and a pending Dashboard deletion. **Current SEO task checkpoint (10 October 2026):** The branch is `main`, and the working tree was clean before this task added its SEO changes. Dashboard remains absent. This task has not committed, pushed or deployed its changes; the historical handoff is not evidence of current release approval.
 
-## Latest update — consented GA4 business tracking
+## Latest update — Buy property navigation loader
+
+**User request + verified source, 3 November 2026:** Listing links now show the existing branded “Opening property…” feedback using Next's native `useLinkStatus`, with a body portal to avoid card clipping. A detail-specific route loading boundary covers the server request; a transition in the persistent Buy access provider covers the selected-listing continuation after OTP login. Anonymous login gating, modified/new-tab clicks, route redirects, API calls and analytics are preserved. The awaited detail GET controls initial availability; the existing interest POST runs after mount and does not gate visible content. No live API latency was measured.
+
+**Verification:** Scoped ESLint, TypeScript and production webpack build pass. Four focused actual-source loading checks pass, including a real suspended React transition after login, portal placement/cleanup, labels and anonymous/modifier behavior; the ten existing property/auth source regressions also pass. Evidence is under `output/navigation-loading/` and `output/website-properties/`. No production checks were performed, following the user's instruction. The user authorized publication of this loader follow-up to `origin/main` on 3 November 2026. Vercel deploys automatically from GitHub; production testing remains with the user.
+
+## Previous update — consented GA4 business tracking
 
 **User brief + source implementation, 3 November 2026:** Added the single root Google Analytics integration for the existing `G-2VBCFFSS0E` stream via `NEXT_PUBLIC_GA_ID`, central safe-event/URL allowlists, pathname pageviews, contact/navigation/service/category interactions, structured search choices and property-card/detail interactions. Contact/Sell explicitly track the first form interaction and `generate_lead` only after the existing validated adapter confirms success; failure paths do not become leads. No contact fields, raw searches, WhatsApp messages, credentials or customer/owner data are sent. Existing auth/enquiry payloads and visual pages remain; the approved consent UI is the intended addition.
 
