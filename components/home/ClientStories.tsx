@@ -16,9 +16,6 @@ export default function ClientStories() {
         <p>A home is personal. So is the journey to finding it.</p>
       </div>
       <TestimonialSlider />
-      <p className={styles.sampleNote}>
-        Sample testimonials for design preview. Client confirmation pending.
-      </p>
     </section>
   );
 }

@@ -1,0 +1,60 @@
+import type { DesignGalleryItem } from "./DesignGalleryCard";
+
+export const DESIGN_GALLERY_HOMES: DesignGalleryItem[] = [
+  {
+    image: "/images/client-2026-11/living-warm-marble.webp",
+    alt: "Client-supplied home interior with an orange sofa, marble flooring and warm ceiling lighting.",
+    title: "Characterful homes",
+    imageAspectRatio: 960 / 1280,
+    href: "/buy",
+  },
+  {
+    image: "/images/client-2026-11/living-stone-feature-wall.webp",
+    alt: "Client-supplied apartment interior with a stone feature wall and a mirrored partition.",
+    title: "Modern residences",
+    imageAspectRatio: 960 / 1280,
+    href: "/buy",
+  },
+  {
+    image: "/images/client-2026-11/living-blue-sofa.webp",
+    alt: "Client-supplied living room with a blue sectional sofa, wood cabinetry and gold ceiling detailing.",
+    title: "Designer apartments",
+    imageAspectRatio: 960 / 1280,
+    href: "/buy",
+  },
+  {
+    image: "/images/client-2026-11/living-family-lounge.webp",
+    alt: "Client-supplied family lounge with a dark sectional sofa and a round coffee table.",
+    title: "Family homes",
+    imageAspectRatio: 1200 / 1600,
+    href: "/buy",
+  },
+  {
+    image: "/images/client-2026-11/kitchen-sage.webp",
+    alt: "Client-supplied kitchen with sage-green cabinetry and a white countertop.",
+    title: "City apartments",
+    imageAspectRatio: 1280 / 960,
+    href: "/buy",
+  },
+  {
+    image: "/images/client-2026-11/bedroom-cream.webp",
+    alt: "Client-supplied bedroom with a cream upholstered bed, wood flooring and recessed lighting.",
+    title: "Signature residences",
+    imageAspectRatio: 960 / 1280,
+    href: "/buy",
+  },
+  {
+    image: "/images/client-2026-11/living-teal-sofa.webp",
+    alt: "Client-supplied sitting room with a teal sofa, patterned wallpaper and a wooden coffee table.",
+    title: "Room to unwind",
+    imageAspectRatio: 1024 / 768,
+    href: "/buy",
+  },
+  {
+    image: "/images/client-2026-11/bedroom-window-marble.webp",
+    alt: "Client-supplied bedroom with a padded headboard, marble flooring and a full-height window.",
+    title: "Contemporary living",
+    imageAspectRatio: 960 / 1280,
+    href: "/buy",
+  },
+];

@@ -141,19 +141,7 @@ export default function DesignGalleryCarousel({
         </div>
       </div>
       <div className={styles.controls}>
-        <p className={styles.position} aria-live="polite" aria-atomic="true">
-          {first ? (
-            <>
-              <span className="sr-only">Showing home styles </span>
-              {pad(first)}–{pad(last)}
-              <span aria-hidden="true"> / </span>
-              <span className="sr-only"> of </span>
-              {pad(count)}
-            </>
-          ) : (
-            `${count} home styles`
-          )}
-        </p>
+
         <div className={styles.buttons}>
           <button
             type="button"

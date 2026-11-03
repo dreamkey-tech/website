@@ -7,6 +7,7 @@ export type DesignGalleryItem = {
   image: string;
   alt: string;
   title: string;
+  description?: string;
   href: string;
   imageAspectRatio?: number;
 };
@@ -15,6 +16,7 @@ export default function DesignGalleryCard({
   image,
   alt,
   title,
+  description,
   href,
   imageAspectRatio = 4 / 5,
 }: DesignGalleryItem) {
@@ -34,12 +36,15 @@ export default function DesignGalleryCard({
     <Link
       href={href}
       draggable={false}
-      className={`${styles.card} ${styles.featured}`}
-      aria-label={`Explore ${title.toLowerCase()}`}
+      className={`${styles.card} ${styles.featured}${description ? ` ${styles.withDescription}` : ""}`}
+      aria-label={`Explore ${title.toLowerCase()}${description ? ` — ${description}` : ""}`}
     >
       {photo}
       <div className={styles.caption}>
-        <h3 className={styles.title}>{title}</h3>
+        <div className={styles.captionCopy}>
+          <h3 className={styles.title}>{title}</h3>
+          {description && <p className={styles.description}>{description}</p>}
+        </div>
         <span className={styles.arrow} aria-hidden="true">
           <ArrowUpRight size={22} />
         </span>

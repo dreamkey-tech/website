@@ -1,0 +1,30 @@
+{
+  "categories": {
+    "accessibility": 100,
+    "best-practices": 96
+  },
+  "consoleFindings": [
+    {
+      "source": "network",
+      "description": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "sourceLocation": {
+        "type": "source-location",
+        "url": "http://127.0.0.1:3041/api-proxy/v1/user/auth/me",
+        "urlProvider": "network",
+        "line": 0,
+        "column": 0
+      }
+    },
+    {
+      "source": "network",
+      "description": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "sourceLocation": {
+        "type": "source-location",
+        "url": "http://127.0.0.1:3041/_vercel/insights/script.js",
+        "urlProvider": "network",
+        "line": 0,
+        "column": 0
+      }
+    }
+  ]
+}

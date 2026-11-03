@@ -1,0 +1,209 @@
+--- a/components/home/design-gallery-data.ts
++++ b/components/home/design-gallery-data.ts
+@@ -2,59 +2,60 @@
+ 
+ export const DESIGN_GALLERY_HOMES: DesignGalleryItem[] = [
+   {
+-    image: "/images/client-2026-11/living-warm-marble.webp",
+-    alt: "Client-supplied home interior with an orange sofa, marble flooring and warm ceiling lighting.",
+-    title: "Characterful homes",
+-    imageAspectRatio: 960 / 1280,
++    image: "/images/property-categories/apartments-flats-v1.webp",
++    alt: "Illustrative Kolkata-inspired apartment tower with cream facades and bare balconies.",
++    title: "Apartments / Flats",
++    imageAspectRatio: 1122 / 1402,
+     href: "/buy",
+   },
+   {
+-    image: "/images/client-2026-11/living-stone-feature-wall.webp",
+-    alt: "Client-supplied apartment interior with a stone feature wall and a mirrored partition.",
+-    title: "Modern residences",
+-    imageAspectRatio: 960 / 1280,
++    image: "/images/property-categories/independent-houses-v1.webp",
++    alt: "Illustrative two-storey independent house with its own entrance and boundary gate.",
++    title: "Independent Houses",
++    imageAspectRatio: 1122 / 1402,
+     href: "/buy",
+   },
+   {
+-    image: "/images/client-2026-11/living-blue-sofa.webp",
+-    alt: "Client-supplied living room with a blue sectional sofa, wood cabinetry and gold ceiling detailing.",
+-    title: "Designer apartments",
+-    imageAspectRatio: 960 / 1280,
++    image: "/images/property-categories/villas-v1.webp",
++    alt: "Illustrative detached luxury villa with broad stone-and-timber elevations and a paved driveway.",
++    title: "Villas",
++    imageAspectRatio: 1122 / 1402,
+     href: "/buy",
+   },
+   {
+-    image: "/images/client-2026-11/living-family-lounge.webp",
+-    alt: "Client-supplied family lounge with a dark sectional sofa and a round coffee table.",
+-    title: "Family homes",
+-    imageAspectRatio: 1200 / 1600,
++    image: "/images/property-categories/penthouses-v1.webp",
++    alt: "Illustrative penthouse living room with tall windows, a private terrace and elevated city views.",
++    title: "Penthouses",
++    imageAspectRatio: 1122 / 1402,
+     href: "/buy",
+   },
+   {
+-    image: "/images/client-2026-11/kitchen-sage.webp",
+-    alt: "Client-supplied kitchen with sage-green cabinetry and a white countertop.",
+-    title: "City apartments",
+-    imageAspectRatio: 1280 / 960,
++    image: "/images/property-categories/duplex-homes-v1.webp",
++    alt: "Illustrative duplex interior with an internal staircase connecting a living room and an upper-floor gallery.",
++    title: "Duplex Homes",
++    imageAspectRatio: 1122 / 1402,
+     href: "/buy",
+   },
+   {
+-    image: "/images/client-2026-11/bedroom-cream.webp",
+-    alt: "Client-supplied bedroom with a cream upholstered bed, wood flooring and recessed lighting.",
+-    title: "Signature residences",
+-    imageAspectRatio: 960 / 1280,
++    image: "/images/property-categories/studio-apartments-v1.webp",
++    alt: "Illustrative compact studio apartment combining a bed alcove, sitting area and kitchenette in one room.",
++    title: "Studio Apartments",
++    imageAspectRatio: 1122 / 1402,
+     href: "/buy",
+   },
+   {
+-    image: "/images/client-2026-11/living-teal-sofa.webp",
+-    alt: "Client-supplied sitting room with a teal sofa, patterned wallpaper and a wooden coffee table.",
+-    title: "Room to unwind",
+-    imageAspectRatio: 1024 / 768,
++    image: "/images/property-categories/residential-plots-v1.webp",
++    alt: "Illustrative vacant residential plot bounded by low walls beside a neighbourhood access road.",
++    title: "Residential Plots",
++    imageAspectRatio: 1122 / 1402,
+     href: "/buy",
+   },
+   {
+-    image: "/images/client-2026-11/bedroom-window-marble.webp",
+-    alt: "Client-supplied bedroom with a padded headboard, marble flooring and a full-height window.",
+-    title: "Contemporary living",
+-    imageAspectRatio: 960 / 1280,
++    image: "/images/property-categories/commercial-properties-v1.webp",
++    alt: "Illustrative commercial building with glass-fronted offices and ground-floor retail or showroom spaces.",
++    title: "Commercial Properties",
++    description: "offices, shops and showrooms",
++    imageAspectRatio: 1122 / 1402,
+     href: "/buy",
+   },
+ ];
+--- a/components/home/DesignGalleryCard.tsx
++++ b/components/home/DesignGalleryCard.tsx
+@@ -7,6 +7,7 @@
+   image: string;
+   alt: string;
+   title: string;
++  description?: string;
+   href: string;
+   imageAspectRatio?: number;
+ };
+@@ -15,6 +16,7 @@
+   image,
+   alt,
+   title,
++  description,
+   href,
+   imageAspectRatio = 4 / 5,
+ }: DesignGalleryItem) {
+@@ -34,12 +36,15 @@
+     <Link
+       href={href}
+       draggable={false}
+-      className={`${styles.card} ${styles.featured}`}
+-      aria-label={`Explore ${title.toLowerCase()}`}
++      className={`${styles.card} ${styles.featured}${description ? ` ${styles.withDescription}` : ""}`}
++      aria-label={`Explore ${title.toLowerCase()}${description ? ` — ${description}` : ""}`}
+     >
+       {photo}
+       <div className={styles.caption}>
+-        <h3 className={styles.title}>{title}</h3>
++        <div className={styles.captionCopy}>
++          <h3 className={styles.title}>{title}</h3>
++          {description && <p className={styles.description}>{description}</p>}
++        </div>
+         <span className={styles.arrow} aria-hidden="true">
+           <ArrowUpRight size={22} />
+         </span>
+--- a/components/home/DesignGallery.module.css
++++ b/components/home/DesignGallery.module.css
+@@ -172,6 +172,13 @@
+   pointer-events: none;
+   background: linear-gradient(180deg, var(--home-photo-shade), transparent 45%);
+ }
++.withDescription::after {
++  background: linear-gradient(
++    180deg,
++    var(--home-photo-shade) 48%,
++    transparent 82%
++  );
++}
+ 
+ .caption {
+   position: relative;
+@@ -183,6 +190,11 @@
+   padding: 24px 22px;
+ }
+ 
++.captionCopy {
++  flex: 1;
++  min-width: 0;
++}
++
+ .title {
+   max-width: 170px;
+   margin: 0;
+@@ -191,6 +203,16 @@
+   font-style: italic;
+   line-height: 1.15;
+   letter-spacing: -0.7px;
++  overflow-wrap: break-word;
++}
++
++.description {
++  max-width: 180px;
++  margin: 7px 0 0;
++  font-size: 12px;
++  font-weight: 400;
++  line-height: 1.45;
++  overflow-wrap: break-word;
+ }
+ 
+ .arrow {
+@@ -221,7 +243,7 @@
+ 
+ /* Touch devices retain the label. Mouse and keyboard reveal it in sequence. */
+ @media (hover: hover) and (pointer: fine) {
+-  .title {
++  .captionCopy {
+     opacity: 0;
+     transform: translateY(10px);
+     transition:
+@@ -243,7 +265,7 @@
+     transform: rotate(45deg);
+   }
+ 
+-  .featured:is(:hover, :focus-visible) .title {
++  .featured:is(:hover, :focus-visible) .captionCopy {
+     opacity: 1;
+     transform: translateY(0);
+   }
+@@ -375,11 +397,11 @@
+     transition: none;
+   }
+   .image,
+-  .title,
++  .captionCopy,
+   .arrow {
+     transition: none;
+   }
+-  .title,
++  .captionCopy,
+   .arrow {
+     transform: none;
+   }

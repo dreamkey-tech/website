@@ -29,10 +29,6 @@ export default function BestProperties() {
       <Link href="/buy" className={styles.collectionLink}>
         View all properties <ArrowRight size={18} aria-hidden="true" />
       </Link>
-      <p className={styles.inventoryNote}>
-        Images and listings are illustrative. Please confirm current pricing and
-        availability with our team.
-      </p>
     </section>
   );
 }

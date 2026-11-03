@@ -1,0 +1,88 @@
+{
+  "scope": "Local production SSR and image delivery; no live account or inventory mutations",
+  "gallerySSR": [
+    {
+      "asset": "/images/property-categories/apartments-flats-v1.webp",
+      "alt": "Illustrative Kolkata-inspired apartment tower with cream facades and bare balconies.",
+      "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.8503031383737517), (max-width: 1100px) calc((100vw - 72px) * 0.42014978601997144), (min-width: 1440px) 367px, calc((100vw - 112px) * 0.27509807417974325)"
+    },
+    {
+      "asset": "/images/property-categories/independent-houses-v1.webp",
+      "alt": "Illustrative two-storey independent house with its own entrance and boundary gate.",
+      "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.8503031383737517), (max-width: 1100px) calc((100vw - 72px) * 0.42014978601997144), (min-width: 1440px) 367px, calc((100vw - 112px) * 0.27509807417974325)"
+    },
+    {
+      "asset": "/images/property-categories/villas-v1.webp",
+      "alt": "Illustrative detached luxury villa with broad stone-and-timber elevations and a paved driveway.",
+      "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.8503031383737517), (max-width: 1100px) calc((100vw - 72px) * 0.42014978601997144), (min-width: 1440px) 367px, calc((100vw - 112px) * 0.27509807417974325)"
+    },
+    {
+      "asset": "/images/property-categories/penthouses-v1.webp",
+      "alt": "Illustrative penthouse living room with tall windows, a private terrace and elevated city views.",
+      "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.8503031383737517), (max-width: 1100px) calc((100vw - 72px) * 0.42014978601997144), (min-width: 1440px) 367px, calc((100vw - 112px) * 0.27509807417974325)"
+    },
+    {
+      "asset": "/images/property-categories/duplex-homes-v1.webp",
+      "alt": "Illustrative duplex interior with an internal staircase connecting a living room and an upper-floor gallery.",
+      "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.8503031383737517), (max-width: 1100px) calc((100vw - 72px) * 0.42014978601997144), (min-width: 1440px) 367px, calc((100vw - 112px) * 0.27509807417974325)"
+    },
+    {
+      "asset": "/images/property-categories/studio-apartments-v1.webp",
+      "alt": "Illustrative compact studio apartment combining a bed alcove, sitting area and kitchenette in one room.",
+      "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.8503031383737517), (max-width: 1100px) calc((100vw - 72px) * 0.42014978601997144), (min-width: 1440px) 367px, calc((100vw - 112px) * 0.27509807417974325)"
+    },
+    {
+      "asset": "/images/property-categories/residential-plots-v1.webp",
+      "alt": "Illustrative vacant residential plot bounded by low walls beside a neighbourhood access road.",
+      "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.8503031383737517), (max-width: 1100px) calc((100vw - 72px) * 0.42014978601997144), (min-width: 1440px) 367px, calc((100vw - 112px) * 0.27509807417974325)"
+    },
+    {
+      "asset": "/images/property-categories/commercial-properties-v1.webp",
+      "alt": "Illustrative commercial building with glass-fronted offices and ground-floor retail or showroom spaces.",
+      "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.8503031383737517), (max-width: 1100px) calc((100vw - 72px) * 0.42014978601997144), (min-width: 1440px) 367px, calc((100vw - 112px) * 0.27509807417974325)"
+    }
+  ],
+  "assets": [
+    {
+      "asset": "/images/property-categories/apartments-flats-v1.webp",
+      "original": 200,
+      "optimized640": 200
+    },
+    {
+      "asset": "/images/property-categories/independent-houses-v1.webp",
+      "original": 200,
+      "optimized640": 200
+    },
+    {
+      "asset": "/images/property-categories/villas-v1.webp",
+      "original": 200,
+      "optimized640": 200
+    },
+    {
+      "asset": "/images/property-categories/penthouses-v1.webp",
+      "original": 200,
+      "optimized640": 200
+    },
+    {
+      "asset": "/images/property-categories/duplex-homes-v1.webp",
+      "original": 200,
+      "optimized640": 200
+    },
+    {
+      "asset": "/images/property-categories/studio-apartments-v1.webp",
+      "original": 200,
+      "optimized640": 200
+    },
+    {
+      "asset": "/images/property-categories/residential-plots-v1.webp",
+      "original": 200,
+      "optimized640": 200
+    },
+    {
+      "asset": "/images/property-categories/commercial-properties-v1.webp",
+      "original": 200,
+      "optimized640": 200
+    }
+  ],
+  "protectedHeroHashesUnchanged": 24
+}

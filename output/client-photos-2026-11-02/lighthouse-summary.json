@@ -1,0 +1,12 @@
+{
+  "categories": {
+    "accessibility": 100,
+    "best-practices": 96
+  },
+  "findings": [
+    {
+      "id": "errors-in-console",
+      "title": "Browser errors were logged to the console"
+    }
+  ]
+}

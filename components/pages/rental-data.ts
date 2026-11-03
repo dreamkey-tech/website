@@ -22,9 +22,9 @@ export const RENTAL_HOMES: RentalHome[] = [
     sqft: 1850,
     rent: 65000,
     furnishing: "Furnished",
-    image: "/images/pages/rent-living.webp",
+    image: "/images/client-2026-11/living-teal-wide.webp",
     imageAlt:
-      "Illustrative bright apartment with a dining nook and skyline views",
+      "Client-supplied reference photo of a living room with a teal sofa and patterned wallpaper",
   },
   {
     id: "salt-lake-two",
@@ -35,9 +35,9 @@ export const RENTAL_HOMES: RentalHome[] = [
     sqft: 1120,
     rent: 32000,
     furnishing: "Semi-furnished",
-    image: "/images/design-gallery/designer-interior.webp",
+    image: "/images/client-2026-11/bedroom-cream.webp",
     imageAlt:
-      "Illustrative contemporary interior with understated designer furniture",
+      "Client-supplied reference photo of a cream bedroom with wood flooring",
   },
   {
     id: "bypass-four",
@@ -48,9 +48,9 @@ export const RENTAL_HOMES: RentalHome[] = [
     sqft: 2400,
     rent: 85000,
     furnishing: "Furnished",
-    image: "/images/pages/sell-residence.webp",
+    image: "/images/client-2026-11/living-ivory-green-wide.webp",
     imageAlt:
-      "Illustrative spacious living room with large windows and residential tower views",
+      "Client-supplied reference photo of a living room with ivory seating and a patterned rug",
   },
   {
     id: "new-town-two",
@@ -61,8 +61,9 @@ export const RENTAL_HOMES: RentalHome[] = [
     sqft: 1050,
     rent: 28000,
     furnishing: "Unfurnished",
-    image: "/images/kolkata-urbana-inspired-hero.webp",
-    imageAlt: "Illustrative Kolkata-inspired residential high-rises",
+    image: "/images/client-2026-11/living-unfurnished-stone.webp",
+    imageAlt:
+      "Client-supplied reference photo of an unfurnished living space with a stone feature wall",
   },
 ];
 

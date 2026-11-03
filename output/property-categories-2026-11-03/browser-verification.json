@@ -1,0 +1,124 @@
+{
+  "scope": "Local production browser with keyboard focus reveals; no accounts/inventory mutated",
+  "desktop": {
+    "width": 1280,
+    "labels8": true,
+    "focusReveal": true,
+    "commercialSubtitleFits": true,
+    "pageOverflow": false
+  },
+  "mobile320": {
+    "cards": [
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Apartments / Flats",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Independent Houses",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Villas",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Penthouses",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Duplex Homes",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Studio Apartments",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Residential Plots",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Commercial Properties",
+        "titleOverflow": false
+      }
+    ],
+    "pageOverflow": false,
+    "width": 320
+  },
+  "mobile390": {
+    "allImagesLoaded": true,
+    "cards": [
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Apartments / Flats",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Independent Houses",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Villas",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Penthouses",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Duplex Homes",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Studio Apartments",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Residential Plots",
+        "titleOverflow": false
+      },
+      {
+        "labelOverlapsArrow": false,
+        "subtitleOverflow": false,
+        "title": "Commercial Properties",
+        "titleOverflow": false
+      }
+    ],
+    "pageOverflow": false,
+    "width": 390
+  },
+  "limits": [
+    "Viewport simulation, not physical devices",
+    "Physical hover/touch and reduced-motion rendering not newly exercised; retained implementation reviewed",
+    "No deployment or inventory verification"
+  ]
+}

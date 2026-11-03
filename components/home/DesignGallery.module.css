@@ -172,6 +172,13 @@
   pointer-events: none;
   background: linear-gradient(180deg, var(--home-photo-shade), transparent 45%);
 }
+.withDescription::after {
+  background: linear-gradient(
+    180deg,
+    var(--home-photo-shade) 48%,
+    transparent 82%
+  );
+}
 
 .caption {
   position: relative;
@@ -183,6 +190,11 @@
   padding: 24px 22px;
 }
 
+.captionCopy {
+  flex: 1;
+  min-width: 0;
+}
+
 .title {
   max-width: 170px;
   margin: 0;
@@ -191,6 +203,16 @@
   font-style: italic;
   line-height: 1.15;
   letter-spacing: -0.7px;
+  overflow-wrap: break-word;
+}
+
+.description {
+  max-width: 180px;
+  margin: 7px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  overflow-wrap: break-word;
 }
 
 .arrow {
@@ -221,7 +243,7 @@
 
 /* Touch devices retain the label. Mouse and keyboard reveal it in sequence. */
 @media (hover: hover) and (pointer: fine) {
-  .title {
+  .captionCopy {
     opacity: 0;
     transform: translateY(10px);
     transition:
@@ -243,7 +265,7 @@
     transform: rotate(45deg);
   }
 
-  .featured:is(:hover, :focus-visible) .title {
+  .featured:is(:hover, :focus-visible) .captionCopy {
     opacity: 1;
     transform: translateY(0);
   }
@@ -375,11 +397,11 @@
     transition: none;
   }
   .image,
-  .title,
+  .captionCopy,
   .arrow {
     transition: none;
   }
-  .title,
+  .captionCopy,
   .arrow {
     transform: none;
   }

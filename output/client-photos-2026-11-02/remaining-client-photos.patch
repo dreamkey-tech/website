@@ -1,0 +1,167 @@
+diff --git a/components/buy/buy-data.ts b/components/buy/buy-data.ts
+index 7599b95..e604624 100644
+--- a/components/buy/buy-data.ts
++++ b/components/buy/buy-data.ts
+@@ -14,8 +14,9 @@ export const BUY_HOMES: BuyHome[] = [
+     status: "construction",
+     bedrooms: [3, 4],
+     amenities: ["water", "club"],
+-    image: "/images/kolkata-urbana-inspired-hero.webp",
+-    imageAlt: "Illustrative Kolkata-inspired residential high-rises",
++    image: "/images/client-2026-11/living-dining-wide.webp",
++    imageAlt:
++      "Client-supplied reference photo of an open-plan living and dining room",
+     priceCr: 1.85,
+     maxSqft: 2750,
+   },
+@@ -33,9 +34,9 @@ export const BUY_HOMES: BuyHome[] = [
+     status: "ready",
+     bedrooms: [3, 4],
+     amenities: ["terrace", "concierge"],
+-    image: "/images/pages/sell-residence.webp",
++    image: "/images/client-2026-11/living-ivory-green-wide.webp",
+     imageAlt:
+-      "Illustrative sunlit apartment interior with residential skyline views",
++      "Client-supplied reference photo of an ivory living room with green accent seating",
+     priceCr: 2.25,
+     maxSqft: 3100,
+   },
+@@ -53,8 +54,9 @@ export const BUY_HOMES: BuyHome[] = [
+     status: "construction",
+     bedrooms: [3],
+     amenities: ["club"],
+-    image: "/images/pages/contact-kolkata.webp",
+-    imageAlt: "Illustrative Kolkata-inspired residential avenue",
++    image: "/images/client-2026-11/living-teal-wide.webp",
++    imageAlt:
++      "Client-supplied reference photo of a sitting room with a teal sofa",
+     priceCr: 1.45,
+     maxSqft: 2100,
+   },
+@@ -72,9 +74,9 @@ export const BUY_HOMES: BuyHome[] = [
+     status: "ready",
+     bedrooms: [4],
+     amenities: ["pool", "parking"],
+-    image: "/images/pages/rent-living.webp",
++    image: "/images/client-2026-11/bedroom-window-marble.webp",
+     imageAlt:
+-      "Illustrative sunlit apartment interior with residential skyline views",
++      "Client-supplied reference photo of a bedroom with marble flooring and a large window",
+     priceCr: 3.85,
+     maxSqft: 4100,
+   },
+@@ -92,8 +94,8 @@ export const BUY_HOMES: BuyHome[] = [
+     status: "waitlist",
+     bedrooms: [4],
+     amenities: ["water"],
+-    image: "/images/kolkata-urbana-inspired-hero.webp",
+-    imageAlt: "Illustrative Kolkata-inspired residential high-rises",
++    image: "/images/client-2026-11/living-dining-wide.webp",
++    imageAlt: "Client-supplied reference photo of a furnished open-plan home",
+     priceCr: 2.9,
+     maxSqft: 3500,
+   },
+@@ -111,8 +113,9 @@ export const BUY_HOMES: BuyHome[] = [
+     status: "ready",
+     bedrooms: [2, 3],
+     amenities: ["automation"],
+-    image: "/images/design-gallery/designer-interior.webp",
+-    imageAlt: "Illustrative contemporary designer interior",
++    image: "/images/client-2026-11/living-family-lounge.webp",
++    imageAlt:
++      "Client-supplied reference photo of a family lounge with a dark sectional sofa",
+     priceCr: 1.15,
+     maxSqft: 1950,
+   },
+@@ -130,9 +133,9 @@ export const BUY_HOMES: BuyHome[] = [
+     status: "launch",
+     bedrooms: [4, 5],
+     amenities: ["lift"],
+-    image: "/images/pages/sell-residence.webp",
++    image: "/images/client-2026-11/living-warm-marble.webp",
+     imageAlt:
+-      "Illustrative sunlit apartment interior with residential skyline views",
++      "Client-supplied reference photo of a warm interior with an orange sofa and marble flooring",
+     priceCr: 4.2,
+     maxSqft: 5200,
+   },
+@@ -150,8 +153,9 @@ export const BUY_HOMES: BuyHome[] = [
+     status: "ready",
+     bedrooms: [4, 5],
+     amenities: ["garden", "solar"],
+-    image: "/images/design-gallery/villa-timber.webp",
+-    imageAlt: "Illustrative contemporary villa exterior",
++    image: "/images/client-2026-11/living-warm-marble.webp",
++    imageAlt:
++      "Client-supplied reference photo of a living room with warm wood finishes and marble flooring",
+     priceCr: 3.4,
+     maxSqft: 4800,
+   },
+diff --git a/components/pages/RentalBrowser.tsx b/components/pages/RentalBrowser.tsx
+index f28bf88..745130c 100644
+--- a/components/pages/RentalBrowser.tsx
++++ b/components/pages/RentalBrowser.tsx
+@@ -108,8 +108,9 @@ export default function RentalBrowser() {
+             Find your kind of <em>everyday.</em>
+           </h2>
+           <p>
+-            Illustrative homes, rents, and imagery for this preview. Contact our
+-            team for current listings, availability, and property photographs.
++            Homes and rents are illustrative. Client-supplied photos are
++            references, not verified images of these listings. Contact our team
++            for current availability and property photographs.
+           </p>
+         </div>
+         <div className={styles.sortControls}>
+diff --git a/components/pages/rental-data.ts b/components/pages/rental-data.ts
+index 466c8f4..0dcec44 100644
+--- a/components/pages/rental-data.ts
++++ b/components/pages/rental-data.ts
+@@ -22,9 +22,9 @@ export const RENTAL_HOMES: RentalHome[] = [
+     sqft: 1850,
+     rent: 65000,
+     furnishing: "Furnished",
+-    image: "/images/pages/rent-living.webp",
++    image: "/images/client-2026-11/living-teal-wide.webp",
+     imageAlt:
+-      "Illustrative bright apartment with a dining nook and skyline views",
++      "Client-supplied reference photo of a living room with a teal sofa and patterned wallpaper",
+   },
+   {
+     id: "salt-lake-two",
+@@ -35,9 +35,9 @@ export const RENTAL_HOMES: RentalHome[] = [
+     sqft: 1120,
+     rent: 32000,
+     furnishing: "Semi-furnished",
+-    image: "/images/design-gallery/designer-interior.webp",
++    image: "/images/client-2026-11/bedroom-cream.webp",
+     imageAlt:
+-      "Illustrative contemporary interior with understated designer furniture",
++      "Client-supplied reference photo of a cream bedroom with wood flooring",
+   },
+   {
+     id: "bypass-four",
+@@ -48,9 +48,9 @@ export const RENTAL_HOMES: RentalHome[] = [
+     sqft: 2400,
+     rent: 85000,
+     furnishing: "Furnished",
+-    image: "/images/pages/sell-residence.webp",
++    image: "/images/client-2026-11/living-ivory-green-wide.webp",
+     imageAlt:
+-      "Illustrative spacious living room with large windows and residential tower views",
++      "Client-supplied reference photo of a living room with ivory seating and a patterned rug",
+   },
+   {
+     id: "new-town-two",
+@@ -61,8 +61,9 @@ export const RENTAL_HOMES: RentalHome[] = [
+     sqft: 1050,
+     rent: 28000,
+     furnishing: "Unfurnished",
+-    image: "/images/kolkata-urbana-inspired-hero.webp",
+-    imageAlt: "Illustrative Kolkata-inspired residential high-rises",
++    image: "/images/client-2026-11/living-unfurnished-stone.webp",
++    imageAlt:
++      "Client-supplied reference photo of an unfurnished living space with a stone feature wall",
+   },
+ ];
+ 

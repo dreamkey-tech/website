@@ -1,0 +1,64 @@
+{
+  "scope": "Local production browser; manual visual review plus DOM dimensions/load state; no backend/customer mutations",
+  "desktop": [
+    "Home gallery crop and Next navigation",
+    "Property management backdrop and readable text",
+    "Best properties card crops"
+  ],
+  "mobile": {
+    "width": 390,
+    "gallery": {
+      "overflow": false,
+      "width": 390
+    },
+    "rent": {
+      "loaded": [
+        {
+          "alt": "Client-supplied reference photo of a living room with a teal sofa and patterned wallpaper",
+          "loaded": true
+        },
+        {
+          "alt": "Client-supplied reference photo of a cream bedroom with wood flooring",
+          "loaded": true
+        },
+        {
+          "alt": "Client-supplied reference photo of a living room with ivory seating and a patterned rug",
+          "loaded": true
+        },
+        {
+          "alt": "Client-supplied reference photo of an unfurnished living space with a stone feature wall",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "width": 390
+    },
+    "services": {
+      "overflow": false,
+      "photos": [
+        {
+          "alt": "Client-supplied living room with a blue sectional sofa and wood cabinetry",
+          "loaded": true
+        },
+        {
+          "alt": "Client-supplied bedroom with a large window and neutral furnishings",
+          "loaded": true
+        },
+        {
+          "alt": "Client-supplied apartment interior with a stone feature wall and mirrored detailing",
+          "loaded": true
+        },
+        {
+          "alt": "Client-supplied kitchen with warm wood cabinetry and dark stone counters",
+          "loaded": true
+        }
+      ],
+      "width": 390
+    }
+  },
+  "limits": [
+    "Not a physical-device test",
+    "Dark appearance and every individual carousel position not exhaustively rechecked",
+    "Native touch/swipe and unrelated application flows unchanged, not newly tested"
+  ]
+}

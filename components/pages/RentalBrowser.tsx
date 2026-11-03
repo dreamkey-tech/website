@@ -108,8 +108,9 @@ export default function RentalBrowser() {
             Find your kind of <em>everyday.</em>
           </h2>
           <p>
-            Illustrative homes, rents, and imagery for this preview. Contact our
-            team for current listings, availability, and property photographs.
+            Homes and rents are illustrative. Client-supplied photos are
+            references, not verified images of these listings. Contact our team
+            for current availability and property photographs.
           </p>
         </div>
         <div className={styles.sortControls}>

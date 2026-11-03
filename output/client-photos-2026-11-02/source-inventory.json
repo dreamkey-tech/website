@@ -1,0 +1,805 @@
+{
+  "sourceFolder": "/home/koushik/Downloads/images",
+  "reviewedCount": 96,
+  "conversion": "EXIF orientation applied; WebP quality 85; native dimensions; no crop, retouching or upscaling; metadata omitted",
+  "photos": [
+    {
+      "id": 1,
+      "width": 575,
+      "height": 1280,
+      "sha256": "005491620d6058a9f278c2ccd2d1ece670a63fafbb17787f0b418385930a044b",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.41 PM (2).jpeg",
+      "asset": null
+    },
+    {
+      "id": 2,
+      "width": 1280,
+      "height": 575,
+      "sha256": "2a02c6b83f46621a77141507b955086577af0b19639bffd7b9321f07432b7ac2",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.41 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 3,
+      "width": 575,
+      "height": 1280,
+      "sha256": "16280a8a5e54b037eea84aa9e1804e3da29aba1d5f78535a293a407fb8350cd5",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.42 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 4,
+      "width": 1280,
+      "height": 575,
+      "sha256": "c1c3664babf0137da6861551b963e84ddb48d5b7353a53b45259b3af01a4f02a",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.42 PM.jpeg",
+      "asset": "/images/client-2026-11/living-dining-wide.webp",
+      "assetSha256": "ca0c9401d60ed32a88411bb9a3c614960f335efd2ad49697af8dc3a71bea69d5",
+      "assetBytes": 66262
+    },
+    {
+      "id": 5,
+      "width": 1280,
+      "height": 575,
+      "sha256": "cb68e3378720036e7e2b0fbe967166aa18b9ea55837ceb34f5fc517f9212974d",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.43 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 6,
+      "width": 1280,
+      "height": 575,
+      "sha256": "415930f96da7e94a25ca1ff0ad3e3b721b58a79c0c080746587395511f708766",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.43 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 7,
+      "width": 575,
+      "height": 1280,
+      "sha256": "403ba906482ae514ecc2bca74d8a5d9f3f733a1c81e577481096f199939194bf",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.44 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 8,
+      "width": 575,
+      "height": 1280,
+      "sha256": "a50d10279dc81e91bffc6a7eef5c674b189b63612bed128afb628cd2e8e346a7",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.45 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 9,
+      "width": 575,
+      "height": 1280,
+      "sha256": "ea6031491bb38154d0c6364aa9cbde76b0e516f2364dcd261cb3872b3b14d994",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.45 PM (2).jpeg",
+      "asset": null
+    },
+    {
+      "id": 10,
+      "width": 1280,
+      "height": 575,
+      "sha256": "3c76220f0c8b6cc4f1457d0e11611b65f36df8bb36a3a3a32bd361c8a1a3343e",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.45 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 11,
+      "width": 1280,
+      "height": 575,
+      "sha256": "2ea52b9f6f52e81989c829bc863c152a786c9b37aec6bf0ad8e7ce95c2bd44cc",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.46 PM (1).jpeg",
+      "asset": "/images/client-2026-11/living-open-plan.webp",
+      "assetSha256": "d1b8b4d10bee4edb24b337fd30e78eae0736f26228cb4cf49356d21800643c0c",
+      "assetBytes": 58654
+    },
+    {
+      "id": 12,
+      "width": 1280,
+      "height": 575,
+      "sha256": "91341d1dbff1172802be875b856cec9611d659cdbfa69006290981591404b54b",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.46 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 13,
+      "width": 960,
+      "height": 1280,
+      "sha256": "9d8adb50f10248dbf5c80200114b9ed7cbcac22931032e4e4f0bccac9a644cc4",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.47 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 14,
+      "width": 960,
+      "height": 1280,
+      "sha256": "698202ccb358a22d3f5a7e7aa7a6f9d880c1339c0aa4015c185933675b360739",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.48 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 15,
+      "width": 960,
+      "height": 1280,
+      "sha256": "0e853c7d47d519776f10a5e3d02ab8f74706a97458b5834d28b2ffbd0b7c1a34",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.48 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 16,
+      "width": 960,
+      "height": 1280,
+      "sha256": "bcd1f937b0e08c090378337fd6e62a8aac4e4ed7eeaf1e5e2ff727e3f6a1f26a",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.49 PM (1).jpeg",
+      "asset": "/images/client-2026-11/living-warm-marble.webp",
+      "assetSha256": "d326d947407d46c57fe78bf160a454d84d80430b88abeb0051cc6efba3c71352",
+      "assetBytes": 192278
+    },
+    {
+      "id": 17,
+      "width": 960,
+      "height": 1280,
+      "sha256": "5e723b14bc815e2e2097218d5683901ff057684f64e43f37fe98a62e69e7a221",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.49 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 18,
+      "width": 960,
+      "height": 1280,
+      "sha256": "6147086a4e3fbf9eb36b72db906026dbf5b8bee42d5fd67c91647ce478eadc7c",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.50 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 19,
+      "width": 960,
+      "height": 1280,
+      "sha256": "4a047726e1ff223ce9b4511ebaa9b2d2ba6d705070d6a08b6f22f065a93cd7be",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.50 PM (2).jpeg",
+      "asset": null
+    },
+    {
+      "id": 20,
+      "width": 960,
+      "height": 1280,
+      "sha256": "ea9a8a7e91029077365867bafbd4c4f4513be5dbc5e7da7d1bfdf7aa735ddb1f",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.50 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 21,
+      "width": 960,
+      "height": 1280,
+      "sha256": "9d337b403fbfdb86cea68cc7db2d5e06651de4aff638b16ce9c5e0f0d738b19a",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.51 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 22,
+      "width": 890,
+      "height": 1280,
+      "sha256": "73473e489b25e6df03e547535cb307bae0ac0f7bd92d6974bcf9a9526c81bd5b",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.51 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 23,
+      "width": 960,
+      "height": 1280,
+      "sha256": "a78808e85cac50a39a90c52c328737edcf6a69c6759f19a427e922236973f4da",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.52 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 24,
+      "width": 960,
+      "height": 1280,
+      "sha256": "ed9306e6c704676990786744a97ba791bc534b8ac01cbbe8319e5bbdb18f2f56",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.52 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 25,
+      "width": 960,
+      "height": 1280,
+      "sha256": "433e70202758798672861e39422005b1e36f6dca429f49ea87f3187a65c34533",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.53 PM (1).jpeg",
+      "asset": "/images/client-2026-11/bedroom-window-marble.webp",
+      "assetSha256": "e4ffa45e1c4e7ccec3194cc0fd91312eddce9707bbbfcfca5b4b59e0af8a6014",
+      "assetBytes": 176122
+    },
+    {
+      "id": 26,
+      "width": 960,
+      "height": 1280,
+      "sha256": "76db6408df71d1fc103655da0693792ccd437f476c35ec899cf9e70afbd0d60f",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.53 PM.jpeg",
+      "asset": "/images/client-2026-11/kitchen-warm-wood.webp",
+      "assetSha256": "f213060fae124ccaba328700a1069b01db467a9e09279bc3a3be7940399dcaa1",
+      "assetBytes": 165910
+    },
+    {
+      "id": 27,
+      "width": 960,
+      "height": 1280,
+      "sha256": "47064198e724c579b1dd4c36e313334d0e7280197d7a41a7e57e9951afb7ad57",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.54 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 28,
+      "width": 960,
+      "height": 1280,
+      "sha256": "7be45c415dbc1e536d9142977d488195d67b79a548a27daaa3e27045d6852cd5",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.54 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 29,
+      "width": 960,
+      "height": 1280,
+      "sha256": "65c7bfd039730d8e8e409a75fdb40679b06f937683abd532d2815ec58fd3b840",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.55 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 30,
+      "width": 960,
+      "height": 1280,
+      "sha256": "ab8c204b5c43ff3a347a7584ff5acdfcaa25d467404d6354106629ccf6f0f70e",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.55 PM (2).jpeg",
+      "asset": null
+    },
+    {
+      "id": 31,
+      "width": 960,
+      "height": 1280,
+      "sha256": "6665c377ef2cdeb6903e2f5fd7ff3c96dbb8980be0af0a723a5065d87667d261",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.55 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 32,
+      "width": 960,
+      "height": 1280,
+      "sha256": "917be701429b924853ccdab1ac89841d3af668ff2e5328da2bc0f48a6d8336b3",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.56 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 33,
+      "width": 960,
+      "height": 1280,
+      "sha256": "897d6cfc3d00cd9bacee1d1d191c2e8fbd0068fbbfddcb5d87bfc5408da14751",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.56 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 34,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "557e5bfcfe53674b35c87a887fb5aa4c213433134f32dd34aac61f401e682dc8",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.58 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 35,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "7fa12ef11acbc1e7382d363781041f4b5c271bbc3779b7f3cc606381f3e34c35",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.58 PM (2).jpeg",
+      "asset": null
+    },
+    {
+      "id": 36,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "2cd9a1366e5217918bdf654cb71797ff3fc4db5cd2714ebab58094d3a31632a7",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.58 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 37,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "f6ae01592dd5f4a28f336466fe37998a4dde7f952fbb818acba86d4f4b24bd70",
+      "filename": "WhatsApp Image 2026-11-02 at 1.28.59 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 38,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "e78dcdf5e144294149305d76ff6e988e4011e398b90150a4fa717c95a5fa81e4",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.00 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 39,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "6b690f67cf36a1e3306887db61f87e2685ca790e9c87960b2194030d4723ab03",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.01 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 40,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "60efc701a493d38fe0118095009d5611c7af8862391d5fe2f603b011bdc70b6f",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.02 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 41,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "e2cf847fa46969bb56b388eccb239f71a3ffbd4e9312fd209c88aa9e6ccde493",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.02 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 42,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "63dc4995490a028ad0245a27666d0d3c67dc3ad93137f5261d28f9ac031f4644",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.03 PM (1).jpeg",
+      "asset": "/images/client-2026-11/bedroom-daylight.webp",
+      "assetSha256": "d104cdc94ac66688cfa6be7800ffad48afbddedf8699ac3ce4bbe9329b78574b",
+      "assetBytes": 122526
+    },
+    {
+      "id": 43,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "5056635bfd5b568ffe613efbe24eb0c62e693089dddf6881a38eddbf6abb2a80",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.03 PM.jpeg",
+      "asset": "/images/client-2026-11/living-family-lounge.webp",
+      "assetSha256": "77911e3d14540dd72c4e555937dd463ab59428c6290bbf15cdd9df067fa7a2c0",
+      "assetBytes": 112060
+    },
+    {
+      "id": 44,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "95deae2e1fbf0258cef945c6950a14792590b031ef323d1a179655179e15302b",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.04 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 45,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "030ae5ec0010d3c30df7ae5457a4763a0867b29e717a4934f86f4aa9f3ad887e",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.04 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 46,
+      "width": 1200,
+      "height": 1600,
+      "sha256": "b893cc921e8ef3ef19017318e7db72ea53f1c50f0bd6f8104e5b2b7600b47ca7",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.05 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 47,
+      "width": 1280,
+      "height": 960,
+      "sha256": "d8ff3c51634e862e77cb803e1cf8fcab82da138589fe7ac6795e9545e121ab82",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.06 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 48,
+      "width": 1600,
+      "height": 1200,
+      "sha256": "93cad1e9dc2788360e212807064fd1612f1443ad9cac864f32f861c051e33eb7",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.06 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 49,
+      "width": 960,
+      "height": 1280,
+      "sha256": "1581a9f4df553c1cff9782f8314d4c7e72fb75bb974864dbb0d0270cff51336a",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.07 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 50,
+      "width": 960,
+      "height": 1280,
+      "sha256": "38fe7d5b5959e9a2c6bb1af476427ce1fe9a05365e4cd61ee8ac14272bd22b42",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.07 PM (2).jpeg",
+      "asset": null
+    },
+    {
+      "id": 51,
+      "width": 960,
+      "height": 1280,
+      "sha256": "28e47989b019e67a7ca3dec8aba8831f550143aa5ccff4f45fefae4d240e5faf",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.07 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 52,
+      "width": 1280,
+      "height": 960,
+      "sha256": "e32e0a62341ea1d2295c794dc9327c4e6b244c1e599adfa577659e2d24f123de",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.08 PM (1).jpeg",
+      "asset": "/images/client-2026-11/living-ivory-green-wide.webp",
+      "assetSha256": "5d945a556363efd861d21cf74676d7f90b40266a0a7b292806cf6129b0e38dbc",
+      "assetBytes": 163638
+    },
+    {
+      "id": 53,
+      "width": 960,
+      "height": 1280,
+      "sha256": "e4416a6422f056a4fd2de54886de1a73bf59faaebf0f589f5840277cbfa3b4d5",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.08 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 54,
+      "width": 960,
+      "height": 1280,
+      "sha256": "be497bb61abd4689f05f531a614505498c1d20648e03c92c7926fd2c2027e814",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.09 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 55,
+      "width": 960,
+      "height": 1280,
+      "sha256": "1e688c8453a933e0091aa2a2590a4730168fbb3360569f75c59498fa1aa0910d",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.10 PM (1).jpeg",
+      "asset": "/images/client-2026-11/living-stone-feature-wall.webp",
+      "assetSha256": "37f1ec11ce2b6e54150ce52390c4172e91108460d1432d321c04ec1391f95431",
+      "assetBytes": 117110
+    },
+    {
+      "id": 56,
+      "width": 960,
+      "height": 1280,
+      "sha256": "7fcc2a47cc5a1e0bb61cbdbbb32e82c7e804d7029b6e2c23d7b6a2d8d03d60bc",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.10 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 57,
+      "width": 960,
+      "height": 1280,
+      "sha256": "d2ce9c8b706da733597b14474d79d3767fd642321132b37d182d379a58144718",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.11 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 58,
+      "width": 960,
+      "height": 1280,
+      "sha256": "475180d1b051ea081414e4f197324729109e23cd13821adbea659ce1d383219b",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.11 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 59,
+      "width": 960,
+      "height": 1280,
+      "sha256": "cfab64562376c8169d5cd32cdc48b209249bc4372e4928f993fdd297d4f50f61",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.12 PM (1).jpeg",
+      "asset": "/images/client-2026-11/living-unfurnished-stone.webp",
+      "assetSha256": "2b2bb6a66a3b9fc7eed826b45ea965bc1e27c60fcc4f0d6644b5771aa73c8219",
+      "assetBytes": 130598
+    },
+    {
+      "id": 60,
+      "width": 960,
+      "height": 1280,
+      "sha256": "11c6d10eabe09a876441d8b6403c7d00fcd01cbe580073a17678e756fa02cb46",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.12 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 61,
+      "width": 960,
+      "height": 1280,
+      "sha256": "0e09b154a20cc222a8f67811a8038ba82d6120aa9e2574d0011ff72a1c12b5d0",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.13 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 62,
+      "width": 960,
+      "height": 1280,
+      "sha256": "e1d2e67b3581d9a485c21a1a7e6cb69f1cedfa7fb8e18230b55f9b81acf29341",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.13 PM (2).jpeg",
+      "asset": null
+    },
+    {
+      "id": 63,
+      "width": 960,
+      "height": 1280,
+      "sha256": "25ce7e650fe61fa4c577f802adbb76363b75f8c82bd2a960edd2e48c7ba1c25a",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.13 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 64,
+      "width": 960,
+      "height": 1280,
+      "sha256": "62c845ffcdd282bbe917f0eb58c67f711607a66c41599610356f37ba0e9bdb1f",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.14 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 65,
+      "width": 960,
+      "height": 1280,
+      "sha256": "ec95b9dab1707c8ba7cd098df69e49130e0281792a916f71da48de3958082617",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.14 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 66,
+      "width": 960,
+      "height": 1280,
+      "sha256": "5a6ce14c51e71303284827b362e773378eb90f0a3a6aa7b3e850c227c1dd7116",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.15 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 67,
+      "width": 960,
+      "height": 1280,
+      "sha256": "4391f30a0d937088d46932d495e31d7da519d3e3be2721d13430b69955fce28d",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.15 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 68,
+      "width": 960,
+      "height": 1280,
+      "sha256": "4509ec00ade45852430917cbb18f271565fa84ce6d91b45a479e06f677db130b",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.16 PM (1).jpeg",
+      "asset": "/images/client-2026-11/bedroom-cream.webp",
+      "assetSha256": "d560a800f8d7e4be9767223d91a5c345161f18f8fc00cd4823a908e7ec4cae9b",
+      "assetBytes": 144696
+    },
+    {
+      "id": 69,
+      "width": 960,
+      "height": 1280,
+      "sha256": "299fea2220c72b4e5ed9629037b391bf29a6e3c6d019f518212008c2130098e1",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.16 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 70,
+      "width": 960,
+      "height": 1280,
+      "sha256": "34547e33c9450c7316eaa09f4acb4b3143333224c7ce1292bb32eb98d44fea2f",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.17 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 71,
+      "width": 960,
+      "height": 1280,
+      "sha256": "1caef6ce17a6a79a31c5b22e2977558a6b4eb61b1e4de4696910ca04516679b0",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.17 PM (2).jpeg",
+      "asset": null
+    },
+    {
+      "id": 72,
+      "width": 960,
+      "height": 1280,
+      "sha256": "9146d10dac2ff6e0867259f1dfcac8507f01bdf69968827b50e155acd411e6fc",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.17 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 73,
+      "width": 960,
+      "height": 1280,
+      "sha256": "2898b77adf80f8a2a9a35cbe2cde0918fa54ba503f21c3314f820f9a8ef9e3a3",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.18 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 74,
+      "width": 1024,
+      "height": 768,
+      "sha256": "cf05b064875e819a7239494b283d637d5f0ffb6cc7a93e2ac7f620f6f5499d7f",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.19 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 75,
+      "width": 1024,
+      "height": 768,
+      "sha256": "8bf689d58a12ce35ee9481269f3189a29860344a230ad2ce32e8219bd2e5efa4",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.19 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 76,
+      "width": 1024,
+      "height": 768,
+      "sha256": "ace21991fcaeb40f174dc294a91d4d285a7449c1530d20562bb39c84b51742a4",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.20 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 77,
+      "width": 1024,
+      "height": 768,
+      "sha256": "85fcca220cd232460260d12e8788e9708f6922e294e39834ee0cb35d16d7d84d",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.20 PM.jpeg",
+      "asset": "/images/client-2026-11/living-teal-sofa.webp",
+      "assetSha256": "c181872b1e1be0f8d161fa64cf81e567a79941111bb5286447b37a6f0c304bd4",
+      "assetBytes": 154270
+    },
+    {
+      "id": 78,
+      "width": 1024,
+      "height": 768,
+      "sha256": "2dbb8af7ff225a343651f1958463c7ad41cbf8ca7fabbe9e771c5b5ab1668b3c",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.21 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 79,
+      "width": 1024,
+      "height": 768,
+      "sha256": "5c5164cb7df373c1c92eb061762021db3afef474f00298302bf7cd0ec83f7f7b",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.21 PM (2).jpeg",
+      "asset": null
+    },
+    {
+      "id": 80,
+      "width": 960,
+      "height": 1280,
+      "sha256": "1f3daefcd30dd753535ade662229b4fd5a170e1407bf203bf26392b859cd934c",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.21 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 81,
+      "width": 1024,
+      "height": 768,
+      "sha256": "aaafca3d039c084c052d6cfd518cb0209f14d5a9d5557e3b11126d9facf259c4",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.22 PM (1).jpeg",
+      "asset": "/images/client-2026-11/living-teal-wide.webp",
+      "assetSha256": "e4d688991c212dca146a57fa89cbf205b8be639b80e82adf57c603e2ed7fda9b",
+      "assetBytes": 83392
+    },
+    {
+      "id": 82,
+      "width": 1024,
+      "height": 768,
+      "sha256": "3167edf1af5a92d241333cd3ea7d3cd7498950a6eedbc0fd3460fe6c1e60233c",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.22 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 83,
+      "width": 1280,
+      "height": 720,
+      "sha256": "624fe3923cc1f2284361942bec999150e781b36106d8e32d9dc7eb6ac630aaf8",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.23 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 84,
+      "width": 1280,
+      "height": 720,
+      "sha256": "92bb270d3ecd7ba81380d3f1f9ffd27cf330d55791a5d05bba5a23e86dd2a6f4",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.23 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 85,
+      "width": 1024,
+      "height": 768,
+      "sha256": "d63550d1da7022cd60ea6a00a7d815c20936ebc0b16e30c96557c9c309519c29",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.24 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 86,
+      "width": 960,
+      "height": 1280,
+      "sha256": "952a0178eb7b36338bd3d277fd069d89628cb97f4de9b8170f481bc8b589f9b9",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.25 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 87,
+      "width": 960,
+      "height": 1280,
+      "sha256": "12fab2b83a608e1588be93614bbe6a98bec07afda3f9415e0cdb04d28adb0bba",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.25 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 88,
+      "width": 960,
+      "height": 1280,
+      "sha256": "416aa75b461755929a3a2d3715d67850bcb6d9d72a655794ca1e057d36753a1d",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.26 PM (1).jpeg",
+      "asset": "/images/client-2026-11/living-blue-sofa.webp",
+      "assetSha256": "9c88d45bd965c61d5d9da97e221a0d94ebbcb4539258d501521ec7846b397aaf",
+      "assetBytes": 140036
+    },
+    {
+      "id": 89,
+      "width": 960,
+      "height": 1280,
+      "sha256": "950d5864f9b9c19d62250a52da99498c05286043d96fcfc87e455405cbdc8a0d",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.26 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 90,
+      "width": 1280,
+      "height": 960,
+      "sha256": "222ea04de41f34123b7cf2826c7e1ae9935a23667b98bbe10085cd96c270b1e2",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.27 PM (1).jpeg",
+      "asset": "/images/client-2026-11/kitchen-sage.webp",
+      "assetSha256": "e7119283020f716ad7095724d38b909d3058d4828aa36f895f01bfaa15ecf7e5",
+      "assetBytes": 95768
+    },
+    {
+      "id": 91,
+      "width": 960,
+      "height": 1280,
+      "sha256": "be9c45b183684c710f6497485b06d23e97d7344dc203ef83bd2663702b87356d",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.27 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 92,
+      "width": 960,
+      "height": 1280,
+      "sha256": "0deb540ed91d5e87dd00bdbac2b1e60d3d7965e6fdec71997cfd80d97327a63a",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.28 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 93,
+      "width": 960,
+      "height": 1280,
+      "sha256": "52a5808fefd1b843fd8129e42063adfd6ef408424c2f6cc072ff13300bfa746a",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.28 PM (2).jpeg",
+      "asset": null
+    },
+    {
+      "id": 94,
+      "width": 960,
+      "height": 1280,
+      "sha256": "1664de7a35988a355a1d49ad247b53eeb9e4a0c07a4a43c46a31a2f3d02b4268",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.28 PM.jpeg",
+      "asset": null
+    },
+    {
+      "id": 95,
+      "width": 960,
+      "height": 1280,
+      "sha256": "df76430841c8787d37804ca6eca189fedd586c75e9d21965cdcf1b9825e4c385",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.29 PM (1).jpeg",
+      "asset": null
+    },
+    {
+      "id": 96,
+      "width": 960,
+      "height": 1280,
+      "sha256": "ca76b8c66ccc08a0f9095e5351587a1014bc84a01abdcfbdb90087754174efe7",
+      "filename": "WhatsApp Image 2026-11-02 at 1.29.29 PM.jpeg",
+      "asset": null
+    }
+  ]
+}

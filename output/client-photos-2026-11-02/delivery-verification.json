@@ -1,0 +1,348 @@
+{
+  "scope": "Local production HTTP/SSR and asset delivery; no live inventory/account mutations.",
+  "pages": [
+    {
+      "route": "/",
+      "status": 200,
+      "newPhotoCount": 12,
+      "photos": [
+        {
+          "source": "/images/client-2026-11/living-warm-marble.webp",
+          "alt": "Client-supplied home interior with an orange sofa, marble flooring and warm ceiling lighting.",
+          "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.85), (max-width: 1100px) calc((100vw - 72px) * 0.42), (min-width: 1440px) 366px, calc((100vw - 112px) * 0.275)"
+        },
+        {
+          "source": "/images/client-2026-11/living-stone-feature-wall.webp",
+          "alt": "Client-supplied apartment interior with a stone feature wall and a mirrored partition.",
+          "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.85), (max-width: 1100px) calc((100vw - 72px) * 0.42), (min-width: 1440px) 366px, calc((100vw - 112px) * 0.275)"
+        },
+        {
+          "source": "/images/client-2026-11/living-blue-sofa.webp",
+          "alt": "Client-supplied living room with a blue sectional sofa, wood cabinetry and gold ceiling detailing.",
+          "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.85), (max-width: 1100px) calc((100vw - 72px) * 0.42), (min-width: 1440px) 366px, calc((100vw - 112px) * 0.275)"
+        },
+        {
+          "source": "/images/client-2026-11/living-family-lounge.webp",
+          "alt": "Client-supplied family lounge with a dark sectional sofa and a round coffee table.",
+          "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.85), (max-width: 1100px) calc((100vw - 72px) * 0.42), (min-width: 1440px) 366px, calc((100vw - 112px) * 0.275)"
+        },
+        {
+          "source": "/images/client-2026-11/kitchen-sage.webp",
+          "alt": "Client-supplied kitchen with sage-green cabinetry and a white countertop.",
+          "sizes": "(max-width: 767px) calc((100vw - 40px) * 1.4166666666666665), (max-width: 1100px) calc((100vw - 72px) * 0.7), (min-width: 1440px) 610px, calc((100vw - 112px) * 0.4583333333333333)"
+        },
+        {
+          "source": "/images/client-2026-11/bedroom-cream.webp",
+          "alt": "Client-supplied bedroom with a cream upholstered bed, wood flooring and recessed lighting.",
+          "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.85), (max-width: 1100px) calc((100vw - 72px) * 0.42), (min-width: 1440px) 366px, calc((100vw - 112px) * 0.275)"
+        },
+        {
+          "source": "/images/client-2026-11/living-teal-sofa.webp",
+          "alt": "Client-supplied sitting room with a teal sofa, patterned wallpaper and a wooden coffee table.",
+          "sizes": "(max-width: 767px) calc((100vw - 40px) * 1.4166666666666665), (max-width: 1100px) calc((100vw - 72px) * 0.7), (min-width: 1440px) 610px, calc((100vw - 112px) * 0.4583333333333333)"
+        },
+        {
+          "source": "/images/client-2026-11/bedroom-window-marble.webp",
+          "alt": "Client-supplied bedroom with a padded headboard, marble flooring and a full-height window.",
+          "sizes": "(max-width: 767px) calc((100vw - 40px) * 0.85), (max-width: 1100px) calc((100vw - 72px) * 0.42), (min-width: 1440px) 366px, calc((100vw - 112px) * 0.275)"
+        },
+        {
+          "source": "/images/client-2026-11/living-open-plan.webp",
+          "alt": "Client-supplied open-plan home with a cream sofa, dining area and large windows",
+          "sizes": "(max-width: 767px) calc(100vw - 40px), (min-width: 1440px) 1328px, calc(100vw - 112px)"
+        },
+        {
+          "source": "/images/client-2026-11/living-ivory-green-wide.webp",
+          "alt": "Client-supplied reference photo of an ivory living room with green accent seating",
+          "sizes": "(max-width: 767px) calc(100vw - 40px), (min-width: 1440px) 590px, 44vw"
+        },
+        {
+          "source": "/images/client-2026-11/living-warm-marble.webp",
+          "alt": "Client-supplied reference photo of a living room with warm wood finishes and marble flooring",
+          "sizes": "(max-width: 767px) calc(100vw - 40px), (min-width: 1440px) 590px, 44vw"
+        },
+        {
+          "source": "/images/client-2026-11/living-dining-wide.webp",
+          "alt": "Client-supplied reference photo of an open-plan living and dining room",
+          "sizes": "(max-width: 767px) calc(100vw - 40px), (min-width: 1440px) 590px, 44vw"
+        }
+      ]
+    },
+    {
+      "route": "/rent",
+      "status": 200,
+      "newPhotoCount": 4,
+      "photos": [
+        {
+          "source": "/images/client-2026-11/living-teal-wide.webp",
+          "alt": "Client-supplied reference photo of a living room with a teal sofa and patterned wallpaper",
+          "sizes": "(max-width: 520px) 100vw, (max-width: 1440px) 50vw, 650px"
+        },
+        {
+          "source": "/images/client-2026-11/bedroom-cream.webp",
+          "alt": "Client-supplied reference photo of a cream bedroom with wood flooring",
+          "sizes": "(max-width: 520px) 100vw, (max-width: 1440px) 50vw, 650px"
+        },
+        {
+          "source": "/images/client-2026-11/living-ivory-green-wide.webp",
+          "alt": "Client-supplied reference photo of a living room with ivory seating and a patterned rug",
+          "sizes": "(max-width: 520px) 100vw, (max-width: 1440px) 50vw, 650px"
+        },
+        {
+          "source": "/images/client-2026-11/living-unfurnished-stone.webp",
+          "alt": "Client-supplied reference photo of an unfurnished living space with a stone feature wall",
+          "sizes": "(max-width: 520px) 100vw, (max-width: 1440px) 50vw, 650px"
+        }
+      ]
+    },
+    {
+      "route": "/services",
+      "status": 200,
+      "newPhotoCount": 4,
+      "photos": [
+        {
+          "source": "/images/client-2026-11/living-blue-sofa.webp",
+          "alt": "Client-supplied living room with a blue sectional sofa and wood cabinetry",
+          "sizes": "(max-width: 640px) 100vw, (max-width: 1440px) 50vw, 640px"
+        },
+        {
+          "source": "/images/client-2026-11/bedroom-daylight.webp",
+          "alt": "Client-supplied bedroom with a large window and neutral furnishings",
+          "sizes": "(max-width: 640px) 100vw, (max-width: 1440px) 50vw, 640px"
+        },
+        {
+          "source": "/images/client-2026-11/living-stone-feature-wall.webp",
+          "alt": "Client-supplied apartment interior with a stone feature wall and mirrored detailing",
+          "sizes": "(max-width: 640px) 100vw, (max-width: 1440px) 50vw, 640px"
+        },
+        {
+          "source": "/images/client-2026-11/kitchen-warm-wood.webp",
+          "alt": "Client-supplied kitchen with warm wood cabinetry and dark stone counters",
+          "sizes": "(max-width: 640px) 100vw, (max-width: 1440px) 50vw, 640px"
+        }
+      ]
+    },
+    {
+      "route": "/sell",
+      "status": 200,
+      "newPhotoCount": 0,
+      "photos": []
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "newPhotoCount": 0,
+      "photos": []
+    },
+    {
+      "route": "/login",
+      "status": 200,
+      "newPhotoCount": 0,
+      "photos": []
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "newPhotoCount": 0,
+      "photos": []
+    }
+  ],
+  "assets": [
+    {
+      "asset": "/images/client-2026-11/living-dining-wide.webp",
+      "original": {
+        "status": 200,
+        "bytes": 66262,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 23154,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/living-open-plan.webp",
+      "original": {
+        "status": 200,
+        "bytes": 58654,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 20441,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/living-warm-marble.webp",
+      "original": {
+        "status": 200,
+        "bytes": 192278,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 72045,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/bedroom-window-marble.webp",
+      "original": {
+        "status": 200,
+        "bytes": 176122,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 69071,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/kitchen-warm-wood.webp",
+      "original": {
+        "status": 200,
+        "bytes": 165910,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 68323,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/bedroom-daylight.webp",
+      "original": {
+        "status": 200,
+        "bytes": 122526,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 39667,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/living-family-lounge.webp",
+      "original": {
+        "status": 200,
+        "bytes": 112060,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 41350,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/living-ivory-green-wide.webp",
+      "original": {
+        "status": 200,
+        "bytes": 163638,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 35490,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/living-stone-feature-wall.webp",
+      "original": {
+        "status": 200,
+        "bytes": 117110,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 47779,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/living-unfurnished-stone.webp",
+      "original": {
+        "status": 200,
+        "bytes": 130598,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 50515,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/bedroom-cream.webp",
+      "original": {
+        "status": 200,
+        "bytes": 144696,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 56163,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/living-teal-sofa.webp",
+      "original": {
+        "status": 200,
+        "bytes": 154270,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 46171,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/living-teal-wide.webp",
+      "original": {
+        "status": 200,
+        "bytes": 83392,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 33324,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/living-blue-sofa.webp",
+      "original": {
+        "status": 200,
+        "bytes": 140036,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 60793,
+        "mime": "image/jpeg"
+      }
+    },
+    {
+      "asset": "/images/client-2026-11/kitchen-sage.webp",
+      "original": {
+        "status": 200,
+        "bytes": 95768,
+        "mime": "image/webp"
+      },
+      "optimized": {
+        "status": 200,
+        "bytes": 34617,
+        "mime": "image/jpeg"
+      }
+    }
+  ],
+  "protectedHeroesUnchanged": true
+}

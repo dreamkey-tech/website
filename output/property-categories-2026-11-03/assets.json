@@ -1,0 +1,82 @@
+[
+  {
+    "key": "apartments-flats-v1",
+    "category": "Apartments / Flats",
+    "source": "/home/koushik/.codex/generated_images/01a11ce6-d9c7-7891-b837-e0bad6bd6a11/exec-ee528580-841c-4bc2-9f77-7f4ab38b003e.png",
+    "asset": "/images/property-categories/apartments-flats-v1.webp",
+    "width": 1122,
+    "height": 1402,
+    "bytes": 215872,
+    "sha256": "def5ac47afe7e32fd1090cebcd4d9a02c077f6e0607dcd5fcdcc861ed2b52653"
+  },
+  {
+    "key": "independent-houses-v1",
+    "category": "Independent Houses",
+    "source": "/home/koushik/.codex/generated_images/01a11ce6-d9c7-7891-b837-e0bad6bd6a11/exec-ba1fc282-ab10-4af8-842b-fba340d0c67d.png",
+    "asset": "/images/property-categories/independent-houses-v1.webp",
+    "width": 1122,
+    "height": 1402,
+    "bytes": 188984,
+    "sha256": "17c4db9b323db6814a62bccd36ed047e02d5169d1b012f795dedabcbc3c6168b"
+  },
+  {
+    "key": "villas-v1",
+    "category": "Villas",
+    "source": "/home/koushik/.codex/generated_images/01a11ce6-d9c7-7891-b837-e0bad6bd6a11/exec-48827a02-f5ad-47d5-85b6-d2902576723d.png",
+    "asset": "/images/property-categories/villas-v1.webp",
+    "width": 1122,
+    "height": 1402,
+    "bytes": 242262,
+    "sha256": "cacfb045f40116f88ab477db70160886e375e91d876ea354d59990600e5a22a3"
+  },
+  {
+    "key": "penthouses-v1",
+    "category": "Penthouses",
+    "source": "/home/koushik/.codex/generated_images/01a11ce6-d9c7-7891-b837-e0bad6bd6a11/exec-cf70b188-cfd1-4b94-b932-4f0e6f5184c9.png",
+    "asset": "/images/property-categories/penthouses-v1.webp",
+    "width": 1122,
+    "height": 1402,
+    "bytes": 167246,
+    "sha256": "c1d4c3f8d361e551aaa60438fabb5acd97612efcb2346218891b7f807507aed4"
+  },
+  {
+    "key": "duplex-homes-v1",
+    "category": "Duplex Homes",
+    "source": "/home/koushik/.codex/generated_images/01a11ce6-d9c7-7891-b837-e0bad6bd6a11/exec-c61bb92c-dffe-480e-babf-44e5d1ef10f0.png",
+    "asset": "/images/property-categories/duplex-homes-v1.webp",
+    "width": 1122,
+    "height": 1402,
+    "bytes": 124102,
+    "sha256": "4a8ec856f7229229fe07e08641a94209e918e5706940c17a6cc542b0a92429e3"
+  },
+  {
+    "key": "studio-apartments-v1",
+    "category": "Studio Apartments",
+    "source": "/home/koushik/.codex/generated_images/01a11ce6-d9c7-7891-b837-e0bad6bd6a11/exec-502da245-8121-4691-aa92-ac25c0d2b3e6.png",
+    "asset": "/images/property-categories/studio-apartments-v1.webp",
+    "width": 1122,
+    "height": 1402,
+    "bytes": 172168,
+    "sha256": "53c7265954adc4e67c9ce8eceab3ab7ffe78478c2d424ef3563df7556b704ac5"
+  },
+  {
+    "key": "residential-plots-v1",
+    "category": "Residential Plots",
+    "source": "/home/koushik/.codex/generated_images/01a11ce6-d9c7-7891-b837-e0bad6bd6a11/exec-36db1936-fe6d-4ea4-8613-b6954f929879.png",
+    "asset": "/images/property-categories/residential-plots-v1.webp",
+    "width": 1122,
+    "height": 1402,
+    "bytes": 263314,
+    "sha256": "4fa71c175510b8a2dd678b4e79fa0322d8e7126e190b0cdb97f44b7ed236a06f"
+  },
+  {
+    "key": "commercial-properties-v1",
+    "category": "Commercial Properties \u2014 offices, shops and showrooms",
+    "source": "/home/koushik/.codex/generated_images/01a11ce6-d9c7-7891-b837-e0bad6bd6a11/exec-1acf0b2e-5964-4da1-bda6-aadd8bb704ec.png",
+    "asset": "/images/property-categories/commercial-properties-v1.webp",
+    "width": 1122,
+    "height": 1402,
+    "bytes": 238586,
+    "sha256": "fad312ec232439d2dc867fd58500dd01a321ca7e26a7c0d6eb62c17fadaadfa5"
+  }
+]
