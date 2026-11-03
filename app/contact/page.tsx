@@ -1,4 +1,6 @@
 import { pageMetadata } from "@/lib/seo";
+import { pageSchema } from "@/lib/page-schema";
+import JsonLd from "@/components/seo/JsonLd";
 import { connection } from "next/server";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import PagePhoto from "@/components/pages/PagePhoto";
@@ -25,24 +27,28 @@ export default async function ContactPage({
     typeof query.property === "string" ? query.property.slice(0, 200) : "";
   return (
     <div className={styles.page} id="page-content">
+      <JsonLd id="dreamkey-contact-page" data={pageSchema("/contact")} />
       <div className={styles.container}>
         <div className={styles.contactIntro}>
-          <p className={styles.eyebrow}>A conversation is a good beginning</p>
+          <p className={styles.eyebrow}>
+            Contact your Kolkata property consultants
+          </p>
           <h1 className={styles.title}>
             Let’s talk about
             <br />
             your <em>next move.</em>
           </h1>
           <p className={styles.lead}>
-            A question, a plan, or just a possibility. We’re here to listen and
-            help you take the next step in Kolkata.
+            Call, email or send an enquiry about buying, renting, selling or
+            consulting in Kolkata. Share your preferred location, budget and
+            property requirements.
           </p>
         </div>
         <div className={styles.contactGrid}>
           <div>
             <PagePhoto
               src="/images/Dream_Key_Office_Call_2.webp"
-              alt="Illustrative New Town-inspired avenue with contemporary Kolkata residential towers"
+              alt="Illustrative office scene with a woman in a Dream Key polo shirt taking a phone call"
               className={styles.contactPhoto}
               eager
             />

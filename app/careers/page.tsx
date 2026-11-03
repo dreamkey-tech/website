@@ -6,54 +6,54 @@ import Link from "next/link";
 const benefits = [
   {
     icon: "trending_up",
-    title: "Unmatched Lead Quality",
+    title: "Customer-Focused Work",
     description:
-      "Stop cold calling. We provide high-intent, pre-qualified leads powered by our proprietary digital marketing engine.",
+      "Understand each customer's preferred location, budget and property priorities before discussing relevant options and next steps.",
   },
   {
     icon: "laptop_mac",
-    title: "Industry-Leading Tech",
+    title: "Local Property Connections",
     description:
-      "Access our custom CRM, virtual tour software, and AI-driven market analysis tools to close deals faster.",
+      "Explore real estate work that connects customer requirements with property information from local brokers and consultants in Kolkata.",
   },
   {
     icon: "handshake",
-    title: "Mentorship & Growth",
+    title: "A Connected Approach",
     description:
-      "Weekly training sessions with industry veterans, shadowing opportunities, and a clear path to becoming a top producer.",
+      "Property consultancy brings together customers, owners and local professionals. Clear coordination helps everyone understand the next step.",
   },
   {
     icon: "account_balance_wallet",
-    title: "Zero Brokerage Advantage",
+    title: "Clear Communication",
     description:
-      "Leverage our unique '100% Zero Brokerage on direct inventory' proposition to instantly win client trust.",
+      "Help customers understand property information and the assistance available. Discuss fees and service scope rather than making assumptions.",
   },
 ];
 
 const positions = [
   {
     title: "Senior Property Consultant",
-    type: "Full-Time",
-    location: "Kolkata (New Town Office)",
-    experience: "3+ Years",
+    type: "Enquire for details",
+    location: "Kolkata",
+    experience: "Confirm requirements",
     description:
-      "Lead high-value transactions in the luxury residential segment. Requires a proven track record in Kolkata real estate.",
+      "Property consulting involves understanding buyer, tenant and owner requirements and coordinating with relevant local property contacts.",
   },
   {
     title: "Inside Sales Agent (ISA)",
-    type: "Full-Time",
-    location: "Kolkata (Hybrid)",
-    experience: "1-3 Years",
+    type: "Enquire for details",
+    location: "Kolkata",
+    experience: "Confirm requirements",
     description:
-      "Engage and qualify inbound leads, schedule property tours, and support the senior consultancy team.",
+      "Sales support can involve discussing enquiries, coordinating property visits and helping the consultancy team follow up on customer needs.",
   },
   {
     title: "Digital Marketing Specialist",
-    type: "Full-Time",
+    type: "Enquire for details",
     location: "Kolkata",
-    experience: "2+ Years",
+    experience: "Confirm requirements",
     description:
-      "Drive our digital acquisition strategy, manage ad spend, and optimize conversion funnels for real estate leads.",
+      "Property marketing focuses on clear, accurate content and helping people discover relevant real estate services and opportunities in Kolkata.",
   },
 ];
 
@@ -100,7 +100,7 @@ export default function CareersPage() {
             Build Your Legacy in Kolkata Real Estate
           </motion.h1>
           <motion.p variants={fadeUp} className="font-body-default text-[18px] text-secondary-fixed-dim leading-relaxed max-w-2xl mx-auto">
-            We are redefining how properties are bought and sold in Bengal. Join a team driven by transparency, cutting-edge tech, and a passion for unlocking dreams.
+            Interested in real estate work in Kolkata? Get to know DreamkeyKol Reality LLP, a consultancy connecting property requirements with local brokers and consultants.
           </motion.p>
         </motion.div>
       </section>
@@ -110,10 +110,10 @@ export default function CareersPage() {
         <div className="max-w-[1320px] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-space-xl">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-space-sm">
-              Why Build Your Career With Us?
+              What Shapes Our Work?
             </h2>
             <p className="font-body-default text-body-default text-secondary">
-              We provide the tools, leads, and culture you need to scale your real estate business faster than anywhere else.
+              Our work starts with customer priorities, local property connections and clear communication. Discuss current opportunities with our team.
             </p>
           </div>
 
@@ -152,10 +152,10 @@ export default function CareersPage() {
         <div className="max-w-[1000px] mx-auto">
           <div className="mb-space-xl">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-space-sm">
-              Open Positions
+              Roles to Discuss
             </h2>
             <p className="font-body-default text-body-default text-secondary">
-              Find your next role and help us shape the future of real estate in Kolkata.
+              These role profiles describe areas of work. Contact our team to confirm current openings, requirements and terms before applying.
             </p>
           </div>
 
@@ -201,7 +201,7 @@ export default function CareersPage() {
                     href={`mailto:careers@dreamkeykol.com?subject=Application for ${job.title}`}
                     className="inline-flex items-center justify-center gap-2 px-space-lg py-3 bg-primary text-on-primary font-label-ui font-semibold rounded-lg hover:bg-primary-container transition-colors w-full md:w-auto"
                   >
-                    Apply Now
+                    Enquire
                     <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                   </Link>
                 </div>
@@ -215,10 +215,10 @@ export default function CareersPage() {
       <section className="py-space-2xl bg-charcoal-pure px-margin-mobile md:px-margin text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="font-headline-md text-headline-md text-surface-clean mb-space-md">
-            Don't see a perfect fit?
+            Don’t see a perfect fit?
           </h2>
           <p className="font-body-default text-body-default text-secondary-fixed-dim mb-space-lg">
-            We are always looking for driven, talented individuals to join our team. Send us your resume and tell us how you can make an impact.
+            Tell us about your experience and interest in Kolkata real estate. Our team can confirm whether there is a suitable current opening.
           </p>
           <Link
             href="mailto:careers@dreamkeykol.com"

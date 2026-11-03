@@ -1,0 +1,161 @@
+Browser tab: 6, Title: "Rich Results Test - Google Search Console", URL: "https://search.google.com/test/rich-results/result/r%2Flocal-business?id=JALFniy7Og0LIsddvkM0Iw".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 63-81
+~0 AXWebArea Rich Results Test - Google Search Console, URL: search.google.com/test/rich-results/result/r%2Flocal-business?id=JALFniy7Og0LIsddvkM0Iw
+~					9 link Description: Sign in, Value: accounts.google.com/ServiceLogin?service=sitemaps&passive=1209600&continue=https%3A%2F%2Fsearch.google.com%2Ftest%2Frich-results%2Fresult%2Fr%252Flocal-business%3Fid%3DJALFniy7Og0LIsddvkM0Iw&followup=https%3A%2F%2Fsearch.google.com%2Ftest%2Frich-results%2Fresult%2Fr%252Flocal-business%3Fid%3DJALFniy7Og0LIsddvkM0Iw&ec=GAZA1AI
+~						62 link Description: Test results, Value: search.google.com/test/rich-results/result?id=JALFniy7Og0LIsddvkM0Iw
++						63 heading Local businesses, Value: 1
++							64 text Local businesses
++					65 button SHARE
++						66 text SHARE
++					67 container
++						68 container
++							69 text 1 valid item detected Valid items are eligible for Google Search's rich results. 
++							70 link Description: Learn more, Value: support.google.com/webmasters/answer/9012289#enhancements
++						71 button View tested page
++							72 text VIEW TESTED PAGE
++						73 button See preview of your URL on Google Search
++							74 text PREVIEW RESULTS
++						75 text Details
++						76 container
++							77 text Detected items
++							78 button (expanded) DreamkeyKol Reality LLP 1 non-critical issue null, Secondary Actions: Collapse
++								79 text DreamkeyKol Reality LLP
++								80 text 1 non-critical issue
++								81 button (collapsed) Description: null, Secondary Actions: Expand
++							82 container
++								83 button Missing field "priceRange" (optional) Go to issue documentation
++									84 text Missing field "priceRange" (optional)
++									85 container Go to issue documentation
++										86 link Description: Go to issue documentation, Value: developers.google.com/search/docs/data-types/local-business
++								87 button type RealEstateAgent
++									88 text type
++									89 text RealEstateAgent
++								90 button id https://www.dreamkeykol.com/#organization
++									91 text id
++									92 text https://www.dreamkeykol.com/#organization
++								93 button name DreamkeyKol Reality LLP
++									94 text name
++									95 text DreamkeyKol Reality LLP
++								96 button legalName DreamkeyKol Reality LLP
++									97 text legalName
++									98 text DreamkeyKol Reality LLP
++								99 button alternateName Dream Key Reality
++									100 text alternateName
++									101 text Dream Key Reality
++								102 button alternateName DreamKey
++									103 text alternateName
++									104 text DreamKey
++								105 button url https://www.dreamkeykol.com/
++									106 text url
++									107 text https://www.dreamkeykol.com/
++								108 button description DreamkeyKol Reality LLP is a Kolkata real estate consultancy offering buying, rental and selling assistance, investment consulting and property documentation support through its local broker and consultant network.
++									109 text description
++									110 text DreamkeyKol Reality LLP is a Kolkata real estate consultancy offering buying, rental and selling assistance, investment consulting and property documentation support through its local broker and consultant network.
++								111 button logo https://www.dreamkeykol.com/logo2.png
++									112 text logo
++									113 text https://www.dreamkeykol.com/logo2.png
++								114 button image https://www.dreamkeykol.com/about/officeExterior.webp
++									115 text image
++									116 text https://www.dreamkeykol.com/about/officeExterior.webp
++								117 button telephone +91 79801 33881
++									118 text telephone
++									119 text +91 79801 33881
++								120 button email info@dreamkeykol.com
++									121 text email
++									122 text info@dreamkeykol.com
++								123 button address
++									124 text address
++								125 button type PostalAddress
++									126 text type
++									127 text PostalAddress
++								128 button streetAddress AA 52, st-69, AA block, Newtown
++									129 text streetAddress
++									130 text AA 52, st-69, AA block, Newtown
++								131 button addressLocality Kolkata
++									132 text addressLocality
++									133 text Kolkata
++								134 button addressRegion West Bengal
++									135 text addressRegion
++									136 text West Bengal
++								137 button postalCode 700156
++									138 text postalCode
++									139 text 700156
++								140 button addressCountry
++									141 text addressCountry
++								142 button type Country
++									143 text type
++									144 text Country
++								145 button name IN
++									146 text name
++									147 text IN
++								148 button areaServed
++									149 text areaServed
++								150 button type City
++									151 text type
++									152 text City
++								153 button name Kolkata
++									154 text name
++									155 text Kolkata
++								156 button hasMap https://www.google.com/maps?cid=2957093561828935358
++									157 text hasMap
++									158 text https://www.google.com/maps?cid=2957093561828935358
++								159 button contactPoint
++									160 text contactPoint
++								161 button type ContactPoint
++									162 text type
++									163 text ContactPoint
++								164 button telephone +91 79801 33881
++									165 text telephone
++									166 text +91 79801 33881
++								167 button contactType customer service
++									168 text contactType
++									169 text customer service
++								170 button sameAs https://www.instagram.com/dream_key_kolkata/
++									171 text sameAs
++									172 text https://www.instagram.com/dream_key_kolkata/
++								173 button sameAs https://www.youtube.com/@dream_key_kolkata
++									174 text sameAs
++									175 text https://www.youtube.com/@dream_key_kolkata
++								176 button sameAs https://www.facebook.com/people/Dream-Key-LLP/61594174244288/
++									177 text sameAs
++									178 text https://www.facebook.com/people/Dream-Key-LLP/61594174244288/
++								179 button sameAs https://www.linkedin.com/company/dreamkeykol-reality
++									180 text sameAs
++									181 text https://www.linkedin.com/company/dreamkeykol-reality
++								182 button founder
++									183 text founder
++								184 button type Person
++									185 text type
++									186 text Person
++								187 button name Sayan Dutta
++									188 text name
++									189 text Sayan Dutta
++								190 button sameAs https://www.linkedin.com/in/sayan-dutta-1763b8250/
++									191 text sameAs
++									192 text https://www.linkedin.com/in/sayan-dutta-1763b8250/
++								193 button founder
++									194 text founder
++								195 button type Person
++									196 text type
++									197 text Person
++								198 button name Mainak Maji
++									199 text name
++									200 text Mainak Maji
++								201 button sameAs https://www.linkedin.com/in/mainakdreamkey/
++									202 text sameAs
++									203 text https://www.linkedin.com/in/mainakdreamkey/
++								204 button founder
++									205 text founder
++								206 button type Person
++									207 text type
++									208 text Person
++								209 button name Siddhant Singh
++									210 text name
++									211 text Siddhant Singh
++								212 button sameAs https://www.linkedin.com/in/siddhant-singh-5600a2308/
++									213 text sameAs
++									214 text https://www.linkedin.com/in/siddhant-singh-5600a2308/
++						215 link Description: Privacy, Value: myaccount.google.com/privacypolicy?hl=en-US
++						216 link Description: Terms, Value: myaccount.google.com/termsofservice?hl=en-US
+The focused UI element is 78 button (expanded) DreamkeyKol Reality LLP 1 non-critical issue null, Secondary Actions: Collapse

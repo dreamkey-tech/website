@@ -11,7 +11,7 @@ export default function DesignGallery() {
       aria-labelledby="design-apartments-heading"
     >
       <h2 id="design-apartments-heading" className="sr-only">
-        Homes by design
+        Explore property types in Kolkata
       </h2>
       <DesignGalleryCarousel count={DESIGN_GALLERY_HOMES.length}>
         {DESIGN_GALLERY_HOMES.map((home) => (

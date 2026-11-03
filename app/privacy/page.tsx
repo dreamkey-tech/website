@@ -1,4 +1,6 @@
 import { pageMetadata } from "@/lib/seo";
+import { pageSchema } from "@/lib/page-schema";
+import JsonLd from "@/components/seo/JsonLd";
 import { connection } from "next/server";
 import CookiePreferencesButton from "@/components/analytics/CookiePreferencesButton";
 import LegalDocument from "@/components/pages/LegalDocument";
@@ -66,6 +68,7 @@ export default async function PrivacyPolicyPage() {
       updated="October 1, 2026"
       sections={sections}
     >
+      <JsonLd id="dreamkey-privacy-page" data={pageSchema("/privacy")} />
       <div>
         <p>
           DreamKey Reality (“DreamKey Reality,” “we,” “us,” or “our”) respects

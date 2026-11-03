@@ -1,5 +1,7 @@
 # DreamKey SEO and AI discovery audit
 
+**Historical record:** The 3 November 2026 content/SEO follow-up is documented in [the current implementation report](seo-content-optimization-2026-11.md). Inventory, testimonials, phone/social details and analytics have since changed; findings and measurements below describe the October checkpoint.
+
 Reviewed 10 October 2026. This separates the observed public deployment from the implementation verified locally. It is not evidence of Google indexing, rankings, business-profile ownership, or ChatGPT recommendations.
 
 ## Findings before this change

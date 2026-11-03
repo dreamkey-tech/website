@@ -1,0 +1,36 @@
+{
+  "baseline": "9c6bedc",
+  "passed": true,
+  "checks": [
+    "No style, asset or font edits",
+    "No auth, form, API, analytics or motion changes",
+    "Visual JSX structure and image/action/style props preserved",
+    "Legal prose and dates preserved",
+    "Exact Home hero tagline preserved"
+  ],
+  "jsxFilesChecked": [
+    "app/about/page.tsx",
+    "app/buy/[slug]/page.tsx",
+    "app/buy/page.tsx",
+    "app/careers/layout.tsx",
+    "app/careers/page.tsx",
+    "app/contact/page.tsx",
+    "app/privacy/page.tsx",
+    "app/rent/page.tsx",
+    "app/sell/page.tsx",
+    "app/terms-and-conditions/page.tsx",
+    "components/buy/BuyResults.tsx",
+    "components/home/BestProperties.tsx",
+    "components/home/DesignGallery.tsx",
+    "components/home/HeroCopy.tsx",
+    "components/home/HomeContactCTA.tsx",
+    "components/home/PropertyManagement.tsx",
+    "components/layout/Footer.tsx",
+    "components/layout/FooterSocialLinks.tsx",
+    "components/pages/RentalBrowser.tsx",
+    "components/services/ServicesCollection.tsx",
+    "components/services/ServicesHero.tsx",
+    "components/services/ServicesNetwork.tsx"
+  ],
+  "limits": "Source invariants supplement local screenshots; edited text can naturally wrap differently. No pixel-identity or production-field claim."
+}

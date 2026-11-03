@@ -1,8 +1,13 @@
 import { pageMetadata } from "@/lib/seo";
+import { pageSchema } from "@/lib/page-schema";
+import JsonLd from "@/components/seo/JsonLd";
 import Image from "next/image";
 import { connection } from "next/server";
 import Link from "next/link";
-import { ArrowUpRightIcon, LinkedinLogoIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowUpRightIcon,
+  LinkedinLogoIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import PagePhoto from "@/components/pages/PagePhoto";
 import PageCTA from "@/components/pages/PageCTA";
 import OfficeGallery from "@/components/about/OfficeGallery";
@@ -42,10 +47,11 @@ export default async function AboutPage() {
   await connection();
   return (
     <div className={styles.page} id="page-content">
+      <JsonLd id="dreamkey-about-page" data={pageSchema("/about")} />
       <div className={styles.container}>
         <section className={styles.hero} aria-labelledby="about-title">
           <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>The people behind your next move</p>
+            <p className={styles.eyebrow}>About DreamkeyKol Reality LLP</p>
             <h1 className={styles.title} id="about-title">
               Real estate.
               <br />
@@ -54,9 +60,9 @@ export default async function AboutPage() {
               <em>real people.</em>
             </h1>
             <p className={styles.lead}>
-              We’re Dream Key Reality, a Kolkata real estate consultancy. We
-              bring personal guidance to one of life’s most important decisions:
-              where you go next.
+              We’re DreamkeyKol Reality LLP, a Kolkata real estate consultancy.
+              We connect your property plans with local knowledge, brokers and
+              property consultants.
             </p>
             <div className={styles.heroActions}>
               <Link className={styles.primaryButton} href="/contact">
@@ -71,7 +77,7 @@ export default async function AboutPage() {
           </div>
           <PagePhoto
             src="/about/Joyful_Friends_in_Matching_Dream_Key_Polos.webp"
-            alt="Dream Key’s Kolkata office meeting area with a shared desk, seating and wood-panelled wall"
+            alt="Three people in matching Dream Key polo shirts standing outdoors"
             caption="Our Team"
             className={photoStyles.officeHero}
             eager
@@ -98,14 +104,14 @@ export default async function AboutPage() {
               listen before we start looking.
             </p>
             <p>
-              We work with buyers, sellers, tenants, owners, and investors
-              across Kolkata. Local understanding and personal attention help us
-              turn a broad search into a clearer set of possibilities.
+              We assist buyers, sellers, tenants, owners and investors in
+              selected East, South and North Kolkata areas. Your location,
+              budget and priorities guide the search.
             </p>
             <p>
-              From the first shortlist to the questions along the way, we aim to
-              make the process feel understandable, considered, and built around
-              your needs.
+              Buying, renting, selling or investing: we help you explore the
+              options and relevant documentation steps, with guidance built
+              around your requirements.
             </p>
           </div>
         </section>
@@ -148,8 +154,8 @@ export default async function AboutPage() {
               </h2>
             </div>
             <p className={styles.lead}>
-              The team behind Dream Key Reality, bringing people and property
-              together with care.
+              The people behind DreamkeyKol Reality LLP, connecting customers
+              with property opportunities and local expertise.
             </p>
           </div>
           <div className={styles.founders}>
@@ -174,7 +180,11 @@ export default async function AboutPage() {
                   rel="noopener noreferrer"
                   aria-label={`${founder.name} on LinkedIn (opens in a new tab)`}
                 >
-                  <LinkedinLogoIcon size={18} weight="fill" aria-hidden="true" />
+                  <LinkedinLogoIcon
+                    size={18}
+                    weight="fill"
+                    aria-hidden="true"
+                  />
                   LinkedIn
                   <ArrowUpRightIcon size={15} aria-hidden="true" />
                 </a>

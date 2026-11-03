@@ -1,0 +1,15 @@
+{
+  "passed": 9,
+  "checks": [
+    "Server snapshot is null and renders neutral initial choices",
+    "Initial banner offers three choices without recording permission",
+    "Preferences open with essential available and optional categories off",
+    "Saving analytics-only permission closes banner and dialog",
+    "Later reopen restores choices and close returns focus without saving",
+    "Accept all grants both optional categories",
+    "Reject optional revokes both categories",
+    "Browser privacy signal disables optional toggles and blocks grants",
+    "Unmount cleans store subscription and page reservation variable"
+  ],
+  "scope": "Actual consent UI source in jsdom with isolated preference-store adapter; no browser geometry or live Google requests"
+}

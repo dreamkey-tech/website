@@ -7,30 +7,31 @@ import {
   WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
 import styles from "./FooterSocialLinks.module.css";
+import { SOCIAL_PROFILES } from "@/lib/social-profiles";
 
 const socialLinks = [
   {
     label: "Instagram",
     platform: "instagram",
-    href: "https://www.instagram.com/dream_key_kolkata/",
+    href: SOCIAL_PROFILES.instagram,
     Icon: InstagramLogo,
   },
   {
     label: "YouTube",
     platform: "youtube",
-    href: "https://www.youtube.com/@dream_key_kolkata",
+    href: SOCIAL_PROFILES.youtube,
     Icon: YoutubeLogo,
   },
   {
     label: "Facebook",
     platform: "facebook",
-    href: "https://www.facebook.com/profile.php?id=61594174244288&utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+    href: SOCIAL_PROFILES.facebook,
     Icon: FacebookLogo,
   },
   {
     label: "LinkedIn",
     platform: "linkedin",
-    href: "https://www.linkedin.com/company/dreamkeykol-reality/home/",
+    href: SOCIAL_PROFILES.linkedin,
     Icon: LinkedinLogo,
   },
 ];

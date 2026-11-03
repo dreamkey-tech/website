@@ -1,0 +1,13 @@
+{
+  "schemaOrg": {
+    "home": "0 errors / 0 warnings",
+    "services": "0 errors / 0 warnings"
+  },
+  "googleRichResults": {
+    "services": "3 valid items: Breadcrumb, Local business, Organization",
+    "remainingOptionalRecommendation": "priceRange unknown; deliberately not invented",
+    "resultUrl": "https://search.google.com/test/rich-results/result?id=JALFniy7Og0LIsddvkM0Iw"
+  },
+  "mode": "Public code/snippets from local build, not production URL tests",
+  "customerDataSubmitted": false
+}

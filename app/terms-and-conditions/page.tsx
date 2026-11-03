@@ -1,4 +1,6 @@
 import { pageMetadata } from "@/lib/seo";
+import { pageSchema } from "@/lib/page-schema";
+import JsonLd from "@/components/seo/JsonLd";
 import { connection } from "next/server";
 import Link from "next/link";
 import LegalDocument from "@/components/pages/LegalDocument";
@@ -86,6 +88,10 @@ export default async function TermsAndConditionsPage() {
       updated="October 4, 2026"
       sections={sections}
     >
+      <JsonLd
+        id="dreamkey-terms-page"
+        data={pageSchema("/terms-and-conditions")}
+      />
       <div>
         <p>
           Welcome to DreamKey Reality. These Terms & Conditions (“Terms”) govern
@@ -318,8 +324,8 @@ export default async function TermsAndConditionsPage() {
         <p>
           To the extent permitted by applicable law, you agree to be responsible
           for losses or claims arising directly from your unlawful use of the
-          website, fraudulent information, or infringement of another person&apos;s
-          rights.
+          website, fraudulent information, or infringement of another
+          person&apos;s rights.
         </p>
         <p>
           This provision does not require you to indemnify DreamKey Reality for

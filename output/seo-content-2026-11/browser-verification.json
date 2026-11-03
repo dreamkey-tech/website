@@ -1,0 +1,79 @@
+{
+  "checks": [
+    {
+      "clientWidth": 1275,
+      "heading": "Your next move.Our shared focus.",
+      "route": "/services",
+      "scrollWidth": 1275
+    },
+    {
+      "clientWidth": 385,
+      "heading": "Your next move.Our shared focus.",
+      "route": "/services",
+      "scrollWidth": 385
+    },
+    {
+      "clientWidth": 385,
+      "heading": "Your next chapterstarts with athoughtful sale.",
+      "route": "/sell",
+      "scrollWidth": 385
+    },
+    {
+      "clientWidth": 385,
+      "heading": "Real estate.Built aroundreal people.",
+      "route": "/about",
+      "scrollWidth": 385
+    },
+    {
+      "clientWidth": 385,
+      "heading": "Let’s talk aboutyour next move.",
+      "route": "/contact",
+      "scrollWidth": 385
+    },
+    {
+      "clientWidth": 385,
+      "heading": "Flats and properties for sale in Kolkata",
+      "route": "/buy",
+      "scrollWidth": 385
+    },
+    {
+      "clientWidth": 385,
+      "heading": "Flats and homes for rent in Kolkata",
+      "route": "/rent",
+      "scrollWidth": 385
+    },
+    {
+      "clientWidth": 385,
+      "heading": "Build Your Legacy in Kolkata Real Estate",
+      "route": "/careers",
+      "scrollWidth": 385
+    },
+    {
+      "clientWidth": 385,
+      "heading": "Homes That Match Your Pace, Not Just Your Budget.",
+      "route": "/",
+      "scrollWidth": 385
+    },
+    {
+      "clientWidth": 315,
+      "heading": "Flats and properties for sale in Kolkata",
+      "route": "/buy",
+      "scrollWidth": 315
+    },
+    {
+      "clientWidth": 315,
+      "heading": "Let’s talk aboutyour next move.",
+      "route": "/contact",
+      "scrollWidth": 315
+    },
+    {
+      "clientWidth": 315,
+      "heading": "Your next move.Our shared focus.",
+      "route": "/services",
+      "scrollWidth": 315
+    }
+  ],
+  "serviceFaq": "Keyboard activation opens the updated six-service answer",
+  "liveMutations": false,
+  "limits": "Local viewport emulation; physical touch and field performance not measured"
+}

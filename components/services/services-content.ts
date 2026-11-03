@@ -1,4 +1,4 @@
-/** Copy grounded in the supplied founder interview; source notes in docs/services-page.md. */
+/** Copy grounded in the founder interview and the user's November 2026 business brief. */
 export type PropertyService = {
   id: string;
   category: string;
@@ -18,7 +18,8 @@ export const propertyServices: PropertyService[] = [
     description:
       "Your location, budget and priorities shape the search. We explore property options through our broker and consultant network to help you find a suitable match.",
     image: "/images/Buying.webp",
-    imageAlt: "Illustrative Kolkata-inspired high-rise residential towers",
+    imageAlt:
+      "Illustrative apartment viewing with an adviser showing a couple the city view",
     href: "/buy",
     linkLabel: "Explore homes to buy",
   },
@@ -30,7 +31,7 @@ export const propertyServices: PropertyService[] = [
       "Looking for a rental or a tenant? We connect rental requirements and property information with relevant customers, brokers and consultants across our local network.",
     image: "/images/service/Thoughtful_Rental_Search_at_Home.webp",
     imageAlt:
-      "Illustrative bright living room with a Kolkata-inspired city view",
+      "Illustrative rental search with a woman reviewing apartment options and a checklist",
     href: "/rent",
     linkLabel: "Explore rentals",
   },
@@ -42,19 +43,19 @@ export const propertyServices: PropertyService[] = [
       "Selling starts with reaching the right people. We share property information with relevant customers, brokers and consultants to connect your property with potential buyers.",
     image: "/images/Selling.webp",
     imageAlt:
-      "Illustrative apartment living room overlooking Kolkata-inspired residential towers",
+      "Illustrative property consultation with an adviser and a couple reviewing a listing on a laptop",
     href: "/sell",
     linkLabel: "Start your property sale",
   },
   {
     id: "consulting",
-    category: "Investment & real estate consulting",
+    category: "Consulting & documentation assistance",
     title: "Make sense of your options.",
     description:
-      "Considering an investment or still defining your search? Our property investment and real estate consulting starts with your objectives, budget and preferred location.",
+      "Explore investment and other property options around your objectives, budget and location. Our real estate consulting includes documentation assistance with the relevant transaction steps.",
     image: "/images/service/Real_Estate_Investment_Consultation.webp",
     imageAlt:
-      "Illustrative consultation space overlooking a Kolkata-inspired river and bridge",
+      "Illustrative investment consultation with property options displayed on a laptop",
     href: "/contact",
     linkLabel: "Discuss a property consultation",
   },
@@ -70,21 +71,21 @@ export const serviceApproach = [
     copy: "We bring together property information from brokers and consultants, looking for options relevant to your requirements.",
   },
   {
-    title: "A conversation about next steps",
-    copy: "We help connect you with relevant property contacts. The next steps depend on your requirements and the service involved.",
+    title: "Guidance on the next steps",
+    copy: "We help you connect with relevant property contacts and assist with transaction documentation. The steps depend on the property and service involved.",
   },
 ];
 
 export const serviceQuestions = [
   {
-    question: "What can Dream Key help me with?",
+    question: "What property services does Dreamkey offer?",
     answer:
-      "Our core services are property renting, buying and selling assistance, property investment consulting and real estate consulting. We start by understanding what you need and exploring relevant options through our network.",
+      "We offer buying assistance, rental services, selling assistance, real estate consulting, investment consulting and documentation assistance. Your requirements guide the options we explore through our local broker and consultant network.",
   },
   {
     question: "Where in Kolkata do you work?",
     answer:
-      "Our focus is Kolkata, including selected areas in East, South and North Kolkata. Share your preferred locality so we can discuss relevant options and current availability.",
+      "We focus on selected areas in East, South and North Kolkata. Tell us if you’re considering New Town, Rajarhat, Salt Lake or another locality, so we can confirm relevant options and current coverage.",
   },
   {
     question: "Can I contact you before I have a shortlist?",

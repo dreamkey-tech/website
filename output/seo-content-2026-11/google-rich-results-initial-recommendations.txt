@@ -1,0 +1,82 @@
+Browser tab: 5, Title: "Rich Results Test - Google Search Console", URL: "https://search.google.com/test/rich-results/result/r%2Flocal-business?id=IogHRLNpkRp-YC7ejJGvEA".
+0 AXWebArea Rich Results Test - Google Search Console, URL: search.google.com/test/rich-results/result/r%2Flocal-business?id=IogHRLNpkRp-YC7ejJGvEA
+	1 container
+		2 container yDmH0d
+			3 container gb
+				4 container
+					10 button Go back
+						11 image
+					5 heading Rich Results Test, Value: 1
+						49 text Rich Results Test
+					7 pop up button (collapsed) Secondary Actions: Expand
+					8 button (collapsed) Description: Google apps, Secondary Actions: Expand
+					9 link Description: Sign in, Value: accounts.google.com/ServiceLogin?service=sitemaps&passive=1209600&continue=https%3A%2F%2Fsearch.google.com%2Ftest%2Frich-results%2Fresult%2Fr%252Flocal-business%3Fid%3DIogHRLNpkRp-YC7ejJGvEA&followup=https%3A%2F%2Fsearch.google.com%2Ftest%2Frich-results%2Fresult%2Fr%252Flocal-business%3Fid%3DIogHRLNpkRp-YC7ejJGvEA&ec=GAZA1AI
+			50 container
+				51 container
+					52 text Code input
+					53 container
+						54 button Open search dialog
+						55 button Copy editor content
+						56 text entry area
+						57 container
+							58 container
+								59 text < script id = "dreamkey-services" type = "application/ld+json" > { "@context" : "https://schema.org" , "@graph" :[{ "@type" : "CollectionPage" , "@id" : "https://www.dreamkeykol.com/services#webpage" , "url" : "https://www.dreamkeykol.com/services" , "name" : "Real Estate Services in Kolkata | DreamkeyKol Reality" , "description" : "Discover property buying, rental and selling assistance, real estate investment consulting and documentation support in Kolkata with DreamkeyKol Reality." , "inLanguage" : "en-IN" , "isPartOf" :{ "@id" : "https://www.dreamkeykol.com/#website" }, "about" :{ "@id" : "https://www.dreamkeykol.com/#organization" }, "breadcrumb" :{ "@id" : "https://www.dreamkeykol.com/services#breadcrumb" }},{ "@type" : "BreadcrumbList" , "@id" : "https://www.dreamkeykol.com/services#breadcrumb" , "itemListElement" :[{ "@type" : "ListItem" , "position" : 1 , "name" : "Home" , "item" : "https://www.dreamkeykol.com/" },{ "@type" : "ListItem" , "position" : 2 , "name" : "Real estate services" , "item" : "https://www.dreamkeykol.com/services" }]},{ "@type" : "Service" , "@id" : "https://www.dreamkeykol.com/services#buying-service" , "name" : "Buying assistance" , "serviceType" : "Buying assistance" , "description" : "Your location, budget and priorities shape the search. We explore property options through our broker and consultant network to help you find a suitable match." , "url" : "https://www.dreamkeykol.com/services#buying-title" , "provider" :{ "@type" : "RealEstateAgent" , "@id" : "https://www.dreamkeykol.com/#organization" , "name" : "DreamkeyKol Reality LLP" , "url" : "https://www.dreamkeykol.com/" }, "areaServed" :{ "@type" : "City" , "name" : "Kolkata" }},{ "@type" : "Service" , "@id" : "https://www.dreamkeykol.com/services#renting-service" , "name" : "Rental services" , "serviceType" : "Rental services" , "description" : "Looking for a rental or a tenant? We connect rental requirements and property information with relevant customers, brokers and consultants across our local network." , "url" : "https://www.dreamkeykol.com/services#renting-title" , "provider" :{ "@type" : "RealEstateAgent" , "@id" : "https://www.dreamkeykol.com/#organization" , "name" : "DreamkeyKol Reality LLP" , "url" : "https://www.dreamkeykol.com/" }, "areaServed" :{ "@type" : "City" , "name" : "Kolkata" }},{ "@type" : "Service" , "@id" : "https://www.dreamkeykol.com/services#selling-service" , "name" : "Selling assistance" , "serviceType" : "Selling assistance" , "description" : "Selling starts with reaching the right people. We share property information with relevant customers, brokers and consultants to connect your property with potential buyers." , "url" : "https://www.dreamkeykol.com/services#selling-title" , "provider" :{ "@type" : "RealEstateAgent" , "@id" : "https://www.dreamkeykol.com/#organization" , "name" : "DreamkeyKol Reality LLP" , "url" : "https://www.dreamkeykol.com/" }, "areaServed" :{ "@type" : "City" , "name" : "Kolkata" }},{ "@type" : "Service" , "@id" : "https://www.dreamkeykol.com/services#consulting-service" , "name" : "Consulting & documentation assistance" , "serviceType" : "Consulting & documentation assistance" , "description" : "Explore investment and other property options around your objectives, budget and location. Our real estate consulting includes documentation assistance with the relevant transaction steps." , "url" : "https://www.dreamkeykol.com/services#consulting-title" , "provider" :{ "@type" : "RealEstateAgent" , "@id" : "https://www.dreamkeykol.com/#organization" , "name" : "DreamkeyKol Reality LLP" , "url" : "https://www.dreamkeykol.com/" }, "areaServed" :{ "@type" : "City" , "name" : "Kolkata" }}]} </ script >
+				60 container
+					61 container Breadcrumbs
+						62 link Description: Test results, Value: search.google.com/test/rich-results/result?id=IogHRLNpkRp-YC7ejJGvEA
+						63 heading Local businesses, Value: 1
+							64 text Local businesses
+					65 button SHARE
+						66 text SHARE
+					67 container
+						68 container
+							69 text 1 valid item detected Valid items are eligible for Google Search's rich results. 
+							70 link Description: Learn more, Value: support.google.com/webmasters/answer/9012289#enhancements
+						71 button View tested page
+							72 text VIEW TESTED PAGE
+						73 button (disabled) See preview of your URL on Google Search
+							74 text PREVIEW RESULTS
+						75 text Details
+						76 container
+							77 text Detected items
+							78 button (expanded) DreamkeyKol Reality LLP 4 non-critical issues null, Secondary Actions: Collapse
+								79 text DreamkeyKol Reality LLP
+								80 text 4 non-critical issues
+								81 button (collapsed) Description: null, Secondary Actions: Expand
+							82 container
+								83 button Missing field "telephone" (optional) Go to issue documentation
+									84 text Missing field "telephone" (optional)
+									85 container Go to issue documentation
+										86 link Description: Go to issue documentation, Value: developers.google.com/search/docs/data-types/local-business
+								87 button Missing field "address" (optional) Go to issue documentation
+									88 text Missing field "address" (optional)
+									89 container Go to issue documentation
+										90 link Description: Go to issue documentation, Value: developers.google.com/search/docs/data-types/local-business
+								91 button Missing field "priceRange" (optional) Go to issue documentation
+									92 text Missing field "priceRange" (optional)
+									93 container Go to issue documentation
+										94 link Description: Go to issue documentation, Value: developers.google.com/search/docs/data-types/local-business
+								95 button Missing field "image" (optional) Go to issue documentation
+									96 text Missing field "image" (optional)
+									97 container Go to issue documentation
+										98 link Description: Go to issue documentation, Value: developers.google.com/search/docs/data-types/local-business
+								99 button type RealEstateAgent
+									100 text type
+									101 text RealEstateAgent
+								102 button name DreamkeyKol Reality LLP
+									103 text name
+									104 text DreamkeyKol Reality LLP
+								105 button url https://www.dreamkeykol.com/
+									106 text url
+									107 text https://www.dreamkeykol.com/
+								108 button id https://www.dreamkeykol.com/#organization
+									109 text id
+									110 text https://www.dreamkeykol.com/#organization
+						111 link Description: Privacy, Value: myaccount.google.com/privacypolicy?hl=en-US
+						112 link Description: Terms, Value: myaccount.google.com/termsofservice?hl=en-US
+		45 container reCAPTCHA
+			46 AXWebArea reCAPTCHA, URL: google.com/recaptcha/api2/anchor?ar=2&k=6LeKMsIjAAAAAGP5PskdMId0tLXc7dL3LiO07Avf&co=aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbTo0NDM.&hl=en&v=NhfdZHzre166o-vFZrWsq3yu&size=invisible&anchor-ms=20000&execute-ms=30000&ovv=CADq00gF&cb=9c4kaba4me5p
+				47 text protected by 
+				48 text reCAPTCHA
+
+The focused UI element is 78 button (expanded) DreamkeyKol Reality LLP 4 non-critical issues null, Secondary Actions: Collapse

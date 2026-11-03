@@ -28,9 +28,9 @@ export default function PropertyManagement() {
             <em>management</em>
           </h2>
           <p>
-            Your property, thoughtfully looked after. From showcasing your home
-            to coordinating enquiries and connecting with tenants, our Kolkata
-            team helps you take the next step.
+            From sharing property details to coordinating enquiries, our Kolkata
+            team connects owners with potential buyers, tenants and local
+            consultants, with documentation assistance along the way.
           </p>
           <DirectionalFillLink
             href="/contact"

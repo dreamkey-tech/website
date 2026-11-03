@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-11-03T15:50:12.324Z",
+  "passed": 9,
+  "checks": [
+    "Initial StrictMode mount queues default-denied consent once and loads no Google/Vercel tag",
+    "Rejecting optional cookies persists denial without tag, config or events",
+    "Accepting uses the official bootstrap once under StrictMode, after safe/default-denied setup, with one manual pageview",
+    "SPA pathname transition sends one sanitized view; ordinary content rerenders add no view or tag",
+    "Revocation disables GA and Vercel event delivery without replaying denied interactions",
+    "Fresh consent activation sends one current-page view and visible property impression; callbacks/rerenders do not repeat them or reload the tag",
+    "Changed property identity is reobserved once; removed cards are unobserved and stale queued visibility cannot emit an impression",
+    "Fresh-page reload respects stored rejection without duplicate configuration",
+    "Fresh-page reload respects stored analytics grant without duplicate configuration"
+  ],
+  "scope": "Actual AnalyticsProvider, consent UI/store, tracking utility and official installed GA bootstrap executed in React StrictMode/jsdom. Next Script cache, visibility and Vercel transport are isolated. No external requests, GA console receipts or live production verification."
+}

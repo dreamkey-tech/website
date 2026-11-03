@@ -1,0 +1,51 @@
+Browser tab: 6, Title: "Rich Results Test - Google Search Console", URL: "https://search.google.com/test/rich-results/result?id=JALFniy7Og0LIsddvkM0Iw".
+0 AXWebArea Rich Results Test - Google Search Console, URL: search.google.com/test/rich-results/result?id=JALFniy7Og0LIsddvkM0Iw
+	1 container
+		2 container yDmH0d
+			3 container gb
+				4 container
+					47 button Go back
+						48 image
+					5 heading Rich Results Test, Value: 1
+						49 text Rich Results Test
+					7 pop up button (collapsed) Secondary Actions: Expand
+					8 button (collapsed) Description: Google apps, Secondary Actions: Expand
+					9 link Description: Sign in, Value: accounts.google.com/ServiceLogin?service=sitemaps&passive=1209600&continue=https%3A%2F%2Fsearch.google.com%2Ftest%2Frich-results%2Fresult%3Fid%3DJALFniy7Og0LIsddvkM0Iw&followup=https%3A%2F%2Fsearch.google.com%2Ftest%2Frich-results%2Fresult%3Fid%3DJALFniy7Og0LIsddvkM0Iw&ec=GAZA1AI
+			50 container
+				51 container
+					52 text Code input
+					53 container
+						54 button Open search dialog
+						55 button Copy editor content
+						56 text entry area
+						57 container
+							58 container
+								59 text < script id = "dreamkey-services" type = "application/ld+json" > { "@context" : "https://schema.org" , "@graph" :[{ "@type" : "CollectionPage" , "@id" : "https://www.dreamkeykol.com/services#webpage" , "url" : "https://www.dreamkeykol.com/services" , "name" : "Real Estate Services in Kolkata | DreamkeyKol Reality" , "description" : "Discover property buying, rental and selling assistance, real estate investment consulting and documentation support in Kolkata with DreamkeyKol Reality." , "inLanguage" : "en-IN" , "isPartOf" :{ "@id" : "https://www.dreamkeykol.com/#website" }, "about" :{ "@id" : "https://www.dreamkeykol.com/#organization" }, "breadcrumb" :{ "@id" : "https://www.dreamkeykol.com/services#breadcrumb" }},{ "@type" : "BreadcrumbList" , "@id" : "https://www.dreamkeykol.com/services#breadcrumb" , "itemListElement" :[{ "@type" : "ListItem" , "position" : 1 , "name" : "Home" , "item" : "https://www.dreamkeykol.com/" },{ "@type" : "ListItem" , "position" : 2 , "name" : "Real estate services" , "item" : "https://www.dreamkeykol.com/services" }]},{ "@type" : "RealEstateAgent" , "@id" : "https://www.dreamkeykol.com/#organization" , "name" : "DreamkeyKol Reality LLP" , "legalName" : "DreamkeyKol Reality LLP" , "alternateName" :[ "Dream Key Reality" , "DreamKey" ], "url" : "https://www.dreamkeykol.com/" , "description" : "DreamkeyKol Reality LLP is a Kolkata real estate consultancy offering buying, rental and selling assistance, investment consulting and property documentation support through its local broker and consultant network." , "logo" : "https://www.dreamkeykol.com/logo2.png" , "image" : "https://www.dreamkeykol.com/about/officeExterior.webp" , "telephone" : "+91 79801 33881" , "email" : "info@dreamkeykol.com" , "address" :{ "@type" : "PostalAddress" , "streetAddress" : "AA 52, st-69, AA block, Newtown" , "addressLocality" : "Kolkata" , "addressRegion" : "West Bengal" , "postalCode" : "700156" , "addressCountry" : "IN" }, "areaServed" :{ "@type" : "City" , "name" : "Kolkata" }, "hasMap" : "https://www.google.com/maps?cid=2957093561828935358" , "contactPoint" :[{ "@type" : "ContactPoint" , "telephone" : "+91 79801 33881" , "contactType" : "customer service" }], "sameAs" :[ "https://www.instagram.com/dream_key_kolkata/" , "https://www.youtube.com/@dream_key_kolkata" , "https://www.facebook.com/people/Dream-Key-LLP/61594174244288/" , "https://www.linkedin.com/company/dreamkeykol-reality" ], "founder" :[{ "@type" : "Person" , "name" : "Sayan Dutta" , "sameAs" : "https://www.linkedin.com/in/sayan-dutta-1763b8250/" },{ "@type" : "Person" , "name" : "Mainak Maji" , "sameAs" : "https://www.linkedin.com/in/mainakdreamkey/" },{ "@type" : "Person" , "name" : "Siddhant Singh" , "sameAs" : "https://www.linkedin.com/in/siddhant-singh-5600a2308/" }]},{ "@type" : "Service" , "@id" : "https://www.dreamkeykol.com/services#buying-service" , "name" : "Buying assistance" , "serviceType" : "Buying assistance" , "description" : "Your location, budget and priorities shape the search. We explore property options through our broker and consultant network to help you find a suitable match." , "url" : "https://www.dreamkeykol.com/services#buying-title" , "provider" :{ "@id" : "https://www.dreamkeykol.com/#organization" }, "areaServed" :{ "@type" : "City" , "name" : "Kolkata" }},{ "@type" : "Service" , "@id" : "https://www.dreamkeykol.com/services#renting-service" , "name" : "Rental services" , "serviceType" : "Rental services" , "description" : "Looking for a rental or a tenant? We connect rental requirements and property information with relevant customers, brokers and consultants across our local network." , "url" : "https://www.dreamkeykol.com/services#renting-title" , "provider" :{ "@id" : "https://www.dreamkeykol.com/#organization" }, "areaServed" :{ "@type" : "City" , "name" : "Kolkata" }},{ "@type" : "Service" , "@id" : "https://www.dreamkeykol.com/services#selling-service" , "name" : "Selling assistance" , "serviceType" : "Selling assistance" , "description" : "Selling starts with reaching the right people. We share property information with relevant customers, brokers and consultants to connect your property with potential buyers." , "url" : "https://www.dreamkeykol.com/services#selling-title" , "provider" :{ "@id" : "https://www.dreamkeykol.com/#organization" }, "areaServed" :{ "@type" : "City" , "name" : "Kolkata" }},{ "@type" : "Service" , "@id" : "https://www.dreamkeykol.com/services#consulting-service" , "name" : "Consulting & documentation assistance" , "serviceType" : "Consulting & documentation assistance" , "description" : "Explore investment and other property options around your objectives, budget and location. Our real estate consulting includes documentation assistance with the relevant transaction steps." , "url" : "https://www.dreamkeykol.com/services#consulting-title" , "provider" :{ "@id" : "https://www.dreamkeykol.com/#organization" }, "areaServed" :{ "@type" : "City" , "name" : "Kolkata" }}]} </ script >
+				60 container
+					61 container Breadcrumbs
+						62 heading Test results, Value: 1
+							63 text Test results
+					64 button SHARE
+						65 text SHARE
+					66 container
+						67 container
+							68 text 3 valid items detected Valid items are eligible for Google Search's rich results. 
+							69 link Description: Learn more, Value: support.google.com/webmasters/answer/9012289#enhancements
+						70 button View tested page
+							71 text VIEW TESTED PAGE
+						72 button See preview of your URL on Google Search
+							73 text PREVIEW RESULTS
+						74 text Detected structured data
+						75 link Description: Breadcrumbs 1 valid item detected, Value: search.google.com/test/rich-results/result/r%2Fbreadcrumbs?id=JALFniy7Og0LIsddvkM0Iw
+						76 link Description: Local businesses 1 valid item detected Non-critical issues detected, Value: search.google.com/test/rich-results/result/r%2Flocal-business?id=JALFniy7Og0LIsddvkM0Iw
+						77 link Description: Organization 1 valid item detected, Value: search.google.com/test/rich-results/result/r%2Forganization-info?id=JALFniy7Og0LIsddvkM0Iw
+						78 text Additional resources
+						79 link Description: Monitor Rich Results for your entire site GO TO SEARCH CONSOLE, Value: search.google.com/search-console/welcome
+						80 link Description: Privacy, Value: myaccount.google.com/privacypolicy?hl=en-US
+						81 link Description: Terms, Value: myaccount.google.com/termsofservice?hl=en-US
+		30 container reCAPTCHA
+			44 AXWebArea reCAPTCHA, URL: google.com/recaptcha/api2/anchor?ar=1&k=6LeKMsIjAAAAAGP5PskdMId0tLXc7dL3LiO07Avf&co=aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbTo0NDM.&hl=en&v=NhfdZHzre166o-vFZrWsq3yu&size=invisible&anchor-ms=20000&execute-ms=30000&ovv=CADq00gF&cb=tob0myyoqhqw
+				45 text protected by 
+				46 text reCAPTCHA
+
+The focused UI element is 0 AXWebArea Rich Results Test - Google Search Console, URL: search.google.com/test/rich-results/result?id=JALFniy7Og0LIsddvkM0Iw

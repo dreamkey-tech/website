@@ -1,4 +1,6 @@
 import { pageMetadata } from "@/lib/seo";
+import { pageSchema } from "@/lib/page-schema";
+import JsonLd from "@/components/seo/JsonLd";
 // import Image from "next/image"; // Restore with the intro section below.
 import { connection } from "next/server";
 import RentalBrowser from "@/components/pages/RentalBrowser";
@@ -11,9 +13,10 @@ export default async function RentPage() {
   await connection();
   return (
     <div className={styles.page} id="page-content">
+      <JsonLd id="dreamkey-rent-page" data={pageSchema("/rent")} />
       <div className={styles.container}>
         <h1 className={styles.srOnly} id="rent-title">
-          Rental homes in Kolkata
+          Flats and homes for rent in Kolkata
         </h1>
         {/* Temporarily hidden intro. To restore: remove the hidden h1 above, uncomment this section and restore the Image import.
         <section aria-labelledby="rent-title">
@@ -49,7 +52,7 @@ export default async function RentPage() {
         <RentalBrowser />
         <PageCTA
           title="Still finding your neighbourhood?"
-          copy="Tell us about your routine, your budget, and the things that make a home feel right."
+          copy="Share your preferred locality, budget and rental needs. Our local network helps you explore suitable options."
           label="Help me find a home"
           href="/contact?purpose=rent"
         />

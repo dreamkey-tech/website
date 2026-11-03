@@ -1,0 +1,527 @@
+Browser tab: 8, Title: "Schema Markup validator", URL: "https://validator.schema.org/".
+0 AXWebArea Schema Markup validator, URL: validator.schema.org/
+	1 container
+		2 container pagehead1
+			3 link Description: Schema.org, Value: schema.org/
+			4 content list
+				5 link Description: Documentation, Value: schema.org/docs/documents.html
+				6 link Description: Schemas, Value: schema.org/docs/schemas.html
+				7 link Description: Validate, Value: validator.schema.org/
+				8 link Description: About, Value: schema.org/docs/about.html
+			9 container gsc-iw-id1
+				10 text field (settable) Description: search, ID: gsc-i-id1
+		11 container fetch-bar
+			12 text public
+			13 container button-panel
+				14 button Run new test, ID: new-test
+				15 button language_japanese_kana, ID: select-language
+				16 button info, ID: settings-help
+		17 container
+			18 text entry area (settable)
+			19 container
+				20 text < script id = "dreamkey-business" type = "application/ld+json" > { "@context" : "https://schema.org" , "@graph" :[{ "@type" : "WebPage" , "@id" : "https://www.dreamkeykol.com/#webpage" , "url" : "https://www.dreamkeykol.com/" , "name" : "Real Estate Consultancy in Kolkata | DreamkeyKol Reality" , "description" : "Buy, rent or sell property in Kolkata with DreamkeyKol Reality. Explore suitable options, local broker connections and property documentation assistance." , "inLanguage" : "en-IN" , "isPartOf" :{ "@id" : "https://www.dreamkeykol.com/#website" }, "about" :{ "@id" : "https://www.dreamkeykol.com/#organization" }},{ "@type" : "RealEstateAgent" , "@id" : "https://www.dreamkeykol.com/#organization" , "name" : "DreamkeyKol Reality LLP" , "legalName" : "DreamkeyKol Reality LLP" , "alternateName" :[ "Dream Key Reality" , "DreamKey" ], "url" : "https://www.dreamkeykol.com/" , "description" : "DreamkeyKol Reality LLP is a Kolkata real estate consultancy offering buying, rental and selling assistance, investment consulting and property documentation support through its local broker and consultant network." , "logo" : "https://www.dreamkeykol.com/logo2.png" , "image" : "https://www.dreamkeykol.com/about/officeExterior.webp" , "telephone" : "+91 79801 33881" , "email" : "info@dreamkeykol.com" , "address" :{ "@type" : "PostalAddress" , "streetAddress" : "AA 52, st-69, AA block, Newtown" , "addressLocality" : "Kolkata" , "addressRegion" : "West Bengal" , "postalCode" : "700156" , "addressCountry" : "IN" }, "areaServed" :{ "@type" : "City" , "name" : "Kolkata" }, "hasMap" : "https://www.google.com/maps?cid=2957093561828935358" , "contactPoint" :[{ "@type" : "ContactPoint" , "telephone" : "+91 79801 33881" , "contactType" : "customer service" }], "sameAs" :[ "https://www.instagram.com/dream_key_kolkata/" , "https://www.youtube.com/@dream_key_kolkata" , "https://www.facebook.com/people/Dream-Key-LLP/61594174244288/" , "https://www.linkedin.com/company/dreamkeykol-reality" ], "founder" :[{ "@type" : "Person" , "name" : "Sayan Dutta" , "sameAs" : "https://www.linkedin.com/in/sayan-dutta-1763b8250/" },{ "@type" : "Person" , "name" : "Mainak Maji" , "sameAs" : "https://www.linkedin.com/in/mainakdreamkey/" },{ "@type" : "Person" , "name" : "Siddhant Singh" , "sameAs" : "https://www.linkedin.com/in/siddhant-singh-5600a2308/" }]},{ "@type" : "WebSite" , "@id" : "https://www.dreamkeykol.com/#website" , "url" : "https://www.dreamkeykol.com/" , "name" : "DreamkeyKol Reality LLP" , "alternateName" : "DreamKey" , "inLanguage" : "en-IN" , "publisher" :{ "@id" : "https://www.dreamkeykol.com/#organization" }}]} </ script >
+		21 container
+			22 text WebPage
+			23 button All (1) arrow_drop_down, ID: filter-menu
+				24 text All (1)
+				25 text arrow_drop_down
+			26 content list
+				27 container
+					28 text WebPage ID: https://www.dreamkeykol.com/#webpage 0 ERRORS 0 WARNINGS expand_less
+				29 table
+					30 row
+						31 cell
+							32 text @type
+						33 cell
+							34 text WebPage
+					35 row
+						36 cell
+							37 text @id
+						38 cell
+							39 text https://www.dreamkeykol.com/#webpage
+					40 row
+						41 cell
+							42 text url
+						43 cell
+							44 text https://www.dreamkeykol.com/
+					45 row
+						46 cell
+							47 text name
+						48 cell
+							49 text Real Estate Consultancy in Kolkata | DreamkeyKol Reality
+					50 row
+						51 cell
+							52 text description
+						53 cell
+							54 text Buy, rent or sell property in Kolkata with DreamkeyKol Reality. Explore suitable options, local broker connections and property documentation assistance.
+					55 row
+						56 cell
+							57 text inLanguage
+						58 cell
+							59 text en-IN
+					60 row
+						61 cell
+							62 text isPartOf
+					63 row
+						64 cell
+							65 text @type
+						66 cell
+							67 text WebSite
+					68 row
+						69 cell
+							70 text @id
+						71 cell
+							72 text https://www.dreamkeykol.com/#website
+					73 row
+						74 cell
+							75 text url
+						76 cell
+							77 text https://www.dreamkeykol.com/
+					78 row
+						79 cell
+							80 text name
+						81 cell
+							82 text DreamkeyKol Reality LLP
+					83 row
+						84 cell
+							85 text alternateName
+						86 cell
+							87 text DreamKey
+					88 row
+						89 cell
+							90 text inLanguage
+						91 cell
+							92 text en-IN
+					93 row
+						94 cell
+							95 text publisher
+					96 row
+						97 cell
+							98 text @type
+						99 cell
+							100 text RealEstateAgent
+					101 row
+						102 cell
+							103 text @id
+						104 cell
+							105 text https://www.dreamkeykol.com/#organization
+					106 row
+						107 cell
+							108 text name
+						109 cell
+							110 text DreamkeyKol Reality LLP
+					111 row
+						112 cell
+							113 text legalName
+						114 cell
+							115 text DreamkeyKol Reality LLP
+					116 row
+						117 cell
+							118 text alternateName
+						119 cell
+							120 text Dream Key Reality
+					121 row
+						122 cell
+							123 text alternateName
+						124 cell
+							125 text DreamKey
+					126 row
+						127 cell
+							128 text url
+						129 cell
+							130 text https://www.dreamkeykol.com/
+					131 row
+						132 cell
+							133 text description
+						134 cell
+							135 text DreamkeyKol Reality LLP is a Kolkata real estate consultancy offering buying, rental and selling assistance, investment consulting and property documentation support through its local broker and consultant network.
+					136 row
+						137 cell
+							138 text logo
+						139 cell
+							140 text https://www.dreamkeykol.com/logo2.png
+					141 row
+						142 cell
+							143 text image
+						144 cell
+							145 text https://www.dreamkeykol.com/about/officeExterior.webp
+					146 row
+						147 cell
+							148 text telephone
+						149 cell
+							150 text +91 79801 33881
+					151 row
+						152 cell
+							153 text email
+						154 cell
+							155 text info@dreamkeykol.com
+					156 row
+						157 cell
+							158 text hasMap
+						159 cell
+							160 text https://www.google.com/maps?cid=2957093561828935358
+					161 row
+						162 cell
+							163 text sameAs
+						164 cell
+							165 text https://www.instagram.com/dream_key_kolkata/
+					166 row
+						167 cell
+							168 text sameAs
+						169 cell
+							170 text https://www.youtube.com/@dream_key_kolkata
+					171 row
+						172 cell
+							173 text sameAs
+						174 cell
+							175 text https://www.facebook.com/people/Dream-Key-LLP/61594174244288/
+					176 row
+						177 cell
+							178 text sameAs
+						179 cell
+							180 text https://www.linkedin.com/company/dreamkeykol-reality
+					181 row
+						182 cell
+							183 text address
+					184 row
+						185 cell
+							186 text @type
+						187 cell
+							188 text PostalAddress
+					189 row
+						190 cell
+							191 text streetAddress
+						192 cell
+							193 text AA 52, st-69, AA block, Newtown
+					194 row
+						195 cell
+							196 text addressLocality
+						197 cell
+							198 text Kolkata
+					199 row
+						200 cell
+							201 text addressRegion
+						202 cell
+							203 text West Bengal
+					204 row
+						205 cell
+							206 text postalCode
+						207 cell
+							208 text 700156
+					209 row
+						210 cell
+							211 text addressCountry
+					212 row
+						213 cell
+							214 text @type
+						215 cell
+							216 text Country
+					217 row
+						218 cell
+							219 text name
+						220 cell
+							221 text IN
+					222 row
+						223 cell
+							224 text areaServed
+					225 row
+						226 cell
+							227 text @type
+						228 cell
+							229 text City
+					230 row
+						231 cell
+							232 text name
+						233 cell
+							234 text Kolkata
+					235 row
+						236 cell
+							237 text contactPoint
+					238 row
+						239 cell
+							240 text @type
+						241 cell
+							242 text ContactPoint
+					243 row
+						244 cell
+							245 text telephone
+						246 cell
+							247 text +91 79801 33881
+					248 row
+						249 cell
+							250 text contactType
+						251 cell
+							252 text customer service
+					253 row
+						254 cell
+							255 text founder
+					256 row
+						257 cell
+							258 text @type
+						259 cell
+							260 text Person
+					261 row
+						262 cell
+							263 text name
+						264 cell
+							265 text Sayan Dutta
+					266 row
+						267 cell
+							268 text sameAs
+						269 cell
+							270 text https://www.linkedin.com/in/sayan-dutta-1763b8250/
+					271 row
+						272 cell
+							273 text founder
+					274 row
+						275 cell
+							276 text @type
+						277 cell
+							278 text Person
+					279 row
+						280 cell
+							281 text name
+						282 cell
+							283 text Mainak Maji
+					284 row
+						285 cell
+							286 text sameAs
+						287 cell
+							288 text https://www.linkedin.com/in/mainakdreamkey/
+					289 row
+						290 cell
+							291 text founder
+					292 row
+						293 cell
+							294 text @type
+						295 cell
+							296 text Person
+					297 row
+						298 cell
+							299 text name
+						300 cell
+							301 text Siddhant Singh
+					302 row
+						303 cell
+							304 text sameAs
+						305 cell
+							306 text https://www.linkedin.com/in/siddhant-singh-5600a2308/
+					307 row
+						308 cell
+							309 text about
+					310 row
+						311 cell
+							312 text @type
+						313 cell
+							314 text RealEstateAgent
+					315 row
+						316 cell
+							317 text @id
+						318 cell
+							319 text https://www.dreamkeykol.com/#organization
+					320 row
+						321 cell
+							322 text name
+						323 cell
+							324 text DreamkeyKol Reality LLP
+					325 row
+						326 cell
+							327 text legalName
+						328 cell
+							329 text DreamkeyKol Reality LLP
+					330 row
+						331 cell
+							332 text alternateName
+						333 cell
+							334 text Dream Key Reality
+					335 row
+						336 cell
+							337 text alternateName
+						338 cell
+							339 text DreamKey
+					340 row
+						341 cell
+							342 text url
+						343 cell
+							344 text https://www.dreamkeykol.com/
+					345 row
+						346 cell
+							347 text description
+						348 cell
+							349 text DreamkeyKol Reality LLP is a Kolkata real estate consultancy offering buying, rental and selling assistance, investment consulting and property documentation support through its local broker and consultant network.
+					350 row
+						351 cell
+							352 text logo
+						353 cell
+							354 text https://www.dreamkeykol.com/logo2.png
+					355 row
+						356 cell
+							357 text image
+						358 cell
+							359 text https://www.dreamkeykol.com/about/officeExterior.webp
+					360 row
+						361 cell
+							362 text telephone
+						363 cell
+							364 text +91 79801 33881
+					365 row
+						366 cell
+							367 text email
+						368 cell
+							369 text info@dreamkeykol.com
+					370 row
+						371 cell
+							372 text hasMap
+						373 cell
+							374 text https://www.google.com/maps?cid=2957093561828935358
+					375 row
+						376 cell
+							377 text sameAs
+						378 cell
+							379 text https://www.instagram.com/dream_key_kolkata/
+					380 row
+						381 cell
+							382 text sameAs
+						383 cell
+							384 text https://www.youtube.com/@dream_key_kolkata
+					385 row
+						386 cell
+							387 text sameAs
+						388 cell
+							389 text https://www.facebook.com/people/Dream-Key-LLP/61594174244288/
+					390 row
+						391 cell
+							392 text sameAs
+						393 cell
+							394 text https://www.linkedin.com/company/dreamkeykol-reality
+					395 row
+						396 cell
+							397 text address
+					398 row
+						399 cell
+							400 text @type
+						401 cell
+							402 text PostalAddress
+					403 row
+						404 cell
+							405 text streetAddress
+						406 cell
+							407 text AA 52, st-69, AA block, Newtown
+					408 row
+						409 cell
+							410 text addressLocality
+						411 cell
+							412 text Kolkata
+					413 row
+						414 cell
+							415 text addressRegion
+						416 cell
+							417 text West Bengal
+					418 row
+						419 cell
+							420 text postalCode
+						421 cell
+							422 text 700156
+					423 row
+						424 cell
+							425 text addressCountry
+					426 row
+						427 cell
+							428 text @type
+						429 cell
+							430 text Country
+					431 row
+						432 cell
+							433 text name
+						434 cell
+							435 text IN
+					436 row
+						437 cell
+							438 text areaServed
+					439 row
+						440 cell
+							441 text @type
+						442 cell
+							443 text City
+					444 row
+						445 cell
+							446 text name
+						447 cell
+							448 text Kolkata
+					449 row
+						450 cell
+							451 text contactPoint
+					452 row
+						453 cell
+							454 text @type
+						455 cell
+							456 text ContactPoint
+					457 row
+						458 cell
+							459 text telephone
+						460 cell
+							461 text +91 79801 33881
+					462 row
+						463 cell
+							464 text contactType
+						465 cell
+							466 text customer service
+					467 row
+						468 cell
+							469 text founder
+					470 row
+						471 cell
+							472 text @type
+						473 cell
+							474 text Person
+					475 row
+						476 cell
+							477 text name
+						478 cell
+							479 text Sayan Dutta
+					480 row
+						481 cell
+							482 text sameAs
+						483 cell
+							484 text https://www.linkedin.com/in/sayan-dutta-1763b8250/
+					485 row
+						486 cell
+							487 text founder
+					488 row
+						489 cell
+							490 text @type
+						491 cell
+							492 text Person
+					493 row
+						494 cell
+							495 text name
+						496 cell
+							497 text Mainak Maji
+					498 row
+						499 cell
+							500 text sameAs
+						501 cell
+							502 text https://www.linkedin.com/in/mainakdreamkey/
+					503 row
+						504 cell
+							505 text founder
+					506 row
+						507 cell
+							508 text @type
+						509 cell
+							510 text Person
+					511 row
+						512 cell
+							513 text name
+						514 cell
+							515 text Siddhant Singh
+					516 row
+						517 cell
+							518 text sameAs
+						519 cell
+							520 text https://www.linkedin.com/in/siddhant-singh-5600a2308/
+		521 button (disabled) play_arrow, ID: validate-button
+			522 text play_arrow
+		523 text VALIDATE
+
+The focused UI element is 0 AXWebArea Schema Markup validator, URL: validator.schema.org/

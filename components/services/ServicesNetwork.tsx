@@ -18,9 +18,9 @@ export default function ServicesNetwork() {
           consultants across Kolkata.
         </p>
         <p>
-          Our focus spans selected areas in East, South and North Kolkata. Your
-          preferred location gives us a starting point for exploring suitable
-          options through our network.
+          We focus on selected East, South and North Kolkata areas, including
+          New Town, Rajarhat and Salt Lake. Share your preferred locality to
+          discuss relevant options and availability.
         </p>
       </div>
       <div className={styles.networkDetails}>

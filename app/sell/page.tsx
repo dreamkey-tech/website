@@ -1,4 +1,6 @@
 import { pageMetadata } from "@/lib/seo";
+import { pageSchema } from "@/lib/page-schema";
+import JsonLd from "@/components/seo/JsonLd";
 import { connection } from "next/server";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
@@ -12,15 +14,15 @@ export const metadata = pageMetadata("/sell");
 const steps = [
   {
     title: "Understand your home",
-    copy: "We start with the location, the details that make your property special, and what a successful sale means to you.",
+    copy: "We start with your property’s location, size, condition, expected price and the timeline you have in mind.",
   },
   {
     title: "Make the right introduction",
-    copy: "Thoughtful presentation and considered viewings connect your property with buyers whose requirements match.",
+    copy: "We share property information with relevant buyers, local brokers and consultants, then discuss suitable viewings with you.",
   },
   {
     title: "Stay supported",
-    copy: "From enquiries and offers to coordinating the next steps, you’ll have a team to speak to throughout the journey.",
+    copy: "Get guidance on enquiries, offers and documentation as you consider the next steps. A buyer or completed sale cannot be guaranteed.",
   },
 ];
 
@@ -28,10 +30,11 @@ export default async function SellPage() {
   await connection();
   return (
     <div className={styles.page} id="page-content">
+      <JsonLd id="dreamkey-sell-page" data={pageSchema("/sell")} />
       <div className={styles.container}>
         <section className={styles.hero} aria-labelledby="sell-title">
           <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Sell with Dream Key</p>
+            <p className={styles.eyebrow}>Sell property in Kolkata</p>
             <h1 className={styles.title} id="sell-title">
               Your next chapter
               <br />
@@ -39,8 +42,9 @@ export default async function SellPage() {
               <em>thoughtful sale.</em>
             </h1>
             <p className={styles.lead}>
-              A home holds more than its square footage. We help you present it
-              with care, reach the right buyers, and move forward with clarity.
+              Planning to sell property in Kolkata? We share your property
+              details through our broker and consultant network to help reach
+              potential buyers.
             </p>
             <div className={styles.heroActions}>
               <a
@@ -77,8 +81,8 @@ export default async function SellPage() {
               </h2>
             </div>
             <p className={styles.lead}>
-              Personal guidance, practical steps, and room to make decisions at
-              your own pace.
+              Local connections, clear property information, and practical
+              selling support around your priorities.
             </p>
           </div>
           <div className={styles.process}>
@@ -147,7 +151,7 @@ export default async function SellPage() {
               {
                 question: "Do you help owners who live outside Kolkata?",
                 answer:
-                  "Yes, you can begin remotely. We’ll discuss how to coordinate property information, access, and communications based on your circumstances.",
+                  "If you live elsewhere, start by sharing your property details remotely. We can then discuss access, documentation and communication around your circumstances.",
               },
             ]}
           />

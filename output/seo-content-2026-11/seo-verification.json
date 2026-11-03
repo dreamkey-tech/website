@@ -1,0 +1,1028 @@
+{
+  "checkedAt": "2026-11-03T17:56:10.654Z",
+  "base": "http://127.0.0.1:3063",
+  "canonicalOrigin": "https://www.dreamkeykol.com",
+  "checks": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "Real Estate Consultancy in Kolkata | DreamkeyKol Reality",
+      "description": "Buy, rent or sell property in Kolkata with DreamkeyKol Reality. Explore suitable options, local broker connections and property documentation assistance.",
+      "canonical": "https://www.dreamkeykol.com",
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Find your place"
+        },
+        {
+          "level": 2,
+          "text": "Dream Key"
+        },
+        {
+          "level": 2,
+          "text": "Come say hello"
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        },
+        {
+          "level": 1,
+          "text": "Homes That Match Your Pace, Not Just Your Budget."
+        },
+        {
+          "level": 2,
+          "text": "Explore property types in Kolkata"
+        },
+        {
+          "level": 3,
+          "text": "Apartments / Flats"
+        },
+        {
+          "level": 3,
+          "text": "Independent Houses"
+        },
+        {
+          "level": 3,
+          "text": "Villas"
+        },
+        {
+          "level": 3,
+          "text": "Penthouses"
+        },
+        {
+          "level": 3,
+          "text": "Duplex Homes"
+        },
+        {
+          "level": 3,
+          "text": "Studio Apartments"
+        },
+        {
+          "level": 3,
+          "text": "Residential Plots"
+        },
+        {
+          "level": 3,
+          "text": "Commercial Properties"
+        },
+        {
+          "level": 2,
+          "text": "Propertymanagement"
+        },
+        {
+          "level": 2,
+          "text": "Best properties"
+        },
+        {
+          "level": 2,
+          "text": "Every move has a story."
+        },
+        {
+          "level": 3,
+          "text": "Oanh"
+        },
+        {
+          "level": 3,
+          "text": "Mai"
+        },
+        {
+          "level": 3,
+          "text": "Capt. Amit Choudhury"
+        },
+        {
+          "level": 2,
+          "text": "Let’s find yourkind of home."
+        },
+        {
+          "level": 3,
+          "text": "Siddha Galaxia Phase II"
+        },
+        {
+          "level": 3,
+          "text": "Mani Casadona Corporate Suite"
+        },
+        {
+          "level": 3,
+          "text": "Uniworld City - Gardens"
+        }
+      ],
+      "schemaTypes": [
+        "WebPage",
+        "RealEstateAgent",
+        "PostalAddress",
+        "City",
+        "ContactPoint",
+        "Person",
+        "Person",
+        "Person",
+        "WebSite"
+      ]
+    },
+    {
+      "route": "/buy",
+      "status": 200,
+      "title": "Buy Flats in Kolkata | DreamkeyKol Reality",
+      "description": "Explore flats and properties for sale in Kolkata with DreamkeyKol Reality. Share your location, budget and priorities for buying assistance through our local network.",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Explore"
+        },
+        {
+          "level": 2,
+          "text": "Dream Key"
+        },
+        {
+          "level": 2,
+          "text": "Find us in Kolkata"
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        },
+        {
+          "level": 1,
+          "text": "Flats and properties for sale in Kolkata"
+        },
+        {
+          "level": 2,
+          "text": "Refine your search"
+        },
+        {
+          "level": 3,
+          "text": "A little guidance?"
+        },
+        {
+          "level": 2,
+          "text": "Explore properties for sale"
+        },
+        {
+          "level": 3,
+          "text": "Mani Casadona Corporate Suite"
+        },
+        {
+          "level": 2,
+          "text": "The right home starts with a conversation."
+        },
+        {
+          "level": 3,
+          "text": "Siddha Galaxia Phase II"
+        },
+        {
+          "level": 3,
+          "text": "The V - Ozone Urbana"
+        },
+        {
+          "level": 3,
+          "text": "DreamKey Altura"
+        }
+      ],
+      "schemaTypes": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "route": "/rent",
+      "status": 200,
+      "title": "Flats for Rent in Kolkata | DreamkeyKol Reality",
+      "description": "Explore sample rental homes in Kolkata, then share your preferred area, budget and requirements with DreamkeyKol Reality to discuss current rental options.",
+      "canonical": "https://www.dreamkeykol.com/rent",
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Explore"
+        },
+        {
+          "level": 2,
+          "text": "Dream Key"
+        },
+        {
+          "level": 2,
+          "text": "Find us in Kolkata"
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        },
+        {
+          "level": 1,
+          "text": "Flats and homes for rent in Kolkata"
+        },
+        {
+          "level": 2,
+          "text": "Find your kind of everyday."
+        },
+        {
+          "level": 3,
+          "text": "Room for a slower morning"
+        },
+        {
+          "level": 3,
+          "text": "A little closer to everything"
+        },
+        {
+          "level": 3,
+          "text": "Space for the whole family"
+        },
+        {
+          "level": 3,
+          "text": "Make the city feel like home"
+        },
+        {
+          "level": 2,
+          "text": "Still finding your neighbourhood?"
+        }
+      ],
+      "schemaTypes": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "route": "/sell",
+      "status": 200,
+      "title": "Sell Property in Kolkata | DreamkeyKol Reality",
+      "description": "Planning to sell property in Kolkata? DreamkeyKol Reality connects your property information with potential buyers, local brokers and property consultants.",
+      "canonical": "https://www.dreamkeykol.com/sell",
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Explore"
+        },
+        {
+          "level": 2,
+          "text": "Dream Key"
+        },
+        {
+          "level": 2,
+          "text": "Find us in Kolkata"
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        },
+        {
+          "level": 1,
+          "text": "Your next chapterstarts with athoughtful sale."
+        },
+        {
+          "level": 2,
+          "text": "From your first conversationto your next chapter."
+        },
+        {
+          "level": 3,
+          "text": "Understand your home"
+        },
+        {
+          "level": 3,
+          "text": "Make the right introduction"
+        },
+        {
+          "level": 3,
+          "text": "Stay supported"
+        },
+        {
+          "level": 2,
+          "text": "Let’s find the rightway forward."
+        },
+        {
+          "level": 3,
+          "text": "Tell us about your property"
+        },
+        {
+          "level": 2,
+          "text": "Before youbegin."
+        }
+      ],
+      "schemaTypes": [
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "route": "/services",
+      "status": 200,
+      "title": "Real Estate Services in Kolkata | DreamkeyKol Reality",
+      "description": "Discover property buying, rental and selling assistance, real estate investment consulting and documentation support in Kolkata with DreamkeyKol Reality.",
+      "canonical": "https://www.dreamkeykol.com/services",
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Explore"
+        },
+        {
+          "level": 2,
+          "text": "Dream Key"
+        },
+        {
+          "level": 2,
+          "text": "Find us in Kolkata"
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        },
+        {
+          "level": 1,
+          "text": "Your next move.Our shared focus."
+        },
+        {
+          "level": 2,
+          "text": "Different plans.The same personal attention."
+        },
+        {
+          "level": 3,
+          "text": "Find a place to buy."
+        },
+        {
+          "level": 3,
+          "text": "Find your next rental."
+        },
+        {
+          "level": 3,
+          "text": "Give your property a new chapter."
+        },
+        {
+          "level": 3,
+          "text": "Make sense of your options."
+        },
+        {
+          "level": 2,
+          "text": "Local connections.More possibilities."
+        },
+        {
+          "level": 3,
+          "text": "A connected approach"
+        },
+        {
+          "level": 3,
+          "text": "Room to make your own decision"
+        },
+        {
+          "level": 3,
+          "text": "For brokers and property consultants"
+        },
+        {
+          "level": 2,
+          "text": "Start with what matters to you."
+        },
+        {
+          "level": 3,
+          "text": "Your requirements first"
+        },
+        {
+          "level": 3,
+          "text": "Options through our network"
+        },
+        {
+          "level": 3,
+          "text": "Guidance on the next steps"
+        },
+        {
+          "level": 2,
+          "text": "A little more clarity."
+        },
+        {
+          "level": 2,
+          "text": "Your plans are a good place to start."
+        }
+      ],
+      "schemaTypes": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "RealEstateAgent",
+        "PostalAddress",
+        "City",
+        "ContactPoint",
+        "Person",
+        "Person",
+        "Person",
+        "Service",
+        "City",
+        "Service",
+        "City",
+        "Service",
+        "City",
+        "Service",
+        "City"
+      ]
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "title": "About DreamkeyKol Reality | Kolkata Property Consultants",
+      "description": "Meet DreamkeyKol Reality LLP, a Kolkata real estate consultancy connecting buyers, tenants, owners and investors with local brokers and property consultants.",
+      "canonical": "https://www.dreamkeykol.com/about",
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Explore"
+        },
+        {
+          "level": 2,
+          "text": "Dream Key"
+        },
+        {
+          "level": 2,
+          "text": "Find us in Kolkata"
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        },
+        {
+          "level": 1,
+          "text": "Real estate.Built aroundreal people."
+        },
+        {
+          "level": 2,
+          "text": "The right propertystarts with theright conversation."
+        },
+        {
+          "level": 3,
+          "text": "Your priorities come first"
+        },
+        {
+          "level": 3,
+          "text": "Clarity at every step"
+        },
+        {
+          "level": 3,
+          "text": "A relationship, not a handover"
+        },
+        {
+          "level": 2,
+          "text": "A place for real conversations."
+        },
+        {
+          "level": 2,
+          "text": "A shared city.A personal commitment."
+        },
+        {
+          "level": 3,
+          "text": "Sayan Dutta"
+        },
+        {
+          "level": 3,
+          "text": "Mainak Maji"
+        },
+        {
+          "level": 3,
+          "text": "Siddhant Singh"
+        },
+        {
+          "level": 2,
+          "text": "Let’s start with your story."
+        }
+      ],
+      "schemaTypes": [
+        "AboutPage",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "title": "Contact DreamkeyKol Reality | Property Consultant Kolkata",
+      "description": "Contact DreamkeyKol Reality in New Town, Kolkata for buying, renting, selling or property consulting. Call +91 79801 33881 or share your requirements online.",
+      "canonical": "https://www.dreamkeykol.com/contact",
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Explore"
+        },
+        {
+          "level": 2,
+          "text": "Dream Key"
+        },
+        {
+          "level": 2,
+          "text": "Find us in Kolkata"
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        },
+        {
+          "level": 1,
+          "text": "Let’s talk aboutyour next move."
+        },
+        {
+          "level": 2,
+          "text": "Give us a call"
+        },
+        {
+          "level": 2,
+          "text": "Write to us"
+        },
+        {
+          "level": 2,
+          "text": "Come by for a conversation"
+        },
+        {
+          "level": 2,
+          "text": "Start a conversation"
+        },
+        {
+          "level": 2,
+          "text": "Find us in New Town."
+        }
+      ],
+      "schemaTypes": [
+        "ContactPage",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "route": "/careers",
+      "status": 200,
+      "title": "Real Estate Careers Enquiries | DreamkeyKol Reality",
+      "description": "Interested in real estate work in Kolkata? Contact DreamkeyKol Reality to discuss property consulting, sales or marketing roles and confirm current openings.",
+      "canonical": "https://www.dreamkeykol.com/careers",
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": 3,
+          "text": "Explore"
+        },
+        {
+          "level": 3,
+          "text": "Company"
+        },
+        {
+          "level": 3,
+          "text": "Legal"
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        },
+        {
+          "level": 1,
+          "text": "Build Your Legacy in Kolkata Real Estate"
+        },
+        {
+          "level": 2,
+          "text": "What Shapes Our Work?"
+        },
+        {
+          "level": 3,
+          "text": "Customer-Focused Work"
+        },
+        {
+          "level": 3,
+          "text": "Local Property Connections"
+        },
+        {
+          "level": 3,
+          "text": "A Connected Approach"
+        },
+        {
+          "level": 3,
+          "text": "Clear Communication"
+        },
+        {
+          "level": 2,
+          "text": "Roles to Discuss"
+        },
+        {
+          "level": 3,
+          "text": "Senior Property Consultant"
+        },
+        {
+          "level": 3,
+          "text": "Inside Sales Agent (ISA)"
+        },
+        {
+          "level": 3,
+          "text": "Digital Marketing Specialist"
+        },
+        {
+          "level": 2,
+          "text": "Don’t see a perfect fit?"
+        }
+      ],
+      "schemaTypes": [
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "title": "Privacy Policy | DreamkeyKol Reality LLP",
+      "description": "Read how the Dreamkey website handles personal information, enquiries, cookies and optional analytics, and how to manage your privacy preferences.",
+      "canonical": "https://www.dreamkeykol.com/privacy",
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Explore"
+        },
+        {
+          "level": 2,
+          "text": "Dream Key"
+        },
+        {
+          "level": 2,
+          "text": "Find us in Kolkata"
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        },
+        {
+          "level": 1,
+          "text": "Privacy Policy"
+        },
+        {
+          "level": 2,
+          "text": "1. Information We Collect"
+        },
+        {
+          "level": 2,
+          "text": "2. How We Use Your Information"
+        },
+        {
+          "level": 2,
+          "text": "3. Sharing of Information"
+        },
+        {
+          "level": 2,
+          "text": "4. Cookies and Analytics"
+        },
+        {
+          "level": 2,
+          "text": "5. Data Security"
+        },
+        {
+          "level": 2,
+          "text": "6. Data Retention"
+        },
+        {
+          "level": 2,
+          "text": "7. Third-Party Links"
+        },
+        {
+          "level": 2,
+          "text": "8. Your Rights"
+        },
+        {
+          "level": 2,
+          "text": "9. Children's Privacy"
+        },
+        {
+          "level": 2,
+          "text": "10. Changes to This Privacy Policy"
+        },
+        {
+          "level": 2,
+          "text": "11. Contact Us"
+        },
+        {
+          "level": 3,
+          "text": "DreamKey Reality"
+        }
+      ],
+      "schemaTypes": [
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "route": "/terms-and-conditions",
+      "status": 200,
+      "title": "Terms & Conditions | DreamkeyKol Reality LLP",
+      "description": "Read the terms for using the Dreamkey website, including property information, enquiries, third-party services and responsibilities when exploring a transaction.",
+      "canonical": "https://www.dreamkeykol.com/terms-and-conditions",
+      "robots": "index, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Explore"
+        },
+        {
+          "level": 2,
+          "text": "Dream Key"
+        },
+        {
+          "level": 2,
+          "text": "Find us in Kolkata"
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        },
+        {
+          "level": 1,
+          "text": "Terms & Conditions"
+        },
+        {
+          "level": 2,
+          "text": "1. About DreamKey Reality"
+        },
+        {
+          "level": 2,
+          "text": "2. Use of Our Website"
+        },
+        {
+          "level": 2,
+          "text": "3. Property Information and Listings"
+        },
+        {
+          "level": 2,
+          "text": "4. No Guarantee of Transactions or Returns"
+        },
+        {
+          "level": 2,
+          "text": "5. Property Verification and Due Diligence"
+        },
+        {
+          "level": 2,
+          "text": "6. Brokerage, Consultancy Fees, and Other Charges"
+        },
+        {
+          "level": 2,
+          "text": "7. User Enquiries and Communication"
+        },
+        {
+          "level": 2,
+          "text": "8. Third-Party Services and Relationships"
+        },
+        {
+          "level": 2,
+          "text": "9. Intellectual Property"
+        },
+        {
+          "level": 2,
+          "text": "10. Limitation of Liability"
+        },
+        {
+          "level": 2,
+          "text": "11. Indemnity"
+        },
+        {
+          "level": 2,
+          "text": "12. Privacy and Data Protection"
+        },
+        {
+          "level": 2,
+          "text": "13. External Links"
+        },
+        {
+          "level": 2,
+          "text": "14. Changes to These Terms"
+        },
+        {
+          "level": 2,
+          "text": "15. Governing Law and Jurisdiction"
+        },
+        {
+          "level": 2,
+          "text": "16. Contact Us"
+        },
+        {
+          "level": 3,
+          "text": "DreamKey Reality"
+        }
+      ],
+      "schemaTypes": [
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ]
+    },
+    {
+      "route": "/login",
+      "status": 200,
+      "title": "Log In | DreamkeyKol Reality",
+      "description": "Log in to your Dream Key account and continue your property search in Kolkata.",
+      "canonical": "https://www.dreamkeykol.com/login",
+      "robots": "noindex, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "A place to call your own."
+        },
+        {
+          "level": 1,
+          "text": "Welcome back."
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        }
+      ],
+      "schemaTypes": []
+    },
+    {
+      "route": "/register",
+      "status": 200,
+      "title": "Create Account | DreamkeyKol Reality",
+      "description": "Create your Dream Key account to begin your property search in Kolkata.",
+      "canonical": "https://www.dreamkeykol.com/register",
+      "robots": "noindex, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "A place to call your own."
+        },
+        {
+          "level": 1,
+          "text": "Make yourself at home."
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        }
+      ],
+      "schemaTypes": []
+    },
+    {
+      "route": "/forgot-password",
+      "status": 200,
+      "title": "Reset Password | DreamkeyKol Reality",
+      "description": "Reset your Dream Key account password with an email verification code.",
+      "canonical": "https://www.dreamkeykol.com/forgot-password",
+      "robots": "noindex, follow",
+      "headings": [
+        {
+          "level": 2,
+          "text": "A place to call your own."
+        },
+        {
+          "level": 1,
+          "text": "Let’s get you back in."
+        },
+        {
+          "level": 2,
+          "text": "Your privacy, your choice."
+        }
+      ],
+      "schemaTypes": []
+    },
+    {
+      "route": "/buy?q=seo-canary%40example.invalid&page=2",
+      "status": 200,
+      "title": "Buy Flats in Kolkata | DreamkeyKol Reality",
+      "description": "Explore flats and properties for sale in Kolkata with DreamkeyKol Reality. Share your location, budget and priorities for buying assistance through our local network.",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/buy?location=new-town",
+      "status": 200,
+      "title": "Buy Flats in Kolkata | DreamkeyKol Reality",
+      "description": "Explore flats and properties for sale in Kolkata with DreamkeyKol Reality. Share your location, budget and priorities for buying assistance through our local network.",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/buy?sort=price-asc",
+      "status": 200,
+      "title": "Buy Flats in Kolkata | DreamkeyKol Reality",
+      "description": "Explore flats and properties for sale in Kolkata with DreamkeyKol Reality. Share your location, budget and priorities for buying assistance through our local network.",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/buy?type=FLAT&budget=75-150",
+      "status": 200,
+      "title": "Buy Flats in Kolkata | DreamkeyKol Reality",
+      "description": "Explore flats and properties for sale in Kolkata with DreamkeyKol Reality. Share your location, budget and priorities for buying assistance through our local network.",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/buy?utm_source=example",
+      "status": 200,
+      "title": "Buy Flats in Kolkata | DreamkeyKol Reality",
+      "description": "Explore flats and properties for sale in Kolkata with DreamkeyKol Reality. Share your location, budget and priorities for buying assistance through our local network.",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/buy?page=invalid&type=invalid",
+      "status": 200,
+      "title": "Buy Flats in Kolkata | DreamkeyKol Reality",
+      "description": "Explore flats and properties for sale in Kolkata with DreamkeyKol Reality. Share your location, budget and priorities for buying assistance through our local network.",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/buy?page=2",
+      "status": 200,
+      "normalizedPage": 1,
+      "title": "Buy Flats in Kolkata | DreamkeyKol Reality",
+      "description": "Explore flats and properties for sale in Kolkata with DreamkeyKol Reality. Share your location, budget and priorities for buying assistance through our local network.",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/buy?page=9999",
+      "status": 200,
+      "normalizedPage": 1,
+      "title": "Buy Flats in Kolkata | DreamkeyKol Reality",
+      "description": "Explore flats and properties for sale in Kolkata with DreamkeyKol Reality. Share your location, budget and priorities for buying assistance through our local network.",
+      "canonical": "https://www.dreamkeykol.com/buy",
+      "robots": "index, follow"
+    },
+    {
+      "route": "/buy/10000000-0000-4000-8000-000000000001",
+      "status": 200,
+      "title": "Property Details | DreamkeyKol Reality",
+      "description": "Log in to view the full property listing, photographs and specifications with Dream Key.",
+      "canonical": "https://www.dreamkeykol.com/buy/10000000-0000-4000-8000-000000000001",
+      "robots": "noindex, follow",
+      "scope": "Anonymous gate only; no real auth/detail/interest request"
+    },
+    {
+      "route": "/dashboard",
+      "status": 404,
+      "robots": "noindex"
+    },
+    {
+      "route": "/seo-nonexistent-route",
+      "status": 404,
+      "robots": "noindex"
+    }
+  ],
+  "sitemapURLs": [
+    "https://www.dreamkeykol.com/",
+    "https://www.dreamkeykol.com/buy",
+    "https://www.dreamkeykol.com/rent",
+    "https://www.dreamkeykol.com/sell",
+    "https://www.dreamkeykol.com/services",
+    "https://www.dreamkeykol.com/about",
+    "https://www.dreamkeykol.com/contact",
+    "https://www.dreamkeykol.com/careers",
+    "https://www.dreamkeykol.com/privacy",
+    "https://www.dreamkeykol.com/terms-and-conditions"
+  ],
+  "robots": "User-Agent: *\nAllow: /\nDisallow: /api/\nDisallow: /api-proxy/\nDisallow: /profile\nDisallow: /settings\n\nUser-Agent: OAI-SearchBot\nAllow: /\nDisallow: /api/\nDisallow: /api-proxy/\nDisallow: /profile\nDisallow: /settings\n\nSitemap: https://www.dreamkeykol.com/sitemap.xml\n",
+  "socialProfiles": [
+    "https://www.instagram.com/dream_key_kolkata/",
+    "https://www.youtube.com/@dream_key_kolkata",
+    "https://www.facebook.com/people/Dream-Key-LLP/61594174244288/",
+    "https://www.linkedin.com/company/dreamkeykol-reality"
+  ],
+  "structuredDataTypes": [
+    "WebPage",
+    "RealEstateAgent",
+    "PostalAddress",
+    "City",
+    "ContactPoint",
+    "Person",
+    "WebSite",
+    "CollectionPage",
+    "BreadcrumbList",
+    "ListItem",
+    "Service",
+    "AboutPage",
+    "ContactPage"
+  ],
+  "checkedTopLevelLinks": [
+    "/",
+    "/about",
+    "/buy",
+    "/careers",
+    "/contact",
+    "/forgot-password",
+    "/login",
+    "/privacy",
+    "/register",
+    "/rent",
+    "/sell",
+    "/services",
+    "/terms-and-conditions"
+  ],
+  "warnings": [],
+  "scope": "Local production HTTP/SSR only. Parser executes no scripts and loads no external resources. No real auth, CRM POST, Google collector, deployment, account access, indexing, ranking, browser geometry or external rich-results validation established."
+}

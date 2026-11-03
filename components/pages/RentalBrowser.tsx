@@ -142,9 +142,10 @@ export default function RentalBrowser() {
             Find your kind of <em>everyday.</em>
           </h2>
           <p>
-            Homes and rents are illustrative. Client-supplied photos are
-            references, not verified images of these listings. Contact our team
-            for current availability and property photographs.
+            Discuss rental requirements in Kolkata. Homes and rents here are
+            illustrative; client photos are references, not verified listing
+            images. Ask our team for availability and current property
+            photographs.
           </p>
         </div>
         <div className={styles.sortControls}>

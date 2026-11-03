@@ -17,7 +17,7 @@ export default function BestProperties() {
         Best <em>properties</em>
       </h2>
       <p className={styles.sectionIntro}>
-        A few places to begin. Explore our featured properties.
+        A few places to begin. Explore featured properties in Kolkata.
       </p>
       <Suspense fallback={<FeaturedPropertiesLoading />}>
         <FeaturedProperties />

@@ -17,8 +17,8 @@ export default function ServicesCollection() {
           The same <em>personal attention.</em>
         </h2>
         <p>
-          Every requirement is different. Choose where you are in your property
-          journey, and we’ll help you explore what comes next.
+          Explore buying, rental and selling assistance, real estate and
+          investment consulting, and support with property documentation.
         </p>
       </div>
       <div className={styles.serviceGrid}>

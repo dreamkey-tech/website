@@ -15,7 +15,10 @@ export default function HomeContactCTA() {
           <br />
           <em>kind of home.</em>
         </h2>
-        <p>Buying, renting, or making a new plan? Start with a conversation.</p>
+        <p>
+          Buying, renting or selling in Kolkata? Talk to our property
+          consultants.
+        </p>
       </div>
       <div className={styles.contactActions} id="contact-form">
         <Link

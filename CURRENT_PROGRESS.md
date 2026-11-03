@@ -1,6 +1,6 @@
 # DreamKey current progress
 
-Reviewed: 30 October 2026. This document describes the current working tree, including uncommitted work. `PROJECT_CONTEXT.md` defines the evidence labels and architecture; `AGENTS.md` contains durable rules.
+Reviewed: 3 November 2026. This document describes the current working tree, including uncommitted work. `PROJECT_CONTEXT.md` defines the evidence labels and architecture; `AGENTS.md` contains durable rules.
 
 ## State at handoff
 
@@ -8,7 +8,17 @@ Reviewed: 30 October 2026. This document describes the current working tree, inc
 
 **Historical handoff:** The earlier documentation task recorded branch `redesign`, remote `dreamkey-tech/website`, extensive uncommitted work and a pending Dashboard deletion. **Current SEO task checkpoint (10 October 2026):** The branch is `main`, and the working tree was clean before this task added its SEO changes. Dashboard remains absent. This task has not committed, pushed or deployed its changes; the historical handoff is not evidence of current release approval.
 
-## Latest update — real client testimonials
+## Latest update — content and SEO optimization
+
+**User brief + implementation, 3 November 2026:** Started from clean `main` at `9c6bedc`, which includes the real testimonials and API-backed Best properties. Applied the supplied content/SEO master brief within existing pages/components: official LLP identity, broker/consultant network, buying/rental/selling/investment/consulting/documentation scope, realistic sale expectations and selected Kolkata coverage. Removed unsupported active Careers benefits/vacancy assertions and legacy-footer founding/verified-inventory claims. Existing design, styles, assets, structure, hero tagline, testimonials, forms/APIs, auth, consent and motion are preserved; invisible JSON-LD is the only new rendering.
+
+Central metadata now gives every public/account page unique accurate copy and existing approved sharing imagery. Public page/breadcrumb schema and a shared business entity use known details without fake reviews/prices/dates/hours. Exact user-supplied social profiles now share one source across footer/schema. Filtered Buy canonical/OG URLs no longer echo visitor search text; unfiltered pagination and gated detail metadata keep their appropriate indexing behavior. Sitemap/robots remain aligned with the same 10 public indexable URLs. Reports, keyword mapping, future content/social strategy and remaining account/performance work: `docs/seo-content-optimization-2026-11.md`.
+
+**Verification:** Production webpack build, TypeScript, scoped ESLint and source-preservation/diff checks pass. Local production verifier covers 24 route/query cases, metadata, headings, schema, exact socials, 10 sitemap URLs, robots, query privacy, private detail gate, Dashboard 404 and internal navigation. Existing analytics/consent/search/provider checks (41) and enquiry regression groups (12) pass with isolated transports. Official Schema.org and Google Rich Results code/snippet checks and local desktop/mobile evidence are recorded under `output/seo-content-2026-11/`. No production frontend, real customer/lead mutation, Google admin account, commit, push or deployment is included.
+
+**Owner follow-ups:** User reports GSC is connected, Home indexed and the sitemap processed with 10 discovered pages; account state was not inspected. GBP profile/social configuration, live GA DebugView/Realtime/Tag Assistant receipt, post-release hosting redirects/indexing and field CWV remain owner checks. Real rental inventory and any future public property-detail indexing require separate product/backend approval; no login gate was weakened. Historical SEO and Lighthouse findings below are not current measurements.
+
+## Previous update — real client testimonials
 
 **User request + implementation, 3 November 2026:** Replaced the five active sample testimonials with the supplied messages from Oanh and Mai (Vietnam) and Capt. Amit Choudhury. Polished grammar and excerpted Mai's explicit recommendation without converting her broader advice into unsupported praise. Oanh's spelling follows the screenshot. Removed fabricated occupations/localities; generic Client labels are used, the captain's unknown location is omitted, and countries display without the hardcoded Kolkata suffix. Title-free initials read AC for the captain. No new portraits, ratings, dates, service claims or structured reviews were invented. Existing carousel layout/rotation/controls remain, with the count derived automatically from the three records.
 

@@ -1,0 +1,23 @@
+{
+  "passed": 17,
+  "checks": [
+    "SSR safe helpers do not require browser consent",
+    "Four default denied signals precede configuration exactly once",
+    "Reject persists and never queues business events",
+    "Only post-consent events wait for Google init",
+    "Analytics-only consent grants no advertising signals and flushes once",
+    "One initial page view; queries hashes and personal title absent",
+    "SPA path navigation records once with sanitized previous route",
+    "Runtime allowlist drops identity, messages, arbitrary metadata and URL overrides",
+    "Revocation stops events and removes optional cookies, preserving session",
+    "GPC overrides attempted grants",
+    "DNT overrides attempted grants",
+    "Expired preferences return to no optional permission",
+    "Stable snapshots and storage changes synchronize across tabs",
+    "Writable-storage failure retains the fresh choice in memory",
+    "Delegated contact/property events have one event each, no destination PII",
+    "Outbound links retain only a safe destination category",
+    "Visible property impression dedupes repeated observer callbacks"
+  ],
+  "scope": "Actual consent/store/tracker source with local DOM, simulated visibility, fake gtag config; no live Google or CRM traffic."
+}

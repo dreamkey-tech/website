@@ -17,10 +17,12 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   return pageMetadata("/buy", {
-    title: "Property Details | Dream Key Reality",
+    title: "Property Details | DreamkeyKol Reality",
     description:
       "Log in to view the full property listing, photographs and specifications with Dream Key.",
-    canonical: `/buy/${encodeURIComponent(slug)}`,
+    canonical: z.uuid().safeParse(slug).success
+      ? `/buy/${slug.toLowerCase()}`
+      : "/buy",
     noIndex: true,
   });
 }
@@ -61,7 +63,9 @@ export default async function PropertyPage({ params }: Props) {
             key={crypto.randomUUID()}
             id={id}
             propertyType={result.property.propertyType}
-            transactionType={result.property.pricingType === "RENT" ? "rent" : "buy"}
+            transactionType={
+              result.property.pricingType === "RENT" ? "rent" : "buy"
+            }
           >
             <LivePropertyDetails property={result.property} />
           </PropertySession>

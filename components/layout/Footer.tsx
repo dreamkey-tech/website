@@ -64,9 +64,9 @@ export default function Footer() {
             </Link>
 
             <p className="text-text-dark-secondary text-body-dense leading-relaxed max-w-xs">
-              Kolkata&#39;s trusted real estate broker since 2012, connecting
-              buyers, sellers, and renters with verified properties across the
-              city.
+              DreamkeyKol Reality LLP connects buyers, sellers and tenants
+              with property information and local brokers and consultants
+              in Kolkata.
             </p>
 
             {/* Contact */}

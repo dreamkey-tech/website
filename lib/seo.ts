@@ -2,72 +2,73 @@ import type { Metadata } from "next";
 
 // The public apex domain currently redirects here. Keep canonicals and the sitemap aligned.
 export const SITE_URL = "https://www.dreamkeykol.com";
-export const SITE_NAME = "Dream Key Reality";
+export const SITE_NAME = "DreamkeyKol Reality LLP";
 
 export const SEO_PAGES = {
   "/": {
-    title: "Real Estate Consultants in Kolkata | Dream Key Reality",
+    title: "Real Estate Consultancy in Kolkata | DreamkeyKol Reality",
     description:
-      "Dream Key Reality connects buyers, tenants and sellers with property options and local brokers in Kolkata. Speak to our New Town real estate team.",
+      "Buy, rent or sell property in Kolkata with DreamkeyKol Reality. Explore suitable options, local broker connections and property documentation assistance.",
   },
   "/buy": {
-    title: "Flats & Houses for Sale in Kolkata | Dream Key Reality",
+    title: "Buy Flats in Kolkata | DreamkeyKol Reality",
     description:
-      "Explore an illustrative selection of flats, houses and villas in Kolkata. Ask Dream Key Reality about current availability, pricing and buying assistance.",
+      "Explore flats and properties for sale in Kolkata with DreamkeyKol Reality. Share your location, budget and priorities for buying assistance through our local network.",
   },
   "/rent": {
-    title: "Rental Homes & Flats in Kolkata | Dream Key Reality",
+    title: "Flats for Rent in Kolkata | DreamkeyKol Reality",
     description:
-      "Explore illustrative rental homes in Kolkata. Share your neighbourhood, budget and bedroom preferences with Dream Key Reality to discuss available options.",
+      "Explore sample rental homes in Kolkata, then share your preferred area, budget and requirements with DreamkeyKol Reality to discuss current rental options.",
   },
   "/sell": {
-    title: "Sell Your Property in Kolkata | Dream Key Reality",
+    title: "Sell Property in Kolkata | DreamkeyKol Reality",
     description:
-      "Talk to Dream Key Reality about selling your Kolkata property, from presentation and enquiries to viewings and the next steps.",
+      "Planning to sell property in Kolkata? DreamkeyKol Reality connects your property information with potential buyers, local brokers and property consultants.",
   },
   "/services": {
-    title: "Real Estate Services in Kolkata | Dream Key Reality",
+    title: "Real Estate Services in Kolkata | DreamkeyKol Reality",
     description:
-      "Buying, renting, selling and property investment consulting in Kolkata. Dream Key Reality connects your requirements with local brokers and consultants.",
+      "Discover property buying, rental and selling assistance, real estate investment consulting and documentation support in Kolkata with DreamkeyKol Reality.",
   },
   "/about": {
-    title: "About Our Kolkata Real Estate Team | Dream Key Reality",
+    title: "About DreamkeyKol Reality | Kolkata Property Consultants",
     description:
-      "Meet the founders of Dream Key Reality, a real estate consultancy in Kolkata helping buyers, sellers, tenants, owners and investors.",
+      "Meet DreamkeyKol Reality LLP, a Kolkata real estate consultancy connecting buyers, tenants, owners and investors with local brokers and property consultants.",
   },
   "/contact": {
-    title: "Contact Our New Town, Kolkata Team | Dream Key Reality",
+    title: "Contact DreamkeyKol Reality | Property Consultant Kolkata",
     description:
-      "Contact Dream Key Reality in New Town, Kolkata. Call +91 79801 33881 or send an enquiry about buying, renting, selling or property consulting.",
+      "Contact DreamkeyKol Reality in New Town, Kolkata for buying, renting, selling or property consulting. Call +91 79801 33881 or share your requirements online.",
   },
   "/careers": {
-    title: "Real Estate Careers in Kolkata | Dream Key Reality",
+    title: "Real Estate Careers Enquiries | DreamkeyKol Reality",
     description:
-      "Explore the careers page at Dream Key Reality in Kolkata. Contact our team to confirm current openings and application details.",
+      "Interested in real estate work in Kolkata? Contact DreamkeyKol Reality to discuss property consulting, sales or marketing roles and confirm current openings.",
   },
   "/privacy": {
-    title: "Privacy Policy | DreamKey Reality",
-    description: "Privacy Policy for DreamKey Reality website and services.",
+    title: "Privacy Policy | DreamkeyKol Reality LLP",
+    description:
+      "Read how the Dreamkey website handles personal information, enquiries, cookies and optional analytics, and how to manage your privacy preferences.",
   },
   "/terms-and-conditions": {
-    title: "Terms & Conditions | DreamKey Reality",
+    title: "Terms & Conditions | DreamkeyKol Reality LLP",
     description:
-      "Terms and conditions for DreamKey Reality website and services.",
+      "Read the terms for using the Dreamkey website, including property information, enquiries, third-party services and responsibilities when exploring a transaction.",
   },
   "/login": {
-    title: "Login | Dream Key",
+    title: "Log In | DreamkeyKol Reality",
     description:
       "Log in to your Dream Key account and continue your property search in Kolkata.",
     noIndex: true,
   },
   "/register": {
-    title: "Create Account | Dream Key",
+    title: "Create Account | DreamkeyKol Reality",
     description:
       "Create your Dream Key account to begin your property search in Kolkata.",
     noIndex: true,
   },
   "/forgot-password": {
-    title: "Reset Password | Dream Key",
+    title: "Reset Password | DreamkeyKol Reality",
     description:
       "Reset your Dream Key account password with an email verification code.",
     noIndex: true,
@@ -100,7 +101,7 @@ export function pageMetadata(
       width: 1920,
       height: 862,
       type: "image/webp",
-      alt: "Dream Key Reality — Kolkata homes and property services",
+      alt: "DreamkeyKol Reality LLP — real estate consultancy in Kolkata",
     },
   ];
 

@@ -7,15 +7,15 @@ export default function ServicesHero() {
   return (
     <section className={styles.hero} aria-labelledby="services-title">
       <div className={styles.heroCopy}>
-        <p className={interior.eyebrow}>Our services</p>
+        <p className={interior.eyebrow}>Real estate services in Kolkata</p>
         <h1 className={styles.title} id="services-title">
           Your next move.
           <br />
           <em>Our shared focus.</em>
         </h1>
         <p className={styles.lead}>
-          Buying, renting, selling or investing. We connect your requirements
-          with property options and people across Kolkata.
+          Buying, renting, selling or investing. Explore property options, local
+          connections and documentation assistance in Kolkata.
         </p>
         <a className={interior.primaryButton} href="#property-services">
           Find the right service

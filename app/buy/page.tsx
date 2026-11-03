@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
+import { pageSchema } from "@/lib/page-schema";
+import JsonLd from "@/components/seo/JsonLd";
 // import Image from "next/image"; // Restore with the intro section below.
 import Link from "next/link";
 import { connection } from "next/server";
@@ -36,11 +38,16 @@ export async function generateMetadata({
     activeBuyFilters(filters).length > 0 || filters.sort !== "recommended";
 
   return pageMetadata("/buy", {
-    canonical: buyHref(filters).split("#")[0],
+    // Search text is visitor input; never repeat it in public metadata or share URLs.
+    canonical: noIndex ? "/buy" : buyHref(filters).split("#")[0],
     noIndex,
     title:
       !noIndex && filters.page > 1
-        ? `Flats & Houses for Sale in Kolkata — Page ${filters.page} | Dream Key Reality`
+        ? `Buy Flats in Kolkata — Page ${filters.page} | DreamkeyKol Reality`
+        : undefined,
+    description:
+      !noIndex && filters.page > 1
+        ? `Browse page ${filters.page} of Kolkata properties for sale with DreamkeyKol Reality. Discuss your preferred area, budget, availability and buying requirements with our team.`
         : undefined,
   });
 }
@@ -67,9 +74,18 @@ export default async function BuyPage({
   const formKey = buyHref(filters);
   return (
     <div className={interior.page} id="page-content">
+      <JsonLd
+        id="dreamkey-buy-page"
+        data={pageSchema(
+          "/buy",
+          chips.length === 0 && filters.sort === "recommended"
+            ? filters.page
+            : 1,
+        )}
+      />
       <div className={interior.container}>
         <h1 className={interior.srOnly} id="buy-title">
-          Properties for sale in Kolkata
+          Flats and properties for sale in Kolkata
         </h1>
         {/* Temporarily hidden intro. To restore: remove the hidden h1 above, uncomment this section and restore the Image import.
         <section className={styles.intro} aria-labelledby="buy-title">
@@ -104,8 +120,8 @@ export default async function BuyPage({
           aria-label="Homes to buy"
         >
           <p className={styles.catalogNote}>
-            Explore properties listed with Dream Key. Confirm availability and
-            final pricing with our team.
+            Explore properties for sale in Kolkata. Confirm availability and
+            final pricing with our local consultants.
           </p>
           {chips.length > 0 && (
             <div
@@ -175,7 +191,7 @@ export default async function BuyPage({
         </section>
         <PageCTA
           title="The right home starts with a conversation."
-          copy="Share your priorities with our Kolkata team. We’ll help you work through the possibilities."
+          copy="Share your location, budget and requirements. Our local broker and consultant network helps you explore options."
           label="Let’s find your home"
           href="/contact?purpose=buy"
         />

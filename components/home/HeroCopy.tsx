@@ -6,13 +6,12 @@ export default function HeroCopy() {
   return (
     <HeroCopyEntrance>
       <h1 id="hero-heading" className="home-hero__title">
-        <span>Homes That Match</span>{" "}
-        <em>Your Pace,</em>{" "}
+        <span>Homes That Match</span> <em>Your Pace,</em>{" "}
         <span className="home-hero__title-ending">Not Just Your Budget.</span>
       </h1>
       <p className="home-hero__description">
-        Find your place in Kolkata. Thoughtfully chosen homes,
-        in neighbourhoods that feel like you.
+        Real estate consultancy in Kolkata. Local connections to help you buy,
+        rent or sell a home.
       </p>
       <Link
         href="/contact"

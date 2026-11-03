@@ -28,7 +28,7 @@ export default function BuyResults({
     <div className={styles.results} data-view={view} aria-busy={pending}>
       <div className={styles.resultsHeading}>
         <div>
-          <h2>Explore the collection</h2>
+          <h2>Explore properties for sale</h2>
           <p aria-live="polite">
             {total} {total === 1 ? "property" : "properties"}
             {total > 0 ? ` · Showing ${first}-${last}` : ""}
