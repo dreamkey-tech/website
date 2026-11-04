@@ -67,11 +67,11 @@ export default async function AboutPage() {
             <div className={styles.heroActions}>
               <Link className={styles.primaryButton} href="/contact">
                 Get to know us
-                <ArrowUpRightIcon size={19} aria-hidden="true" />
+                <ArrowUpRightIcon size="1.1875rem" aria-hidden="true" />
               </Link>
               <a className={styles.textLink} href="#our-founders">
                 Meet the founders
-                <ArrowUpRightIcon size={17} aria-hidden="true" />
+                <ArrowUpRightIcon size="1.0625rem" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default async function AboutPage() {
                     alt={founder.name}
                     style={{ objectPosition: founder.imagePosition }}
                     fill
-                    sizes="(max-width: 520px) 100vw, (max-width: 1440px) 33vw, 424px"
+                    sizes="(max-width: 520px) 100vw, (max-width: 1479px) 33vw, (max-width: 1920px) 29vw, 552px"
                   />
                 </div>
                 <h3>{founder.name}</h3>
@@ -181,12 +181,12 @@ export default async function AboutPage() {
                   aria-label={`${founder.name} on LinkedIn (opens in a new tab)`}
                 >
                   <LinkedinLogoIcon
-                    size={18}
+                    size="1.125rem"
                     weight="fill"
                     aria-hidden="true"
                   />
                   LinkedIn
-                  <ArrowUpRightIcon size={15} aria-hidden="true" />
+                  <ArrowUpRightIcon size="0.9375rem" aria-hidden="true" />
                 </a>
               </article>
             ))}

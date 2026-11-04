@@ -16,12 +16,12 @@ export default function MobileMenu() {
       }
     }}>
       <summary role="button" aria-label="Navigation menu">
-        <List className="home-mobile-menu__open" size={22} aria-hidden="true" />
-        <X className="home-mobile-menu__close" size={22} aria-hidden="true" />
+        <List className="home-mobile-menu__open" size="1.375rem" aria-hidden="true" />
+        <X className="home-mobile-menu__close" size="1.375rem" aria-hidden="true" />
       </summary>
       <nav aria-label="Mobile navigation" className="home-mobile-menu__panel">
         {NAV_LINKS.map(({ label, href }) => (
-          <Link href={href} key={label} onClick={closeMenu}>{label}<ArrowUpRight size={18} aria-hidden="true" /></Link>
+          <Link href={href} key={label} onClick={closeMenu}>{label}<ArrowUpRight size="1.125rem" aria-hidden="true" /></Link>
         ))}
       </nav>
     </details>

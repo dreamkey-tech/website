@@ -1,0 +1,72 @@
+[
+  {
+    "card": 660.96875,
+    "container": 1728,
+    "left": 93.5,
+    "overflow": false,
+    "width": 1920
+  },
+  {
+    "bannerHeight": 105.1875,
+    "card": 716,
+    "container": 1840,
+    "heading": "33px",
+    "left": 101.5,
+    "overflow": false,
+    "width": 2048
+  },
+  {
+    "bannerHeight": 92.59375,
+    "card": 528.78125,
+    "container": 1382.390625,
+    "heading": "25.9584px",
+    "left": 74.296875,
+    "overflow": false,
+    "width": 1536
+  },
+  {
+    "bannerHeight": 90.984375,
+    "card": 509.5,
+    "container": 1332,
+    "heading": "25.012px",
+    "left": 71.5,
+    "overflow": false,
+    "width": 1480
+  },
+  {
+    "bannerHeight": 90.984375,
+    "card": 508,
+    "container": 1328,
+    "heading": "25px",
+    "left": 53.5,
+    "overflow": false,
+    "width": 1440
+  },
+  {
+    "bannerHeight": 170.578125,
+    "card": 346.5,
+    "container": 715,
+    "heading": "25px",
+    "left": 24,
+    "overflow": false,
+    "width": 768
+  },
+  {
+    "bannerHeight": 233.375,
+    "card": 345,
+    "container": 345,
+    "heading": "25px",
+    "left": 20,
+    "overflow": false,
+    "width": 390
+  },
+  {
+    "bannerHeight": 233.375,
+    "card": 275,
+    "container": 275,
+    "heading": "25px",
+    "left": 20,
+    "overflow": false,
+    "width": 320
+  }
+]

@@ -123,7 +123,7 @@ export default function Select({
     >
       {label && (
         <label className={styles.label} htmlFor={id}>
-          {Icon && <Icon size={15} aria-hidden="true" />}
+          {Icon && <Icon size="0.9375rem" aria-hidden="true" />}
           {label}
         </label>
       )}
@@ -180,7 +180,7 @@ export default function Select({
           >
             <Primitive.Value>{selectedLabel}</Primitive.Value>
             <Primitive.Icon className={styles.caret}>
-              <CaretDown size={14} aria-hidden="true" />
+              <CaretDown size="0.875rem" aria-hidden="true" />
             </Primitive.Icon>
           </Primitive.Trigger>
           <Primitive.Portal>
@@ -192,7 +192,7 @@ export default function Select({
               align="start"
             >
               <Primitive.ScrollUpButton className={styles.scrollButton}>
-                <CaretUp size={14} aria-hidden="true" />
+                <CaretUp size="0.875rem" aria-hidden="true" />
               </Primitive.ScrollUpButton>
               <Primitive.Viewport className={styles.viewport}>
                 {options.map((option) => (
@@ -204,13 +204,13 @@ export default function Select({
                   >
                     <Primitive.ItemText>{option.label}</Primitive.ItemText>
                     <Primitive.ItemIndicator className={styles.check}>
-                      <Check size={16} weight="bold" aria-hidden="true" />
+                      <Check size="1rem" weight="bold" aria-hidden="true" />
                     </Primitive.ItemIndicator>
                   </Primitive.Item>
                 ))}
               </Primitive.Viewport>
               <Primitive.ScrollDownButton className={styles.scrollButton}>
-                <CaretDown size={14} aria-hidden="true" />
+                <CaretDown size="0.875rem" aria-hidden="true" />
               </Primitive.ScrollDownButton>
             </Primitive.Content>
           </Primitive.Portal>

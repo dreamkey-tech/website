@@ -28,7 +28,7 @@ export default function ListingImage({
     />
   ) : (
     <span className={styles.fallback}>
-      <ImageSquare size={32} weight="light" aria-hidden="true" />
+      <ImageSquare size="2rem" weight="light" aria-hidden="true" />
       <span>Photograph on request</span>
     </span>
   );

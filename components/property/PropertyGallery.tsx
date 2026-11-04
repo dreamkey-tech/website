@@ -63,9 +63,15 @@ export default function PropertyGallery({
               src={photo.src}
               alt={photo.alt}
               sizes={
-                index === 0
-                  ? "(max-width: 767px) 100vw, 50vw"
-                  : "(max-width: 767px) 50vw, 25vw"
+                photos.length === 1
+                  ? "(max-width: 1479px) 100vw, (max-width: 1920px) 90vw, 1728px"
+                  : photos.length === 2 || (index === 0 && photos.length >= 5)
+                    ? "(max-width: 767px) 100vw, (max-width: 1479px) 50vw, (max-width: 1920px) 45vw, 864px"
+                    : index === 0
+                      ? "(max-width: 767px) 100vw, (max-width: 1479px) 67vw, (max-width: 1920px) 60vw, 1152px"
+                      : photos.length < 5
+                        ? "(max-width: 1479px) 33vw, (max-width: 1920px) 30vw, 576px"
+                        : "(max-width: 1479px) 25vw, (max-width: 1920px) 23vw, 432px"
               }
               eager={index === 0}
             />
@@ -77,7 +83,7 @@ export default function PropertyGallery({
           type="button"
           onClick={() => show(0)}
         >
-          <SquaresFour size={17} aria-hidden="true" />
+          <SquaresFour size="1.0625rem" aria-hidden="true" />
           View all {photos.length} photos
         </button>
       </div>
@@ -111,7 +117,7 @@ export default function PropertyGallery({
             onClick={() => dialog.current?.close()}
             aria-label="Close photo gallery"
           >
-            <X size={24} />
+            <X size="1.5rem" />
           </button>
         </div>
         <div className={styles.lightboxImage}>
@@ -128,7 +134,7 @@ export default function PropertyGallery({
             onClick={() => move(-1)}
             aria-label="Previous photo"
           >
-            <ArrowLeft size={22} />
+            <ArrowLeft size="1.375rem" />
           </button>
           <p aria-live="polite">
             {photos[active].label}
@@ -137,7 +143,7 @@ export default function PropertyGallery({
             </span>
           </p>
           <button type="button" onClick={() => move(1)} aria-label="Next photo">
-            <ArrowRight size={22} />
+            <ArrowRight size="1.375rem" />
           </button>
         </div>
         <div className={styles.thumbnails} aria-label="Choose a photo">
@@ -149,7 +155,12 @@ export default function PropertyGallery({
               aria-pressed={active === index}
               onClick={() => setActive(index)}
             >
-              <Image src={photo.src} alt="" fill sizes="80px" />
+              <Image
+                src={photo.src}
+                alt=""
+                fill
+                sizes="(min-width: 1480px) 96px, 80px"
+              />
             </button>
           ))}
         </div>

@@ -18,7 +18,7 @@ export default function FooterMap({ legacy = false }: { legacy?: boolean }) {
         aria-label="View on Google Maps (DreamKey, opens in a new tab)"
       >
         View on Google Maps
-        <ArrowUpRight size={15} aria-hidden="true" />
+        <ArrowUpRight size="0.9375rem" aria-hidden="true" />
       </a>
     </div>
   );

@@ -41,14 +41,14 @@ export default function PropertyEnquiryPanel({
           : enquiryHref
             ? "Enquire about this property"
             : "Enquire about this home"}
-        <ArrowUpRight size={19} aria-hidden="true" />
+        <ArrowUpRight size="1.1875rem" aria-hidden="true" />
       </Link>
       <a
         href="tel:+917980133881"
         className={styles.secondaryButton}
         data-component-name="property_details"
       >
-        <PhoneCall size={18} aria-hidden="true" />
+        <PhoneCall size="1.125rem" aria-hidden="true" />
         +91 79801 33881
       </a>
       <a
@@ -58,9 +58,9 @@ export default function PropertyEnquiryPanel({
         className={styles.whatsapp}
         data-component-name="property_details"
       >
-        <ChatCircleText size={18} aria-hidden="true" />
+        <ChatCircleText size="1.125rem" aria-hidden="true" />
         Continue on WhatsApp
-        <ArrowUpRight size={16} aria-hidden="true" />
+        <ArrowUpRight size="1rem" aria-hidden="true" />
         <span className={styles.srOnly}> (opens in a new tab)</span>
       </a>
       <div className={styles.panelNote}>

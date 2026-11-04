@@ -75,7 +75,7 @@ export default function RecoveryEmailForm({
           disabled={request.pending}
         >
           {request.pending ? "Sending reset code…" : "Send reset code"}
-          {!request.pending && <ArrowRight size={18} aria-hidden="true" />}
+          {!request.pending && <ArrowRight size="1.125rem" aria-hidden="true" />}
         </button>
       </form>
     </>

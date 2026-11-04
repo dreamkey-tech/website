@@ -63,7 +63,7 @@ export default function LegalDocument({
           <div className={styles.readingColumn}>
             <details className={styles.mobileContents}>
               <summary>
-                On this page <CaretDown size={16} aria-hidden="true" />
+                On this page <CaretDown size="1rem" aria-hidden="true" />
               </summary>
               <nav aria-label="On this page">
                 <Contents sections={sections} />
@@ -78,7 +78,7 @@ export default function LegalDocument({
               {children}
             </article>
             <a className={styles.backToTop} href="#page-content">
-              Back to top <ArrowUp size={16} aria-hidden="true" />
+              Back to top <ArrowUp size="1rem" aria-hidden="true" />
             </a>
           </div>
         </div>

@@ -96,11 +96,11 @@ export default function Navbar() {
         ref={headerRef}
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
           scrolled
-            ? "bg-dark-base/90 backdrop-blur-xl border-b border-border-dark shadow-[0_1px_32px_rgba(0,0,0,0.4)]"
+            ? "bg-dark-base/90 backdrop-blur-xl border-b border-border-dark shadow-[0_0.0625rem_2rem_rgba(0,0,0,0.4)]"
             : "bg-transparent"
         }`}
       >
-        <div className="h-[72px] max-w-[1400px] mx-auto px-5 md:px-10 flex items-center justify-between">
+        <div className="h-[4.5rem] max-w-[87.5rem] mx-auto px-5 md:px-10 flex items-center justify-between">
           {/* Logo */}
           <Link className="flex items-center gap-3 shrink-0" href="/" aria-label="Dream Key Reality - Home">
             <div className="relative w-8 h-8">
@@ -113,10 +113,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="font-display text-[15px] font-bold text-white tracking-tight">
+              <span className="font-display text-[0.9375rem] font-bold text-white tracking-tight">
                 Dream <span className="text-gold">Key</span>
               </span>
-              <span className="text-[9px] uppercase tracking-[0.2em] text-text-dark-secondary font-semibold">
+              <span className="text-[0.5625rem] uppercase tracking-[0.2em] text-text-dark-secondary font-semibold">
                 Reality
               </span>
             </div>
@@ -130,7 +130,7 @@ export default function Navbar() {
                 <Link
                   key={link.href + link.label}
                   href={link.href}
-                  className={`relative text-[14px] font-medium tracking-wide transition-colors duration-200 group ${
+                  className={`relative text-[0.875rem] font-medium tracking-wide transition-colors duration-200 group ${
                     isActive
                       ? "text-gold"
                       : "text-text-dark-secondary hover:text-white"
@@ -152,9 +152,9 @@ export default function Navbar() {
             {/* CTA button */}
             <Link
               href="/buy"
-              className="hidden md:inline-flex items-center gap-2 h-9 px-5 bg-gold hover:bg-gold-light text-dark-base text-[13px] font-bold rounded-full transition-all duration-200 active:scale-[0.97]"
+              className="hidden md:inline-flex items-center gap-2 h-9 px-5 bg-gold hover:bg-gold-light text-dark-base text-[0.8125rem] font-bold rounded-full transition-all duration-200 active:scale-[0.97]"
             >
-              <MagnifyingGlass size={14} weight="bold" />
+              <MagnifyingGlass size="0.875rem" weight="bold" />
               Find Property
             </Link>
 
@@ -164,41 +164,41 @@ export default function Navbar() {
                 <div className="relative" ref={menuRef}>
                   <button
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                    className="flex items-center gap-2 h-9 px-3 bg-dark-raised border border-border-dark rounded-full text-[13px] text-text-dark-secondary hover:text-white hover:border-gold/40 transition-all duration-200 active:scale-95"
+                    className="flex items-center gap-2 h-9 px-3 bg-dark-raised border border-border-dark rounded-full text-[0.8125rem] text-text-dark-secondary hover:text-white hover:border-gold/40 transition-all duration-200 active:scale-95"
                     aria-label="User menu"
                     aria-expanded={isUserMenuOpen}
                   >
-                    <User size={16} weight="regular" />
-                    <span className="hidden sm:inline max-w-[80px] truncate">
+                    <User size="1rem" weight="regular" />
+                    <span className="hidden sm:inline max-w-[5rem] truncate">
                       {user?.name?.split(" ")[0] || "Account"}
                     </span>
-                    <CaretDown size={12} weight="bold" className={`transition-transform duration-200 ${isUserMenuOpen ? "rotate-180" : ""}`} />
+                    <CaretDown size="0.75rem" weight="bold" className={`transition-transform duration-200 ${isUserMenuOpen ? "rotate-180" : ""}`} />
                   </button>
 
                   {isUserMenuOpen && (
                     <div
                       ref={userMenuRef}
-                      className="absolute right-0 top-[calc(100%+10px)] w-56 bg-[var(--home-surface)] text-[var(--home-text)] border border-[var(--home-border)] rounded-2xl shadow-[var(--home-panel-shadow)] overflow-hidden z-[100]"
+                      className="absolute right-0 top-[calc(100%+0.625rem)] w-56 bg-[var(--home-surface)] text-[var(--home-text)] border border-[var(--home-border)] rounded-2xl shadow-[var(--home-panel-shadow)] overflow-hidden z-[100]"
                     >
                       <div className="px-4 pt-3.5 pb-3 border-b border-[var(--home-border)]">
-                        <p className="text-[14px] font-semibold text-[var(--home-text)] truncate">{user?.name || "User"}</p>
-                        <p className="text-[11px] text-[var(--home-text-muted)] truncate mt-0.5">{user?.email}</p>
+                        <p className="text-[0.875rem] font-semibold text-[var(--home-text)] truncate">{user?.name || "User"}</p>
+                        <p className="text-[0.6875rem] text-[var(--home-text-muted)] truncate mt-0.5">{user?.email}</p>
                       </div>
                       <div className="p-1.5">
                         <Link
                           href="/buy"
                           onClick={() => setIsUserMenuOpen(false)}
-                          className="flex items-center gap-3 min-h-11 rounded-[10px] px-3 py-2.5 text-[12px] text-[var(--home-text-muted)] hover:text-[var(--home-text)] hover:bg-[var(--home-surface-muted)] transition-colors group"
+                          className="flex items-center gap-3 min-h-11 rounded-[0.625rem] px-3 py-2.5 text-[0.75rem] text-[var(--home-text-muted)] hover:text-[var(--home-text)] hover:bg-[var(--home-surface-muted)] transition-colors group"
                         >
-                          <MagnifyingGlass size={16} className="group-hover:text-gold transition-colors" />
+                          <MagnifyingGlass size="1rem" className="group-hover:text-gold transition-colors" />
                           Browse Properties
                         </Link>
                         <div className="border-t border-[var(--home-border)] mx-3 my-1" />
                         <button
                           onClick={() => { logout(); setIsUserMenuOpen(false); }}
-                          className="w-full flex items-center gap-3 min-h-11 rounded-[10px] px-3 py-2.5 text-[12px] text-[var(--home-text)] hover:bg-[var(--home-surface-muted)] transition-colors"
+                          className="w-full flex items-center gap-3 min-h-11 rounded-[0.625rem] px-3 py-2.5 text-[0.75rem] text-[var(--home-text)] hover:bg-[var(--home-surface-muted)] transition-colors"
                         >
-                          <SignOut size={16} />
+                          <SignOut size="1rem" />
                           Sign Out
                         </button>
                       </div>
@@ -208,9 +208,9 @@ export default function Navbar() {
               ) : (
                 <Link
                   href="/login"
-                  className="hidden sm:inline-flex items-center gap-1.5 h-9 px-4 bg-dark-raised border border-border-dark text-[13px] text-text-dark-secondary hover:text-white hover:border-gold/40 rounded-full transition-all duration-200"
+                  className="hidden sm:inline-flex items-center gap-1.5 h-9 px-4 bg-dark-raised border border-border-dark text-[0.8125rem] text-text-dark-secondary hover:text-white hover:border-gold/40 rounded-full transition-all duration-200"
                 >
-                  <User size={14} />
+                  <User size="0.875rem" />
                   Login
                 </Link>
               )
@@ -225,7 +225,7 @@ export default function Navbar() {
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? <X size={20} /> : <List size={20} />}
+              {isMobileMenuOpen ? <X size="1.25rem" /> : <List size="1.25rem" />}
             </button>
           </div>
         </div>
@@ -238,12 +238,12 @@ export default function Navbar() {
           className="fixed inset-0 z-[60] bg-dark-base/95 backdrop-blur-xl xl:hidden flex flex-col"
         >
           {/* Mobile menu header */}
-          <div className="h-[72px] px-5 flex items-center justify-between border-b border-border-dark">
+          <div className="h-[4.5rem] px-5 flex items-center justify-between border-b border-border-dark">
             <Link className="flex items-center gap-3" href="/" onClick={() => setIsMobileMenuOpen(false)}>
               <div className="relative w-7 h-7">
                 <Image src="/logo2.png" alt="Dream Key" fill className="object-contain" />
               </div>
-              <span className="font-display text-[15px] font-bold text-white">
+              <span className="font-display text-[0.9375rem] font-bold text-white">
                 Dream <span className="text-gold">Key</span>
               </span>
             </Link>
@@ -252,7 +252,7 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Close menu"
             >
-              <X size={20} />
+              <X size="1.25rem" />
             </button>
           </div>
 
@@ -263,7 +263,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center justify-between py-3.5 border-b border-border-dark/50 text-[16px] font-medium transition-colors ${
+                  className={`flex items-center justify-between py-3.5 border-b border-border-dark/50 text-[1rem] font-medium transition-colors ${
                     pathname === link.href ? "text-gold" : "text-text-dark-secondary hover:text-white"
                   }`}
                 >
@@ -274,18 +274,18 @@ export default function Navbar() {
 
             {/* Bottom contact info */}
             <div className="mt-auto pt-8 pb-8 flex flex-col gap-4">
-              <a href="tel:+917980133881" className="flex items-center gap-3 text-text-dark-secondary hover:text-gold transition-colors text-[15px]">
-                <PhoneCall size={18} weight="duotone" className="text-gold" />
+              <a href="tel:+917980133881" className="flex items-center gap-3 text-text-dark-secondary hover:text-gold transition-colors text-[0.9375rem]">
+                <PhoneCall size="1.125rem" weight="duotone" className="text-gold" />
                 +91 79801 33881
               </a>
-              <a href="mailto:info@dreamkeykol.com" className="flex items-center gap-3 text-text-dark-secondary hover:text-gold transition-colors text-[15px]">
-                <Envelope size={18} weight="duotone" className="text-gold" />
+              <a href="mailto:info@dreamkeykol.com" className="flex items-center gap-3 text-text-dark-secondary hover:text-gold transition-colors text-[0.9375rem]">
+                <Envelope size="1.125rem" weight="duotone" className="text-gold" />
                 info@dreamkeykol.com
               </a>
               <Link
                 href="/buy"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-4 flex items-center justify-center h-12 bg-gold text-dark-base font-bold rounded-xl tracking-wide text-[15px] active:scale-[0.97] transition-transform"
+                className="mt-4 flex items-center justify-center h-12 bg-gold text-dark-base font-bold rounded-xl tracking-wide text-[0.9375rem] active:scale-[0.97] transition-transform"
               >
                 Find Your Property
               </Link>

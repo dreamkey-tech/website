@@ -18,7 +18,7 @@ export default function AuthPageShell({ children }: { children: ReactNode }) {
           </a>
           <BrandLogo />
           <Link className={styles.backLink} href="/">
-            <ArrowLeft size={17} aria-hidden="true" /> Back to website
+            <ArrowLeft size="1.0625rem" aria-hidden="true" /> Back to website
           </Link>
         </header>
         <div className={styles.layout}>
@@ -27,7 +27,7 @@ export default function AuthPageShell({ children }: { children: ReactNode }) {
               src="/images/kolkata-urbana-inspired-hero.webp"
               alt="Illustrative Kolkata-inspired residential high-rises in warm afternoon light"
               fill
-              sizes="(max-width: 900px) 1px, (max-width: 1440px) 52vw, 720px"
+              sizes="(max-width: 900px) 1px, (max-width: 1480px) 52vw, (max-width: 1920px) 46vw, 900px"
               loading="eager"
               fetchPriority="high"
               className={styles.image}

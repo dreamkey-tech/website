@@ -34,7 +34,7 @@ export default function Footer() {
       className="bg-dark-raised border-t border-border-dark"
       aria-label="Footer"
     >
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
+      <div className="max-w-[87.5rem] mx-auto px-5 md:px-10">
         <CookiePreferencesButton />
         {/* Main footer grid */}
         <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
@@ -54,10 +54,10 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="font-display text-[16px] font-bold text-white">
+                <span className="font-display text-[1rem] font-bold text-white">
                   Dream <span className="text-gold">Key</span>
                 </span>
-                <span className="text-[9px] uppercase tracking-[0.2em] text-text-dark-secondary font-semibold mt-0.5">
+                <span className="text-[0.5625rem] uppercase tracking-[0.2em] text-text-dark-secondary font-semibold mt-0.5">
                   Reality
                 </span>
               </div>
@@ -70,14 +70,14 @@ export default function Footer() {
             </p>
 
             {/* Contact */}
-            <div className="flex flex-col gap-2.5 text-[13px]">
+            <div className="flex flex-col gap-2.5 text-[0.8125rem]">
               <FooterPhoneLinks legacy />
               <a
                 href="mailto:info@dreamkeykol.com"
                 className={`${linkStyles.link} ${linkStyles.compact} flex items-center gap-2.5 text-text-dark-secondary`}
               >
                 <Envelope
-                  size={14}
+                  size="0.875rem"
                   weight="duotone"
                   className="text-gold shrink-0"
                 />
@@ -85,7 +85,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-2.5 text-text-dark-secondary">
                 <MapPin
-                  size={14}
+                  size="0.875rem"
                   weight="duotone"
                   className="text-gold shrink-0 mt-0.5"
                 />
@@ -101,7 +101,7 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
             <div key={heading} className="flex flex-col gap-4">
-              <h3 className="text-[11px] uppercase tracking-[0.16em] font-bold text-text-dark-secondary">
+              <h3 className="text-[0.6875rem] uppercase tracking-[0.16em] font-bold text-text-dark-secondary">
                 {heading}
               </h3>
               <ul className="flex flex-col gap-3">
@@ -109,7 +109,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className={`${linkStyles.link} ${linkStyles.compact} text-[13px] text-text-dark-secondary`}
+                      className={`${linkStyles.link} ${linkStyles.compact} text-[0.8125rem] text-text-dark-secondary`}
                     >
                       {link.label}
                     </Link>
@@ -122,10 +122,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-border-dark py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[12px] text-text-dark-muted text-center sm:text-left">
+          <p className="text-[0.75rem] text-text-dark-muted text-center sm:text-left">
             &copy; {year} Dream Key Reality. All rights reserved.
           </p>
-          <p className="text-[12px] text-text-dark-muted">
+          <p className="text-[0.75rem] text-text-dark-muted">
             Built with care in Kolkata.
           </p>
         </div>

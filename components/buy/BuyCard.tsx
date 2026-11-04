@@ -30,9 +30,13 @@ export default function BuyCard({
   const area = property.carpetAreaSqFt ?? property.superBuiltUpAreaSqFt;
   const analytics = {
     "data-property-id": property.id,
-    "data-property-type": ["FLAT", "LAND", "WAREHOUSE", "COMMERCIAL", "OTHER"].includes(
-      property.propertyType,
-    )
+    "data-property-type": [
+      "FLAT",
+      "LAND",
+      "WAREHOUSE",
+      "COMMERCIAL",
+      "OTHER",
+    ].includes(property.propertyType)
       ? property.propertyType
       : "OTHER",
     "data-transaction-type": property.pricingType === "RENT" ? "rent" : "buy",
@@ -57,10 +61,10 @@ export default function BuyCard({
           key={property.coverImage}
           src={property.coverImage}
           alt={`${title}, ${propertyAddress(property)}`}
-          sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1440px) 37vw, 510px"
+          sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1479px) 37vw, (max-width:1919px) 34.4vw, 661px"
         />
         <span className={styles.cardArrow}>
-          <ArrowRight size={20} aria-hidden="true" />
+          <ArrowRight size="1.25rem" aria-hidden="true" />
         </span>
       </PropertyLink>
       <div className={styles.cardBody}>
@@ -74,7 +78,11 @@ export default function BuyCard({
           </span>
         </div>
         <h3>
-          <PropertyLink href={href} {...analytics} data-analytics-event="select_item">
+          <PropertyLink
+            href={href}
+            {...analytics}
+            data-analytics-event="select_item"
+          >
             {title}
           </PropertyLink>
         </h3>
@@ -84,18 +92,18 @@ export default function BuyCard({
         <div className={styles.specs}>
           {property.bedrooms !== null && (
             <span>
-              <Bed size={17} aria-hidden="true" />
+              <Bed size="1.0625rem" aria-hidden="true" />
               {property.bedrooms} BHK
             </span>
           )}
           {property.bathrooms !== null && (
             <span>
-              <Bathtub size={17} aria-hidden="true" />
+              <Bathtub size="1.0625rem" aria-hidden="true" />
               {property.bathrooms} baths
             </span>
           )}
           <span>
-            <CornersOut size={17} aria-hidden="true" />
+            <CornersOut size="1.0625rem" aria-hidden="true" />
             {propertyArea(area)}
           </span>
         </div>
@@ -122,7 +130,7 @@ export default function BuyCard({
             {...analytics}
             data-analytics-event="property_enquiry_click"
           >
-            Enquire <ArrowRight size={16} aria-hidden="true" />
+            Enquire <ArrowRight size="1rem" aria-hidden="true" />
           </Link>
         </div>
       </div>

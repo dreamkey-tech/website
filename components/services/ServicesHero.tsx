@@ -19,7 +19,7 @@ export default function ServicesHero() {
         </p>
         <a className={interior.primaryButton} href="#property-services">
           Find the right service
-          <ArrowDown size={18} aria-hidden="true" />
+          <ArrowDown size="1.125rem" aria-hidden="true" />
         </a>
       </div>
       <PagePhoto

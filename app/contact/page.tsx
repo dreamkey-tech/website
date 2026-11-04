@@ -75,7 +75,7 @@ export default async function ContactPage({
                   rel="noopener noreferrer"
                 >
                   Get directions
-                  <ArrowUpRight size={17} aria-hidden="true" />
+                  <ArrowUpRight size="1.0625rem" aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -102,7 +102,7 @@ export default async function ContactPage({
               rel="noopener noreferrer"
             >
               Open in Google Maps
-              <ArrowUpRight size={17} aria-hidden="true" />
+              <ArrowUpRight size="1.0625rem" aria-hidden="true" />
             </a>
           </div>
           <ContactMap />

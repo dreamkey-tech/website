@@ -131,7 +131,7 @@ export default function RentalBrowser() {
           />
         </div>
         <button className={styles.primaryButton} type="submit">
-          <MagnifyingGlass size={17} aria-hidden="true" />
+          <MagnifyingGlass size="1.0625rem" aria-hidden="true" />
           Find homes
         </button>
       </form>

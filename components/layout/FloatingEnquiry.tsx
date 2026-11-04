@@ -25,7 +25,7 @@ export default function FloatingEnquiry() {
       aria-label="Enquire now on WhatsApp (opens in a new tab)"
     >
       <span>Enquire now</span>
-      <ArrowUpRightIcon size={16} weight="regular" aria-hidden="true" />
+      <ArrowUpRightIcon size="1rem" weight="regular" aria-hidden="true" />
     </a>
   );
 }

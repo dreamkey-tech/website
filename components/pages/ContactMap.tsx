@@ -12,7 +12,7 @@ export default function ContactMap() {
   }
   return (
     <div className={styles.mapPreview}>
-      <MapPinIcon size={30} weight="light" aria-hidden="true" />
+      <MapPinIcon size="1.875rem" weight="light" aria-hidden="true" />
       <p>
         AA 52, st-69, AA block, Newtown
         <br />
@@ -24,7 +24,7 @@ export default function ContactMap() {
         onClick={() => setShowMap(true)}
       >
         Show interactive map
-        <ArrowUpRightIcon size={17} aria-hidden="true" />
+        <ArrowUpRightIcon size="1.0625rem" aria-hidden="true" />
       </button>
     </div>
   );

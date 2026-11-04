@@ -72,7 +72,7 @@ export default function BuyResults({
               aria-pressed={view === "grid"}
               onClick={() => setView("grid")}
             >
-              <SquaresFour size={18} aria-hidden="true" />
+              <SquaresFour size="1.125rem" aria-hidden="true" />
             </button>
             <button
               type="button"
@@ -80,7 +80,7 @@ export default function BuyResults({
               aria-pressed={view === "list"}
               onClick={() => setView("list")}
             >
-              <Rows size={18} aria-hidden="true" />
+              <Rows size="1.125rem" aria-hidden="true" />
             </button>
           </div>
         </div>

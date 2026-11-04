@@ -9,10 +9,10 @@
 .link::after {
   content: "";
   position: absolute;
-  bottom: var(--footer-underline-bottom, 5px);
+  bottom: var(--footer-underline-bottom, 0.3125rem);
   left: 0;
   right: 0;
-  height: 2px;
+  height: 0.125rem;
   background: var(--home-accent);
   transform: scaleX(0);
   transform-origin: left;
@@ -31,7 +31,7 @@
 
 /* Unpadded legal/legacy links keep the line below their text without adding height. */
 .compact {
-  --footer-underline-bottom: -4px;
+  --footer-underline-bottom: -0.25rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

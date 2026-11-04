@@ -22,7 +22,7 @@ export default function ServicesApproach() {
           const Icon = approachIcons[index];
           return (
             <div className={styles.approachItem} key={item.title}>
-              <Icon size={28} weight="light" aria-hidden="true" />
+              <Icon size="1.75rem" weight="light" aria-hidden="true" />
               <h3>{item.title}</h3>
               <p>{item.copy}</p>
             </div>

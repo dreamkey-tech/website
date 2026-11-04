@@ -20,10 +20,10 @@ export default function FooterPhoneLinks({
         <li key={href}>
           <a href={href} className={`${styles.link} ${linkStyles.link}`}>
             {legacy && (
-              <PhoneCall size={14} weight="duotone" aria-hidden="true" />
+              <PhoneCall size="0.875rem" weight="duotone" aria-hidden="true" />
             )}
             {label}
-            {!legacy && <ArrowUpRight size={17} aria-hidden="true" />}
+            {!legacy && <ArrowUpRight size="1.0625rem" aria-hidden="true" />}
           </a>
         </li>
       ))}

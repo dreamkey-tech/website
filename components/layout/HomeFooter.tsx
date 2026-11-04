@@ -24,7 +24,7 @@ export default function HomeFooter() {
               href="mailto:info@dreamkeykol.com"
               className={`${styles.contactLink} ${linkStyles.link}`}
             >
-              info@dreamkeykol.com <ArrowUpRight size={17} aria-hidden="true" />
+              info@dreamkeykol.com <ArrowUpRight size="1.0625rem" aria-hidden="true" />
             </a>
             <FooterSocialLinks />
           </div>

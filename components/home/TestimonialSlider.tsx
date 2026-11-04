@@ -118,7 +118,7 @@ export default function TestimonialSlider() {
           aria-label="Previous testimonial"
           aria-controls={TRACK_ID}
         >
-          <ArrowLeft size={20} aria-hidden="true" />
+          <ArrowLeft size="1.25rem" aria-hidden="true" />
         </button>
         <p className={styles.counter} aria-hidden="true">
           <span>{pad(index + 1)}</span> / {pad(count)}
@@ -129,7 +129,7 @@ export default function TestimonialSlider() {
           aria-label="Next testimonial"
           aria-controls={TRACK_ID}
         >
-          <ArrowRight size={20} aria-hidden="true" />
+          <ArrowRight size="1.25rem" aria-hidden="true" />
         </button>
       </div>
       <p

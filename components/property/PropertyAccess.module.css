@@ -7,16 +7,16 @@
   transform: translate(-50%, -50%);
   --auth-error: #a82323;
   --auth-error-surface: #fff1f1;
-  --auth-control-height: 46px;
-  --auth-field-gap: 12px;
-  --auth-section-gap: 16px;
-  width: min(500px, calc(100vw - 32px));
+  --auth-control-height: 2.875rem;
+  --auth-field-gap: 0.75rem;
+  --auth-section-gap: 1rem;
+  width: min(31.25rem, calc(100vw - 2rem));
   max-width: none;
-  max-height: calc(100dvh - 32px);
+  max-height: calc(100dvh - 2rem);
   margin: 0;
-  padding: 22px 30px 24px;
+  padding: 1.375rem 1.875rem 1.5rem;
   border: 1px solid var(--home-border);
-  border-radius: 24px;
+  border-radius: 1.5rem;
   color: var(--home-text);
   background: var(--home-page);
   font-family: var(--font-plus-jakarta), sans-serif;
@@ -32,61 +32,61 @@
   background: var(--home-photo-shade);
 }
 .dialog :is(button, a, input):focus-visible {
-  outline: 2px solid var(--home-focus);
-  outline-offset: 4px;
+  outline: 0.125rem solid var(--home-focus);
+  outline-offset: 0.25rem;
 }
 .dialogHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 10px;
+  gap: 1rem;
+  margin-bottom: 0.625rem;
 }
 .dialogHeader p {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--home-text-muted);
   line-height: 1.8;
 }
 .dialogHeader button {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 2.75rem;
+  height: 2.75rem;
   flex-shrink: 0;
   border: 1px solid var(--home-border);
   border-radius: 50%;
   cursor: pointer;
 }
 .legal {
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 1.8;
   color: var(--home-text-muted);
-  margin-top: 18px;
+  margin-top: 1.125rem;
   text-align: center;
 }
 .legal a {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 0.1875rem;
 }
 .locked {
-  max-width: 640px;
-  margin: 40px auto 72px;
-  padding-block: 40px;
+  max-width: 40rem;
+  margin: 2.5rem auto 4.5rem;
+  padding-block: 2.5rem;
 }
 .locked h1 {
-  font-size: clamp(30px, 4vw, 48px);
+  font-size: clamp(1.875rem, 4vw, 3rem);
   font-weight: 400;
   line-height: 1.2;
-  letter-spacing: -1.8px;
-  margin-block: 22px;
+  letter-spacing: -0.1125rem;
+  margin-block: 1.375rem;
 }
 .locked em {
   font-family: var(--font-hero-editorial), Georgia, serif;
-  padding-bottom: 5px;
+  padding-bottom: 0.3125rem;
   font-weight: 400;
 }
 .locked p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.9;
   color: var(--home-text-muted);
 }
@@ -94,53 +94,53 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 18px;
-  margin-top: 28px;
+  gap: 1.125rem;
+  margin-top: 1.75rem;
 }
 .locked button {
-  min-height: 48px;
-  padding: 12px 24px;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
   background: var(--home-accent);
   color: var(--home-on-accent);
-  border-radius: 999px;
+  border-radius: 62.4375rem;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
 }
 .locked a {
-  min-height: 44px;
+  min-height: 2.75rem;
   display: inline-flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 0.75rem;
   text-decoration: underline;
-  text-underline-offset: 5px;
+  text-underline-offset: 0.3125rem;
 }
 .interestError {
-  padding: 14px 18px;
-  margin: 12px 0 20px;
+  padding: 0.875rem 1.125rem;
+  margin: 0.75rem 0 1.25rem;
   border: 1px solid var(--home-border);
-  border-radius: 12px;
+  border-radius: 0.75rem;
   background: var(--home-surface-muted);
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.8;
 }
 .interestError button {
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-underline-offset: 0.25rem;
   cursor: pointer;
-  padding: 4px;
+  padding: 0.25rem;
 }
 @media (max-width: 520px) {
   .dialog {
-    padding: 16px 20px 22px;
-    width: calc(100vw - 20px);
-    max-height: calc(100dvh - 20px);
-    border-radius: 18px;
+    padding: 1rem 1.25rem 1.375rem;
+    width: calc(100vw - 1.25rem);
+    max-height: calc(100dvh - 1.25rem);
+    border-radius: 1.125rem;
   }
   .dialogHeader {
-    gap: 8px;
+    gap: 0.5rem;
   }
   .locked {
-    margin-top: 20px;
+    margin-top: 1.25rem;
   }
 }

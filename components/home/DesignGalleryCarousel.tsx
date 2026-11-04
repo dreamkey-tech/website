@@ -150,7 +150,7 @@ export default function DesignGalleryCarousel({
             disabled={!previous}
             onClick={() => move("previous")}
           >
-            <ArrowLeft size={20} aria-hidden="true" />
+            <ArrowLeft size="1.25rem" aria-hidden="true" />
           </button>
           <button
             type="button"
@@ -159,7 +159,7 @@ export default function DesignGalleryCarousel({
             disabled={!next}
             onClick={() => move("next")}
           >
-            <ArrowRight size={20} aria-hidden="true" />
+            <ArrowRight size="1.25rem" aria-hidden="true" />
           </button>
         </div>
       </div>

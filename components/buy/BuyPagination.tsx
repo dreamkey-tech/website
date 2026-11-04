@@ -15,12 +15,12 @@ export default function BuyPagination({
     <nav className={styles.pagination} aria-label="Property pages">
       {filters.page > 1 ? (
         <Link href={buyHref(filters, { page: filters.page - 1 })}>
-          <ArrowLeft size={16} aria-hidden="true" />
+          <ArrowLeft size="1rem" aria-hidden="true" />
           <span>Previous</span>
         </Link>
       ) : (
         <span aria-disabled="true">
-          <ArrowLeft size={16} aria-hidden="true" />
+          <ArrowLeft size="1rem" aria-hidden="true" />
           <span>Previous</span>
         </span>
       )}
@@ -44,12 +44,12 @@ export default function BuyPagination({
       {filters.page < pages ? (
         <Link href={buyHref(filters, { page: filters.page + 1 })}>
           <span>Next</span>
-          <ArrowRight size={16} aria-hidden="true" />
+          <ArrowRight size="1rem" aria-hidden="true" />
         </Link>
       ) : (
         <span aria-disabled="true">
           <span>Next</span>
-          <ArrowRight size={16} aria-hidden="true" />
+          <ArrowRight size="1rem" aria-hidden="true" />
         </span>
       )}
     </nav>

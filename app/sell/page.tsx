@@ -55,11 +55,11 @@ export default async function SellPage() {
                 data-component-name="sell_primary"
               >
                 Let’s discuss your property
-                <ArrowUpRight size={19} aria-hidden="true" />
+                <ArrowUpRight size="1.1875rem" aria-hidden="true" />
               </a>
               <Link className={styles.textLink} href="/about">
                 Meet your team
-                <ArrowUpRight size={17} aria-hidden="true" />
+                <ArrowUpRight size="1.0625rem" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default async function SellPage() {
             </p>
             <a className={styles.textLink} href="tel:+917980133881">
               Prefer a call? +91 79801 33881
-              <ArrowUpRight size={18} aria-hidden="true" />
+              <ArrowUpRight size="1.125rem" aria-hidden="true" />
             </a>
           </div>
           <PropertyEnquiryForm variant="sell" />

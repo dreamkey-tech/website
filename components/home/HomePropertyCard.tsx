@@ -19,8 +19,10 @@ import styles from "./Landing.module.css";
 
 export default function HomePropertyCard({
   property,
+  imageSizes,
 }: {
   property: WebsitePropertyCard;
+  imageSizes: string;
 }) {
   const href = propertyHref(property);
   const title = propertyName(property);
@@ -61,10 +63,10 @@ export default function HomePropertyCard({
           key={image}
           src={image}
           alt={`${title}, ${address}`}
-          sizes="(max-width: 767px) calc(100vw - 40px), (min-width: 1440px) 590px, 44vw"
+          sizes={imageSizes}
         />
         <span className={styles.propertyArrow} aria-hidden="true">
-          <ArrowRight size={21} />
+          <ArrowRight size="1.3125rem" />
         </span>
       </PropertyLink>
       <div className={styles.propertyInfo}>
@@ -93,18 +95,18 @@ export default function HomePropertyCard({
         <div className={styles.propertySpecs}>
           {property.bedrooms !== null && (
             <span>
-              <Bed size={15} aria-hidden="true" />
+              <Bed size="0.9375rem" aria-hidden="true" />
               {property.bedrooms} BHK
             </span>
           )}
           {property.bathrooms !== null && (
             <span>
-              <Bathtub size={15} aria-hidden="true" />
+              <Bathtub size="0.9375rem" aria-hidden="true" />
               {property.bathrooms} baths
             </span>
           )}
           <span>
-            <ArrowsOut size={15} aria-hidden="true" />
+            <ArrowsOut size="0.9375rem" aria-hidden="true" />
             {area === null
               ? propertyArea(null)
               : `${propertyArea(area)} ${property.carpetAreaSqFt !== null ? "carpet" : "super built-up"}`}

@@ -27,7 +27,7 @@ export default function PageCTA({
         data-component-name="page_cta"
       >
         {label}
-        <ArrowUpRight size={19} aria-hidden="true" />
+        <ArrowUpRight size="1.1875rem" aria-hidden="true" />
       </Link>
     </section>
   );

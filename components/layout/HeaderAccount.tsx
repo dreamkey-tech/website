@@ -9,7 +9,7 @@ export default function HeaderAccount() {
   if (!isAuthenticated) {
     return (
       <Link href="/login" className="home-login">
-        Log in <User size={17} aria-hidden="true" />
+        Log in <User size="1.0625rem" aria-hidden="true" />
       </Link>
     );
   }
@@ -24,13 +24,13 @@ export default function HeaderAccount() {
       }}
     >
       <summary className="home-login">
-        <User size={17} aria-hidden="true" />
+        <User size="1.0625rem" aria-hidden="true" />
         <span>{user?.name?.split(" ")[0] || "Account"}</span>
-        <CaretDown size={12} aria-hidden="true" />
+        <CaretDown size="0.75rem" aria-hidden="true" />
       </summary>
       <div className="home-account__panel">
         <button type="button" onClick={() => void logout()}>
-          <SignOut size={16} aria-hidden="true" /> Sign out
+          <SignOut size="1rem" aria-hidden="true" /> Sign out
         </button>
       </div>
     </details>

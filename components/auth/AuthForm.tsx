@@ -250,7 +250,7 @@ export default function AuthForm({
                 ? "Log in"
                 : "Create account"}
           </span>
-          {!request.pending && <ArrowRight size={18} aria-hidden="true" />}
+          {!request.pending && <ArrowRight size="1.125rem" aria-hidden="true" />}
         </button>
         <span className={styles.srOnly} role="status">
           {request.pending ? "Processing your account request" : ""}

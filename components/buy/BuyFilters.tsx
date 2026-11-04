@@ -43,7 +43,7 @@ export default function BuyFilters({ filters }: { filters: Filters }) {
     <aside className={styles.sidebar} aria-label="Refine your property search">
       <div className={styles.filterHeading}>
         <h2>
-          <SlidersHorizontal size={18} aria-hidden="true" />
+          <SlidersHorizontal size="1.125rem" aria-hidden="true" />
           Refine your search
         </h2>
         <Link
@@ -63,10 +63,10 @@ export default function BuyFilters({ filters }: { filters: Filters }) {
         onClick={() => setOpen(!open)}
       >
         <span>
-          <SlidersHorizontal size={18} aria-hidden="true" /> Filters
+          <SlidersHorizontal size="1.125rem" aria-hidden="true" /> Filters
           {count ? ` (${count})` : ""}
         </span>
-        <CaretDown size={17} aria-hidden="true" />
+        <CaretDown size="1.0625rem" aria-hidden="true" />
       </button>
       <div id="buy-filter-body" className={styles.filterBody} data-open={open}>
         <form
@@ -129,7 +129,7 @@ export default function BuyFilters({ filters }: { filters: Filters }) {
             shortlist.
           </p>
           <Link href="/contact?purpose=buy">
-            Talk to our team <ArrowUpRight size={16} aria-hidden="true" />
+            Talk to our team <ArrowUpRight size="1rem" aria-hidden="true" />
           </Link>
         </div>
       </div>

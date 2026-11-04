@@ -1,0 +1,245 @@
+[
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/about",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/services",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/sell",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/rent",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "pageHeight": 3697,
+    "path": "/contact",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "pageHeight": 844,
+    "path": "/login",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "pageHeight": 844,
+    "path": "/register",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "pageHeight": 844,
+    "path": "/forgot-password",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/privacy",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/terms-and-conditions",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/careers",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/layout-check-not-found",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/buy",
+    "root": "16px",
+    "width": 390
+  },
+  {
+    "container": 275,
+    "overflow": false,
+    "path": "/buy",
+    "root": "16px",
+    "width": 320
+  },
+  {
+    "container": 715,
+    "overflow": false,
+    "path": "/buy",
+    "root": "16px",
+    "width": 768
+  },
+  {
+    "container": 1328,
+    "overflow": false,
+    "path": "/buy",
+    "root": "16px",
+    "width": 1440
+  },
+  {
+    "container": 1381.109375,
+    "overflow": false,
+    "path": "/buy",
+    "root": "16.64px",
+    "width": 1536
+  },
+  {
+    "container": 1726.390625,
+    "overflow": false,
+    "path": "/buy",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "container": 1726.390625,
+    "overflow": false,
+    "path": "/buy",
+    "root": "20.8px",
+    "width": 2048
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "container": 1726.390625,
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/about",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "container": 1726.390625,
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/services",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "container": 1726.390625,
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/sell",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "container": 1726.390625,
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/rent",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "container": 1726.390625,
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/contact",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "container": 1788.796875,
+    "hasHeading": true,
+    "overflow": false,
+    "path": "/login",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "pageHeight": 900,
+    "panelHeight": 778,
+    "panelScroll": 778,
+    "path": "/register",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "pageHeight": 900,
+    "panelHeight": 778,
+    "panelScroll": 778,
+    "path": "/forgot-password",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "pageHeight": 6700,
+    "path": "/privacy",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "pageHeight": 8741,
+    "path": "/terms-and-conditions",
+    "root": "20.8px",
+    "width": 1920
+  },
+  {
+    "hasHeading": true,
+    "overflow": false,
+    "pageHeight": 3894,
+    "path": "/careers",
+    "root": "20.8px",
+    "width": 1920
+  }
+]

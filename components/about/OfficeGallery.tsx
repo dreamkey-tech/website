@@ -30,8 +30,8 @@ export default function OfficeGallery() {
               fill
               sizes={
                 photo.layout === "wide"
-                  ? "(max-width: 640px) calc(100vw - 40px), (max-width: 900px) 50vw, (max-width: 1440px) 58vw, 800px"
-                  : "(max-width: 640px) calc(100vw - 40px), (max-width: 900px) 50vw, (max-width: 1440px) 42vw, 570px"
+                  ? "(max-width: 640px) calc(100vw - 40px), (max-width: 900px) 50vw, (max-width: 1479px) 58vw, (max-width: 1920px) 53vw, 1000px"
+                  : "(max-width: 640px) calc(100vw - 40px), (max-width: 900px) 50vw, (max-width: 1479px) 42vw, (max-width: 1920px) 39vw, 715px"
               }
               style={{ objectPosition: photo.position }}
             />

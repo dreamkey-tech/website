@@ -76,7 +76,7 @@ export default function CareersPage() {
   return (
     <div className="w-full flex flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center bg-charcoal-pure overflow-hidden">
+      <section className="relative w-full h-[60vh] min-h-[31.25rem] flex items-center justify-center bg-charcoal-pure overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{
@@ -87,19 +87,19 @@ export default function CareersPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-pure/40 via-charcoal-pure/80 to-charcoal-pure"></div>
 
         <motion.div
-          className="relative z-10 max-w-[800px] mx-auto text-center px-margin-mobile md:px-margin"
+          className="relative z-10 max-w-[50rem] mx-auto text-center px-margin-mobile md:px-margin"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
         >
           <motion.div variants={fadeUp} className="inline-flex items-center gap-space-xs px-3 py-1 rounded bg-primary/20 mb-space-md">
-            <span className="material-symbols-outlined text-primary text-[18px]">work</span>
+            <span className="material-symbols-outlined text-primary text-[1.125rem]">work</span>
             <span className="font-label-ui text-label-ui text-primary tracking-wider uppercase font-semibold">Join Dream Key</span>
           </motion.div>
-          <motion.h1 variants={fadeUp} className="font-headline-lg-mobile md:font-headline-lg text-[40px] md:text-[64px] text-surface-clean font-bold leading-tight mb-space-md">
+          <motion.h1 variants={fadeUp} className="font-headline-lg-mobile md:font-headline-lg text-[2.5rem] md:text-[4rem] text-surface-clean font-bold leading-tight mb-space-md">
             Build Your Legacy in Kolkata Real Estate
           </motion.h1>
-          <motion.p variants={fadeUp} className="font-body-default text-[18px] text-secondary-fixed-dim leading-relaxed max-w-2xl mx-auto">
+          <motion.p variants={fadeUp} className="font-body-default text-[1.125rem] text-secondary-fixed-dim leading-relaxed max-w-2xl mx-auto">
             Interested in real estate work in Kolkata? Get to know DreamkeyKol Reality LLP, a consultancy connecting property requirements with local brokers and consultants.
           </motion.p>
         </motion.div>
@@ -107,7 +107,7 @@ export default function CareersPage() {
 
       {/* Benefits Section */}
       <section className="py-space-2xl bg-surface px-margin-mobile md:px-margin">
-        <div className="max-w-[1320px] mx-auto">
+        <div className="max-w-[82.5rem] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-space-xl">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-space-sm">
               What Shapes Our Work?
@@ -131,7 +131,7 @@ export default function CareersPage() {
                 className="bg-surface-clean p-space-lg rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center mb-space-md">
-                  <span className="material-symbols-outlined text-[24px] text-primary">
+                  <span className="material-symbols-outlined text-[1.5rem] text-primary">
                     {benefit.icon}
                   </span>
                 </div>
@@ -149,7 +149,7 @@ export default function CareersPage() {
 
       {/* Open Positions */}
       <section className="py-space-2xl bg-surface-container-low px-margin-mobile md:px-margin">
-        <div className="max-w-[1000px] mx-auto">
+        <div className="max-w-[62.5rem] mx-auto">
           <div className="mb-space-xl">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-space-sm">
               Roles to Discuss
@@ -173,22 +173,22 @@ export default function CareersPage() {
                 className="bg-surface-clean p-space-lg rounded-xl border border-outline-variant/30 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:border-primary/40 transition-colors"
               >
                 <div className="flex-1">
-                  <h3 className="font-headline-sm text-[20px] text-on-surface font-semibold mb-2">
+                  <h3 className="font-headline-sm text-[1.25rem] text-on-surface font-semibold mb-2">
                     {job.title}
                   </h3>
                   <div className="flex flex-wrap items-center gap-3 text-secondary font-label-ui text-label-ui uppercase tracking-wider mb-3">
                     <span className="flex items-center gap-1">
-                      <span className="material-symbols-outlined text-[16px]">work</span>
+                      <span className="material-symbols-outlined text-[1rem]">work</span>
                       {job.type}
                     </span>
                     <span className="w-1 h-1 rounded-full bg-outline-variant"></span>
                     <span className="flex items-center gap-1">
-                      <span className="material-symbols-outlined text-[16px]">location_on</span>
+                      <span className="material-symbols-outlined text-[1rem]">location_on</span>
                       {job.location}
                     </span>
                     <span className="w-1 h-1 rounded-full bg-outline-variant"></span>
                     <span className="flex items-center gap-1">
-                      <span className="material-symbols-outlined text-[16px]">schedule</span>
+                      <span className="material-symbols-outlined text-[1rem]">schedule</span>
                       {job.experience}
                     </span>
                   </div>
@@ -202,7 +202,7 @@ export default function CareersPage() {
                     className="inline-flex items-center justify-center gap-2 px-space-lg py-3 bg-primary text-on-primary font-label-ui font-semibold rounded-lg hover:bg-primary-container transition-colors w-full md:w-auto"
                   >
                     Enquire
-                    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    <span className="material-symbols-outlined text-[1.125rem]">arrow_forward</span>
                   </Link>
                 </div>
               </motion.div>
@@ -225,7 +225,7 @@ export default function CareersPage() {
             className="inline-flex items-center justify-center gap-2 px-space-xl py-4 bg-surface-clean text-charcoal-pure font-label-ui font-bold rounded-lg hover:bg-surface-container-low transition-colors"
           >
             Email Your Resume
-            <span className="material-symbols-outlined text-[20px]">mail</span>
+            <span className="material-symbols-outlined text-[1.25rem]">mail</span>
           </Link>
         </div>
       </section>

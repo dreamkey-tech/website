@@ -43,7 +43,7 @@ export default function TestimonialCard({
           </div>
         </div>
         <Quotes
-          size={24}
+          size="1.5rem"
           weight="light"
           className={styles.quoteIcon}
           aria-hidden="true"

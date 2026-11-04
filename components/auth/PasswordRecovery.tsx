@@ -85,7 +85,7 @@ export default function PasswordRecovery({ returnTo }: { returnTo?: string }) {
       )}
       {step.phase === "done" && (
         <div className={styles.recoverySuccess} role="status">
-          <CheckCircle size={42} weight="light" aria-hidden="true" />
+          <CheckCircle size="2.625rem" weight="light" aria-hidden="true" />
           <p>Use your new password the next time you log in.</p>
           <Link
             href={authPageHref("/login", returnTo)}

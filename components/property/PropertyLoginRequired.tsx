@@ -14,7 +14,7 @@ export default function PropertyLoginRequired({ href }: { href: string }) {
   }, [href, openLogin]);
   return (
     <section className={styles.locked} aria-labelledby="locked-property-title">
-      <LockKey size={34} weight="light" aria-hidden="true" />
+      <LockKey size="2.125rem" weight="light" aria-hidden="true" />
       <h1 id="locked-property-title">
         Your next place. <em>A closer look.</em>
       </h1>

@@ -6,10 +6,10 @@ import { House, Buildings, MagnifyingGlass, Phone } from "@phosphor-icons/react"
 import { isRedesignedPage } from "@/components/pages/page-routes";
 
 const NAV = [
-  { label: "Home",     icon: <House      size={22} weight="duotone" />, href: "/" },
-  { label: "Buy",      icon: <Buildings  size={22} weight="duotone" />, href: "/buy" },
-  { label: "Search",   icon: <MagnifyingGlass size={22} weight="duotone" />, href: "/buy" },
-  { label: "Contact",  icon: <Phone      size={22} weight="duotone" />, href: "/contact" },
+  { label: "Home",     icon: <House      size="1.375rem" weight="duotone" />, href: "/" },
+  { label: "Buy",      icon: <Buildings  size="1.375rem" weight="duotone" />, href: "/buy" },
+  { label: "Search",   icon: <MagnifyingGlass size="1.375rem" weight="duotone" />, href: "/buy" },
+  { label: "Contact",  icon: <Phone      size="1.375rem" weight="duotone" />, href: "/contact" },
 ];
 
 export default function MobileBottomNav() {

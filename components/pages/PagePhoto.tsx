@@ -20,7 +20,7 @@ export default function PagePhoto({
         src={src}
         alt={alt}
         fill
-        sizes="(max-width: 800px) 100vw, (max-width: 1440px) 55vw, 760px"
+        sizes="(max-width: 800px) 100vw, (max-width: 1479px) 55vw, (max-width: 1919px) 46.5vw, 895px"
         loading={eager ? "eager" : "lazy"}
         fetchPriority={eager ? "high" : "auto"}
       />

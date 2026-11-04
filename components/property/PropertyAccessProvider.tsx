@@ -108,7 +108,7 @@ function PropertyLoginModal({
           aria-label="Close login popup"
           onClick={() => dialog.current?.close()}
         >
-          <X size={21} aria-hidden="true" />
+          <X size="1.3125rem" aria-hidden="true" />
         </button>
       </div>
       <AuthForm

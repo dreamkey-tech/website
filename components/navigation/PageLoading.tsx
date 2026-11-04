@@ -20,6 +20,7 @@ export default function PageLoading({
           alt=""
           width={160}
           height={96}
+          sizes="(min-width: 1920px) 208px, (min-width: 1480px) 11vw, 160px"
           loading="eager"
           className={styles.logo}
         />

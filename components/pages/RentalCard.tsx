@@ -31,10 +31,10 @@ export default function RentalCard({ home }: { home: RentalHome }) {
           src={home.image}
           alt={home.imageAlt}
           fill
-          sizes="(max-width: 520px) 100vw, (max-width: 1440px) 50vw, 650px"
+          sizes="(max-width: 520px) 100vw, (max-width: 1479px) 50vw, (max-width: 1919px) 44vw, 845px"
         />
         <span className={styles.cardArrow}>
-          <ArrowUpRight size={19} aria-hidden="true" />
+          <ArrowUpRight size="1.1875rem" aria-hidden="true" />
         </span>
       </Link>
       <p className={styles.cardLocation}>
@@ -57,11 +57,11 @@ export default function RentalCard({ home }: { home: RentalHome }) {
       </div>
       <div className={styles.cardSpecs}>
         <span>
-          <Bed size={16} aria-hidden="true" />
+          <Bed size="1rem" aria-hidden="true" />
           {home.bedrooms} bedrooms
         </span>
         <span>
-          <CornersOut size={16} aria-hidden="true" />
+          <CornersOut size="1rem" aria-hidden="true" />
           {home.sqft.toLocaleString("en-IN")} sq ft
         </span>
         <span>{home.furnishing}</span>

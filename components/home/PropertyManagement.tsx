@@ -17,7 +17,7 @@ export default function PropertyManagement() {
           src="/images/pages/about-studio.webp"
           alt="Illustrative Kolkata property studio with a timber desk and Howrah Bridge views"
           fill
-          sizes="(max-width: 767px) calc(100vw - 40px), (min-width: 1440px) 1328px, calc(100vw - 112px)"
+          sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1100px) calc(100vw - 72px), (min-width: 1920px) 1727px, (min-width: 1480px) 89.9167vw, (min-width: 1440px) 1328px, calc(100vw - 112px)"
           className={styles.managementImage}
         />
         <div className={styles.managementScrim} aria-hidden="true" />
@@ -39,7 +39,8 @@ export default function PropertyManagement() {
             data-cta-name="discuss_property"
             data-component-name="property_management"
           >
-            Discuss your property <ArrowUpRight size={17} aria-hidden="true" />
+            Discuss your property{" "}
+            <ArrowUpRight size="1.0625rem" aria-hidden="true" />
           </DirectionalFillLink>
         </div>
       </section>

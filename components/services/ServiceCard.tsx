@@ -19,7 +19,7 @@ export default function ServiceCard({ service }: { service: PropertyService }) {
           src={service.image}
           alt={service.imageAlt}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1440px) 50vw, 640px"
+          sizes="(max-width: 640px) 100vw, (max-width: 1479px) 50vw, (max-width: 1920px) 46vw, 850px"
         />
       </div>
       <p className={styles.serviceCategory}>{service.category}</p>
@@ -33,7 +33,7 @@ export default function ServiceCard({ service }: { service: PropertyService }) {
         data-component-name="services"
       >
         <span>{service.linkLabel}</span>
-        <ArrowRight size={20} aria-hidden="true" />
+        <ArrowRight size="1.25rem" aria-hidden="true" />
       </Link>
     </article>
   );

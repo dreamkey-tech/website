@@ -1,0 +1,68 @@
+[
+  {
+    "bannerHeight": 117.9375,
+    "height": 900,
+    "overflow": false,
+    "pageHeight": 900,
+    "panelHeight": 660,
+    "panelScroll": 660,
+    "path": "/register",
+    "tabsTop": 80.59375,
+    "width": 1920
+  },
+  {
+    "bannerHeight": 117.9375,
+    "height": 900,
+    "overflow": false,
+    "pageHeight": 900,
+    "panelHeight": 660,
+    "panelScroll": 660,
+    "path": "/login",
+    "tabsTop": 80.59375,
+    "width": 1920
+  },
+  {
+    "bannerHeight": 117.9375,
+    "height": 800,
+    "overflow": false,
+    "pageHeight": 800,
+    "panelHeight": 573,
+    "panelScroll": 573,
+    "path": "/register",
+    "tabsTop": 70.171875,
+    "width": 1920
+  },
+  {
+    "bannerHeight": 117.9375,
+    "height": 800,
+    "overflow": false,
+    "pageHeight": 800,
+    "panelHeight": 573,
+    "panelScroll": 573,
+    "path": "/login",
+    "tabsTop": 72.78125,
+    "width": 1920
+  },
+  {
+    "bannerHeight": 90.984375,
+    "height": 720,
+    "overflow": false,
+    "pageHeight": 720,
+    "panelHeight": 545,
+    "panelScroll": 545,
+    "path": "/register",
+    "tabsTop": 56,
+    "width": 1280
+  },
+  {
+    "bannerHeight": 90.984375,
+    "height": 720,
+    "overflow": false,
+    "pageHeight": 720,
+    "panelHeight": 545,
+    "panelScroll": 545,
+    "path": "/login",
+    "tabsTop": 56,
+    "width": 1280
+  }
+]

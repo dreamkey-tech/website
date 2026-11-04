@@ -124,7 +124,7 @@ export default function ResetPasswordForm({
           disabled={request.pending}
         >
           {request.pending ? "Updating password…" : "Update password"}
-          {!request.pending && <ArrowRight size={18} aria-hidden="true" />}
+          {!request.pending && <ArrowRight size="1.125rem" aria-hidden="true" />}
         </button>
       </form>
     </>

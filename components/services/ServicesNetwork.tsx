@@ -47,7 +47,7 @@ export default function ServicesNetwork() {
           </p>
           <Link className={styles.serviceLink} href="/contact">
             <span>Talk about working together</span>
-            <ArrowUpRight size={19} aria-hidden="true" />
+            <ArrowUpRight size="1.1875rem" aria-hidden="true" />
           </Link>
         </div>
       </div>

@@ -29,9 +29,9 @@ export default function PageNavigation() {
         onClick={() => setOpen(!open)}
       >
         {open ? (
-          <X size={22} aria-hidden="true" />
+          <X size="1.375rem" aria-hidden="true" />
         ) : (
-          <List size={22} aria-hidden="true" />
+          <List size="1.375rem" aria-hidden="true" />
         )}
       </button>
       <nav

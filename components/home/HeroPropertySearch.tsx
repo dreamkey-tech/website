@@ -20,7 +20,7 @@ export default function HeroPropertySearch() {
       <HeroSearchField
         name="location"
         label="Location"
-        icon={<MapPin size={21} />}
+        icon={<MapPin size="1.3125rem" />}
         options={[
           { value: "", label: "Kolkata, West Bengal" },
           { value: "new-town", label: "New Town" },
@@ -34,7 +34,7 @@ export default function HeroPropertySearch() {
       <HeroSearchField
         name="budget"
         label="Budget"
-        icon={<CurrencyInr size={21} />}
+        icon={<CurrencyInr size="1.3125rem" />}
         options={[
           { value: "", label: "Any budget" },
           { value: "35l-75l", label: "₹35L - ₹75L" },
@@ -46,7 +46,7 @@ export default function HeroPropertySearch() {
       <HeroSearchField
         name="bedrooms"
         label="Bedrooms"
-        icon={<Bed size={21} />}
+        icon={<Bed size="1.3125rem" />}
         options={[
           { value: "", label: "Any BHK" },
           { value: "1bhk", label: "1 BHK" },
@@ -58,7 +58,7 @@ export default function HeroPropertySearch() {
       <HeroSearchField
         name="type"
         label="Property type"
-        icon={<Buildings size={21} />}
+        icon={<Buildings size="1.3125rem" />}
         options={[
           { value: "", label: "All homes" },
           { value: "apartment", label: "Apartment" },
@@ -68,7 +68,7 @@ export default function HeroPropertySearch() {
         ]}
       />
       <button type="submit" className="hero-search__submit">
-        <MagnifyingGlass size={19} aria-hidden="true" />
+        <MagnifyingGlass size="1.1875rem" aria-hidden="true" />
         <span>Search</span>
       </button>
     </form>

@@ -169,7 +169,7 @@ export default function OtpVerificationForm({
             : purpose === "LOGIN"
               ? "Verify and log in"
               : "Verify code"}
-          {!request.pending && <ArrowRight size={18} aria-hidden="true" />}
+          {!request.pending && <ArrowRight size="1.125rem" aria-hidden="true" />}
         </button>
         <span className={styles.srOnly} role="status">
           {request.pending ? "Processing your verification request" : ""}

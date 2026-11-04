@@ -64,9 +64,9 @@ export default function AuthField({
             aria-controls={id}
           >
             {visible ? (
-              <EyeSlash size={20} aria-hidden="true" />
+              <EyeSlash size="1.25rem" aria-hidden="true" />
             ) : (
-              <Eye size={20} aria-hidden="true" />
+              <Eye size="1.25rem" aria-hidden="true" />
             )}
           </button>
         )}

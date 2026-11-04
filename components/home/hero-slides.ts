@@ -30,4 +30,4 @@ export const HERO_SLIDES = [
 
 // Account for the landscape image covering a tall hero, including mobile crops.
 export const HERO_IMAGE_SIZES =
-  "(max-width: 767px) max(1175px, calc(178svh - 157px)), (min-width: 1600px) max(1568px, calc(178svh - 178px)), max(calc(100vw - 32px), 1140px, calc(178svh - 178px))";
+  "(max-width: 767px) max(1175px, calc(178svh - 157px)), (min-width: 1920px) max(min(100vw, 2039px), min(2083px, calc(178svh - 231px))), (min-width: 1600px) max(100vw, min(108.47vw, calc(178svh - 19.29vw))), (min-width: 1480px) max(100vw, calc(178svh - 19.29vw)), max(calc(100vw - 32px), 1140px, calc(178svh - 178px))";

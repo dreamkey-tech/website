@@ -1,6 +1,6 @@
 .section {
-  margin-top: 100px;
-  scroll-margin-top: 24px;
+  margin-top: 6.25rem;
+  scroll-margin-top: 1.5rem;
 }
 
 .heading {
@@ -8,7 +8,7 @@
 }
 
 .heading h2 {
-  font-size: clamp(36px, 4.2vw, 56px);
+  font-size: clamp(2.25rem, 4.2vw, 3.5rem);
   font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 1.18;
@@ -20,37 +20,37 @@
 }
 
 .heading p {
-  margin: 16px auto 0;
-  max-width: 420px;
+  margin: 1rem auto 0;
+  max-width: 26.25rem;
   color: var(--home-text-muted);
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.85;
 }
 
 .carousel {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .stage {
   display: grid;
   overflow: hidden;
-  padding: 30px 12px 42px;
+  padding: 1.875rem 0.75rem 2.625rem;
   touch-action: pan-y;
 }
 
 .card {
   grid-area: 1 / 1;
   position: relative;
-  width: min(430px, calc(100% - 40px));
+  width: min(26.875rem, calc(100% - 2.5rem));
   min-width: 0;
   margin-inline: auto;
-  padding: 32px;
+  padding: 2rem;
   border: 1px solid var(--home-border);
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background: var(--home-surface);
   color: var(--home-text);
-  transform: translateX(calc(var(--position) * (100% + 24px)))
-    translateY(calc(var(--depth) * 16px));
+  transform: translateX(calc(var(--position) * (100% + 1.5rem)))
+    translateY(calc(var(--depth) * 1rem));
   transition:
     transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
     opacity 320ms ease,
@@ -66,7 +66,7 @@
 
 .card[data-current="true"] {
   border-color: var(--home-accent);
-  box-shadow: 0 10px 24px -20px var(--home-text-muted);
+  box-shadow: 0 0.625rem 1.5rem -1.25rem var(--home-text-muted);
   z-index: 2;
 }
 
@@ -79,44 +79,44 @@
 .author {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding-right: 28px;
+  gap: 0.75rem;
+  padding-right: 1.75rem;
 }
 
 .initials {
   display: grid;
   place-items: center;
-  flex: 0 0 42px;
-  height: 42px;
+  flex: 0 0 2.625rem;
+  height: 2.625rem;
   border-radius: 50%;
   background: var(--home-surface-muted);
   color: var(--home-text);
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .author h3 {
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.5;
   font-weight: 600;
 }
 
 .author p {
-  margin-top: 4px;
-  font-size: 11px;
+  margin-top: 0.25rem;
+  font-size: 0.6875rem;
   line-height: 1.7;
   color: var(--home-text-muted);
 }
 
 .quoteIcon {
   position: absolute;
-  right: 26px;
-  top: 36px;
+  right: 1.625rem;
+  top: 2.25rem;
   color: var(--home-text-muted);
 }
 
 .card blockquote {
-  margin-top: 28px;
-  font-size: 17px;
+  margin-top: 1.75rem;
+  font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.75;
   letter-spacing: -0.02em;
@@ -124,9 +124,9 @@
 
 .location {
   margin-top: auto;
-  padding-top: 28px;
+  padding-top: 1.75rem;
   color: var(--home-text-muted);
-  font-size: 11px;
+  font-size: 0.6875rem;
   line-height: 1.6;
 }
 
@@ -142,14 +142,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 .controls button {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 1px solid var(--home-border);
   border-radius: 50%;
   cursor: pointer;
@@ -167,11 +167,11 @@
 }
 
 .counter {
-  min-width: 58px;
+  min-width: 3.625rem;
   text-align: center;
   font-variant-numeric: tabular-nums;
   color: var(--home-text-muted);
-  font-size: 11px;
+  font-size: 0.6875rem;
 }
 
 .counter span {
@@ -179,44 +179,44 @@
 }
 
 .sampleNote {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   text-align: center;
   color: var(--home-text-muted);
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 1.8;
 }
 
 @media (max-width: 767px) {
   .section {
-    margin-top: 64px;
+    margin-top: 4rem;
   }
   .heading h2 {
-    max-width: 330px;
+    max-width: 20.625rem;
     margin-inline: auto;
   }
   .heading p {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .carousel {
-    margin-inline: -20px;
+    margin-inline: -1.25rem;
   }
   .stage {
-    padding: 24px 0 32px;
+    padding: 1.5rem 0 2rem;
   }
   .card {
-    width: calc(100% - 64px);
-    padding: 24px;
-    transform: translateX(calc(var(--position) * (100% + 12px)))
-      translateY(calc(var(--depth) * 10px));
+    width: calc(100% - 4rem);
+    padding: 1.5rem;
+    transform: translateX(calc(var(--position) * (100% + 0.75rem)))
+      translateY(calc(var(--depth) * 0.625rem));
   }
   .card blockquote {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1.8;
-    margin-top: 24px;
+    margin-top: 1.5rem;
   }
   .quoteIcon {
-    right: 20px;
-    top: 28px;
+    right: 1.25rem;
+    top: 1.75rem;
   }
 }
 

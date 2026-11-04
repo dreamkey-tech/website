@@ -20,7 +20,7 @@ export default function HeroCopy() {
         data-cta-name="hero_find_home"
         data-component-name="hero"
       >
-        Let’s find your home <ArrowUpRight size={19} aria-hidden="true" />
+        Let’s find your home <ArrowUpRight size="1.1875rem" aria-hidden="true" />
       </Link>
     </HeroCopyEntrance>
   );

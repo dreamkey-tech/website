@@ -64,7 +64,7 @@ export default function BuySearch({ filters }: { filters: BuyFilters }) {
         </div>
       ))}
       <button className={styles.searchButton} type="submit">
-        <MagnifyingGlass size={18} aria-hidden="true" />
+        <MagnifyingGlass size="1.125rem" aria-hidden="true" />
         Find homes
       </button>
     </form>

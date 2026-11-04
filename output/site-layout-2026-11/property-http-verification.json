@@ -1,0 +1,16 @@
+{
+  "passed": 10,
+  "checks": [
+    "public API catalogue, six-card pagination and real UUID routes",
+    "supported filters and INR sorting are applied to API, not just visible labels",
+    "page clamping and metadata follow API totals",
+    "empty results preserve search with a useful reset",
+    "anonymous and forged-cookie detail requests never contain protected data",
+    "authenticated detail SSR has actual areas/floor/photos and excludes internal fields/private documents",
+    "server rendering and route prefetch record no interest",
+    "property and catalogue failures show recovery instead of sample fallback",
+    "unpublished/missing listings show not-found and old sample URLs retire safely",
+    "auth returns to intended property and rejects external redirects"
+  ],
+  "scope": "Local HTTP/SSR with loopback fixture. No live authenticated GET or click POST."
+}

@@ -73,7 +73,7 @@ export default function FooterSocialLinks({
               className={styles.link}
               data-platform={platform}
             >
-              <Icon size={20} weight="regular" aria-hidden="true">
+              <Icon size="1.25rem" weight="regular" aria-hidden="true">
                 {platform === "instagram" && (
                   <defs>
                     <linearGradient

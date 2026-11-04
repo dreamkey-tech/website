@@ -36,7 +36,7 @@ export default function DesignGalleryCard({
       src={image}
       alt={alt}
       fill
-      sizes={`(max-width: 767px) calc((100vw - 40px) * ${0.85 * coverFactor}), (max-width: 1100px) calc((100vw - 72px) * ${0.42 * coverFactor}), (min-width: 1440px) ${Math.ceil(366 * coverFactor)}px, calc((100vw - 112px) * ${0.275 * coverFactor})`}
+      sizes={`(max-width: 767px) calc((100vw - 40px) * ${0.85 * coverFactor}), (max-width: 1100px) calc((100vw - 72px) * ${0.42 * coverFactor}), (min-width: 1920px) ${Math.ceil(365.2 * 1.3 * coverFactor)}px, (min-width: 1480px) ${(24.727084 * coverFactor).toFixed(4)}vw, (min-width: 1440px) ${Math.ceil(366 * coverFactor)}px, calc((100vw - 112px) * ${0.275 * coverFactor})`}
       draggable={false}
       className={styles.image}
     />
@@ -49,7 +49,9 @@ export default function DesignGalleryCard({
       className={`${styles.card} ${styles.featured}${description ? ` ${styles.withDescription}` : ""}`}
       aria-label={`Explore ${title.toLowerCase()}${description ? ` — ${description}` : ""}`}
       data-analytics-event={categoryName[title] ? "cta_click" : undefined}
-      data-cta-name={categoryName[title] ? `category_${categoryName[title]}` : undefined}
+      data-cta-name={
+        categoryName[title] ? `category_${categoryName[title]}` : undefined
+      }
       data-component-name="home_gallery"
     >
       {photo}
@@ -59,7 +61,7 @@ export default function DesignGalleryCard({
           {description && <p className={styles.description}>{description}</p>}
         </div>
         <span className={styles.arrow} aria-hidden="true">
-          <ArrowUpRight size={22} />
+          <ArrowUpRight size="1.375rem" />
         </span>
       </div>
     </Link>

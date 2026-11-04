@@ -28,7 +28,7 @@ export default function HomeContactCTA() {
           data-cta-name="home_start_conversation"
           data-component-name="home_contact"
         >
-          Start an enquiry <ArrowUpRight size={20} aria-hidden="true" />
+          Start an enquiry <ArrowUpRight size="1.25rem" aria-hidden="true" />
         </Link>
         <a href="tel:+917980133881">Or call +91 79801 33881</a>
       </div>

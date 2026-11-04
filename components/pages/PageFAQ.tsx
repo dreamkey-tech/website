@@ -15,7 +15,7 @@ export default function PageFAQ({
           summary={
             <summary>
               {item.question}
-              <Plus size={20} aria-hidden="true" />
+              <Plus size="1.25rem" aria-hidden="true" />
             </summary>
           }
           answer={<p>{item.answer}</p>}

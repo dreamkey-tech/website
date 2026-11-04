@@ -123,7 +123,7 @@ export default function LivePropertyDetails({
       <div className={styles.topbar}>
         <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
           <Link href="/buy">
-            <ArrowLeft size={16} aria-hidden="true" />
+            <ArrowLeft size="1rem" aria-hidden="true" />
             All properties
           </Link>
           <span aria-current="page">{title}</span>
@@ -147,7 +147,7 @@ export default function LivePropertyDetails({
             </div>
             <h1>{title}</h1>
             <p className={styles.locationAddress}>
-              <MapPin size={18} aria-hidden="true" />
+              <MapPin size="1.125rem" aria-hidden="true" />
               {address}
             </p>
             <p className={styles.summaryPrice}>{propertyPrice(property)}</p>
@@ -160,7 +160,7 @@ export default function LivePropertyDetails({
               data-analytics-event="property_enquiry_click"
             >
               Enquire about this property
-              <ArrowUpRight size={18} aria-hidden="true" />
+              <ArrowUpRight size="1.125rem" aria-hidden="true" />
             </Link>
           </header>
           <nav className={styles.sectionNav} aria-label="Property sections">
@@ -193,7 +193,7 @@ export default function LivePropertyDetails({
                 { Icon: Buildings, value: type, label: "Property type" },
               ].map(({ Icon, value, label }) => (
                 <div key={label}>
-                  <Icon size={25} weight="light" aria-hidden="true" />
+                  <Icon size="1.5625rem" weight="light" aria-hidden="true" />
                   <strong>{value ?? "On request"}</strong>
                   <span>{label}</span>
                 </div>
@@ -237,14 +237,14 @@ export default function LivePropertyDetails({
                   >
                     {plan.title ||
                       `View floor plan${floorPlans.length > 1 ? ` ${index + 1}` : ""}`}{" "}
-                    <ArrowUpRight size={16} aria-hidden="true" />
+                    <ArrowUpRight size="1rem" aria-hidden="true" />
                     <span className={styles.srOnly}> (opens in a new tab)</span>
                   </a>
                 ))}
                 {!floorPlans.length && (
                   <Link href={enquiry} data-analytics-event="property_enquiry_click">
                     Request floor plan{" "}
-                    <ArrowUpRight size={16} aria-hidden="true" />
+                    <ArrowUpRight size="1rem" aria-hidden="true" />
                   </Link>
                 )}
               </div>
@@ -260,7 +260,7 @@ export default function LivePropertyDetails({
               <ul className={styles.amenities}>
                 {property.amenities.map((item, index) => (
                   <li key={`${item}-${index}`}>
-                    <Check size={18} aria-hidden="true" />
+                    <Check size="1.125rem" aria-hidden="true" />
                     {item}
                   </li>
                 ))}

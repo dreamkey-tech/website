@@ -25,7 +25,7 @@ export default function PropertyLocation({
         Get to know <em>the neighbourhood.</em>
       </h2>
       <p className={styles.locationAddress}>
-        <MapPin size={19} aria-hidden="true" />
+        <MapPin size="1.1875rem" aria-hidden="true" />
         {location}
       </p>
       <div className={styles.mapFrame}>
@@ -50,7 +50,7 @@ export default function PropertyLocation({
               className={styles.mapButton}
               onClick={() => setShowMap(true)}
             >
-              <MapPin size={18} aria-hidden="true" />
+              <MapPin size="1.125rem" aria-hidden="true" />
               Explore the neighbourhood
             </button>
           </>
@@ -67,7 +67,7 @@ export default function PropertyLocation({
         rel="noopener noreferrer"
       >
         Open neighbourhood in Google Maps
-        <ArrowUpRight size={17} aria-hidden="true" />
+        <ArrowUpRight size="1.0625rem" aria-hidden="true" />
         <span className={styles.srOnly}> (opens in a new tab)</span>
       </a>
     </section>

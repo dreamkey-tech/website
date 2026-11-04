@@ -32,7 +32,7 @@ export default function PropertyOverview({
       <div className={styles.quickFacts}>
         {facts.map(({ Icon, value, label }) => (
           <div key={label}>
-            <Icon size={25} weight="light" aria-hidden="true" />
+            <Icon size="1.5625rem" weight="light" aria-hidden="true" />
             <strong>{value}</strong>
             <span>{label}</span>
           </div>

@@ -108,7 +108,7 @@ export default function PropertyEnquiryForm({
   if (status === "success")
     return (
       <div className={styles.formSuccess} role="status">
-        <CheckCircle size={46} weight="light" aria-hidden="true" />
+        <CheckCircle size="2.875rem" weight="light" aria-hidden="true" />
         <Heading>Your enquiry is with us.</Heading>
         <p>
           {responseMessage ||
@@ -208,7 +208,7 @@ export default function PropertyEnquiryForm({
           : variant === "sell"
             ? "Request a property consultation"
             : "Send enquiry"}
-        <ArrowUpRight size={19} aria-hidden="true" />
+        <ArrowUpRight size="1.1875rem" aria-hidden="true" />
       </button>
       <p className={styles.formNote}>
         Required fields are marked *. By sending this enquiry, you agree to be

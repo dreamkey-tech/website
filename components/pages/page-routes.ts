@@ -1,21 +1,6 @@
-/** The landing page and routes awaiting a redesign keep their existing shell. */
+/** Home and Careers retain dedicated shells; unknown URLs use the editorial 404. */
 export function isRedesignedPage(pathname: string) {
-  return (
-    pathname.startsWith("/buy/") ||
-    [
-      "/buy",
-      "/sell",
-      "/services",
-      "/rent",
-      "/about",
-      "/contact",
-      "/privacy",
-      "/terms-and-conditions",
-      "/login",
-      "/register",
-      "/forgot-password",
-    ].includes(pathname)
-  );
+  return pathname !== "/" && pathname !== "/careers";
 }
 
 export function isAuthPage(pathname: string) {

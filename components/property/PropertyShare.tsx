@@ -23,7 +23,7 @@ export default function PropertyShare({ title }: { title: string }) {
   return (
     <div className={styles.share}>
       <button type="button" className={styles.quietButton} onClick={share}>
-        <ShareNetwork size={17} aria-hidden="true" />
+        <ShareNetwork size="1.0625rem" aria-hidden="true" />
         Share
       </button>
       <span role="status">{message}</span>

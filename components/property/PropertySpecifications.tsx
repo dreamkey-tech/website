@@ -54,7 +54,7 @@ export default function PropertySpecifications({
           ))}
         </dl>
         <div className={styles.documentCallout}>
-          <FileText size={29} weight="light" aria-hidden="true" />
+          <FileText size="1.8125rem" weight="light" aria-hidden="true" />
           <div>
             <h3>Find your fit, room by room.</h3>
             <p>
@@ -63,7 +63,7 @@ export default function PropertySpecifications({
             </p>
             <Link href={buyEnquiryHref(home)}>
               Request floor plan
-              <ArrowUpRight size={16} aria-hidden="true" />
+              <ArrowUpRight size="1rem" aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function PropertySpecifications({
         <ul className={styles.amenities}>
           {property.highlights.map((item) => (
             <li key={item}>
-              <Check size={18} aria-hidden="true" />
+              <Check size="1.125rem" aria-hidden="true" />
               {item}
             </li>
           ))}
