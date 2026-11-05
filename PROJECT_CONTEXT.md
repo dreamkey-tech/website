@@ -1,10 +1,12 @@
 # DreamKey project context
 
-Reviewed: 4 November 2026. This is a handoff for future Codex conversations, not a deployment or client sign-off record. Read `AGENTS.md` for coding rules and `CURRENT_PROGRESS.md` for outstanding work.
+Reviewed: 5 November 2026. This is a handoff for future Codex conversations, not a deployment or client sign-off record. Read `AGENTS.md` for coding rules and `CURRENT_PROGRESS.md` for outstanding work.
 
 Authentication contract and implementation updated: 1 November 2026; see `docs/auth-otp.md`. Earlier account-page notes describe the pre-OTP behavior.
 
 Buy inventory/access updated: 1 November 2026; see `docs/website-properties-api.md`. Earlier sample-detail descriptions are historical.
+
+**Additional real testimonials, 5 November 2026:** The active `client-stories.ts` collection now has five entries after adding user-supplied feedback from Satyajit Ghosh and Dinu Chakraborty. Satyajit's message thanks Sayan/the team for an apartment and recommends them to colleagues; Dinu's thanks the team for a flat within budget. Wording is lightly polished, roles remain generic Client and no locations/portraits/ratings are invented. Two screenshots repeat Dinu's feedback and produce one record; the separate anonymous long message is not assigned to either person. Existing copy, carousel design/rotation/controls and reduced-motion behavior are preserved. Evidence: `output/testimonials-2026-11-05/`. The user explicitly requested pushing this follow-up.
 
 **Live Rent catalogue, 4 November 2026:** User authorized replacing the illustrative Rent collection with public `GET /v1/website/properties/list?pricingType=RENT`. `getRentalCatalogue` uses the same fresh, cookie-free, whitelisted public DTO and pagination safeguards as Buy and rejects a response containing Sale records. `app/rent/page.tsx` remains a request-time Server Component; query-driven forms support locality/project search, property type, neighbourhood, bedrooms, raw INR rent caps and sorting, six results per page, active chips and reset. Furnishing is absent from the public contract and is no longer offered. Cards reuse Buy's layout, live rental facts and the existing UUID detail/login/loader/interest flow; `/buy/{id}` remains the shared detail route, and an authorized rental detail returns to `/rent`. The Rent layout supplies its own scoped access provider. Metadata no longer calls inventory sample; filtered canonicals omit free text. Gold custom radio rings replace the native dark selected border on both catalogues. Historical sample data stays retained but unmounted. Details/evidence: `docs/rental-properties-api.md`, `output/rent-api/`; the prior layout-only evidence in `output/rent-catalogue/` is superseded.
 

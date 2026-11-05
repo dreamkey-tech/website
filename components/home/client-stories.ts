@@ -26,4 +26,16 @@ export const CLIENT_STORIES = [
     quote:
       "You did an excellent job. The documentation and other formalities were handled smoothly and in a timely manner, helping both parties. Your team was courteous and professional. I would definitely recommend your services to other property owners. Best wishes for your future endeavours.",
   },
+  {
+    name: "Satyajit Ghosh",
+    role: "Client",
+    quote:
+      "We’re grateful to Sayan and the DreamKey team for helping us find this beautiful apartment. Your guidance and support in finding the right place are greatly appreciated. I’ll be pleased to recommend your services to my colleagues.",
+  },
+  {
+    name: "Dinu Chakraborty",
+    role: "Client",
+    quote:
+      "Thank you, DreamKey, for helping me find a great flat within my budget. I truly appreciate your support.",
+  },
 ] as const satisfies readonly ClientStory[];

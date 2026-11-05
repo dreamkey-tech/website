@@ -1,6 +1,6 @@
 # DreamKey current progress
 
-Reviewed: 4 November 2026. This document describes the current working tree, including uncommitted work. `PROJECT_CONTEXT.md` defines the evidence labels and architecture; `AGENTS.md` contains durable rules.
+Reviewed: 5 November 2026. This document describes the current working tree, including uncommitted work. `PROJECT_CONTEXT.md` defines the evidence labels and architecture; `AGENTS.md` contains durable rules.
 
 ## State at handoff
 
@@ -8,7 +8,13 @@ Reviewed: 4 November 2026. This document describes the current working tree, inc
 
 **Historical handoff:** The earlier documentation task recorded branch `redesign`, remote `dreamkey-tech/website`, extensive uncommitted work and a pending Dashboard deletion. **Current SEO task checkpoint (10 October 2026):** The branch is `main`, and the working tree was clean before this task added its SEO changes. Dashboard remains absent. This task has not committed, pushed or deployed its changes; the historical handoff is not evidence of current release approval.
 
-## Latest update — live Rent inventory and filter radios
+## Latest update — Satyajit and Dinu testimonials
+
+**User request + implementation, 5 November 2026:** Added Satyajit Ghosh and Dinu Chakraborty to the existing three real client testimonials. Quotes are faithful polished excerpts from the supplied named messages. Dinu's duplicate screenshots produce a single entry; no author is inferred for the separate anonymous long message. No invented locations, occupations, portraits, ratings or review schema. Existing carousel layout/motion and all previous content remain; its count/navigation derives automatically from five records.
+
+**Verification and release scope:** Scoped ESLint, TypeScript via production webpack build and whitespace checks pass. Local Chromium at 1440px and 390px confirms both names/quotes, count five, fourth/fifth selection, fifth-to-first keyboard wrap, and no page/card/quote overflow. Evidence: `output/testimonials-2026-11-05/`. Working tree started clean on `main` at `7f4ae78` with `origin/main` aligned. User explicitly authorized commit/push of this follow-up; production frontend testing remains with the user.
+
+## Previous update — live Rent inventory and filter radios
 
 **User request + implementation, 4 November 2026:** Rent now reads the public listing endpoint with `pricingType=RENT`, city Kolkata and six results per page. Fresh server reads share the existing runtime card allowlist, timeout, cookie-free public request pattern, page correction and defensive wrong-category rejection. URL forms apply supported locality/project, property type, neighbourhood, bedrooms and INR rent-cap filters; sorts/pagination run through the backend. Public cards display API names/media/prices/areas/beds/baths/availability/amenities. Removed active sample content and unsupported furnishing controls; retained historical sample source. Rent uses the established PropertyLink/login popup/loading/detail/interest flow, with a scoped access provider; rental detail breadcrumbs return to Rent. The shared catalogue radios now have gold selected borders/fill, clear keyboard focus and forced-colors native fallback. SEO description and filter canonicals reflect live rental inventory without leaking free-text searches.
 

@@ -1,0 +1,66 @@
+{
+  "scope": "Local production Chromium preview; no production frontend test.",
+  "checks": [
+    {
+      "cardHeight": 342,
+      "cardScroll": 342,
+      "counter": "Testimonial 4 of 5: Satyajit Ghosh. We’re grateful to Sayan and the DreamKey team for helping us find this beautiful apartment. Your guidance and support in finding the right place are greatly appreciated. I’ll be pleased to recommend your services to my colleagues.",
+      "name": "Satyajit Ghosh",
+      "overflow": false,
+      "quote": "“We’re grateful to Sayan and the DreamKey team for helping us find this beautiful apartment. Your guidance and support in finding the right place are greatly appreciated. I’ll be pleased to recommend your services to my colleagues.”",
+      "quoteHeight": 179,
+      "quoteScroll": 179,
+      "total": 5,
+      "width": 1440
+    },
+    {
+      "cardHeight": 342,
+      "cardScroll": 342,
+      "counter": "Testimonial 5 of 5: Dinu Chakraborty. Thank you, DreamKey, for helping me find a great flat within my budget. I truly appreciate your support.",
+      "name": "Dinu Chakraborty",
+      "overflow": false,
+      "quote": "“Thank you, DreamKey, for helping me find a great flat within my budget. I truly appreciate your support.”",
+      "quoteHeight": 89,
+      "quoteScroll": 89,
+      "total": 5,
+      "width": 1440
+    },
+    {
+      "cardHeight": 330,
+      "cardScroll": 330,
+      "counter": "Testimonial 5 of 5: Dinu Chakraborty. Thank you, DreamKey, for helping me find a great flat within my budget. I truly appreciate your support.",
+      "name": "Dinu Chakraborty",
+      "overflow": false,
+      "quote": "“Thank you, DreamKey, for helping me find a great flat within my budget. I truly appreciate your support.”",
+      "quoteHeight": 81,
+      "quoteScroll": 81,
+      "total": 5,
+      "width": 390
+    },
+    {
+      "cardHeight": 330,
+      "cardScroll": 330,
+      "counter": "Testimonial 4 of 5: Satyajit Ghosh. We’re grateful to Sayan and the DreamKey team for helping us find this beautiful apartment. Your guidance and support in finding the right place are greatly appreciated. I’ll be pleased to recommend your services to my colleagues.",
+      "name": "Satyajit Ghosh",
+      "overflow": false,
+      "quote": "“We’re grateful to Sayan and the DreamKey team for helping us find this beautiful apartment. Your guidance and support in finding the right place are greatly appreciated. I’ll be pleased to recommend your services to my colleagues.”",
+      "quoteHeight": 189,
+      "quoteScroll": 189,
+      "total": 5,
+      "width": 390
+    },
+    {
+      "cardHeight": 330,
+      "cardScroll": 330,
+      "counter": "Testimonial 1 of 5: Oanh. The house is beautiful, and we’re very satisfied with the way you work. Your team is cheerful and enthusiastic. Thank you!",
+      "name": "Oanh",
+      "overflow": false,
+      "quote": "“The house is beautiful, and we’re very satisfied with the way you work. Your team is cheerful and enthusiastic. Thank you!”",
+      "quoteHeight": 108,
+      "quoteScroll": 108,
+      "total": 5,
+      "width": 390,
+      "check": "Wrap fifth to first"
+    }
+  ]
+}
