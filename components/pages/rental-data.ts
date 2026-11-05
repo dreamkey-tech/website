@@ -80,6 +80,32 @@ export const EMPTY_RENTAL_FILTERS: RentalFilters = {
   furnishing: "",
 };
 
+export const RENTAL_LOCATIONS = [
+  { value: "", label: "All Kolkata locations" },
+  { value: "New Town", label: "New Town" },
+  { value: "Salt Lake", label: "Salt Lake" },
+  { value: "EM Bypass", label: "EM Bypass" },
+];
+export const RENTAL_BUDGETS = [
+  { value: "", label: "Any budget" },
+  { value: "30000", label: "Up to ₹30,000" },
+  { value: "50000", label: "Up to ₹50,000" },
+  { value: "75000", label: "Up to ₹75,000" },
+  { value: "100000", label: "Up to ₹1,00,000" },
+];
+export const RENTAL_BEDROOMS = [
+  { value: "", label: "Any BHK" },
+  { value: "2", label: "2 BHK" },
+  { value: "3", label: "3 BHK" },
+  { value: "4", label: "4 BHK" },
+];
+export const RENTAL_FURNISHING = [
+  { value: "", label: "Any furnishing" },
+  { value: "Furnished", label: "Furnished" },
+  { value: "Semi-furnished", label: "Semi-furnished" },
+  { value: "Unfurnished", label: "Unfurnished" },
+];
+
 export function filterRentalHomes(
   homes: RentalHome[],
   filters: RentalFilters,

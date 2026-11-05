@@ -1,0 +1,220 @@
+[
+  {
+    "check": "Initial desktop catalogue",
+    "bedrooms": "Any BHK",
+    "budget": "Any budget",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "Room for a slower morning",
+      "A little closer to everything",
+      "Space for the whole family",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "Draft sidebar selection syncs top search without applying",
+    "bedrooms": "Any BHK",
+    "budget": "Any budget",
+    "location": "New Town",
+    "overflow": false,
+    "titles": [
+      "Room for a slower morning",
+      "A little closer to everything",
+      "Space for the whole family",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "New Town applied",
+    "bedrooms": "Any BHK",
+    "budget": "Any budget",
+    "location": "New Town",
+    "overflow": false,
+    "titles": [
+      "Room for a slower morning",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "New Town and Furnished applied",
+    "bedrooms": "Any BHK",
+    "budget": "Any budget",
+    "location": "New Town",
+    "overflow": false,
+    "titles": [
+      "Room for a slower morning"
+    ],
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "Impossible combination shows empty state",
+    "emptyVisible": true,
+    "bedrooms": "Any BHK",
+    "budget": "Any budget",
+    "location": "New Town",
+    "overflow": false,
+    "titles": [],
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "Slider 30000 cap via keyboard and top form apply",
+    "bedrooms": "Any BHK",
+    "budget": "Up to ₹30,000",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "Slider 50000 cap inclusive results",
+    "bedrooms": "Any BHK",
+    "budget": "Up to ₹50,000",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "A little closer to everything",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "Remove active cap chip resets both controls and results",
+    "bedrooms": "Any BHK",
+    "budget": "Any budget",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "Room for a slower morning",
+      "A little closer to everything",
+      "Space for the whole family",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "Sort monthly rent ascending",
+    "bedrooms": "Any BHK",
+    "budget": "Any budget",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "Make the city feel like home",
+      "A little closer to everything",
+      "Room for a slower morning",
+      "Space for the whole family"
+    ],
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "List view layout",
+    "bedrooms": "Any BHK",
+    "budget": "Any budget",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "Make the city feel like home",
+      "A little closer to everything",
+      "Room for a slower morning",
+      "Space for the whole family"
+    ],
+    "view": "list",
+    "width": 1920
+  },
+  {
+    "check": "Mobile initial collapsed filters",
+    "bedrooms": "Any BHK",
+    "budget": "Any budget",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "Room for a slower morning",
+      "A little closer to everything",
+      "Space for the whole family",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 390,
+    "expanded": "false"
+  },
+  {
+    "check": "Mobile two-bedroom filter applies and syncs search",
+    "bedrooms": "2 BHK",
+    "budget": "Any budget",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "A little closer to everything",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 390
+  },
+  {
+    "check": "Mobile filters collapse with active count",
+    "expanded": "false",
+    "bedrooms": "2 BHK",
+    "budget": "Any budget",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "A little closer to everything",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 390
+  },
+  {
+    "check": "Responsive width check",
+    "bedrooms": "2 BHK",
+    "budget": "Any budget",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "A little closer to everything",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 320
+  },
+  {
+    "check": "Responsive width check",
+    "bedrooms": "2 BHK",
+    "budget": "Any budget",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "A little closer to everything",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 768
+  },
+  {
+    "check": "Responsive width check",
+    "bedrooms": "2 BHK",
+    "budget": "Any budget",
+    "location": "All Kolkata locations",
+    "overflow": false,
+    "titles": [
+      "A little closer to everything",
+      "Make the city feel like home"
+    ],
+    "view": "grid",
+    "width": 1440
+  }
+]

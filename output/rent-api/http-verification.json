@@ -1,0 +1,11 @@
+{
+  "passed": 5,
+  "checks": [
+    "Rent SSR renders live rental inventory and six-card RENT pagination without sale/sample leakage",
+    "Rent page two and oversized-page clamping use rental totals and preserve missing-image fallback",
+    "rent caps, neighbourhood, bedrooms and sorting reach backend in raw INR",
+    "empty rental filters preserve a useful reset and unavailable upstream never becomes sample stock",
+    "rental UUID details preserve login gating, sanitized authenticated SSR and zero SSR interest"
+  ],
+  "scope": "Local production HTTP/SSR using 127.0.0.1:4189 synthetic rental data. No external account, authenticated backend request or real interest mutation."
+}

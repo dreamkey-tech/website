@@ -1,0 +1,170 @@
+[
+  {
+    "cards": [
+      {
+        "source": "live",
+        "title": "Uniworld City - Gardens",
+        "transaction": "rent"
+      }
+    ],
+    "check": "Live public rental catalogue and selected radio style",
+    "overflow": false,
+    "radio": {
+      "appearance": "none",
+      "background": "radial-gradient(circle, rgb(223, 158, 4) 0px, rgb(223, 158, 4) 35%, rgba(0, 0, 0, 0) 40%)",
+      "borderColor": "rgb(223, 158, 4)"
+    },
+    "width": 1920
+  },
+  {
+    "check": "Anonymous live rental opens existing login popup",
+    "dialogVisible": true,
+    "url": "http://127.0.0.1:3071/rent"
+  },
+  {
+    "check": "Fixture first page",
+    "cards": [
+      {
+        "title": "Rental Fixture Residence 1",
+        "transaction": "rent"
+      },
+      {
+        "title": "Rental Fixture Residence 2",
+        "transaction": "rent"
+      },
+      {
+        "title": "Rental Fixture Residence 3",
+        "transaction": "rent"
+      },
+      {
+        "title": "Rental Fixture Residence 4",
+        "transaction": "rent"
+      },
+      {
+        "title": "Rental Fixture Residence 5",
+        "transaction": "rent"
+      },
+      {
+        "title": "Rental Fixture Residence 6",
+        "transaction": "rent"
+      }
+    ],
+    "overflow": false,
+    "path": "/rent",
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "Next page uses real server pagination",
+    "cards": [
+      {
+        "title": "Rental Fixture Residence 7",
+        "transaction": "rent"
+      }
+    ],
+    "overflow": false,
+    "path": "/rent?page=2",
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "Combined neighbourhood and 50000 INR cap reset pagination",
+    "cards": [
+      {
+        "title": "Rental Fixture Residence 1",
+        "transaction": "rent"
+      },
+      {
+        "title": "Rental Fixture Residence 4",
+        "transaction": "rent"
+      }
+    ],
+    "overflow": false,
+    "path": "/rent?location=new-town&maxPrice=50000&bedrooms=",
+    "view": "grid",
+    "width": 1920
+  },
+  {
+    "check": "Live catalogue list view",
+    "cards": [
+      {
+        "title": "Rental Fixture Residence 1",
+        "transaction": "rent"
+      },
+      {
+        "title": "Rental Fixture Residence 4",
+        "transaction": "rent"
+      }
+    ],
+    "overflow": false,
+    "path": "/rent?location=new-town&maxPrice=50000&bedrooms=",
+    "view": "list",
+    "width": 1920
+  },
+  {
+    "check": "Mobile public API catalogue",
+    "cards": [
+      {
+        "title": "Uniworld City - Gardens",
+        "transaction": "rent"
+      }
+    ],
+    "overflow": false,
+    "path": "/rent",
+    "view": "grid",
+    "width": 390
+  },
+  {
+    "check": "Mobile sidebar applies live location and collapses",
+    "cards": [
+      {
+        "title": "Uniworld City - Gardens",
+        "transaction": "rent"
+      }
+    ],
+    "overflow": false,
+    "path": "/rent?location=new-town&maxPrice=&bedrooms=",
+    "view": "grid",
+    "width": 390,
+    "expanded": "false"
+  },
+  {
+    "check": "Responsive API catalogue",
+    "cards": [
+      {
+        "title": "Uniworld City - Gardens",
+        "transaction": "rent"
+      }
+    ],
+    "overflow": false,
+    "path": "/rent?location=new-town&maxPrice=&bedrooms=",
+    "view": "grid",
+    "width": 320
+  },
+  {
+    "check": "Responsive API catalogue",
+    "cards": [
+      {
+        "title": "Uniworld City - Gardens",
+        "transaction": "rent"
+      }
+    ],
+    "overflow": false,
+    "path": "/rent?location=new-town&maxPrice=&bedrooms=",
+    "view": "grid",
+    "width": 768
+  },
+  {
+    "check": "Responsive API catalogue",
+    "cards": [
+      {
+        "title": "Uniworld City - Gardens",
+        "transaction": "rent"
+      }
+    ],
+    "overflow": false,
+    "path": "/rent?location=new-town&maxPrice=&bedrooms=",
+    "view": "grid",
+    "width": 1440
+  }
+]

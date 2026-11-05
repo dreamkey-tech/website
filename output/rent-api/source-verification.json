@@ -1,0 +1,13 @@
+{
+  "passed": 7,
+  "checks": [
+    "rental query locks RENT and sends supported monthly-INR filters and sort",
+    "invalid query inputs are bounded; rental links and chips retain only supported state",
+    "public rental fetch is fresh, cookie-free and strips unapproved CRM fields",
+    "rental pagination clamps and refetches against RENT totals",
+    "upstream failures and mixed SALE pages show errors without sample fallback or false totals",
+    "live rental cards show backend rent, actual bath/area facts and shared protected UUID links",
+    "rental details retain the existing backend auth boundary and sanitized DTO"
+  ],
+  "scope": "Actual TypeScript filters/server and React SSR with isolated fetch/Next adapters. No live backend, browser or CRM mutation."
+}

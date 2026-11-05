@@ -191,6 +191,25 @@
   accent-color: var(--home-accent);
   cursor: pointer;
 }
+.choice input[type="radio"] {
+  appearance: none;
+  border: 1px solid var(--home-border);
+  border-radius: 50%;
+  background: var(--home-surface);
+}
+.choice input[type="radio"]:checked {
+  border: 2px solid var(--home-accent);
+  background: radial-gradient(circle, var(--home-accent) 0 35%, transparent 40%);
+}
+.choice input[type="radio"]:focus-visible {
+  outline: 2px solid var(--home-accent);
+  outline-offset: 3px;
+}
+@media (forced-colors: active) {
+  .choice input[type="radio"] {
+    appearance: auto;
+  }
+}
 .choice:has(input:checked) {
   color: var(--home-text);
 }
@@ -292,7 +311,7 @@
   gap: 0.5rem;
   margin-bottom: 1.625rem;
 }
-.activeFilters > a {
+.activeFilters > :is(a, button) {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -303,11 +322,12 @@
   border-radius: 62.4375rem;
   max-width: 100%;
   overflow-wrap: anywhere;
+  cursor: pointer;
 }
 .activeFilters svg {
   flex-shrink: 0;
 }
-.activeFilters > a:hover {
+.activeFilters > :is(a, button):hover {
   background: var(--home-surface-muted);
 }
 .activeFilters > .clearFilters {

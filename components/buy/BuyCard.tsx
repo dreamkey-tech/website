@@ -22,8 +22,10 @@ import styles from "./Buy.module.css";
 
 export default function BuyCard({
   property,
+  listName = "buy_catalogue",
 }: {
   property: WebsitePropertyCard;
+  listName?: "buy_catalogue" | "rent_catalogue";
 }) {
   const title = propertyName(property);
   const href = propertyHref(property);
@@ -41,7 +43,7 @@ export default function BuyCard({
       : "OTHER",
     "data-transaction-type": property.pricingType === "RENT" ? "rent" : "buy",
     "data-inventory-source": "live",
-    "data-list-name": "buy_catalogue",
+    "data-list-name": listName,
     "data-component-name": "property_card",
   };
   return (
@@ -87,7 +89,8 @@ export default function BuyCard({
           </PropertyLink>
         </h3>
         <p className={styles.description}>
-          {PROPERTY_LABELS[property.propertyType] || "Property"} for sale
+          {PROPERTY_LABELS[property.propertyType] || "Property"} for{" "}
+          {property.pricingType === "RENT" ? "rent" : "sale"}
         </p>
         <div className={styles.specs}>
           {property.bedrooms !== null && (
@@ -121,7 +124,9 @@ export default function BuyCard({
         )}
         <div className={styles.cardBottom}>
           <p className={styles.price}>
-            <span>Asking price</span>
+            <span>
+              {property.pricingType === "RENT" ? "Rent" : "Asking price"}
+            </span>
             {propertyPrice(property)}
           </p>
           <Link

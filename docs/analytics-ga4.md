@@ -38,7 +38,7 @@ The banner measures its height to reserve document space. While present, consent
 
 Known public route paths and real property UUID paths are retained. Query strings and fragments are excluded from page URLs. Unknown routes use a generic not-found path, and generic titles prevent arbitrary document content becoming analytics metadata. The first external referrer retains its origin; later virtual pageviews use the previous sanitized route. No global `ignore_referrer` override is applied.
 
-Do not pass arbitrary data into `trackEvent`. Its runtime allowlists deliberately reject unknown keys and unapproved values. Never send names, email, telephone destinations, WhatsApp messages, passwords, OTPs, enquiry contents, free-text searches, property owner details or raw URLs. Search records only whether text was supplied, plus bounded structured selections where supported. No customer User-ID or lead value is fabricated. Sample Home/Rent records carry `inventory_source=sample`; CRM Buy records carry `inventory_source=live`.
+Do not pass arbitrary data into `trackEvent`. Its runtime allowlists deliberately reject unknown keys and unapproved values. Never send names, email, telephone destinations, WhatsApp messages, passwords, OTPs, enquiry contents, free-text searches, property owner details or raw URLs. Search records only whether text was supplied, plus bounded structured selections where supported. No customer User-ID or lead value is fabricated. Retained illustrative records carry `inventory_source=sample`; active CRM Buy/Rent catalogue and Home featured records carry `inventory_source=live`. Rent uses its own `rent_catalogue` context with the shared UUID card/access flow.
 
 ## Event mapping
 

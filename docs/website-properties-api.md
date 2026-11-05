@@ -2,6 +2,8 @@
 
 Implemented 1 November 2026. Scope: Buy catalogue, authenticated listing details, login popup and interest recording. Landing/Rent inventory, enquiry delivery and business/legal copy were not migrated.
 
+Subsequent inventory integrations: Home Best properties is recorded in `best-properties-api.md`; the user-authorized live RENT-only catalogue (4 November 2026) is recorded in `rental-properties-api.md`. Those updates supersede this original scope statement for Home/Rent, while reusing the detail/access protections below.
+
 ## Contract and evidence
 
 Read [Swagger](https://backend.dreamkey-crm.workers.dev/docs) and its public [OpenAPI document](https://backend.dreamkey-crm.workers.dev/openapi.json). A read-only `list?pricingType=SALE&page=1&limit=2` request returned HTTP 200, five total sale records and documented card fields. No authenticated live request or interest POST was made. API records are data supplied by the backend, not independent verification of actual availability or photographs.

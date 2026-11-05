@@ -11,6 +11,11 @@ import {
   saleApiQuery,
   type BuyFilters,
 } from "@/components/buy/website-filters";
+import {
+  parseRentFilters,
+  rentalApiQuery,
+  type RentFilters,
+} from "@/components/pages/rental-filters";
 
 const API_PATH = "/v1/website/properties/list";
 async function request(path: string, cookie?: string) {
@@ -79,6 +84,52 @@ export const getSaleCatalogue = cache(async (query: string) => {
     return { kind: "ready" as const, filters, ...result };
   } catch {
     // Never substitute illustrative stock for a failed live inventory request.
+    return { kind: "error" as const, filters };
+  }
+});
+
+export const getRentalCatalogue = cache(async (query: string) => {
+  let filters: RentFilters = parseRentFilters(
+    Object.fromEntries(new URLSearchParams(query)),
+  );
+  try {
+    const range = rentalApiQuery(filters);
+    if (
+      Number(range.get("minPrice") ?? 0) >
+      Number(range.get("maxPrice") ?? Infinity)
+    ) {
+      return {
+        kind: "ready" as const,
+        success: true as const,
+        filters: { ...filters, page: 1 },
+        properties: [],
+        pagination: {
+          total: 0,
+          page: 1,
+          limit: 6,
+          totalPages: 0,
+          hasNextPage: false,
+          hasPrevPage: false,
+        },
+      };
+    }
+    async function fetchPage() {
+      const response = await request(`${API_PATH}?${rentalApiQuery(filters)}`);
+      if (!response.ok) throw new Error("Property service unavailable");
+      return propertyListSchema.parse(await response.json());
+    }
+    let result = await fetchPage();
+    const pages = Math.max(1, result.pagination.totalPages);
+    if (filters.page > pages) {
+      filters = { ...filters, page: pages };
+      result = await fetchPage();
+    }
+    // Keep sale inventory out of Rent if the upstream ignores its RENT filter.
+    if (result.properties.some((property) => property.pricingType !== "RENT"))
+      throw new Error("Unexpected listing category");
+    return { kind: "ready" as const, filters, ...result };
+  } catch {
+    // Never substitute illustrative homes for failed live rental inventory.
     return { kind: "error" as const, filters };
   }
 });

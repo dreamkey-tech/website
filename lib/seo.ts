@@ -18,7 +18,7 @@ export const SEO_PAGES = {
   "/rent": {
     title: "Flats for Rent in Kolkata | DreamkeyKol Reality",
     description:
-      "Explore sample rental homes in Kolkata, then share your preferred area, budget and requirements with DreamkeyKol Reality to discuss current rental options.",
+      "Explore properties for rent in Kolkata with DreamkeyKol Reality. Compare rental prices, photographs and property details, and discuss availability with our local consultants.",
   },
   "/sell": {
     title: "Sell Property in Kolkata | DreamkeyKol Reality",

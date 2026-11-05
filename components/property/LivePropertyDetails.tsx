@@ -122,7 +122,7 @@ export default function LivePropertyDetails({
     <>
       <div className={styles.topbar}>
         <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
-          <Link href="/buy">
+          <Link href={property.pricingType === "RENT" ? "/rent" : "/buy"}>
             <ArrowLeft size="1rem" aria-hidden="true" />
             All properties
           </Link>
@@ -152,7 +152,8 @@ export default function LivePropertyDetails({
             </p>
             <p className={styles.summaryPrice}>{propertyPrice(property)}</p>
             <p className={styles.priceNote}>
-              Asking price. Confirm charges and inclusions with our team.
+              {property.pricingType === "RENT" ? "Rent" : "Asking price"}.
+              Confirm charges and inclusions with our team.
             </p>
             <Link
               className={`${styles.primaryButton} ${styles.mobileEnquiry}`}
@@ -242,7 +243,10 @@ export default function LivePropertyDetails({
                   </a>
                 ))}
                 {!floorPlans.length && (
-                  <Link href={enquiry} data-analytics-event="property_enquiry_click">
+                  <Link
+                    href={enquiry}
+                    data-analytics-event="property_enquiry_click"
+                  >
                     Request floor plan{" "}
                     <ArrowUpRight size="1rem" aria-hidden="true" />
                   </Link>

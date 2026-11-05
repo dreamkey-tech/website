@@ -4,7 +4,11 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "./Buy.module.css";
 
-export default function BuyCatalogueError() {
+export default function BuyCatalogueError({
+  purpose = "buy",
+}: {
+  purpose?: "buy" | "rent";
+}) {
   const [pending, startTransition] = useTransition();
   const router = useRouter();
   return (
@@ -20,7 +24,7 @@ export default function BuyCatalogueError() {
         >
           {pending ? "Loading properties…" : "Try again"}
         </button>
-        <Link href="/contact?purpose=buy">Talk to our team</Link>
+        <Link href={`/contact?purpose=${purpose}`}>Talk to our team</Link>
       </div>
     </div>
   );

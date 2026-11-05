@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-04T07:16:19.458Z",
+  "checks": [
+    "Shared Select tracks only opted-in actual value changes through its native fallback",
+    "Native Buy and Hero forms opt into one delegated submit event without handler duplication",
+    "Buy neighbourhood changes emit once and unchanged reset does not emit",
+    "Price cap emits on commit only, deduplicates pointer/key/blur and tracks removal",
+    "Buy sort event preserves existing router arguments and excludes search text",
+    "Rental changes, submit, sort and reset use safe tokens once without delegated-submit duplication"
+  ],
+  "scope": "Actual components with isolated React state/event and tracker adapters. No GA network, live CRM or native browser interaction verified."
+}
