@@ -10,6 +10,8 @@ export const loginSchema = emailSchema.extend({ password });
 
 export const registerSchema = loginSchema.extend({
   name: z.string().trim().min(2, "Name must be at least 2 characters"),
+  phone: z.string().optional(),
+  countryCode: z.string().optional(),
 });
 
 export const otpSchema = emailSchema.extend({

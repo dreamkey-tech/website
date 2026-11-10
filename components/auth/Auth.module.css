@@ -22,9 +22,12 @@
   padding-bottom: 0;
   background: var(--home-page);
 }
-.page :is(a, button, input, select):focus-visible {
+.page :is(a, button, select):focus-visible {
   outline: 2px solid var(--home-focus);
   outline-offset: 5px;
+}
+.page input:focus-visible {
+  outline: none;
 }
 .container {
   max-width: 86rem;
@@ -217,6 +220,7 @@
 }
 .field input:focus {
   border-color: var(--home-focus);
+  outline: none;
 }
 .field input[aria-invalid="true"] {
   border-color: var(--auth-error);
@@ -227,6 +231,59 @@
 }
 .field .passwordInput {
   padding-right: 3.5rem;
+}
+/* Phone number row */
+.phoneGroup {
+  display: flex;
+  border: 1px solid var(--home-border);
+  border-radius: 0.625rem;
+  overflow: hidden;
+  transition: border-color 180ms ease;
+  background: var(--home-surface);
+}
+.phoneGroup:focus-within {
+  border-color: var(--home-focus);
+}
+.countryCodeSelect {
+  flex-shrink: 0;
+  min-height: var(--auth-control-height);
+  background: var(--home-surface-muted);
+  color: var(--home-text);
+  font: inherit;
+  font-size: 0.75rem;
+  padding: 0 0.625rem;
+  border: none;
+  border-right: 1px solid var(--home-border);
+  cursor: pointer;
+  outline: none;
+}
+.countryCodeSelect:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.phoneInput {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--auth-control-height);
+  background: transparent;
+  color: var(--home-text);
+  font: inherit;
+  font-size: 0.875rem;
+  padding: 0.5625rem 1rem;
+  border: none;
+  outline: none;
+}
+.phoneInput::placeholder {
+  color: var(--home-text-muted);
+}
+.phoneInput:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.fieldOptional {
+  font-weight: 400;
+  color: var(--home-text-muted);
+  font-size: 0.6875rem;
 }
 .passwordToggle {
   position: absolute;

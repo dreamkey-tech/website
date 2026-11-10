@@ -34,10 +34,11 @@ export default function AuthForm({
     name: "",
     email: "",
     password: "",
+    phone: "",
+    countryCode: "+91",
   });
   const [errors, setErrors] = useState<CredentialErrors>({});
   const [challenge, setChallenge] = useState<LoginChallenge | null>(null);
-  const [registeredEmail, setRegisteredEmail] = useState<string | null>(null);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const request = useAuthRequest();
   const busy = request.pending || isGoogleLoading;
@@ -77,6 +78,28 @@ export default function AuthForm({
     });
   }
 
+  /**
+   * After registration the backend already dispatched the OTP — calling
+   * resendOtp immediately would hit the 60-second rate limit and prevent the
+   * OTP view from ever appearing. This function clears the provisional session
+   * cookie and sets the challenge state directly so the user lands on the code
+   * input right away. The OTP form's built-in Resend button handles later
+   * re-sends after the cooldown elapses.
+   */
+  async function goToOtpAfterRegister(email: string, signal: AbortSignal) {
+    // Best-effort logout — a failed logout should not block the user
+    // from reaching the verification step.
+    await authApi.logoutWebsiteSession(signal).catch(() => {});
+    if (signal.aborted) return;
+    setChallenge({
+      success: true,
+      requiresOtp: true,
+      email,
+      message:
+        "A 4-digit verification code has been sent to your email. Enter it below to complete registration.",
+    });
+  }
+
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (busy) return;
@@ -113,13 +136,14 @@ export default function AuthForm({
               name: values.name.trim(),
               email: parsed.data.email,
               password: parsed.data.password,
+              phone: values.phone?.trim() || undefined,
+              countryCode: values.phone?.trim() ? (values.countryCode || "+91") : undefined,
             },
             signal,
           );
           if (signal.aborted) return;
           setValues((previous) => ({ ...previous, password: "" }));
-          setRegisteredEmail(result.user.email);
-          await sendSignupCode(result.user.email, signal);
+          await goToOtpAfterRegister(result.user.email, signal);
         }
       },
       isLogin
@@ -166,50 +190,6 @@ export default function AuthForm({
             request.clearError();
           }}
         />
-      </AuthFormFrame>
-    );
-
-  if (registeredEmail)
-    return (
-      <AuthFormFrame
-        mode={mode}
-        returnTo={returnTo}
-        onModeChange={onModeChange}
-        headingLevel={onAuthenticated ? 2 : 1}
-        title={
-          <>
-            Verify your <em>email.</em>
-          </>
-        }
-        description="Your account has been created. Verify your email to finish signing in."
-      >
-        <div className={styles.challengeFields} aria-busy={request.pending}>
-          <p className={styles.notice}>
-            Request a verification code for{" "}
-            <strong className={styles.deliveryAddress}>
-              {registeredEmail}
-            </strong>
-            . You won’t need to register again.
-          </p>
-          {request.error && (
-            <p className={styles.apiError} role="alert">
-              {request.error}
-            </p>
-          )}
-          <button
-            type="button"
-            className={styles.submit}
-            disabled={request.pending}
-            onClick={() =>
-              request.run(
-                (signal) => sendSignupCode(registeredEmail, signal),
-                "We couldn’t send your verification code. Please try again.",
-              )
-            }
-          >
-            {request.pending ? "Sending code…" : "Send verification code"}
-          </button>
-        </div>
       </AuthFormFrame>
     );
 

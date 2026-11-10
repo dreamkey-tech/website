@@ -11,7 +11,9 @@ export interface WebsiteUser {
   id: string;
   name: string;
   email: string;
+  phone?: string | null;
   emailVerified?: boolean;
+  authProvider?: string;
 }
 
 export type OtpPurpose = "LOGIN" | "PASSWORD_RESET";
@@ -126,16 +128,17 @@ export const authApi = {
   },
 
   register: async (
-    data: RegisterInput,
+    data: RegisterInput & { phone?: string; countryCode?: string },
     signal?: AbortSignal,
   ): Promise<AuthSession> => {
-    return session(
-      await post(
-        "register",
-        { name: data.name, email: data.email, password: data.password },
-        signal,
-      ),
-    );
+    const payload: Record<string, string> = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    };
+    if (data.phone) payload.phone = data.phone;
+    if (data.countryCode) payload.countryCode = data.countryCode;
+    return session(await post("register", payload, signal));
   },
 
   verifyLoginOtp: async (
@@ -221,18 +224,75 @@ export const authApi = {
         ? window.location.origin
         : process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
-    const response = await apiClient.post("/api/auth/sign-in/social", {
-      provider: "google",
-      callbackURL: callbackURL || `${origin}/`,
-      errorCallbackURL: errorCallbackURL || `${origin}/login`,
+    // Use fetch with redirect:'manual' so we capture the Location header
+    // when the backend issues a 302 redirect to Google's consent screen,
+    // rather than axios silently following it and losing the URL.
+    const response = await fetch("/api/auth/sign-in/social", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      redirect: "manual",
+      body: JSON.stringify({
+        provider: "google",
+        callbackURL: callbackURL || `${origin}/`,
+        errorCallbackURL: errorCallbackURL || `${origin}/login`,
+      }),
     });
 
-    return response.data.url as string;
+    // 302 redirect → Location header contains the Google consent URL
+    if (response.type === "opaqueredirect" || (response.status >= 300 && response.status < 400)) {
+      const location = response.headers.get("Location");
+      if (location) return location;
+    }
+
+    // 200 JSON response with { url } field
+    if (response.ok) {
+      const data = await response.json().catch(() => null);
+      if (data && typeof data.url === "string" && data.url) return data.url;
+    }
+
+    throw new AuthResponseError("No sign-in URL returned from server.");
   },
 
   /** Get session for OAuth users (Better Auth) */
   getSession: async () => {
     const response = await apiClient.get("/api/auth/get-session");
     return response.data; // { user, session } or null
+  },
+
+  /** Save or update phone number for the authenticated user (email-auth or OAuth). */
+  updatePhone: async (
+    phone: string,
+    countryCode: string,
+    signal?: AbortSignal,
+  ): Promise<{ user: WebsiteUser }> => {
+    // Try the v1 user-auth path first; fall back to the Better Auth phone path.
+    try {
+      const { data } = await apiClient.post(
+        "/v1/user/auth/phone",
+        { phone, countryCode },
+        { signal },
+      );
+      if (object(data) && data.success === false) {
+        throw new AuthResponseError(
+          message(data, "We couldn't save your phone number. Please try again."),
+        );
+      }
+      return data as { user: WebsiteUser };
+    } catch (err) {
+      if ((err as AuthResponseError).name === "AuthResponseError") throw err;
+      // Fallback to Better Auth phone endpoint
+      const { data } = await apiClient.post(
+        "/api/auth/phone",
+        { phone, countryCode },
+        { signal },
+      );
+      if (object(data) && data.success === false) {
+        throw new AuthResponseError(
+          message(data, "We couldn't save your phone number. Please try again."),
+        );
+      }
+      return data as { user: WebsiteUser };
+    }
   },
 };

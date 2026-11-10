@@ -1,0 +1,241 @@
+/* Phone prompt modal overlay and dialog */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background: rgb(0 0 0 / 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  backdrop-filter: blur(2px);
+  /* Entrance */
+  animation: fadeIn 180ms ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-width: 26rem;
+  background: var(--home-page, #fff);
+  color: var(--home-text, #1a1a1a);
+  border-radius: 1.25rem;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 20px 60px -8px rgb(0 0 0 / 0.25);
+  padding: 1.625rem;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  /* Entrance */
+  animation: slideUp 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0.75rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.625rem;
+}
+
+.title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+  color: var(--home-text, #1a1a1a);
+}
+
+.closeButton {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--home-text-muted, #6b7280);
+  transition:
+    background 150ms ease,
+    color 150ms ease;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: var(--home-surface-muted, #f5f5f5);
+  color: var(--home-text, #1a1a1a);
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid var(--home-focus, #3b82f6);
+  outline-offset: 2px;
+}
+
+.description {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--home-text-muted, #6b7280);
+  margin-bottom: 1.125rem;
+}
+
+/* Phone input row */
+.phoneRow {
+  display: flex;
+  border: 1px solid var(--home-border, #e5e7eb);
+  border-radius: 0.625rem;
+  overflow: hidden;
+  transition: border-color 180ms ease;
+  background: var(--home-surface, #fff);
+  margin-bottom: 1.25rem;
+}
+
+.phoneRow:focus-within {
+  border-color: var(--home-focus, #3b82f6);
+}
+
+.codeSelect {
+  flex-shrink: 0;
+  min-height: 2.875rem;
+  background: var(--home-surface-muted, #f9fafb);
+  color: var(--home-text, #1a1a1a);
+  font: inherit;
+  font-size: 0.8125rem;
+  padding: 0 0.75rem;
+  border: none;
+  border-right: 1px solid var(--home-border, #e5e7eb);
+  cursor: pointer;
+  outline: none;
+}
+
+.codeSelect:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.phoneInput {
+  flex: 1;
+  min-width: 0;
+  min-height: 2.875rem;
+  background: transparent;
+  color: var(--home-text, #1a1a1a);
+  font: inherit;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+}
+
+.phoneInput::placeholder {
+  color: var(--home-text-muted, #9ca3af);
+}
+
+.phoneInput:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.skipButton {
+  font: inherit;
+  font-size: 0.8125rem;
+  color: var(--home-text-muted, #6b7280);
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.skipButton:hover {
+  color: var(--home-text, #1a1a1a);
+}
+
+.skipButton:focus-visible {
+  outline: 2px solid var(--home-focus, #3b82f6);
+  outline-offset: 2px;
+}
+
+.skipButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.saveButton {
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--home-accent, #df9e04);
+  padding: 0.5625rem 1.25rem;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition:
+    filter 150ms ease,
+    transform 100ms ease;
+}
+
+.saveButton:hover:not(:disabled) {
+  filter: brightness(0.92);
+}
+
+.saveButton:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.saveButton:focus-visible {
+  outline: 2px solid var(--home-focus, #3b82f6);
+  outline-offset: 3px;
+}
+
+.saveButton:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .dialog {
+    animation: none;
+  }
+  .closeButton,
+  .skipButton,
+  .saveButton {
+    transition: none;
+  }
+  .saveButton:active:not(:disabled) {
+    transform: none;
+  }
+}
