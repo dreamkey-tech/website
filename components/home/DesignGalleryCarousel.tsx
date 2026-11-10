@@ -3,6 +3,7 @@
 import {
   useCallback,
   useEffect,
+  useState,
   useSyncExternalStore,
   type ReactNode,
 } from "react";
@@ -31,6 +32,11 @@ export default function DesignGalleryCarousel({
     breakpoints: { [MOTION_QUERY]: { duration: 0 } },
   });
 
+  // Track whether we've mounted on the client so the server snapshot
+  // ("0,0,0,0" — no carousel yet) always matches the client's first paint.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
   const subscribe = useCallback(
     (listener: () => void) => {
       if (!carousel) return () => {};
@@ -50,7 +56,7 @@ export default function DesignGalleryCarousel({
     [carousel],
   );
   const getSnapshot = useCallback(() => {
-    if (!carousel) return "0,0,0,0";
+    if (!mounted || !carousel) return "0,0,0,0";
     const visible = carousel.slidesInView();
     return [
       Number(carousel.canScrollPrev()),
@@ -58,7 +64,7 @@ export default function DesignGalleryCarousel({
       visible.length ? visible[0] + 1 : 1,
       visible.length ? visible[visible.length - 1] + 1 : 1,
     ].join(",");
-  }, [carousel]);
+  }, [carousel, mounted]);
   const snapshot = useSyncExternalStore(
     subscribe,
     getSnapshot,
@@ -147,7 +153,7 @@ export default function DesignGalleryCarousel({
             type="button"
             aria-label="Previous home styles"
             aria-controls={TRACK_ID}
-            disabled={!previous}
+            disabled={previous === 0}
             onClick={() => move("previous")}
           >
             <ArrowLeft size="1.25rem" aria-hidden="true" />
@@ -156,7 +162,7 @@ export default function DesignGalleryCarousel({
             type="button"
             aria-label="Next home styles"
             aria-controls={TRACK_ID}
-            disabled={!next}
+            disabled={next === 0}
             onClick={() => move("next")}
           >
             <ArrowRight size="1.25rem" aria-hidden="true" />
