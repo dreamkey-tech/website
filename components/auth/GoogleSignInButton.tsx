@@ -24,14 +24,18 @@ export const GoogleSignInButton = ({
     setIsLoading(true);
     onBusyChange?.(true);
     try {
+      // Always land on /auth/callback so the token can be exchanged.
+      // Carry returnTo forward so the callback can redirect onward.
+      const callbackBase = new URL("/auth/callback", window.location.origin);
+      if (returnTo) {
+        callbackBase.searchParams.set("returnTo", safeAuthReturnTo(returnTo));
+      }
       const url = await authApi.googleSignIn(
-        returnTo
-          ? new URL(safeAuthReturnTo(returnTo), window.location.origin).href
-          : undefined,
+        callbackBase.href,
         returnTo
           ? new URL(authPageHref("/login", returnTo), window.location.origin)
               .href
-          : undefined,
+          : `${window.location.origin}/login`,
       );
       if (!url) throw new Error("No sign-in URL returned");
       window.location.href = url;

@@ -1,4 +1,5 @@
-import { apiClient } from "./client";
+// api/auth.ts
+import { apiClient, clearAuthToken } from "./client";
 import type {
   EmailInput,
   LoginInput,
@@ -207,9 +208,13 @@ export const authApi = {
   },
 
   logout: async () => {
-    // Call both endpoints — one for email/password session, one for OAuth session
-    await apiClient.post("/v1/user/auth/logout").catch(() => {});
-    await apiClient.post("/api/auth/sign-out").catch(() => {});
+    try {
+      // Call both endpoints — one for email/password session, one for OAuth session
+      await apiClient.post("/v1/user/auth/logout").catch(() => {});
+      await apiClient.post("/api/auth/sign-out").catch(() => {});
+    } finally {
+      clearAuthToken();
+    }
   },
 
   // ─── Google OAuth (Better Auth) ───────────────────────────────────────────
@@ -234,13 +239,16 @@ export const authApi = {
       redirect: "manual",
       body: JSON.stringify({
         provider: "google",
-        callbackURL: callbackURL || `${origin}/`,
+        callbackURL: callbackURL || `${origin}/auth/callback`,
         errorCallbackURL: errorCallbackURL || `${origin}/login`,
       }),
     });
 
     // 302 redirect → Location header contains the Google consent URL
-    if (response.type === "opaqueredirect" || (response.status >= 300 && response.status < 400)) {
+    if (
+      response.type === "opaqueredirect" ||
+      (response.status >= 300 && response.status < 400)
+    ) {
       const location = response.headers.get("Location");
       if (location) return location;
     }
