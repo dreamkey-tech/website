@@ -274,33 +274,16 @@ export const authApi = {
     countryCode: string,
     signal?: AbortSignal,
   ): Promise<{ user: WebsiteUser }> => {
-    // Try the v1 user-auth path first; fall back to the Better Auth phone path.
-    try {
-      const { data } = await apiClient.post(
-        "/v1/user/auth/phone",
-        { phone, countryCode },
-        { signal },
+    const { data } = await apiClient.post(
+      "/v1/user/auth/phone",
+      { phone, countryCode },
+      { signal },
+    );
+    if (object(data) && data.success === false) {
+      throw new AuthResponseError(
+        message(data, "We couldn't save your phone number. Please try again."),
       );
-      if (object(data) && data.success === false) {
-        throw new AuthResponseError(
-          message(data, "We couldn't save your phone number. Please try again."),
-        );
-      }
-      return data as { user: WebsiteUser };
-    } catch (err) {
-      if ((err as AuthResponseError).name === "AuthResponseError") throw err;
-      // Fallback to Better Auth phone endpoint
-      const { data } = await apiClient.post(
-        "/api/auth/phone",
-        { phone, countryCode },
-        { signal },
-      );
-      if (object(data) && data.success === false) {
-        throw new AuthResponseError(
-          message(data, "We couldn't save your phone number. Please try again."),
-        );
-      }
-      return data as { user: WebsiteUser };
     }
+    return data as { user: WebsiteUser };
   },
 };
