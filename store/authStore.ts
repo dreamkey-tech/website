@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { authApi } from "@/api/auth";
+import { ensureSessionCookies } from "@/api/client";
 
 interface User {
   id: string;
@@ -47,6 +48,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       try {
         const oauthRes = await authApi.getSession();
         if (oauthRes?.user) {
+          ensureSessionCookies(oauthRes.session?.token);
           set({ user: oauthRes.user, isAuthenticated: true, isLoading: false });
           return;
         }

@@ -16,6 +16,8 @@ import { X } from "@phosphor-icons/react";
 import AuthForm from "@/components/auth/AuthForm";
 import PageLoading from "@/components/navigation/PageLoading";
 import { safeAuthReturnTo } from "@/lib/auth-return";
+import { useAuthStore } from "@/store/authStore";
+import { getAuthToken, ensureSessionCookies } from "@/api/client";
 import styles from "./PropertyAccess.module.css";
 
 const AccessContext = createContext<((href: string) => void) | null>(null);
@@ -33,10 +35,23 @@ export default function PropertyAccessProvider({
   const [mode, setMode] = useState<"login" | "register">("login");
   const [opening, startTransition] = useTransition();
   const router = useRouter();
-  const open = useCallback((href: string) => {
-    setMode("login");
-    setTarget(safeAuthReturnTo(href));
-  }, []);
+  const open = useCallback(
+    (href: string) => {
+      const { isAuthenticated } = useAuthStore.getState();
+      const token = getAuthToken();
+      if (isAuthenticated || token) {
+        ensureSessionCookies(token || undefined);
+        startTransition(() => {
+          router.push(safeAuthReturnTo(href));
+          router.refresh();
+        });
+        return;
+      }
+      setMode("login");
+      setTarget(safeAuthReturnTo(href));
+    },
+    [router],
+  );
   return (
     <AccessContext.Provider value={open}>
       {children}

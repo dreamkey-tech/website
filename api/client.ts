@@ -12,11 +12,29 @@ export function getAuthToken(): string | null {
 export function setAuthToken(token: string): void {
   if (typeof window === "undefined") return;
   localStorage.setItem(AUTH_TOKEN_KEY, token);
+  ensureSessionCookies(token);
 }
 
 export function clearAuthToken(): void {
   if (typeof window === "undefined") return;
   localStorage.removeItem(AUTH_TOKEN_KEY);
+  document.cookie = "better-auth.session_token=; path=/; max-age=0; SameSite=Lax";
+  document.cookie = "access_token=; path=/; max-age=0; SameSite=Lax";
+}
+
+export function ensureSessionCookies(explicitToken?: string): void {
+  if (typeof window === "undefined") return;
+  const token = explicitToken || getAuthToken();
+  if (!token) return;
+  const isSecure = window.location.protocol === "https:";
+  const flags = `; path=/; max-age=${60 * 60 * 24 * 7}; SameSite=Lax${isSecure ? "; Secure" : ""}`;
+  const encoded = encodeURIComponent(token);
+  if (!document.cookie.includes("better-auth.session_token=")) {
+    document.cookie = `better-auth.session_token=${encoded}${flags}`;
+  }
+  if (!document.cookie.includes("access_token=")) {
+    document.cookie = `access_token=${encoded}${flags}`;
+  }
 }
 
 export const apiClient = axios.create({
