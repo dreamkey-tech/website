@@ -85,7 +85,7 @@ export default function CredentialFields({
         <div className={styles.field}>
           <label htmlFor="account-phone">
             Mobile number{" "}
-            <span className={styles.fieldOptional}>(Optional)</span>
+           
           </label>
           <div className={styles.phoneGroup}>
             <select

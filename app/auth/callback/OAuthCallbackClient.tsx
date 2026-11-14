@@ -42,6 +42,12 @@ export default function OAuthCallbackClient() {
         // Store the token for the axios request interceptor (Bearer header)
         if (token) {
           setAuthToken(token);
+          if (typeof document !== "undefined") {
+            const isSecure = window.location.protocol === "https:";
+            const flags = `; path=/; max-age=${60 * 60 * 24 * 7}; SameSite=Lax${isSecure ? "; Secure" : ""}`;
+            document.cookie = `better-auth.session_token=${encodeURIComponent(token)}${flags}`;
+            document.cookie = `access_token=${encodeURIComponent(token)}${flags}`;
+          }
         }
 
         // Re-hydrate the auth store using the new session
